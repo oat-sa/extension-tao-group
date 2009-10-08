@@ -1,0 +1,54 @@
+<?xml version='1.0'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	 <!ENTITY local 'http://www.tao.lu/Ontologies/TAOTest.rdf#'>
+	 <!ENTITY subject 'http://www.tao.lu/Ontologies/TAOSubject.rdf#'>
+	  <!ENTITY test 'http://www.tao.lu/Ontologies/TAOTest.rdf#'>
+	  <!ENTITY generis 'http://www.tao.lu/Ontologies/generis.rdf#'>
+	 <!ENTITY tao 'http://www.tao.lu/Ontologies/TAO.rdf#'>
+	 <!ENTITY widget 'http://www.tao.lu/datatypes/WidgetDefinitions.rdf#'>
+	 <!ENTITY xmls 'http://www.w3.org/2000/01/rdf-schema#'>]>
+<rdf:RDF
+xmlns="&local;"
+xmlns:rdf="&rdf;"
+xmlns:tao="&tao;"
+xmlns:subject="&subject;"
+xmlns:test="&test;"
+xmlns:generis="&generis;"
+xmlns:widget="&widget;"
+xmlns:rdfs="&rdfs;" >
+
+
+<rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Group">
+  <rdfs:label xml:lang="EN">Group</rdfs:label>
+  <rdfs:comment xml:lang="EN">Group</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="&tao;TAOObject"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Members">
+  <rdf:type rdf:resource="&rdf;Property"/>
+  <rdfs:label xml:lang="EN">Members</rdfs:label>
+  <rdfs:comment xml:lang="EN">Members</rdfs:comment>
+  <rdfs:domain rdf:resource="#Group"/>
+  <rdfs:range rdf:resource="&subject;Subject"/>
+  <widget:widget rdf:resource="&widget;TreeView"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf">
+  <rdf:type rdf:resource="&generis;Model"/>
+ <rdfs:label xml:lang="EN">TAO Group Model</rdfs:label>
+  <rdfs:comment xml:lang="EN">TAO Group Model</rdfs:comment>
+  <generis:Plugin>hypergraph</generis:Plugin>
+  </rdf:Description>
+
+<rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Tests">
+  <rdf:type rdf:resource="&rdf;Property"/>
+  <rdfs:label xml:lang="EN">Tests</rdfs:label>
+  <rdfs:comment xml:lang="EN">Tests</rdfs:comment>
+  <rdfs:domain rdf:resource="#Group"/>
+  <rdfs:range rdf:resource="&test;Test"/>
+  <widget:widget rdf:resource="&widget;TreeView"/>
+</rdf:Description>
+
+
+</rdf:RDF>
