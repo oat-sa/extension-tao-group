@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension name="Groups" url="/taoGroups/Groups/index">
+	<sections>
+		<section name="groups" url="/taoGroups/Groups/index">
+			<trees>
+				<tree name="groups" 
+					dataUrl="/taoGroups/Groups/getGroups" 
+					editClassUrl=""
+					editInstanceUrl=""
+					addInstanceUrl=""
+					addSubClassUrl=""
+					deleteUrl=""
+					duplicateUrl=""
+					gridUrl=""
+				/>
+			</trees>
+			<actions>
+				<action name="import" url="/taoGroups/Groups/import" />
+				<action name="export" url="/taoGroups/Groups/export" />
+			</actions>
+		</section>
+	</sections>
+</extension>
