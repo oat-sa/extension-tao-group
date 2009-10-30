@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension name="Groups" url="/taoGroups/Groups/index">
+<extension name="Groups" url="/taoGroups/Groups/index" level="3">
 	<sections>
 		<section name="groups" url="/taoGroups/Groups/index">
 			<trees>
 				<tree name="groups" 
 					dataUrl="/taoGroups/Groups/getGroups" 
-					editClassUrl=""
-					editInstanceUrl=""
-					addInstanceUrl=""
-					addSubClassUrl=""
-					deleteUrl=""
-					duplicateUrl=""
+					editClassUrl="/taoGroups/Groups/editGroupClass"
+					editInstanceUrl="/taoGroups/Groups/editGroup"
+					addInstanceUrl="/taoGroups/Groups/addGroup"
+					addSubClassUrl="/taoGroups/Groups/addGroupClass"
+					deleteUrl="/taoGroups/Groups/delete"
+					duplicateUrl="/taoGroups/Groups/cloneGroup"
 					gridUrl=""
 				/>
 			</trees>
