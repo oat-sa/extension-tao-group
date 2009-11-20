@@ -1,20 +1,50 @@
 <?php
+require_once('tao/actions/CommonModule.class.php');
+require_once('tao/actions/TaoModule.class.php');
+
 /**
- * the groups module provide the actions to manage groups
+ * Groups Controller provide actions performed from url resolution
+ * 
+ * @author Bertrand Chevrier, <taosupport@tudor.lu>
+ * @package taoGroups
+ * @subpackage actions
  */
-class Groups extends Module {
+class Groups extends TaoModule {
 
 	/**
-	 * @var taoGroups_models_classes_GroupsService
-	 */
-	protected $service = null;
-
-	/**
-	 * constructor
-	 * initialize services 
+	 * constructor: initialize the service and the default data
+	 * @return Groups
 	 */
 	public function __construct(){
+		
+		parent::__construct();
+		
+		//the service is initialized by default
 		$this->service = tao_models_classes_ServiceFactory::get('Groups');
+		$this->defaultData();
+	}
+	
+/*
+ * conveniance methods
+ */
+	
+	/**
+	 * get the selected group from the current context (from the uri and classUri parameter in the request)
+	 * @return core_kernel_classes_Resource $group
+	 */
+	private function getCurrentGroup(){
+		$uri = tao_helpers_Uri::decode($this->getRequestParameter('uri'));
+		if(is_null($uri) || empty($uri)){
+			throw new Exception("No valid uri found");
+		}
+		
+		$clazz = $this->getCurrentClass();
+		$group = $this->service->getGroup($uri, 'uri', $clazz);
+		if(is_null($group)){
+			throw new Exception("No group found for the uri {$uri}");
+		}
+		
+		return $group;
 	}
 	
 /*
@@ -26,6 +56,12 @@ class Groups extends Module {
 	 * @return void
 	 */
 	public function index(){
+		
+		if($this->getData('reload') == true){
+			unset($_SESSION[SESSION_NAMESPACE]['uri']);
+			unset($_SESSION[SESSION_NAMESPACE]['classUri']);
+		}
+		
 		$context = Context::getInstance();
 		$this->setData('content', "this is the ". get_class($this) ." module, " . $context->getActionName());
 		$this->setView('index.tpl');
@@ -55,38 +91,18 @@ class Groups extends Module {
 	 * @return void
 	 */
 	public function editGroupClass(){
-		$clazz = $this->getCurrentGroupClass();
-		$myForm = tao_helpers_form_GenerisFormFactory::classEditor($clazz, $this->service->getGroupClass());
+		
+		$myForm = $this->editClass($this->getCurrentClass(), $this->service->getGroupClass());
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
-				
-				$classValues = array();
-				$propertyValues = array();
-				foreach($myForm->getValues() as $key => $value){
-					if(preg_match("/^class_/", $key)){
-						$classKey =  tao_helpers_Uri::decode(str_replace('class_', '', $key));
-						$classValues[$classKey] =  tao_helpers_Uri::decode($value);
-					}
-					if(preg_match("/^property_/", $key)){
-						$key = str_replace('property_', '', $key);
-						$propNum = substr($key, 0, 1 );
-						$propKey = tao_helpers_Uri::decode(str_replace($propNum.'_', '', $key));
-						$propertyValues[$propNum][$propKey] = tao_helpers_Uri::decode($value);
-					}
-				}
-				$clazz = $this->service->bindProperties($clazz, $classValues);
-				foreach($propertyValues as $propNum => $properties){
-					$this->service->bindProperties(new core_kernel_classes_Resource(tao_helpers_Uri::decode($_POST['propertyUri'.$propNum])), $properties);
-				}
-				if($clazz instanceof core_kernel_classes_Class){
+				if($clazz instanceof core_kernel_classes_Resource){
 					$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($clazz->uriResource));
 				}
-				$this->setData('message', 'group class saved');
+				$this->setData('message', 'class saved');
 				$this->setData('reload', true);
 				$this->forward('Groups', 'index');
 			}
 		}
-		
 		$this->setData('formTitle', 'Edit group class');
 		$this->setData('myForm', $myForm->render());
 		$this->setView('form.tpl');
@@ -98,7 +114,7 @@ class Groups extends Module {
 	 * @return void
 	 */
 	public function editGroup(){
-		$clazz = $this->getCurrentGroupClass();
+		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentGroup();
 		$myForm = tao_helpers_form_GenerisFormFactory::instanceEditor($clazz, $group);
 		if($myForm->isSubmited()){
@@ -126,7 +142,7 @@ class Groups extends Module {
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
-		$clazz = $this->getCurrentGroupClass();
+		$clazz = $this->getCurrentClass();
 		$group = $this->service->createInstance($clazz);
 		if(!is_null($group) && $group instanceof core_kernel_classes_Resource){
 			echo json_encode(array(
@@ -144,7 +160,7 @@ class Groups extends Module {
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
-		$clazz = $this->service->createGroupClass($this->getCurrentGroupClass());
+		$clazz = $this->service->createGroupClass($this->getCurrentClass());
 		if(!is_null($clazz) && $clazz instanceof core_kernel_classes_Class){
 			echo json_encode(array(
 				'label'	=> $clazz->getLabel(),
@@ -167,7 +183,7 @@ class Groups extends Module {
 			$deleted = $this->service->deleteGroup($this->getCurrentGroup());
 		}
 		else{
-			$deleted = $this->service->deleteGroupClass($this->getCurrentGroupClass());
+			$deleted = $this->service->deleteGroupClass($this->getCurrentClass());
 		}
 		
 		echo json_encode(array('deleted'	=> $deleted));
@@ -183,7 +199,7 @@ class Groups extends Module {
 		}
 		
 		$group = $this->getCurrentGroup();
-		$clazz = $this->getCurrentGroupClass();
+		$clazz = $this->getCurrentClass();
 		
 		$clone = $this->service->createInstance($clazz);
 		if(!is_null($clone)){
@@ -202,60 +218,23 @@ class Groups extends Module {
 	}
 	
 	/*
-	 * TODO
+	 * @TODO implement the following actions
 	 */
 	
-	 public function import(){
-		$context = Context::getInstance();
-		$this->setData('content', "this is the ". get_class($this) ." module, " . $context->getActionName());
-		$this->setView('index.tpl');
+	public function getMetaData(){
+		throw new Exception("Not yet implemented");
 	}
 	
-	 public function export(){
-		$context = Context::getInstance();
-		$this->setData('content', "this is the ". get_class($this) ." module, " . $context->getActionName());
-		$this->setView('index.tpl');
+	public function saveComment(){
+		throw new Exception("Not yet implemented");
 	}
 	
-	/*
-	 * conveniance methods
-	 */
-	
-	/**
-	 * get the selected group from the current context (from the uri and classUri parameter in the request)
-	 * @return core_kernel_classes_Resource $group
-	 */
-	private function getCurrentGroup(){
-		$uri = tao_helpers_Uri::decode($this->getRequestParameter('uri'));
-		if(is_null($uri) || empty($uri)){
-			throw new Exception("No valid uri found");
-		}
-		
-		$clazz = $this->getCurrentGroupClass();
-		$group = $this->service->getGroup($uri, 'uri', $clazz);
-		if(is_null($group)){
-			throw new Exception("No group found for the uri {$uri}");
-		}
-		
-		return $group;
+	public function import(){
+		throw new Exception("Not yet implemented");
 	}
 	
-	/**
-	 * get the selected group class from the current context (from the classUri parameter in the request)
-	 * @return core_kernel_classes_Class $clazz
-	 */
-	private function getCurrentGroupClass(){
-		$classUri = tao_helpers_Uri::decode($this->getRequestParameter('classUri'));
-		if(is_null($classUri) || empty($classUri)){
-			throw new Exception("No valid uri found");
-		}
-		
-		$clazz = new core_kernel_classes_Class($classUri);
-		if(is_null($clazz)){
-			throw new Exception("No class found for the uri {$classUri}");
-		}
-		
-		return $clazz;
+	public function export(){
+		throw new Exception("Not yet implemented");
 	}
 }
 ?>

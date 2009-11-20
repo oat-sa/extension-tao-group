@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension name="Groups" url="/taoGroups/Groups/index" level="3">
 	<sections>
-		<section name="groups" url="/taoGroups/Groups/index">
+		<section name="Manage groups" url="/taoGroups/Groups/index">
 			<trees>
-				<tree name="groups" 
+				<tree name="Groups library" 
 					dataUrl="/taoGroups/Groups/getGroups" 
 					editClassUrl="/taoGroups/Groups/editGroupClass"
 					editInstanceUrl="/taoGroups/Groups/editGroup"
@@ -11,10 +11,14 @@
 					addSubClassUrl="/taoGroups/Groups/addGroupClass"
 					deleteUrl="/taoGroups/Groups/delete"
 					duplicateUrl="/taoGroups/Groups/cloneGroup"
-					gridUrl=""
 				/>
 			</trees>
 			<actions>
+				<action name="new class" js="subClass" url="/taoGroups/Groups/addGroupClass" context="class" />
+				<action name="new group" js="instanciate" url="/taoGroups/Groups/addGroup" context="class" />
+				<action name="delete" js="removeNode" url="/taoGroups/Groups/delete" context="resource" />
+				<action name="duplicate" js="cloneNode" url="/taoGroups/Groups/cloneGroup" context="instance" />
+				<action name="edit group" url="/taoGroups/Groups/editGroup" context="instance" />
 				<action name="import" url="/taoGroups/Groups/import" />
 				<action name="export" url="/taoGroups/Groups/export" />
 			</actions>
