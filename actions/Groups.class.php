@@ -91,8 +91,8 @@ class Groups extends TaoModule {
 	 * @return void
 	 */
 	public function editGroupClass(){
-		
-		$myForm = $this->editClass($this->getCurrentClass(), $this->service->getGroupClass());
+		$clazz = $this->getCurrentClass();
+		$myForm = $this->editClass($clazz, $this->service->getGroupClass());
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				if($clazz instanceof core_kernel_classes_Resource){
@@ -236,5 +236,6 @@ class Groups extends TaoModule {
 	public function export(){
 		throw new Exception("Not yet implemented");
 	}
+	
 }
 ?>
