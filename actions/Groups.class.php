@@ -217,6 +217,19 @@ class Groups extends TaoModule {
 		}
 	}
 	
+	
+	public function getLists(){
+		if(!tao_helpers_Request::isAjax()){
+			throw new Exception("wrong request mode");
+		}
+		
+		return json_encode(
+			$this->getListData(array(
+				TAO_GROUP_CLASS
+			))
+		);
+	}
+	
 	/*
 	 * @TODO implement the following actions
 	 */
