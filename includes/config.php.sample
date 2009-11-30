@@ -22,22 +22,13 @@ define("DIR_VIEWS"			, "views/");
 define("DIR_HELPERS"		, dirname(__FILE__) . "/../helpers/");
 
 # core directory
-define("DIR_CORE"			, dirname(__FILE__) . "/core/");
+define("DIR_CORE"			, dirname(__FILE__) . "/../../PHP-Framework/core/");
 
 # core helpers directory
 define("DIR_CORE_HELPERS"	, DIR_CORE . "helpers/");
 
 # core utils directory
 define("DIR_CORE_UTILS"		, DIR_CORE . "util/");
-
-# database config
-/*
-define("DATABASE_LOGIN"		, "root");
-define("DATABASE_PASS"		, "");
-define("DATABASE_URL"		, "");
-define("DATABASE_DRIVER"	, "");
-define("DATABASE_NAME"		, "localhost");
-*/
 
 # session namespace
 define('SESSION_NAMESPACE', 'PHPFramework');
