@@ -19,6 +19,7 @@
 				<action name="delete" js="removeNode" url="/taoGroups/Groups/delete" context="resource" />
 				<action name="duplicate" js="cloneNode" url="/taoGroups/Groups/cloneGroup" context="instance" />
 				<action name="edit group" url="/taoGroups/Groups/editGroup" context="instance" />
+				<action name="new property" js="addProperty" url="/taoGroups/Groups/addClassProperty" context="class" />
 				<action name="import" url="/taoGroups/Groups/import"  context="class" />
 				<action name="export" url="/taoGroups/Groups/export"  context="class" reload="true" />
 			</actions>
