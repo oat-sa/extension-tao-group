@@ -131,7 +131,7 @@ class Groups extends TaoModule {
 		
 		$this->setData('formTitle', 'Edit group');
 		$this->setData('myForm', $myForm->render());
-		$this->setView('form.tpl');
+		$this->setView('form_group.tpl');
 	}
 	
 	/**
@@ -236,6 +236,38 @@ class Groups extends TaoModule {
 	/*
 	 * @TODO implement the following actions
 	 */
+	
+	public function getSubjects(){
+		if(!tao_helpers_Request::isAjax()){
+			throw new Exception("wrong request mode");
+		}
+		
+		echo json_encode($this->service->toTree( $this->service->getGroupClass(), true, true, ''));
+	}
+	
+	public function saveSubjects(){
+		if(!tao_helpers_Request::isAjax()){
+			throw new Exception("wrong request mode");
+		}
+		$saved = false;
+		echo json_encode(array('saved'	=> $saved));
+	}
+	
+	public function getTests(){
+		if(!tao_helpers_Request::isAjax()){
+			throw new Exception("wrong request mode");
+		}
+		
+		echo json_encode($this->service->toTree( $this->service->getGroupClass(), true, true, ''));
+	}
+	
+	public function saveTests(){
+		if(!tao_helpers_Request::isAjax()){
+			throw new Exception("wrong request mode");
+		}
+		$saved = false;
+		echo json_encode(array('saved'	=> $saved));
+	}
 	
 	public function getMetaData(){
 		throw new Exception("Not yet implemented");
