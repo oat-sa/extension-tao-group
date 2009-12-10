@@ -13,6 +13,7 @@
 		$re		= new HttpRequest();
 		$fc		= new AdvancedFC($re);
 		$fc->loadModule();
+		
 	} catch (Exception $e) {
 		$message	= $e->getMessage();
 		require_once DIR_VIEWS . $GLOBALS['dir_theme'] . 'error404.tpl';
