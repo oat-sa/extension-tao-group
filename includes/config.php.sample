@@ -1,5 +1,4 @@
 <?php
-
 /**
  * main configuration file
  */
@@ -22,17 +21,9 @@ define("DIR_VIEWS"			, "views/");
 # helpers directory
 define("DIR_HELPERS"		, dirname(__FILE__) . "/../helpers/");
 
-# core directory
-define("DIR_CORE"			, dirname(__FILE__) . "/../../PHP-Framework/core/");
-
-# core helpers directory
-define("DIR_CORE_HELPERS"	, DIR_CORE . "helpers/");
-
-# core utils directory
-define("DIR_CORE_UTILS"		, DIR_CORE . "util/");
 
 # session namespace
-define('SESSION_NAMESPACE', 'PHPFramework');
+define('SESSION_NAMESPACE', 'ClearFw');
 
 # default module name
 define('DEFAULT_MODULE_NAME', 'Groups');
@@ -46,7 +37,7 @@ define('DEFAULT_ACTION_NAME', 'index');
 $GLOBALS['dir_theme']		= "templates/";
 
 # language
-$GLOBALS['lang']			= 'en';
+$GLOBALS['lang']			= 'EN';
 
 define("API_LOGIN", "demo", true);
 define("API_PASS", md5("demo"), true);
