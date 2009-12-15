@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 /**
  * Generis Object Oriented API -
  *
- * $Id$
+ *
  *
  * This file is part of Generis Object Oriented API.
  *
