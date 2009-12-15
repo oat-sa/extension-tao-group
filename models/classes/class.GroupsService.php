@@ -5,12 +5,12 @@ error_reporting(E_ALL);
 /**
  * Generis Object Oriented API -
  *
- *
+ * $Id$
  *
  * This file is part of Generis Object Oriented API.
  *
- * Automatically generated on 30.10.2009, 14:36:21 with ArgoUML PHP module 
- * (last revised $Date: 2008-04-19 08:22:08 +0200 (Sat, 19 Apr 2008) $)
+ * Automatically generated on 15.12.2009, 14:14:33 with ArgoUML PHP module 
+ * (last revised $Date: 2009-04-11 21:57:46 +0200 (Sat, 11 Apr 2009) $)
  *
  * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
  * @package taoGroups
@@ -67,7 +67,7 @@ class taoGroups_models_classes_GroupsService
      * @access protected
      * @var array
      */
-    protected $groupsOntologies = array('http://www.tao.lu/Ontologies/TAOGroup.rdf');
+    protected $groupsOntologies = array('http://www.tao.lu/Ontologies/TAOGroup.rdf', 'http://www.tao.lu/Ontologies/TAOSubject.rdf','http://www.tao.lu/Ontologies/TAOTest.rdf');
 
     // --- OPERATIONS ---
 
@@ -299,6 +299,124 @@ class taoGroups_models_classes_GroupsService
 		}
 		
         // section 127-0-1-1--5cd530d7:1249feedb80:-8000:0000000000001AEA end
+
+        return (bool) $returnValue;
+    }
+
+    /**
+     * Short description of method getRelatedSubjects
+     *
+     * @access public
+     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @param  Resource group
+     * @return array
+     */
+    public function getRelatedSubjects( core_kernel_classes_Resource $group)
+    {
+        $returnValue = array();
+
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D44 begin
+		
+		if(!is_null($group)){
+			$returnValue = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP));
+		}
+		
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D44 end
+
+        return (array) $returnValue;
+    }
+
+    /**
+     * Short description of method setRelatedSubjects
+     *
+     * @access public
+     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @param  Resource group
+     * @param  array subjects
+     * @return boolean
+     */
+    public function setRelatedSubjects( core_kernel_classes_Resource $group, $subjects = array())
+    {
+        $returnValue = (bool) false;
+
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D48 begin
+		
+		if(!is_null($group)){
+			
+			$memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
+			
+			$group->removePropertyValues($memberProp);
+			$done = 0;
+			foreach($subjects as $subject){
+				if($group->setPropertyValue($memberProp, $subject)){
+					$done++;
+				}
+			}
+			if($done == count($subjects)){
+				$returnValue = true;
+			}
+		}
+		
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D48 end
+
+        return (bool) $returnValue;
+    }
+
+    /**
+     * Short description of method getRelatedTests
+     *
+     * @access public
+     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @param  Resource group
+     * @return array
+     */
+    public function getRelatedTests( core_kernel_classes_Resource $group)
+    {
+        $returnValue = array();
+
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D53 begin
+		
+		if(!is_null($group)){
+			$returnValue = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_TESTS_PROP));
+		}
+		
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D53 end
+
+        return (array) $returnValue;
+    }
+
+    /**
+     * Short description of method setRelatedTests
+     *
+     * @access public
+     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @param  Resource group
+     * @param  array tests
+     * @return boolean
+     */
+    public function setRelatedTests( core_kernel_classes_Resource $group, $tests = array())
+    {
+        $returnValue = (bool) false;
+
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D57 begin
+		
+		if(!is_null($group)){
+			
+			$testProp = new core_kernel_classes_Property(TAO_GROUP_TESTS_PROP);
+			
+			$group->removePropertyValues($testProp);
+			$done = 0;
+			foreach($tests as $test){
+				if($group->setPropertyValue($testProp, $test)){
+					$done++;
+				}
+			}
+			if($done == count($tests)){
+				$returnValue = true;
+			}
+		}
+		
+        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D57 end
 
         return (bool) $returnValue;
     }

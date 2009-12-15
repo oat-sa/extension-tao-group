@@ -64,6 +64,7 @@ class Groups extends TaoModule {
 		}
 		
 		$context = Context::getInstance();
+		
 		$this->setData('content', "this is the ". get_class($this) ." module, " . $context->getActionName());
 		$this->setView('index.tpl');
 	}
@@ -129,6 +130,14 @@ class Groups extends TaoModule {
 				$this->forward('Groups', 'index');
 			}
 		}
+		
+		$relatedSubjects = $this->service->getRelatedSubjects($group);
+		$relatedSubjects = array_map("tao_helpers_Uri::encode", $relatedSubjects);
+		$this->setData('relatedSubjects', json_encode($relatedSubjects));
+		
+		$relatedTests = $this->service->getRelatedTests($group);
+		$relatedTests = array_map("tao_helpers_Uri::encode", $relatedTests);
+		$this->setData('relatedTests', json_encode($relatedTests));
 		
 		$this->setData('formTitle', 'Edit group');
 		$this->setData('myForm', $myForm->render());
@@ -234,23 +243,31 @@ class Groups extends TaoModule {
 		);
 	}
 	
-	/*
-	 * @TODO implement the following actions
-	 */
-	
-	public function getSubjects(){
+	public function getMembers(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
 		
-		echo json_encode($this->service->toTree( $this->service->getGroupClass(), true, true, ''));
+		echo json_encode($this->service->toTree( new core_kernel_classes_Class(TAO_SUBJECT_CLASS), true, true, ''));
 	}
 	
-	public function saveSubjects(){
+	public function saveMembers(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
 		$saved = false;
+		
+		$members = array();
+		foreach($this->getRequestParameters() as $key => $value){
+			if(preg_match("/^instance_/", $key)){
+				array_push($members, tao_helpers_Uri::decode($value));
+			}
+		}
+		$group = $this->getCurrentGroup();
+		
+		if($this->service->setRelatedSubjects($group, $members)){
+			$saved = true;
+		}
 		echo json_encode(array('saved'	=> $saved));
 	}
 	
@@ -259,7 +276,7 @@ class Groups extends TaoModule {
 			throw new Exception("wrong request mode");
 		}
 		
-		echo json_encode($this->service->toTree( $this->service->getGroupClass(), true, true, ''));
+		echo json_encode($this->service->toTree( new core_kernel_classes_Class(TAO_TEST_CLASS), true, true, ''));
 	}
 	
 	public function saveTests(){
@@ -267,8 +284,26 @@ class Groups extends TaoModule {
 			throw new Exception("wrong request mode");
 		}
 		$saved = false;
+		
+		$tests = array();
+		foreach($this->getRequestParameters() as $key => $value){
+			if(preg_match("/^instance_/", $key)){
+				array_push($tests, tao_helpers_Uri::decode($value));
+			}
+		}
+		$group = $this->getCurrentGroup();
+		
+		if($this->service->setRelatedTests($group, $tests)){
+			$saved = true;
+		}
 		echo json_encode(array('saved'	=> $saved));
 	}
+	
+	
+	
+	/*
+	 * @TODO implement the following actions
+	 */
 	
 	public function getMetaData(){
 		throw new Exception("Not yet implemented");

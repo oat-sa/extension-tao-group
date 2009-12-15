@@ -32,13 +32,15 @@
 </div>
 <script type="text/javascript">
 $(function(){
-	new GenerisTreeFormClass('#subject-tree', "/taoGroups/Groups/getSubjects", {
+	new GenerisTreeFormClass('#subject-tree', "/taoGroups/Groups/getMembers", {
 		actionId: 'subject',
-		saveUrl : '/taoGroups/Groups/saveSubjects'
+		saveUrl : '/taoGroups/Groups/saveMembers',
+		checkedNodes : <?=get_data('relatedSubjects')?>
 	});
 	new GenerisTreeFormClass('#test-tree', "/taoGroups/Groups/getTests", {
 		actionId: 'test',
-		saveUrl : '/taoGroups/Groups/saveTests'
+		saveUrl : '/taoGroups/Groups/saveTests',
+		checkedNodes : <?=get_data('relatedTests')?>
 	});
 });
 </script>
