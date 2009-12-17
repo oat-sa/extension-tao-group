@@ -227,21 +227,6 @@ class Groups extends TaoModule {
 		}
 	}
 	
-	/**
-	 * get the list data: all taoObjects children except the TAO_GROUP class
-	 * @return void
-	 */
-	public function getLists(){
-		if(!tao_helpers_Request::isAjax()){
-			throw new Exception("wrong request mode");
-		}
-		
-		return json_encode(
-			$this->getListData(array(
-				TAO_GROUP_CLASS
-			))
-		);
-	}
 	
 	public function getMembers(){
 		if(!tao_helpers_Request::isAjax()){
