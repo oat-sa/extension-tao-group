@@ -4,7 +4,7 @@
 	<div class="ui-widget ui-state-default ui-widget-header ui-corner-top container-title" >
 		<?=__('Select group testees')?>
 	</div>
-	<div class="ui-widget ui-widget-content ui-state-default container-content" style="min-height:420px;">
+	<div class="ui-widget ui-widget-content container-content" style="min-height:420px;">
 		<div id="subject-tree"></div>
 	</div>
 	<div class="ui-widget ui-widget-content ui-state-default ui-corner-bottom" style="text-align:center; padding:4px;">
@@ -15,7 +15,7 @@
 	<div class="ui-widget ui-state-default ui-widget-header ui-corner-top container-title" >
 		<?=__('Select group test')?>
 	</div>
-	<div class="ui-widget ui-widget-content ui-state-default container-content" style="min-height:420px;">
+	<div class="ui-widget ui-widget-content container-content" style="min-height:420px;">
 		<div id="test-tree"></div>
 	</div>
 	<div class="ui-widget ui-widget-content ui-state-default ui-corner-bottom" style="text-align:center; padding:4px;">

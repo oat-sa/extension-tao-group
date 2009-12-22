@@ -1,7 +1,7 @@
 <div><strong><?=get_data('sent')?></strong></div>
 
 <div class="ui-widget-header ui-corner-top ui-state-default" style="padding:5px;">Add a subject model:</div>
-<div class="ui-widget-content ui-corner-bottom ui-state-default" style="padding:5px; font-size:0.9em;">
+<div class="ui-widget-content ui-corner-bottom " style="padding:5px; font-size:0.9em;">
 
 	<form method="post">
 		<fieldset>
