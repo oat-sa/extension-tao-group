@@ -3,16 +3,9 @@
 error_reporting(E_ALL);
 
 /**
- * Generis Object Oriented API -
+ * Service methods to manage the Groups business models using the RDF API.
  *
- * $Id$
- *
- * This file is part of Generis Object Oriented API.
- *
- * Automatically generated on 15.12.2009, 14:14:33 with ArgoUML PHP module 
- * (last revised $Date: 2009-04-11 21:57:46 +0200 (Sat, 11 Apr 2009) $)
- *
- * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+ * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
  * @package taoGroups
  * @subpackage models_classes
  */
@@ -25,7 +18,7 @@ if (0 > version_compare(PHP_VERSION, '5')) {
  * The Service class is an abstraction of each service instance. 
  * Used to centralize the behavior related to every servcie instances.
  *
- * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+ * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
  */
 require_once('tao/models/classes/class.Service.php');
 
@@ -38,10 +31,10 @@ require_once('tao/models/classes/class.Service.php');
 // section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D2-constants end
 
 /**
- * Short description of class taoGroups_models_classes_GroupsService
+ * Service methods to manage the Groups business models using the RDF API.
  *
  * @access public
- * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+ * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
  * @package taoGroups
  * @subpackage models_classes
  */
@@ -54,7 +47,7 @@ class taoGroups_models_classes_GroupsService
     // --- ATTRIBUTES ---
 
     /**
-     * Short description of attribute groupClass
+     * The RDFS top level group class
      *
      * @access protected
      * @var Class
@@ -62,7 +55,7 @@ class taoGroups_models_classes_GroupsService
     protected $groupClass = null;
 
     /**
-     * Short description of attribute groupsOntologies
+     * The ontologies to load
      *
      * @access protected
      * @var array
@@ -75,7 +68,7 @@ class taoGroups_models_classes_GroupsService
      * Short description of method __construct
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @return mixed
      */
     public function __construct()
@@ -90,10 +83,12 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method getGroupClass
+     * get a group subclass by uri. 
+     * If the uri is not set, it returns the group class (the top level class.
+     * If the uri don't reference a group subclass, it returns null
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  string uri
      * @return core_kernel_classes_Class
      */
@@ -122,7 +117,7 @@ class taoGroups_models_classes_GroupsService
      * Short description of method getGroup
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  string identifier usually the test label or the ressource URI
      * @param  string mode
      * @param  Class clazz
@@ -150,7 +145,7 @@ class taoGroups_models_classes_GroupsService
      * Short description of method getGroups
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  array options
      * @return core_kernel_classes_ContainerCollection
      */
@@ -168,7 +163,7 @@ class taoGroups_models_classes_GroupsService
      * Short description of method createGroup
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  string label
      * @param  ContainerCollection members
      * @param  ContainerCollection tests
@@ -188,7 +183,7 @@ class taoGroups_models_classes_GroupsService
      * Short description of method createGroupClass
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Class clazz
      * @param  string label
      * @param  array properties
@@ -225,10 +220,10 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method deleteGroup
+     * delete a group instance
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Resource group
      * @return boolean
      */
@@ -248,10 +243,10 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method deleteGroupClass
+     * delete a group class or sublcass
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Class clazz
      * @return boolean
      */
@@ -276,7 +271,7 @@ class taoGroups_models_classes_GroupsService
      * Short description of method isGroupClass
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Class clazz
      * @return boolean
      */
@@ -304,10 +299,10 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method getRelatedSubjects
+     * get the list of subjects in the group in parameter
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Resource group
      * @return array
      */
@@ -327,10 +322,10 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method setRelatedSubjects
+     * define the list of subjects composing a group
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Resource group
      * @param  array subjects
      * @return boolean
@@ -363,10 +358,10 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method getRelatedTests
+     * get the list of tests in the group in parameter
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Resource group
      * @return array
      */
@@ -386,10 +381,10 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method setRelatedTests
+     * define the list of tests composing a group
      *
      * @access public
-     * @author Bertrand Chevrier, <chevrier.bertrand@gmail.com>
+     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Resource group
      * @param  array tests
      * @return boolean
