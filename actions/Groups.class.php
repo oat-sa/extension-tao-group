@@ -227,7 +227,10 @@ class Groups extends TaoModule {
 		}
 	}
 	
-	
+	/**
+	 * Get the data to populate the tree of group's subjects
+	 * @return void
+	 */
 	public function getMembers(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
@@ -236,6 +239,10 @@ class Groups extends TaoModule {
 		echo json_encode($this->service->toTree( new core_kernel_classes_Class(TAO_SUBJECT_CLASS), true, true, ''));
 	}
 	
+	/**
+	 * Save the group related subjects
+	 * @return void
+	 */
 	public function saveMembers(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
@@ -256,6 +263,10 @@ class Groups extends TaoModule {
 		echo json_encode(array('saved'	=> $saved));
 	}
 	
+	/**
+	 * Get the data to populate the tree of group's tests
+	 * @return void
+	 */
 	public function getTests(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
@@ -264,6 +275,10 @@ class Groups extends TaoModule {
 		echo json_encode($this->service->toTree( new core_kernel_classes_Class(TAO_TEST_CLASS), true, true, ''));
 	}
 	
+	/**
+	 * Save the group related subjects
+	 * @return void
+	 */
 	public function saveTests(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
