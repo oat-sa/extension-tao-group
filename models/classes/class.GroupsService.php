@@ -129,6 +129,14 @@ class taoGroups_models_classes_GroupsService
 
         // section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D5 begin
 		
+		if(is_null($clazz) && $mode == 'uri'){
+			try{
+				$resource = new core_kernel_classes_Resource($identifier);
+				$type = $resource->getUniquePropertyValue(new core_kernel_classes_Property( RDF_TYPE ));
+				$clazz = new core_kernel_classes_Class($type->uriResource);
+			}
+			catch(Exception $e){}
+		}
 		if(is_null($clazz)){
 			$clazz = $this->groupClass;
 		}
