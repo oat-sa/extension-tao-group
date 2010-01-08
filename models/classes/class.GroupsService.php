@@ -150,24 +150,6 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method getGroups
-     *
-     * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
-     * @param  array options
-     * @return core_kernel_classes_ContainerCollection
-     */
-    public function getGroups($options)
-    {
-        $returnValue = null;
-
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:0000000000001809 begin
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:0000000000001809 end
-
-        return $returnValue;
-    }
-
-    /**
      * Short description of method createGroup
      *
      * @access public
