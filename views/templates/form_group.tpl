@@ -1,6 +1,6 @@
 <?include('header.tpl')?>
 
-<div id="subject-container" >
+<div id="subject-container" class="data-container">
 	<div class="ui-widget ui-state-default ui-widget-header ui-corner-top container-title" >
 		<?=__('Select group testees')?>
 	</div>
@@ -11,7 +11,7 @@
 		<input id="saver-action-subject" type="button" value="<?=__('Save')?>" />
 	</div>
 </div>
-<div id="test-container" >
+<div id="test-container" class="data-container">
 	<div class="ui-widget ui-state-default ui-widget-header ui-corner-top container-title" >
 		<?=__('Select group test')?>
 	</div>
