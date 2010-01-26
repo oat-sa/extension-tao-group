@@ -208,18 +208,8 @@ class Groups extends TaoModule {
 			throw new Exception("wrong request mode");
 		}
 		
-		$group = $this->getCurrentGroup();
-		$clazz = $this->getCurrentClass();
-		
-		$clone = $this->service->createInstance($clazz);
+		$clone = $this->service->cloneInstance($this->getCurrentGroup(), $this->getCurrentClass());
 		if(!is_null($clone)){
-			
-			foreach($clazz->getProperties() as $property){
-				foreach($group->getPropertyValues($property) as $propertyValue){
-					$clone->setPropertyValue($property, $propertyValue);
-				}
-			}
-			$clone->setLabel($group->getLabel()."'");
 			echo json_encode(array(
 				'label'	=> $clone->getLabel(),
 				'uri' 	=> tao_helpers_Uri::encode($clone->uriResource)
