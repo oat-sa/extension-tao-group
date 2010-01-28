@@ -1,0 +1,9 @@
+msgid ""
+msgstr ""
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Select group test"
+msgstr "Choisir le test du groupe"
+

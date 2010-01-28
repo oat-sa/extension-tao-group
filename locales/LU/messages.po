@@ -1,0 +1,9 @@
+msgid "Select group testees"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Select group test"
+msgstr ""
+
