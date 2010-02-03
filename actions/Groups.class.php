@@ -97,7 +97,6 @@ class Groups extends TaoModule {
 				}
 				$this->setData('message', 'class saved');
 				$this->setData('reload', true);
-				$this->forward('Groups', 'index');
 			}
 		}
 		$this->setData('formTitle', 'Edit group class');
@@ -122,7 +121,6 @@ class Groups extends TaoModule {
 				$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->uriResource));
 				$this->setData('message', 'Group saved');
 				$this->setData('reload', true);
-				$this->forward('Groups', 'index');
 			}
 		}
 		

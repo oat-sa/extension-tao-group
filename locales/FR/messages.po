@@ -1,4 +1,4 @@
-msgid ""
+msgid "Select group testees"
 msgstr ""
 
 msgid "Save"

@@ -1,3 +1,4 @@
 /* auto generated content */
 /* extesion: taoGroups, lang: FR */
-var i18n_tr_FR = {"Select group testees":"","Save":"","Select group test":""};
+var langCode = 'FR';
+var i18n_tr = {"":"","Save":"Enregistrer","Select group test":"Choisir le test du groupe"};
