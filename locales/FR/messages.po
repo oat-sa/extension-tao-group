@@ -1,9 +1,60 @@
-msgid "Select group testees"
+msgid ""
 msgstr ""
+
+msgid "Edit group class"
+msgstr "Modifier la classe Groupe"
+
+msgid "Group saved"
+msgstr "Groupe enregistré"
+
+msgid "Groups"
+msgstr "Groupes"
+
+msgid "Manage groups"
+msgstr "Gérer les groupes"
+
+msgid "Groups library"
+msgstr "Librairie"
+
+msgid "new class"
+msgstr "Nouvelle classe"
+
+msgid "new group"
+msgstr "nouveau groupe"
+
+msgid "delete"
+msgstr "supprimer"
+
+msgid "duplicate"
+msgstr "dupliquer"
+
+msgid "edit group"
+msgstr "modifier le groupe"
+
+msgid "new property"
+msgstr "nouvelle propriété"
+
+msgid "create table"
+msgstr "créer un tableau"
+
+msgid "import"
+msgstr "importer"
+
+msgid "export"
+msgstr "exporter"
+
+msgid "Select group testees"
+msgstr "Choisissez les sujets du groupe"
 
 msgid "Save"
 msgstr "Enregistrer"
 
 msgid "Select group test"
 msgstr "Choisir le test du groupe"
+
+msgid "The Group module allows to groupe Testees according to global features and classifications."
+msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications"
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
 

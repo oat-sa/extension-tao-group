@@ -95,11 +95,11 @@ class Groups extends TaoModule {
 				if($clazz instanceof core_kernel_classes_Resource){
 					$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($clazz->uriResource));
 				}
-				$this->setData('message', 'class saved');
+				$this->setData('message', __('Class saved'));
 				$this->setData('reload', true);
 			}
 		}
-		$this->setData('formTitle', 'Edit group class');
+		$this->setData('formTitle', __('Edit group class'));
 		$this->setData('myForm', $myForm->render());
 		$this->setView('form.tpl');
 	}
@@ -119,7 +119,7 @@ class Groups extends TaoModule {
 				$group = $this->service->bindProperties($group, $myForm->getValues());
 				
 				$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->uriResource));
-				$this->setData('message', 'Group saved');
+				$this->setData('message', __('Group saved'));
 				$this->setData('reload', true);
 			}
 		}

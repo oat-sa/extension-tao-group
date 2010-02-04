@@ -196,7 +196,7 @@ class taoGroups_models_classes_GroupsService
 			foreach($properties as $propertyName => $propertyValue){
 				$myProperty = $groupClass->createProperty(
 					$propertyName,
-					$propertyName . ' ' . $label .' subject property created from ' . get_class($this) . ' the '. date('Y-m-d h:i:s') 
+					$propertyName . ' ' . $label .' property created from ' . get_class($this) . ' the '. date('Y-m-d h:i:s') 
 				);
 				
 				//@todo implement check if there is a widget key and/or a range key
