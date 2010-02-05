@@ -1,4 +1,4 @@
-<?include('header.tpl')?>
+<?include(TAO_TPL_PATH . 'header.tpl')?>
 
 <div id="subject-container" class="data-container">
 	<div class="ui-widget ui-state-default ui-widget-header ui-corner-top container-title" >
@@ -45,4 +45,4 @@ $(function(){
 });
 </script>
 
-<?include('footer.tpl');?>
+<?include(TAO_TPL_PATH . 'footer.tpl');?>

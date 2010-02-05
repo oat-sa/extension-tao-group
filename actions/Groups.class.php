@@ -33,7 +33,7 @@ class Groups extends TaoModule {
 	 * get the selected group from the current context (from the uri and classUri parameter in the request)
 	 * @return core_kernel_classes_Resource $group
 	 */
-	private function getCurrentGroup(){
+	protected function getCurrentInstance(){
 		$uri = tao_helpers_Uri::decode($this->getRequestParameter('uri'));
 		if(is_null($uri) || empty($uri)){
 			throw new Exception("No valid uri found");
@@ -52,19 +52,6 @@ class Groups extends TaoModule {
  * controller actions
  */
 
-	/**
-	 * Main action
-	 * @return void
-	 */
-	public function index(){
-		
-		if($this->getData('reload') == true){
-			unset($_SESSION[SESSION_NAMESPACE]['uri']);
-			unset($_SESSION[SESSION_NAMESPACE]['classUri']);
-		}
-		$this->setView('index.tpl');
-	}
-	
 	/**
 	 * Render json data to populate the group tree 
 	 * 'modelType' must be in the request parameters
@@ -101,7 +88,7 @@ class Groups extends TaoModule {
 		}
 		$this->setData('formTitle', __('Edit group class'));
 		$this->setData('myForm', $myForm->render());
-		$this->setView('form.tpl');
+		$this->setView('form.tpl', true);
 	}
 	
 	/**
@@ -111,7 +98,7 @@ class Groups extends TaoModule {
 	 */
 	public function editGroup(){
 		$clazz = $this->getCurrentClass();
-		$group = $this->getCurrentGroup();
+		$group = $this->getCurrentInstance();
 		$myForm = tao_helpers_form_GenerisFormFactory::instanceEditor($clazz, $group);
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
@@ -137,23 +124,6 @@ class Groups extends TaoModule {
 		$this->setView('form_group.tpl');
 	}
 	
-	/**
-	 * Add a group instance
-	 * @return void
-	 */
-	public function addGroup(){
-		if(!tao_helpers_Request::isAjax()){
-			throw new Exception("wrong request mode");
-		}
-		$clazz = $this->getCurrentClass();
-		$group = $this->service->createInstance($clazz);
-		if(!is_null($group) && $group instanceof core_kernel_classes_Resource){
-			echo json_encode(array(
-				'label'	=> $group->getLabel(),
-				'uri' 	=> tao_helpers_Uri::encode($group->uriResource)
-			));
-		}
-	}
 	
 	/**
 	 * Add a group subclass
@@ -183,7 +153,7 @@ class Groups extends TaoModule {
 		
 		$deleted = false;
 		if($this->getRequestParameter('uri')){
-			$deleted = $this->service->deleteGroup($this->getCurrentGroup());
+			$deleted = $this->service->deleteGroup($this->getCurrentInstance());
 		}
 		else{
 			$deleted = $this->service->deleteGroupClass($this->getCurrentClass());
@@ -192,23 +162,6 @@ class Groups extends TaoModule {
 		echo json_encode(array('deleted'	=> $deleted));
 	}
 	
-	/**
-	 * Duplicate a group instance
-	 * @return void
-	 */
-	public function cloneGroup(){
-		if(!tao_helpers_Request::isAjax()){
-			throw new Exception("wrong request mode");
-		}
-		
-		$clone = $this->service->cloneInstance($this->getCurrentGroup(), $this->getCurrentClass());
-		if(!is_null($clone)){
-			echo json_encode(array(
-				'label'	=> $clone->getLabel(),
-				'uri' 	=> tao_helpers_Uri::encode($clone->uriResource)
-			));
-		}
-	}
 	
 	/**
 	 * Get the data to populate the tree of group's subjects
@@ -238,7 +191,7 @@ class Groups extends TaoModule {
 				array_push($members, tao_helpers_Uri::decode($value));
 			}
 		}
-		$group = $this->getCurrentGroup();
+		$group = $this->getCurrentInstance();
 		
 		if($this->service->setRelatedSubjects($group, $members)){
 			$saved = true;
@@ -274,7 +227,7 @@ class Groups extends TaoModule {
 				array_push($tests, tao_helpers_Uri::decode($value));
 			}
 		}
-		$group = $this->getCurrentGroup();
+		$group = $this->getCurrentInstance();
 		
 		if($this->service->setRelatedTests($group, $tests)){
 			$saved = true;
