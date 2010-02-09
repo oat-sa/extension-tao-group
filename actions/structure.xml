@@ -4,7 +4,7 @@
 		<section name="Manage groups" url="/taoGroups/Groups/index">
 			<trees>
 				<tree name="Groups library" 
-					dataUrl="/taoGroups/Groups/getGroups" 
+					dataUrl="/taoGroups/Groups/getOntologyData" 
 					editClassUrl="/taoGroups/Groups/editGroupClass"
 					editInstanceUrl="/taoGroups/Groups/editGroup"
 					addInstanceUrl="/taoGroups/Groups/addInstance"
@@ -14,6 +14,7 @@
 				/>
 			</trees>
 			<actions>
+				<action name="search" url="/taoGroups/Groups/search" context="*" />
 				<action name="new class" js="GenerisAction.subClass" url="/taoGroups/Groups/addGroupClass" context="class" />
 				<action name="new group" js="GenerisAction.instanciate" url="/taoGroups/Groups/addInstance" context="class" />
 				<action name="delete" js="GenerisAction.removeNode" url="/taoGroups/Groups/delete" context="resource" />
