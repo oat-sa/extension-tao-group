@@ -33,5 +33,22 @@ class SaSGroups extends Groups {
 		parent::setView('sas.tpl', true);
     }
 	
+	/**
+	 * Render the tree to select the group related subjects 
+	 * @return void
+	 */
+	public function selectSubjects(){
+		$this->setData('relatedSubjects', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedSubjects($this->getCurrentInstance()))));
+		$this->setView('subjects.tpl');
+	}
+	
+	/**
+	 * Render the tree to select the group related tests 
+	 * @return void
+	 */
+	public function selectTests(){
+		$this->setData('relatedTests', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedTests($this->getCurrentInstance()))));
+		$this->setView('tests.tpl');
+	}
 }
 ?>
