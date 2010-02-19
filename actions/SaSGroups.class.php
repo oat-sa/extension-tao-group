@@ -39,6 +39,8 @@ class SaSGroups extends Groups {
 	 * @return void
 	 */
 	public function selectSubjects(){
+		$this->setData('uri', $this->getRequestParameter('uri'));
+		$this->setData('classUri', $this->getRequestParameter('classUri'));
 		$this->setData('relatedSubjects', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedSubjects($this->getCurrentInstance()))));
 		$this->setView('subjects.tpl');
 	}
@@ -48,6 +50,8 @@ class SaSGroups extends Groups {
 	 * @return void
 	 */
 	public function selectTests(){
+		$this->setData('uri', $this->getRequestParameter('uri'));
+		$this->setData('classUri', $this->getRequestParameter('classUri'));
 		$this->setData('relatedTests', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedTests($this->getCurrentInstance()))));
 		$this->setView('tests.tpl');
 	}

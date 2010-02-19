@@ -9,12 +9,21 @@
 		<input id="saver-action-test" type="button" value="<?=__('Save')?>" />
 	</div>
 </div>
+<?if(!get_data('myForm')):?>
+	<input type='hidden' name='uri' value="<?=get_data('uri')?>" />
+	<input type='hidden' name='classUri' value="<?=get_data('classUri')?>" />
+<?endif?>
 <script type="text/javascript">
 $(document).ready(function(){
-
-	new GenerisTreeFormClass('#test-tree', "/taoGroups/Groups/getTests", {
+	
+	if(ctx_extension){
+		url = '/' + ctx_extension + '/' + ctx_module + '/';
+	}
+	getUrl = url + 'getTests';
+	setUrl = url + 'saveTests';
+	new GenerisTreeFormClass('#test-tree', getUrl, {
 		actionId: 'test',
-		saveUrl : '/taoGroups/Groups/saveTests',
+		saveUrl : setUrl,
 		checkedNodes : <?=get_data('relatedTests')?>
 	});
 

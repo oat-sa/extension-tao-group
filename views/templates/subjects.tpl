@@ -9,12 +9,21 @@
 		<input id="saver-action-subject" type="button" value="<?=__('Save')?>" />
 	</div>
 </div>
+<?if(!get_data('myForm')):?>
+	<input type='hidden' name='uri' value="<?=get_data('uri')?>" />
+	<input type='hidden' name='classUri' value="<?=get_data('classUri')?>" />
+<?endif?>
 <script type="text/javascript">
 $(document).ready(function(){
 	
-	new GenerisTreeFormClass('#subject-tree', "/taoGroups/Groups/getMembers", {
+	if(ctx_extension){
+		url = '/' + ctx_extension + '/' + ctx_module + '/';
+	}
+	getUrl = url + 'getMembers';
+	setUrl = url + 'saveMembers';
+	new GenerisTreeFormClass('#subject-tree', getUrl, {
 		actionId: 'subject',
-		saveUrl : '/taoGroups/Groups/saveMembers',
+		saveUrl : setUrl,
 		checkedNodes : <?=get_data('relatedSubjects')?>
 	});
 	
