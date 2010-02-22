@@ -1,4 +1,4 @@
-msgid ""
+msgid "Class saved"
 msgstr ""
 
 msgid "Edit group class"
@@ -15,6 +15,9 @@ msgstr "Gérer les groupes"
 
 msgid "Groups library"
 msgstr "Librairie"
+
+msgid "search"
+msgstr ""
 
 msgid "new class"
 msgstr "Nouvelle classe"
@@ -34,14 +37,20 @@ msgstr "modifier le groupe"
 msgid "new property"
 msgstr "nouvelle propriété"
 
+msgid "meta data"
+msgstr ""
+
 msgid "create table"
 msgstr "créer un tableau"
 
-msgid "import"
-msgstr "importer"
-
 msgid "export"
 msgstr "exporter"
+
+msgid "The Group module allows to groupe Testees according to global features and classifications."
+msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications"
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
 
 msgid "Select group testees"
 msgstr "Choisissez les sujets du groupe"
@@ -52,11 +61,8 @@ msgstr "Enregistrer"
 msgid "Select group test"
 msgstr "Choisir le test du groupe"
 
-msgid "The Group module allows to groupe Testees according to global features and classifications."
-msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications"
-
-msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
+msgid "import"
+msgstr "importer"
 
 msgid "EN"
 msgstr "English"
@@ -69,3 +75,4 @@ msgstr "German"
 
 msgid "LU"
 msgstr "Luxemburgish"
+

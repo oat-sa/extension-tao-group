@@ -16,6 +16,9 @@ msgstr ""
 msgid "Groups library"
 msgstr ""
 
+msgid "search"
+msgstr ""
+
 msgid "new class"
 msgstr ""
 
@@ -34,13 +37,19 @@ msgstr ""
 msgid "new property"
 msgstr ""
 
+msgid "meta data"
+msgstr ""
+
 msgid "create table"
 msgstr ""
 
-msgid "import"
+msgid "export"
 msgstr ""
 
-msgid "export"
+msgid "The Group module allows to groupe Testees according to global features and classifications."
+msgstr ""
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
 msgstr ""
 
 msgid "Select group testees"
@@ -50,12 +59,6 @@ msgid "Save"
 msgstr ""
 
 msgid "Select group test"
-msgstr ""
-
-msgid "The Group module allows to groupe Testees according to global features and classifications."
-msgstr ""
-
-msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
 msgstr ""
 
 msgid "EN"
@@ -69,3 +72,4 @@ msgstr "German"
 
 msgid "LU"
 msgstr "Luxemburgish"
+
