@@ -8,8 +8,6 @@
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
 class SaSGroups extends Groups {
-
-    
     
     /**
      * @see Groups::__construct()
@@ -19,7 +17,6 @@ class SaSGroups extends Groups {
 		tao_helpers_form_GenerisFormFactory::setMode(tao_helpers_form_GenerisFormFactory::MODE_STANDALONE);
 		parent::__construct();
     }
-    	
 		
 	/**
      * @see TaoModule::setView()
@@ -32,6 +29,19 @@ class SaSGroups extends Groups {
 			$this->setData('includedView', BASE_PATH . '/' . DIR_VIEWS . $GLOBALS['dir_theme'] . $identifier);
 		}
 		parent::setView('sas.tpl', true);
+    }
+	
+	/**
+     * overrided to prevent exception: 
+     * if no class is selected, the root class is returned 
+     * @see TaoModule::getCurrentClass()
+     * @return core_kernel_class_Class
+     */
+    protected function getCurrentClass() {
+        if($this->hasRequestParameter('classUri')){
+        	return parent::getCurrentClass();
+        }
+		return $this->getRootClass();
     }
 	
 	/**
