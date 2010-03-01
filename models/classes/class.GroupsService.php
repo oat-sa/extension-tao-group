@@ -60,7 +60,7 @@ class taoGroups_models_classes_GroupsService
      * @access protected
      * @var array
      */
-    protected $groupsOntologies = array('http://www.tao.lu/Ontologies/TAOGroup.rdf', 'http://www.tao.lu/Ontologies/TAOSubject.rdf','http://www.tao.lu/Ontologies/TAOTest.rdf');
+    protected $groupsOntologies = array('http://www.tao.lu/Ontologies/TAOGroup.rdf', 'http://www.tao.lu/Ontologies/TAOSubject.rdf','http://www.tao.lu/Ontologies/TAODelivery.rdf');
 
     // --- OPERATIONS ---
 
@@ -348,60 +348,60 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * get the list of tests in the group in parameter
+     * Short description of method getRelatedDeliveries
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Resource group
      * @return array
      */
-    public function getRelatedTests( core_kernel_classes_Resource $group)
+    public function getRelatedDeliveries( core_kernel_classes_Resource $group)
     {
         $returnValue = array();
 
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D53 begin
+        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED4 begin
 		
 		if(!is_null($group)){
-			$returnValue = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_TESTS_PROP));
+			$returnValue = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP));
 		}
 		
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D53 end
+        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED4 end
 
         return (array) $returnValue;
     }
 
     /**
-     * define the list of tests composing a group
+     * Short description of method setRelatedDeliveries
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
      * @param  Resource group
-     * @param  array tests
+     * @param  array deliveries
      * @return boolean
      */
-    public function setRelatedTests( core_kernel_classes_Resource $group, $tests = array())
+    public function setRelatedDeliveries( core_kernel_classes_Resource $group, $deliveries = array())
     {
         $returnValue = (bool) false;
 
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D57 begin
+        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED7 begin
 		
 		if(!is_null($group)){
 			
-			$testProp = new core_kernel_classes_Property(TAO_GROUP_TESTS_PROP);
+			$deliveriesProp = new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP);
 			
-			$group->removePropertyValues($testProp);
+			$group->removePropertyValues($deliveriesProp);
 			$done = 0;
-			foreach($tests as $test){
-				if($group->setPropertyValue($testProp, $test)){
+			foreach($deliveries as $delivery){
+				if($group->setPropertyValue($deliveriesProp, $delivery)){
 					$done++;
 				}
 			}
-			if($done == count($tests)){
+			if($done == count($deliveries)){
 				$returnValue = true;
 			}
 		}
 		
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D57 end
+        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED7 end
 
         return (bool) $returnValue;
     }

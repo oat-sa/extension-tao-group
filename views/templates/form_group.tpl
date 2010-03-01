@@ -2,7 +2,7 @@
 
 <?include('subjects.tpl')?>
 
-<?include('tests.tpl')?>
+<?include('deliveries.tpl')?>
 
 <div class="main-container">
 	<div id="form-title" class="ui-widget-header ui-corner-top ui-state-default">

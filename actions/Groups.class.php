@@ -106,9 +106,13 @@ class Groups extends TaoModule {
 		$relatedSubjects = array_map("tao_helpers_Uri::encode", $relatedSubjects);
 		$this->setData('relatedSubjects', json_encode($relatedSubjects));
 		
-		$relatedTests = $this->service->getRelatedTests($group);
+	/*	$relatedTests = $this->service->getRelatedTests($group);
 		$relatedTests = array_map("tao_helpers_Uri::encode", $relatedTests);
 		$this->setData('relatedTests', json_encode($relatedTests));
+	*/	
+		$relatedDeliveries = $this->service->getRelatedDeliveries($group);
+		$relatedDeliveries = array_map("tao_helpers_Uri::encode", $relatedDeliveries);
+		$this->setData('relatedDeliveries', json_encode($relatedDeliveries));
 		
 		$this->setData('formTitle', 'Edit group');
 		$this->setData('myForm', $myForm->render());
@@ -191,36 +195,36 @@ class Groups extends TaoModule {
 	}
 	
 	/**
-	 * Get the data to populate the tree of group's tests
+	 * Get the data to populate the tree of group's deliveries
 	 * @return void
 	 */
-	public function getTests(){
+	public function getDeliveries(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
 		
-		echo json_encode($this->service->toTree( new core_kernel_classes_Class(TAO_TEST_CLASS), true, true, ''));
+		echo json_encode($this->service->toTree( new core_kernel_classes_Class(TAO_DELIVERY_CLASS), true, true, ''));
 	}
 	
 	/**
-	 * Save the group related subjects
+	 * Save the group related deliveries
 	 * @return void
 	 */
-	public function saveTests(){
+	public function saveDeliveries(){
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
 		$saved = false;
 		
-		$tests = array();
+		$deliveries = array();
 		foreach($this->getRequestParameters() as $key => $value){
 			if(preg_match("/^instance_/", $key)){
-				array_push($tests, tao_helpers_Uri::decode($value));
+				array_push($deliveries, tao_helpers_Uri::decode($value));
 			}
 		}
 		$group = $this->getCurrentInstance();
 		
-		if($this->service->setRelatedTests($group, $tests)){
+		if($this->service->setRelatedDeliveries($group, $deliveries)){
 			$saved = true;
 		}
 		echo json_encode(array('saved'	=> $saved));

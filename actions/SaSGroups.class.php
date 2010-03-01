@@ -55,15 +55,16 @@ class SaSGroups extends Groups {
 		$this->setView('subjects.tpl');
 	}
 	
+	
 	/**
-	 * Render the tree to select the group related tests 
+	 * Render the tree to select the group related deliveries 
 	 * @return void
 	 */
-	public function selectTests(){
+	public function selectDeliveries(){
 		$this->setData('uri', $this->getRequestParameter('uri'));
 		$this->setData('classUri', $this->getRequestParameter('classUri'));
-		$this->setData('relatedTests', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedTests($this->getCurrentInstance()))));
-		$this->setView('tests.tpl');
+		$this->setData('relatedDeliveries', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedDeliveries($this->getCurrentInstance()))));
+		$this->setView('deliveries.tpl');
 	}
 }
 ?>
