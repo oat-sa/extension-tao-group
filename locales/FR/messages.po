@@ -1,5 +1,5 @@
 msgid "Class saved"
-msgstr ""
+msgstr "Classe enregistrée"
 
 msgid "Edit group class"
 msgstr "Modifier la classe Groupe"
@@ -17,7 +17,7 @@ msgid "Groups library"
 msgstr "Librairie"
 
 msgid "search"
-msgstr ""
+msgstr "Rechercher"
 
 msgid "new class"
 msgstr "Nouvelle classe"
@@ -38,7 +38,7 @@ msgid "new property"
 msgstr "nouvelle propriété"
 
 msgid "meta data"
-msgstr ""
+msgstr "métadonnée"
 
 msgid "create table"
 msgstr "créer un tableau"
