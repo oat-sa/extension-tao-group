@@ -26,7 +26,7 @@ msgid "new group"
 msgstr "neue Gruppe"
 
 msgid "delete"
-msgstr "löschen"
+msgstr "lÃ¶schen"
 
 msgid "duplicate"
 msgstr "duplizieren"
@@ -47,10 +47,10 @@ msgid "export"
 msgstr "Export"
 
 msgid "The Group module allows to groupe Testees according to global features and classifications."
-msgstr "Das Gruppen-Modul erlaubt das gruppieren von Testpersonen gemäß globalen Eigenschaften und Klassifikationen."
+msgstr "Das Gruppen-Modul erlaubt das gruppieren von Testpersonen gemÃ¤ÃŸ globalen Eigenschaften und Klassifikationen."
 
 msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr "Das Gruppen-Moduls ermöglicht das Zuweisen von Tests zu Gruppen und stellt damit die Grundlage für das Aufrufen und Laufen eines Tests."
+msgstr "Das Gruppen-Moduls ermÃ¶glicht das Zuweisen von Tests zu Gruppen und stellt damit die Grundlage fÃ¼r das Aufrufen und Laufen eines Tests."
 
 msgid "Select group testees"
 msgstr "Testpersonen der Gruppe markieren"
@@ -65,7 +65,7 @@ msgid "EN"
 msgstr "Englisch"
 
 msgid "FR"
-msgstr "Französisch"
+msgstr "FranzÃ¶sisch"
 
 msgid "DE"
 msgstr "Deutsch"

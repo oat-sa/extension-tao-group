@@ -1,8 +1,8 @@
-msgid "Class saved"
+Ôªømsgid "Class saved"
 msgstr "Klass gespaichert"
 
 msgid "Edit group class"
-msgstr "Gruppen Klass editéiren"
+msgstr "Gruppen Klass edit≈Ωiren"
 
 msgid "Group saved"
 msgstr "Grupp gespaichert"
@@ -26,16 +26,16 @@ msgid "new group"
 msgstr "Nei Grupp"
 
 msgid "delete"
-msgstr "läschen"
+msgstr "l≈†schen"
 
 msgid "duplicate"
-msgstr "duplizéiren"
+msgstr "dupliz≈Ωiren"
 
 msgid "edit group"
-msgstr "Grupp editéiren"
+msgstr "Grupp edit≈Ωiren"
 
 msgid "new property"
-msgstr "nei Proprietéit"
+msgstr "nei Propriet≈Ωit"
 
 msgid "meta data"
 msgstr "Meta Daten"
@@ -44,13 +44,13 @@ msgid "create table"
 msgstr "Tabell erstellen"
 
 msgid "export"
-msgstr "exportéiren"
+msgstr "export≈Ωiren"
 
 msgid "The Group module allows to groupe Testees according to global features and classifications."
-msgstr "Den Gruppen Modul erlabt Testpersounen ze gruppéiren no globalen Charakteristiken an Klassifikatiounen."
+msgstr "Den Gruppen Modul erlabt Testpersounen ze grupp≈Ωiren no globalen Charakteristiken an Klassifikatiounen."
 
 msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr "d'Haaptziel vum Gruppen Modul besteht dran fier Tester mat hiirem entspriechenden Grupp ze verbannen an esou een Test ze erméiglechen."
+msgstr "d'Haaptziel vum Gruppen Modul besteht dran fier Tester mat hiirem entspriechenden Grupp ze verbannen an esou een Test ze erm≈Ωiglechen."
 
 msgid "Select group testees"
 msgstr "Gruppen Testpersounen eraussichen"
