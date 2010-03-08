@@ -114,7 +114,7 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method getGroup
+     * get a group instance
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
@@ -150,10 +150,11 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method createGroup
+     * create a group instance
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @deprecated
      * @param  string label
      * @param  ContainerCollection members
      * @param  ContainerCollection tests
@@ -170,7 +171,7 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method createGroupClass
+     * subclass the Group class or one of it's subclass
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
@@ -258,7 +259,7 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method isGroupClass
+     * Check if the Class in parameter is a subclass of the Group Class
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
@@ -289,7 +290,7 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * get the list of subjects in the group in parameter
+     * get the list of subjects linked to the group in parameter
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
@@ -348,7 +349,7 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method getRelatedDeliveries
+     * get the list of deliveries linked to the group in parameter
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
@@ -371,7 +372,7 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * Short description of method setRelatedDeliveries
+     * define a list of deliveries linked to the group in parameter
      *
      * @access public
      * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
