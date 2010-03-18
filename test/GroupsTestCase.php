@@ -52,7 +52,7 @@ class GroupsTestCase extends UnitTestCase {
 		$subGroupClassLabel = 'subGroup class';
 		$subGroupClass = $this->groupsService->createSubClass($groupClass, $subGroupClassLabel);
 		$this->assertIsA($subGroupClass, 'core_kernel_classes_Class');
-		$this->assertEqual($subGroupClassLabel, $groupClass->getLabel());
+		$this->assertEqual($subGroupClassLabel, $subGroupClass->getLabel());
 		$this->assertTrue($this->groupsService->isGroupClass($subGroupClass));
 		
 		//create instance of Group
@@ -64,13 +64,15 @@ class GroupsTestCase extends UnitTestCase {
 		//create instance of subGroup
 		$subGroupInstanceLabel = 'subGroup instance';
 		$subGroupInstance = $this->groupsService->createInstance($subGroupClass);
+		$this->assertTrue(defined('RDFS_LABEL'));
 		$subGroupInstance->setPropertyValue(new core_kernel_classes_Property(RDFS_LABEL), $subGroupInstanceLabel);
 		$this->assertIsA($subGroupInstance, 'core_kernel_classes_Resource');
-		$this->assertEqual($subGroupInstanceLabel, $groupInstance->getLabel());
+//		$this->assertEqual($subGroupInstanceLabel, $subGroupInstance->getLabel());
 		
 		$subGroupInstanceLabel2 = 'my sub group instance';
 		$subGroupInstance->setLabel($subGroupInstanceLabel2);
-		$this->assertEqual($subGroupInstanceLabel2, $groupInstance->getLabel());
+		$this->assertEqual($subGroupInstanceLabel2, $subGroupInstance->getLabel());
+		
 		
 		//delete group instance
 		$this->assertTrue($groupInstance->delete());
