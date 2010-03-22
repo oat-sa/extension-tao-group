@@ -64,10 +64,12 @@ class GroupsTestCase extends UnitTestCase {
 		//create instance of subGroup
 		$subGroupInstanceLabel = 'subGroup instance';
 		$subGroupInstance = $this->groupsService->createInstance($subGroupClass);
+		
 		$this->assertTrue(defined('RDFS_LABEL'));
+		$subGroupInstance->removePropertyValues(new core_kernel_classes_Property(RDFS_LABEL));
 		$subGroupInstance->setPropertyValue(new core_kernel_classes_Property(RDFS_LABEL), $subGroupInstanceLabel);
 		$this->assertIsA($subGroupInstance, 'core_kernel_classes_Resource');
-//		$this->assertEqual($subGroupInstanceLabel, $subGroupInstance->getLabel());
+		$this->assertEqual($subGroupInstanceLabel, $subGroupInstance->getLabel());
 		
 		$subGroupInstanceLabel2 = 'my sub group instance';
 		$subGroupInstance->setLabel($subGroupInstanceLabel2);

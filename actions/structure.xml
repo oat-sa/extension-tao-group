@@ -11,6 +11,7 @@
 					addSubClassUrl="/taoGroups/Groups/addGroupClass"
 					deleteUrl="/taoGroups/Groups/delete"
 					duplicateUrl="/taoGroups/Groups/cloneInstance"
+					moveInstanceUrl="/taoGroups/Groups/moveInstance"
 				/>
 			</trees>
 			<actions>
