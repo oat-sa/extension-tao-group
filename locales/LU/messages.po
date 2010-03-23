@@ -1,4 +1,4 @@
-﻿msgid "Class saved"
+msgid "Class saved"
 msgstr "Klass gespaichert"
 
 msgid "Edit group class"
@@ -46,6 +46,15 @@ msgstr "Tabell erstellen"
 msgid "export"
 msgstr "exportéiren"
 
+msgid "Select group deliveries"
+msgstr ""
+
+msgid "Save"
+msgstr "Spaicheren"
+
+msgid "Show delvery tests"
+msgstr ""
+
 msgid "The Group module allows to groupe Testees according to global features and classifications."
 msgstr "Den Gruppen Modul erlabt Testpersounen ze gruppéiren no globalen Charakteristiken an Klassifikatiounen."
 
@@ -54,9 +63,6 @@ msgstr "d'Haaptziel vum Gruppen Modul besteht dran fier Tester mat hiirem entspr
 
 msgid "Select group testees"
 msgstr "Gruppen Testpersounen eraussichen"
-
-msgid "Save"
-msgstr "Spaicheren"
 
 msgid "Select group test"
 msgstr "Gruppen Test eraussichen"
