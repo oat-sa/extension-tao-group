@@ -2,7 +2,7 @@ msgid "Class saved"
 msgstr "Klasse gespeichert"
 
 msgid "Edit group class"
-msgstr "Klasse "Gruppe" bearbeiten"
+msgstr "Klasse \"Gruppe\" bearbeiten"
 
 msgid "Group saved"
 msgstr "Gruppe gespeichert"
