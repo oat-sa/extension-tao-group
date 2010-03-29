@@ -21,31 +21,38 @@ $(document).ready(function(){
 	}
 	getUrl = url + 'getDeliveries';
 	setUrl = url + 'saveDeliveries';
+	getTests = '/taoDelivery/Delivery/getDeliveriesTests';
 	
 	new GenerisTreeFormClass('#delivery-tree', getUrl, {
 		actionId: 'delivery',
 		saveUrl : setUrl,
 		checkedNodes : <?=get_data('relatedDeliveries')?>,
 		loadCallback: function(){
-			$("#delivery-tree  li.node-instance").each(function(){
-				$(this).append(
-					"<img src='<?=BASE_WWW?>/img/test.png' title='<?=__('Show delvery tests')?>'  class='tests-opener' id='tests-opener_"+$(this).attr('id')+"' />" +
-					"<div id='tests-viewer_"+$(this).attr('id')+"' style='display:none;'></div>"
-				);
-			});
-			$("img.tests-opener").click(function(){
-				classUri = $(this).parents('.node-class:first').attr('id');
-				var deliveryUri = this.id.replace('tests-opener_', '');
-				$.post(
-					'/taoDelivery/Delivery/getTests', 
-					{uri: deliveryUri, classUri: classUri},
-					function(response){
-						divNode = $("div[id='tests-viewer_" + deliveryUri+"']");
-						divNode.html(response);
-						divNode.dialog();
-					},
-					'html'
-				);	
+			$.postJson(getTests, {}, function(response){
+				if(response.data){
+					var tests = response.data;
+
+					$("#delivery-tree  li.node-instance").each(function(){
+						deliveryUri = $(this).attr('id');
+						if(tests[deliveryUri]){
+							testContent = '';
+							testContent += "<img src='<?=BASE_WWW?>/img/test.png'  class='tests-opener' id='tests-opener_"+deliveryUri+"' />";
+							testContent += "<div id='tests-viewer_"+deliveryUri+"' class='ui-state-highlight' style='display:none;'>" ;
+							testContent += __('Related tests') + ":<br />";
+							for(test in tests[deliveryUri]){
+								testContent += " - " + tests[deliveryUri][test]['label'] + "<br />";
+							}
+							testContent += "</div>";
+							$(this).append(testContent);
+						}
+					});
+					$(".tests-opener").mouseover(function(){
+						$("div[id='" + this.id.replace('tests-opener_', 'tests-viewer_')+"']").show();
+					});
+					$(".tests-opener").mouseout(function(){
+						$("div[id='" + this.id.replace('tests-opener_', 'tests-viewer_')+"']").hide();
+					});
+				}
 			});
 		}
 	});
