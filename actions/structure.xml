@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE extension SYSTEM "../../tao/doc/structure.dtd">
 <extension name="Groups" url="/taoGroups/Groups/index" level="3">
 	<sections>
-		<section name="Manage groups" url="/taoGroups/Groups/index">
+		<section id="manage_groups" name="Manage groups" url="/taoGroups/Groups/index">
 			<trees>
 				<tree name="Groups library" 
 					dataUrl="/taoGroups/Groups/getOntologyData" 
