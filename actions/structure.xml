@@ -21,7 +21,6 @@
 				<action name="new group" js="GenerisAction.instanciate" url="/taoGroups/Groups/addInstance" context="class" />
 				<action name="delete" js="GenerisAction.removeNode" url="/taoGroups/Groups/delete" context="resource" />
 				<action name="duplicate" js="GenerisAction.duplicateNode" url="/taoGroups/Groups/cloneInstance" context="instance" />
-				<action name="edit group" url="/taoGroups/Groups/editGroup" context="instance" />
 				<action name="move" js="GenerisAction.moveNode" url="" context="instance" />
 				<action name="new property" js="GenerisAction.addProperty" url="/taoGroups/Groups/addClassProperty" context="class" />
 				<action name="lists"  url="/tao/Lists/index"  context="*" />
