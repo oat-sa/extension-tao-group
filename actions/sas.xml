@@ -2,6 +2,27 @@
 <!DOCTYPE services SYSTEM "../../tao/doc/sas.dtd">
 <services>
 	<service>
+		<name>Group class selection</name>
+		<description>Select a group (sub)class</description>
+		<location url="/taoGroups/SaSGroups/sasSelect">
+			<param key="selectInstance" value="false" />
+		</location>
+		<return>
+			<param key="groupClassUri" />
+		</return>
+	</service>
+	<service>
+		<name>Group selection</name>
+		<description>Select a group</description>
+		<location url="/taoGroups/SaSGroups/sasSelect">
+			<param key="selectInstance" value="true" />
+		</location>
+		<return>
+			<param key="groupClassUri" />
+			<param key="groupUri" />
+		</return>
+	</service>
+	<service>
 		<name>Group add</name>
 		<description>Add a new group and redirect to the edit form</description>
 		<location url="/taoGroups/SaSGroups/sasAddInstance">
