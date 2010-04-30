@@ -16,12 +16,9 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	
-	if(ctx_extension){
-		url = '/' + ctx_extension + '/' + ctx_module + '/';
-	}
-	getUrl = url + 'getDeliveries';
-	setUrl = url + 'saveDeliveries';
-	getTests = '/taoDelivery/Delivery/getDeliveriesTests';
+	getUrl = "<?=_url('getDeliveries')?>";
+	setUrl = "<?=_url('saveDeliveries')?>";
+	getTests = "<?=_url('getDeliveriesTests', 'Delivery', 'taoDelivery')?>";
 	
 	new GenerisTreeFormClass('#delivery-tree', getUrl, {
 		actionId: 'delivery',
