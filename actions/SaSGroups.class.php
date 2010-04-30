@@ -54,7 +54,8 @@ class SaSGroups extends Groups {
 	public function selectSubjects(){
 		$this->setData('uri', $this->getRequestParameter('uri'));
 		$this->setData('classUri', $this->getRequestParameter('classUri'));
-		$this->setData('relatedSubjects', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedSubjects($this->getCurrentInstance()))));
+		$relatedSubjects = tao_helpers_Uri::encodeArray($this->service->getRelatedSubjects($this->getCurrentInstance()), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
+		$this->setData('relatedSubjects', json_encode($relatedSubjects));
 		$this->setView('subjects.tpl');
 	}
 	
@@ -66,7 +67,8 @@ class SaSGroups extends Groups {
 	public function selectDeliveries(){
 		$this->setData('uri', $this->getRequestParameter('uri'));
 		$this->setData('classUri', $this->getRequestParameter('classUri'));
-		$this->setData('relatedDeliveries', json_encode(array_map("tao_helpers_Uri::encode", $this->service->getRelatedDeliveries($this->getCurrentInstance()))));
+		$relatedDeliveries = tao_helpers_Uri::encodeArray($this->service->getRelatedDeliveries($this->getCurrentInstance()), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
+		$this->setData('relatedDeliveries', json_encode($relatedDeliveries));
 		$this->setView('deliveries.tpl');
 	}
 }

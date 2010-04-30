@@ -102,16 +102,10 @@ class Groups extends TaoModule {
 			}
 		}
 		
-		$relatedSubjects = $this->service->getRelatedSubjects($group);
-		$relatedSubjects = array_map("tao_helpers_Uri::encode", $relatedSubjects);
+		$relatedSubjects = tao_helpers_Uri::encodeArray($this->service->getRelatedSubjects($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
 		$this->setData('relatedSubjects', json_encode($relatedSubjects));
 		
-	/*	$relatedTests = $this->service->getRelatedTests($group);
-		$relatedTests = array_map("tao_helpers_Uri::encode", $relatedTests);
-		$this->setData('relatedTests', json_encode($relatedTests));
-	*/	
-		$relatedDeliveries = $this->service->getRelatedDeliveries($group);
-		$relatedDeliveries = array_map("tao_helpers_Uri::encode", $relatedDeliveries);
+		$relatedDeliveries = tao_helpers_Uri::encodeArray($this->service->getRelatedDeliveries($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
 		$this->setData('relatedDeliveries', json_encode($relatedDeliveries));
 		
 		$this->setData('formTitle', 'Edit group');
