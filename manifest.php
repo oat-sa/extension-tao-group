@@ -16,6 +16,13 @@
 				'sql' => dirname(__FILE__). '/model/ontology/taosubjects.sql',
 				'php' => dirname(__FILE__). '/install/install.php'
 			),
+			
+			'model' => array(
+							'http://www.tao.lu/Ontologies/TAOGroup.rdf', 
+							'http://www.tao.lu/Ontologies/TAOSubject.rdf',
+							'http://www.tao.lu/Ontologies/TAODelivery.rdf'
+			),
+			
 
 			'classLoaderPackages' => array( 
 				dirname(__FILE__).'/actions/',
