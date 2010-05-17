@@ -1,5 +1,5 @@
-msgid "Class saved"
-msgstr "Classe enregistrée"
+msgid ""
+msgstr ""
 
 msgid "Edit group class"
 msgstr "Modifier la classe Groupe"
@@ -56,7 +56,7 @@ msgid "Show delvery tests"
 msgstr ""
 
 msgid "The Group module allows to groupe Testees according to global features and classifications."
-msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications"
+msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications."
 
 msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
 msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
