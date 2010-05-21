@@ -98,7 +98,7 @@
 		<name>Group removing</name>
 		<description>Delete a group instance</description>
 		<location url="/taoGroups/SaSGroups/sasDeleteInstance">
-			<param key="groupUri" />
+			<param key="uri" value="^groupUri" />
 			<param key="classUri" value="^groupClassUri" />
 		</location>
 	</service>
