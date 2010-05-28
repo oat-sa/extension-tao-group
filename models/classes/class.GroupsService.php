@@ -54,14 +54,6 @@ class taoGroups_models_classes_GroupsService
      */
     protected $groupClass = null;
 
-    /**
-     * The ontologies to load
-     *
-     * @access protected
-     * @var array
-     */
-    protected $groupsOntologies = array('http://www.tao.lu/Ontologies/TAOGroup.rdf', 'http://www.tao.lu/Ontologies/TAOSubject.rdf','http://www.tao.lu/Ontologies/TAODelivery.rdf');
-
     // --- OPERATIONS ---
 
     /**
@@ -77,7 +69,6 @@ class taoGroups_models_classes_GroupsService
 		
 		parent::__construct();
 		$this->groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
-		$this->loadOntologies($this->groupsOntologies);
 		
         // section 127-0-1-1-506607cb:1249f78eef0:-8000:0000000000001AEB end
     }
