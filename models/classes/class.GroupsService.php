@@ -295,7 +295,24 @@ class taoGroups_models_classes_GroupsService
         // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D44 begin
 		
 		if(!is_null($group)){
-			$returnValue = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP));
+			$subjects = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP));
+			
+			if(count($subjects) > 0){
+				$subjectClass = new core_kernel_classes_Class(TAO_SUBJECT_CLASS);
+				$subjectSubClasses = array();
+				foreach($subjectClass->getSubClasses(true) as $subjectSubClass){
+					$subjectSubClasses[] = $subjectSubClass->uriResource;
+				}
+				foreach($subjects as $subjectUri){
+					$clazz = $this->getClass(new core_kernel_classes_Resource($subjectUri));
+					if(!is_null($clazz)){
+						if(in_array($clazz->uriResource, $subjectSubClasses)){
+							$returnValue[] = $clazz->uriResource;
+						}
+					}
+					$returnValue[] = $subjectUri;
+				}
+			}
 		}
 		
         // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D44 end
@@ -354,7 +371,22 @@ class taoGroups_models_classes_GroupsService
         // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED4 begin
 		
 		if(!is_null($group)){
-			$returnValue = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP));
+			$deliveries = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP));
+		
+			$deliveryClass = new core_kernel_classes_Class(TAO_DELIVERY_CLASS);
+			$deliverySubClasses = array();
+			foreach($deliveryClass->getSubClasses(true) as $deliverySubClass){
+				$deliverySubClasses[] = $deliverySubClass->uriResource;
+			}
+			foreach($deliveries as $deliveryUri){
+				$clazz = $this->getClass(new core_kernel_classes_Resource($deliveryUri));
+				if(!is_null($clazz)){
+					if(in_array($clazz->uriResource, $deliverySubClasses)){
+						$returnValue[] = $clazz->uriResource;
+					}
+				}
+				$returnValue[] = $deliveryUri;
+			}
 		}
 		
         // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED4 end
