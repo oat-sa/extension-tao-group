@@ -2,7 +2,7 @@ msgid "Class saved"
 msgstr "Klasse gespeichert"
 
 msgid "Edit group class"
-msgstr "Klasse \"Gruppe\" bearbeiten"
+msgstr "Klasse "Gruppe" bearbeiten"
 
 msgid "Group saved"
 msgstr "Gruppe gespeichert"
@@ -31,11 +31,11 @@ msgstr "löschen"
 msgid "duplicate"
 msgstr "duplizieren"
 
-msgid "edit group"
-msgstr "Gruppe bearbeiten"
+msgid "move"
+msgstr ""
 
-msgid "new property"
-msgstr "neue Eigenschaft"
+msgid "lists"
+msgstr ""
 
 msgid "meta data"
 msgstr "Meta-Daten"
@@ -43,8 +43,11 @@ msgstr "Meta-Daten"
 msgid "create table"
 msgstr "Tabelle erstellen"
 
-msgid "export"
-msgstr "Export"
+msgid "rdf"
+msgstr ""
+
+msgid "import"
+msgstr ""
 
 msgid "Select group deliveries"
 msgstr ""
@@ -52,7 +55,7 @@ msgstr ""
 msgid "Save"
 msgstr "Speichern"
 
-msgid "Show delvery tests"
+msgid "Related tests"
 msgstr ""
 
 msgid "The Group module allows to groupe Testees according to global features and classifications."
@@ -66,6 +69,18 @@ msgstr "Testpersonen der Gruppe markieren"
 
 msgid "Select group test"
 msgstr "Test der Gruppe markieren"
+
+msgid "edit group"
+msgstr "Gruppe bearbeiten"
+
+msgid "new property"
+msgstr "neue Eigenschaft"
+
+msgid "export"
+msgstr "Export"
+
+msgid "Show delvery tests"
+msgstr ""
 
 msgid "EN"
 msgstr "Englisch"

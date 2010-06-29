@@ -31,11 +31,11 @@ msgstr "supprimer"
 msgid "duplicate"
 msgstr "dupliquer"
 
-msgid "edit group"
-msgstr "modifier le groupe"
+msgid "move"
+msgstr "déplacer"
 
-msgid "new property"
-msgstr "nouvelle propriété"
+msgid "lists"
+msgstr "listes"
 
 msgid "meta data"
 msgstr "métadonnée"
@@ -43,17 +43,20 @@ msgstr "métadonnée"
 msgid "create table"
 msgstr "créer un tableau"
 
-msgid "export"
-msgstr "exporter"
+msgid "rdf"
+msgstr "rdf"
+
+msgid "import"
+msgstr "importer"
 
 msgid "Select group deliveries"
-msgstr ""
+msgstr "Choissiez les deliveries du groupe"
 
 msgid "Save"
 msgstr "Enregistrer"
 
-msgid "Show delvery tests"
-msgstr ""
+msgid "Related tests"
+msgstr "Tests "
 
 msgid "The Group module allows to groupe Testees according to global features and classifications."
 msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications."
@@ -67,8 +70,20 @@ msgstr "Choisissez les sujets du groupe"
 msgid "Select group test"
 msgstr "Choisir le test du groupe"
 
-msgid "import"
-msgstr "importer"
+msgid ""
+msgstr ""
+
+msgid "edit group"
+msgstr "modifier le groupe"
+
+msgid "new property"
+msgstr "nouvelle propriété"
+
+msgid "export"
+msgstr "exporter"
+
+msgid "Show delvery tests"
+msgstr "Voire les tests du delivery"
 
 msgid "EN"
 msgstr "English"

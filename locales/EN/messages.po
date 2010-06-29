@@ -31,10 +31,10 @@ msgstr ""
 msgid "duplicate"
 msgstr ""
 
-msgid "edit group"
+msgid "move"
 msgstr ""
 
-msgid "new property"
+msgid "lists"
 msgstr ""
 
 msgid "meta data"
@@ -43,7 +43,10 @@ msgstr ""
 msgid "create table"
 msgstr ""
 
-msgid "export"
+msgid "rdf"
+msgstr ""
+
+msgid "import"
 msgstr ""
 
 msgid "Select group deliveries"
@@ -52,7 +55,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-msgid "Show delvery tests"
+msgid "Related tests"
 msgstr ""
 
 msgid "The Group module allows to groupe Testees according to global features and classifications."
@@ -65,6 +68,18 @@ msgid "Select group testees"
 msgstr ""
 
 msgid "Select group test"
+msgstr ""
+
+msgid "edit group"
+msgstr ""
+
+msgid "new property"
+msgstr ""
+
+msgid "export"
+msgstr ""
+
+msgid "Show delvery tests"
 msgstr ""
 
 msgid "EN"
