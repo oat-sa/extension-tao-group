@@ -19,8 +19,11 @@ class SaSGroups extends Groups {
     }
     
 	/**
-     * @see TaoModule::setView()
-     */
+	 * @see TaoModule::setView()
+	 * @param string $identifier the view name
+	 * @param boolean $useMetaExtensionView use a view from the parent extention
+	 * @return mixed 
+	 */
     public function setView($identifier, $useMetaExtensionView = false) {
 		if(tao_helpers_Request::isAjax()){
 			return parent::setView($identifier, $useMetaExtensionView);
