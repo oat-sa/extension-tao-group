@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE services SYSTEM "../../tao/doc/sas.dtd">
 <services>
+	<description>Groups services</description>
 	<service>
 		<name>Group class selection</name>
 		<description>Select a group (sub)class</description>
