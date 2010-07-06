@@ -62,12 +62,13 @@ class Groups extends TaoModule {
 	
 	/**
 	 * Edit a group class
-	 * @see tao_helpers_form_GenerisFormFactory::classEditor
 	 * @return void
 	 */
 	public function editGroupClass(){
 		$clazz = $this->getCurrentClass();
-		$myForm = $this->editClass($clazz, $this->service->getGroupClass());
+		
+		$formContainer = new tao_actions_form_Instance($clazz, $this->service->getGroupClass());
+		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				if($clazz instanceof core_kernel_classes_Resource){
@@ -84,13 +85,14 @@ class Groups extends TaoModule {
 	
 	/**
 	 * Edit a group instance
-	 * @see tao_helpers_form_GenerisFormFactory::instanceEditor
 	 * @return void
 	 */
 	public function editGroup(){
 		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentInstance();
-		$myForm = tao_helpers_form_GenerisFormFactory::instanceEditor($clazz, $group);
+
+		$formContainer = new tao_actions_form_Instance($clazz, $group);
+		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				
