@@ -14,7 +14,6 @@ class SaSGroups extends Groups {
      */
     public function __construct() {
         $this->setSessionAttribute('currentExtension', 'taoGroups');
-		tao_helpers_form_GenerisFormFactory::setMode(tao_helpers_form_GenerisFormFactory::MODE_STANDALONE);
 		parent::__construct();
     }
     
