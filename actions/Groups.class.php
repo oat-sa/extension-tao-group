@@ -67,6 +67,10 @@ class Groups extends TaoModule {
 	public function editGroupClass(){
 		$clazz = $this->getCurrentClass();
 		
+		if($this->hasRequestParameter('property_mode')){
+			$this->setSessionAttribute('property_mode', $this->getRequestParameter('property_mode'));
+		}
+		
 		$formContainer = new tao_actions_form_Instance($clazz, $this->service->getGroupClass());
 		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
