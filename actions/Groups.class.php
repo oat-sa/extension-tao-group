@@ -102,11 +102,11 @@ class Groups extends TaoModule {
 				
 				$group = $this->service->bindProperties($group, $myForm->getValues());
 				
-				$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->uriResource));
 				$this->setData('message', __('Group saved'));
 				$this->setData('reload', true);
 			}
 		}
+		$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->uriResource));
 		
 		$relatedSubjects = tao_helpers_Uri::encodeArray($this->service->getRelatedSubjects($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
 		$this->setData('relatedSubjects', json_encode($relatedSubjects));
