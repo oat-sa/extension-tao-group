@@ -13,6 +13,7 @@ class SaSGroups extends Groups {
      * @see Groups::__construct()
      */
     public function __construct() {
+    	tao_helpers_Context::load('STANDALONE_MODE');
         $this->setSessionAttribute('currentExtension', 'taoGroups');
 		parent::__construct();
     }
