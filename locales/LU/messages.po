@@ -58,13 +58,13 @@ msgstr "Spaicheren"
 msgid "Related tests"
 msgstr ""
 
-msgid "The Group module allows to groupe Testees according to global features and classifications."
+msgid "The Group module allows to groupe Test takers according to global features and classifications."
 msgstr "Den Gruppen Modul erlabt Testpersounen ze gruppéiren no globalen Charakteristiken an Klassifikatiounen."
 
 msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
 msgstr "d'Haaptziel vum Gruppen Modul besteht dran fier Tester mat hiirem entspriechenden Grupp ze verbannen an esou een Test ze erméiglechen."
 
-msgid "Select group testees"
+msgid "Select group test takers"
 msgstr "Gruppen Testpersounen eraussichen"
 
 msgid "Select group test"

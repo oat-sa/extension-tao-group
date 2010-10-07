@@ -1,6 +1,6 @@
 <div id="subject-container" class="data-container">
 	<div class="ui-widget ui-state-default ui-widget-header ui-corner-top container-title" >
-		<?=__('Select group testees')?>
+		<?=__('Select group test takers')?>
 	</div>
 	<div class="ui-widget ui-widget-content container-content">
 		<div id="subject-tree"></div>
