@@ -71,8 +71,7 @@ class Groups extends TaoModule {
 			$this->setSessionAttribute('property_mode', $this->getRequestParameter('property_mode'));
 		}
 		
-		$formContainer = new tao_actions_form_Instance($clazz, $this->service->getGroupClass());
-		$myForm = $formContainer->getForm();
+		$myForm = $this->editClass($clazz, $this->service->getGroupClass());
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				if($clazz instanceof core_kernel_classes_Resource){
