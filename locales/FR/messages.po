@@ -1,8 +1,14 @@
-msgid ""
-msgstr ""
+msgid "DE"
+msgstr "German"
+
+msgid "EN"
+msgstr "English"
 
 msgid "Edit group class"
 msgstr "Modifier la classe Groupe"
+
+msgid "FR"
+msgstr "French"
 
 msgid "Group saved"
 msgstr "Groupe enregistré"
@@ -10,53 +16,32 @@ msgstr "Groupe enregistré"
 msgid "Groups"
 msgstr "Groupes"
 
-msgid "Manage groups"
-msgstr "Gérer les groupes"
-
 msgid "Groups library"
 msgstr "Librairie"
 
-msgid "search"
-msgstr "Rechercher"
+msgid "LU"
+msgstr "Luxemburgish"
 
-msgid "new class"
-msgstr "Nouvelle classe"
+msgid "Manage groups"
+msgstr "Gérer les groupes"
 
-msgid "new group"
-msgstr "nouveau groupe"
-
-msgid "delete"
-msgstr "supprimer"
-
-msgid "duplicate"
-msgstr "dupliquer"
-
-msgid "move"
-msgstr "déplacer"
-
-msgid "lists"
-msgstr "listes"
-
-msgid "meta data"
-msgstr "métadonnée"
-
-msgid "create table"
-msgstr "créer un tableau"
-
-msgid "rdf"
-msgstr "rdf"
-
-msgid "import"
-msgstr "importer"
-
-msgid "Select group deliveries"
-msgstr "Choissiez les deliveries du groupe"
+msgid "Related tests"
+msgstr "Tests"
 
 msgid "Save"
 msgstr "Enregistrer"
 
-msgid "Related tests"
-msgstr "Tests "
+msgid "Select group deliveries"
+msgstr "Choissiez les deliveries du groupe"
+
+msgid "Select group test"
+msgstr "Choisir le test du groupe"
+
+msgid "Select group test takers"
+msgstr "Choisissez les sujets du groupe"
+
+msgid "Show delvery tests"
+msgstr "Voire les tests du delivery"
 
 msgid "The Group module allows to groupe Test takers according to global features and classifications."
 msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications."
@@ -64,36 +49,51 @@ msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des
 msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
 msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
 
-msgid "Select group test takers"
-msgstr "Choisissez les sujets du groupe"
+msgid "create table"
+msgstr "créer un tableau"
 
-msgid "Select group test"
-msgstr "Choisir le test du groupe"
+msgid "delete"
+msgstr "supprimer"
 
-msgid ""
-msgstr ""
+msgid "duplicate"
+msgstr "dupliquer"
 
 msgid "edit group"
 msgstr "modifier le groupe"
 
-msgid "new property"
-msgstr "nouvelle propriété"
-
 msgid "export"
 msgstr "exporter"
 
-msgid "Show delvery tests"
-msgstr "Voire les tests du delivery"
+msgid "import"
+msgstr "importer"
 
-msgid "EN"
-msgstr "English"
+msgid "lists"
+msgstr "listes"
 
-msgid "FR"
-msgstr "French"
+msgid "meta data"
+msgstr "métadonnée"
 
-msgid "DE"
-msgstr "German"
+msgid "move"
+msgstr "déplacer"
 
-msgid "LU"
-msgstr "Luxemburgish"
+msgid "new class"
+msgstr "Nouvelle classe"
+
+msgid "new group"
+msgstr "nouveau groupe"
+
+msgid "new property"
+msgstr "nouvelle propriété"
+
+msgid "rdf"
+msgstr "rdf"
+
+msgid "search"
+msgstr "Rechercher"
+
+msgid ""
+msgstr ""
+
+msgid "Class saved"
+msgstr ""
 
