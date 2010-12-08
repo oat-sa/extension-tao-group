@@ -91,9 +91,6 @@ msgstr "rdf"
 msgid "search"
 msgstr "Rechercher"
 
-msgid ""
-msgstr ""
-
 msgid "Class saved"
-msgstr ""
+msgstr "Classe sauvegardée"
 
