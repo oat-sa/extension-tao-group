@@ -67,7 +67,7 @@ class GroupsTestCase extends UnitTestCase {
 		
 		$this->assertTrue(defined('RDFS_LABEL'));
 		$subGroupInstance->removePropertyValues(new core_kernel_classes_Property(RDFS_LABEL));
-		$subGroupInstance->setPropertyValue(new core_kernel_classes_Property(RDFS_LABEL), $subGroupInstanceLabel);
+		$subGroupInstance->setLabel($subGroupInstanceLabel);
 		$this->assertIsA($subGroupInstance, 'core_kernel_classes_Resource');
 		$this->assertEqual($subGroupInstanceLabel, $subGroupInstance->getLabel());
 		

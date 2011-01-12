@@ -141,27 +141,6 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * create a group instance
-     *
-     * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
-     * @deprecated
-     * @param  string label
-     * @param  ContainerCollection members
-     * @param  ContainerCollection tests
-     * @return core_kernel_classes_Resource
-     */
-    public function createGroup($label,  core_kernel_classes_ContainerCollection $members,  core_kernel_classes_ContainerCollection $tests)
-    {
-        $returnValue = null;
-
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017CD begin
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017CD end
-
-        return $returnValue;
-    }
-
-    /**
      * subclass the Group class or one of it's subclass
      *
      * @access public
