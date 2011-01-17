@@ -1,4 +1,4 @@
 /* auto generated content */
-/* extesion: , lang: EN */
+/* extesion: taoGroups, lang: EN */
 var langCode = 'EN';
 var i18n_tr = {"DE":"German","EN":"English","FR":"French","LU":"Luxemburgish","Class saved":"","Edit group class":"","Group saved":"","Groups":"","Groups library":"","Manage groups":"","Related tests":"","Save":"","Select group deliveries":"","Select group test":"","Select group test takers":"","Show delvery tests":"","The Group module allows to groupe Test takers according to global features and classifications.":"","The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test.":"","create table":"","delete":"","duplicate":"","edit group":"","export":"","import":"","lists":"","meta data":"","move":"","new class":"","new group":"","new property":"","rdf":"","search":""};
