@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE extension SYSTEM "../../tao/doc/structure.dtd">
 <extension name="Groups" url="/taoGroups/Groups/index" level="3">
+	<description>Group test takers according to global features and classifications.</description>
 	<sections>
 		<section id="manage_groups" name="Manage groups" url="/taoGroups/Groups/index">
 			<trees>
