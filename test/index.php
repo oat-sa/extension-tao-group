@@ -7,7 +7,7 @@ $tests = TestRunner::getTests(array('taoGroups'));
 //create the test sutie
 $testSuite = new TestSuite('TAO Group unit tests');
 foreach($tests as $testCase){
-	$testSuite->addTestFile($testCase);
+	$testSuite->addFile($testCase);
 }    
 
 //add the reporter regarding the context
