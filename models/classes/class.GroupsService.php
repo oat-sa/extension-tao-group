@@ -123,8 +123,11 @@ class taoGroups_models_classes_GroupsService
 		if(is_null($clazz) && $mode == 'uri'){
 			try{
 				$resource = new core_kernel_classes_Resource($identifier);
-				$type = $resource->getUniquePropertyValue(new core_kernel_classes_Property( RDF_TYPE ));
-				$clazz = new core_kernel_classes_Class($type->uriResource);
+				$types = $resource->getType();
+				foreach($types as $type){
+					$clazz = $type;
+					break;
+				}
 			}
 			catch(Exception $e){}
 		}
