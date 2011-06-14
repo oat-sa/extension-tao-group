@@ -1,0 +1,96 @@
+msgid "DE"
+msgstr "German"
+
+msgid "EN"
+msgstr "English"
+
+msgid "FR"
+msgstr "French"
+
+msgid "LU"
+msgstr "Luxemburgish"
+
+msgid "Class saved"
+msgstr "Klass sparad"
+
+msgid "Edit group class"
+msgstr "Redigera gruppklass"
+
+msgid "Group saved"
+msgstr "Grupp sparad"
+
+msgid "Groups"
+msgstr "Grupper"
+
+msgid "Groups library"
+msgstr "Grupparkiv"
+
+msgid "Manage groups"
+msgstr "Hantera grupper"
+
+msgid "Related tests"
+msgstr "Besläktade test"
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "Select group deliveries"
+msgstr "Välj gruppleveranser"
+
+msgid "Select group test"
+msgstr "Välj grupptest"
+
+msgid "Select group test takers"
+msgstr "Välj grupptesttagare"
+
+msgid "Show delvery tests"
+msgstr "Visa leveranstest"
+
+msgid "The Group module allows to groupe Test takers according to global features and classifications."
+msgstr "Gruppmodulen låter dig gruppera testtagare enligt totala egenskaper och klassifikationer"
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr "Huvudsyftet med gruppmodulen är att knyta test(er) till fastställd grupp, och därigenom upprätta grunden för att genomföra ett test"
+
+msgid "create table"
+msgstr "skapa tabell"
+
+msgid "delete"
+msgstr "radera"
+
+msgid "duplicate"
+msgstr "dublett"
+
+msgid "edit group"
+msgstr "redigera grupp"
+
+msgid "export"
+msgstr "exportera"
+
+msgid "import"
+msgstr "importera"
+
+msgid "lists"
+msgstr "listor"
+
+msgid "meta data"
+msgstr "metadata"
+
+msgid "move"
+msgstr "flytta"
+
+msgid "new class"
+msgstr "ny klass"
+
+msgid "new group"
+msgstr "ny grupp"
+
+msgid "new property"
+msgstr "ny egenskap"
+
+msgid "rdf"
+msgstr "rdf"
+
+msgid "search"
+msgstr "sök"
+
