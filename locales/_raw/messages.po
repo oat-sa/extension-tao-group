@@ -1,0 +1,69 @@
+msgid "Class saved"
+msgstr ""
+
+msgid "Edit group class"
+msgstr ""
+
+msgid "Group saved"
+msgstr ""
+
+msgid "Groups"
+msgstr ""
+
+msgid "Groups library"
+msgstr ""
+
+msgid "Manage groups"
+msgstr ""
+
+msgid "Related tests"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Select group deliveries"
+msgstr ""
+
+msgid "Select group test takers"
+msgstr ""
+
+msgid "The Group module allows to groupe Test takers according to global features and classifications."
+msgstr ""
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr ""
+
+msgid "create table"
+msgstr ""
+
+msgid "delete"
+msgstr ""
+
+msgid "duplicate"
+msgstr ""
+
+msgid "export"
+msgstr ""
+
+msgid "import"
+msgstr ""
+
+msgid "lists"
+msgstr ""
+
+msgid "meta data"
+msgstr ""
+
+msgid "move"
+msgstr ""
+
+msgid "new class"
+msgstr ""
+
+msgid "new group"
+msgstr ""
+
+msgid "search"
+msgstr ""
+
