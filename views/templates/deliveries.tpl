@@ -22,9 +22,10 @@ $(document).ready(function(){
 	getTests = "<?=_url('getDeliveriesTests', 'Delivery', 'taoDelivery')?>";
 	
 	new GenerisTreeFormClass('#delivery-tree', getUrl, {
-		actionId: 'delivery',
-		saveUrl : setUrl,
-		checkedNodes : <?=get_data('relatedDeliveries')?>,
+		actionId: 		'delivery',
+		saveUrl: 		setUrl,
+		checkedNodes: 	<?=get_data('relatedDeliveries')?>,
+		paginate: 		5,
 		loadCallback: function(){
 			$.postJson(getTests, {}, function(response){
 				if(response.data){

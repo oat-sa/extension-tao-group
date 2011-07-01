@@ -23,9 +23,10 @@ $(document).ready(function(){
 	getUrl = url + 'getMembers';
 	setUrl = url + 'saveMembers';
 	new GenerisTreeFormClass('#subject-tree', getUrl, {
-		actionId: 'subject',
-		saveUrl : setUrl,
-		checkedNodes : <?=get_data('relatedSubjects')?>
+		actionId: 		'subject',
+		saveUrl: 		setUrl,
+		checkedNodes: 	<?=get_data('relatedSubjects')?>,
+		paginate:		5
 	});
 	
 });
