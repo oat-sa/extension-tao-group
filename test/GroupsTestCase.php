@@ -75,7 +75,6 @@ class GroupsTestCase extends UnitTestCase {
 		$subGroupInstance->setLabel($subGroupInstanceLabel2);
 		$this->assertEqual($subGroupInstanceLabel2, $subGroupInstance->getLabel());
 		
-		
 		//delete group instance
 		$this->assertTrue($groupInstance->delete());
 		
