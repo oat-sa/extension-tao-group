@@ -1,0 +1,96 @@
+msgid "DE"
+msgstr "الألمانية"
+
+msgid "EN"
+msgstr "الانجليزية"
+
+msgid "Edit group class"
+msgstr "تعديل الصنف مجموعة"
+
+msgid "FR"
+msgstr "الفرنسية"
+
+msgid "Group saved"
+msgstr "مجموعة محفوظة"
+
+msgid "Groups"
+msgstr "مجموعات"
+
+msgid "Groups library"
+msgstr "مكتبة المجموعات"
+
+msgid "LU"
+msgstr "اللكسمبورجية"
+
+msgid "Manage groups"
+msgstr "إدارة المجموعات"
+
+msgid "Related tests"
+msgstr "الاختبارات ذات الصلة"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Select group deliveries"
+msgstr "Choissiez les deliveries du groupe"
+
+msgid "Select group test"
+msgstr "اختر اختبار المجموعة "
+
+msgid "Select group test takers"
+msgstr "اختر مواضيع المجموعة"
+
+msgid "Show delvery tests"
+msgstr "Voire les tests du delivery"
+
+msgid "The Group module allows to groupe Test takers according to global features and classifications."
+msgstr ".وحدة المجموعة تسمح بتجميع المتقدمين للاختبار وفقا لملامح والتصنيفات العالمية"
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
+
+msgid "create table"
+msgstr "إنشاء جدول"
+
+msgid "delete"
+msgstr "حذف"
+
+msgid "duplicate"
+msgstr "تكرير"
+
+msgid "edit group"
+msgstr "تحرير المجموعة"
+
+msgid "export"
+msgstr "تصدير"
+
+msgid "import"
+msgstr "استراد"
+
+msgid "lists"
+msgstr "القوائم"
+
+msgid "meta data"
+msgstr "بيانات التعريف"
+
+msgid "move"
+msgstr "حرك"
+
+msgid "new class"
+msgstr "صنف جديد"
+
+msgid "new group"
+msgstr "مجموعة جديدة"
+
+msgid "new property"
+msgstr "خاصية جديدة"
+
+msgid "rdf"
+msgstr "rdf"
+
+msgid "search"
+msgstr "بحث"
+
+msgid "Class saved"
+msgstr "صنف محفوظ"
+
