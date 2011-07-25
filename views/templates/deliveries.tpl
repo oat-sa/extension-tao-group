@@ -25,7 +25,7 @@ $(document).ready(function(){
 		actionId: 		'delivery',
 		saveUrl: 		setUrl,
 		checkedNodes: 	<?=get_data('relatedDeliveries')?>,
-		paginate: 		5,
+		paginate: 		10,
 		loadCallback: function(){
 			$.postJson(getTests, {}, function(response){
 				if(response.data){
