@@ -249,7 +249,7 @@ class taoGroups_models_classes_GroupsService
 			$returnValue = true;	
 		}
 		else{
-			foreach($this->groupClass->getSubClasses() as $subclass){
+			foreach($this->groupClass->getSubClasses(true) as $subclass){
 				if($clazz->uriResource == $subclass->uriResource){
 					$returnValue = true;
 					break;	
