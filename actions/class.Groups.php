@@ -14,7 +14,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * constructor: initialize the service and the default data
 	 * @return Groups
 	 */
-	public function __construct(){
+	public function __construct()
+	{
 		
 		parent::__construct();
 		
@@ -31,7 +32,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * get the selected group from the current context (from the uri and classUri parameter in the request)
 	 * @return core_kernel_classes_Resource $group
 	 */
-	protected function getCurrentInstance(){
+	protected function getCurrentInstance()
+	{
 		$uri = tao_helpers_Uri::decode($this->getRequestParameter('uri'));
 		if(is_null($uri) || empty($uri)){
 			throw new Exception("No valid uri found");
@@ -50,7 +52,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * get the main class
 	 * @return core_kernel_classes_Classes
 	 */
-	protected function getRootClass(){
+	protected function getRootClass()
+	{
 		return $this->service->getGroupClass();
 	}
 	
@@ -62,7 +65,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * Edit a group class
 	 * @return void
 	 */
-	public function editGroupClass(){
+	public function editGroupClass()
+	{
 		$clazz = $this->getCurrentClass();
 		
 		if($this->hasRequestParameter('property_mode')){
@@ -88,7 +92,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * Edit a group instance
 	 * @return void
 	 */
-	public function editGroup(){
+	public function editGroup()
+	{
 		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentInstance();
 
@@ -105,10 +110,11 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 		}
 		$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->uriResource));
 		
-		$relatedSubjects = tao_helpers_Uri::encodeArray($this->service->getRelatedSubjects($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
-		$this->setData('relatedSubjects', json_encode($relatedSubjects));
+		$relatedSubjects = tao_helpers_Uri::encodeArray($this->service->getRelatedSubjects($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES, true, true);
 		
-		$relatedDeliveries = tao_helpers_Uri::encodeArray($this->service->getRelatedDeliveries($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
+		$this->setData('relatedSubjects', json_encode(array_values($relatedSubjects)));
+		
+		$relatedDeliveries = tao_helpers_Uri::encodeArray($this->service->getRelatedDeliveries($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES, true, true);
 		$this->setData('relatedDeliveries', json_encode($relatedDeliveries));
 		
 		$this->setData('formTitle', 'Edit group');
@@ -121,7 +127,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * Add a group subclass
 	 * @return void
 	 */
-	public function addGroupClass(){
+	public function addGroupClass()
+	{
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
@@ -138,7 +145,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * Delete a group or a group class
 	 * @return void
 	 */
-	public function delete(){
+	public function delete()
+	{
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
@@ -154,16 +162,18 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 		echo json_encode(array('deleted'	=> $deleted));
 	}
 	
-	
 	/**
 	 * Get the data to populate the tree of group's subjects
 	 * @return void
 	 */
-	public function getMembers(){
+	public function getMembers()
+	{
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
-		$options = array('chunk' => false);
+		$options = array(
+			'chunk' => false
+		);
 		if($this->hasRequestParameter('classUri')) {
 			$clazz = $this->getCurrentClass();
 			$options['chunk'] = true;
@@ -194,7 +204,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * Save the group related subjects
 	 * @return void
 	 */
-	public function saveMembers(){
+	public function saveMembers()
+	{
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
@@ -218,12 +229,13 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * Get the data to populate the tree of group's deliveries
 	 * @return void
 	 */
-	public function getDeliveries(){
+	public function getDeliveries()
+	{
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
 		$options = array('chunk' => false);
-		if($this->hasRequestParameter('classUri')) {
+		if($this->hasRequestParameter('classUri')){
 			$clazz = $this->getCurrentClass();
 			$options['chunk'] = true;
 		}
@@ -253,7 +265,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 * Save the group related deliveries
 	 * @return void
 	 */
-	public function saveDeliveries(){
+	public function saveDeliveries()
+	{
 		if(!tao_helpers_Request::isAjax()){
 			throw new Exception("wrong request mode");
 		}
