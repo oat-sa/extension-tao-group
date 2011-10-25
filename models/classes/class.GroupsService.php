@@ -286,13 +286,15 @@ class taoGroups_models_classes_GroupsService
 					$subjectSubClasses[] = $subjectSubClass->uriResource;
 				}
 				foreach($subjects as $subjectUri){
-					$clazz = $this->getClass(new core_kernel_classes_Resource($subjectUri));
-					if(!is_null($clazz)){
-						if(in_array($clazz->uriResource, $subjectSubClasses)){
-							$returnValue[] = $clazz->uriResource;
+					if(!empty($subjectUri)){
+						$clazz = $this->getClass(new core_kernel_classes_Resource($subjectUri));
+						if(!is_null($clazz)){
+							if(in_array($clazz->uriResource, $subjectSubClasses)){
+								$returnValue[] = $clazz->uriResource;
+							}
 						}
+						$returnValue[] = $subjectUri;
 					}
-					$returnValue[] = $subjectUri;
 				}
 			}
 		}
