@@ -30,7 +30,7 @@ class GroupsTestCase extends UnitTestCase {
 	 */
 	public function testService(){
 		
-		$groupsService = tao_models_classes_ServiceFactory::get('Groups');
+		$groupsService = taoGroups_models_classes_GroupsService::singleton();
 		$this->assertIsA($groupsService, 'tao_models_classes_Service');
 		$this->assertIsA($groupsService, 'taoGroups_models_classes_GroupsService');
 		
