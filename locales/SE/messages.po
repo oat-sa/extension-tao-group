@@ -1,56 +1,15 @@
-msgid "DE"
-msgstr "German"
-
-msgid "EN"
-msgstr "English"
-
-msgid "FR"
-msgstr "French"
-
-msgid "LU"
-msgstr "Luxemburgish"
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO v2.2-alpha\n"
+"PO-Revision-Date: 2012-01-18T15:51:00\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: SE\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgid "Class saved"
 msgstr "Klass sparad"
-
-msgid "Edit group class"
-msgstr "Redigera gruppklass"
-
-msgid "Group saved"
-msgstr "Grupp sparad"
-
-msgid "Groups"
-msgstr "Grupper"
-
-msgid "Groups library"
-msgstr "Grupparkiv"
-
-msgid "Manage groups"
-msgstr "Hantera grupper"
-
-msgid "Related tests"
-msgstr "Besläktade test"
-
-msgid "Save"
-msgstr "Spara"
-
-msgid "Select group deliveries"
-msgstr "Välj gruppleveranser"
-
-msgid "Select group test"
-msgstr "Välj grupptest"
-
-msgid "Select group test takers"
-msgstr "Välj grupptesttagare"
-
-msgid "Show delvery tests"
-msgstr "Visa leveranstest"
-
-msgid "The Group module allows to groupe Test takers according to global features and classifications."
-msgstr "Gruppmodulen låter dig gruppera testtagare enligt totala egenskaper och klassifikationer"
-
-msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr "Huvudsyftet med gruppmodulen är att knyta test(er) till fastställd grupp, och därigenom upprätta grunden för att genomföra ett test"
 
 msgid "create table"
 msgstr "skapa tabell"
@@ -61,17 +20,32 @@ msgstr "radera"
 msgid "duplicate"
 msgstr "dublett"
 
-msgid "edit group"
-msgstr "redigera grupp"
+msgid "Edit group class"
+msgstr "Redigera gruppklass"
 
 msgid "export"
 msgstr "exportera"
+
+msgid "Group saved"
+msgstr "Grupp sparad"
+
+msgid "Group test takers according to global features and classifications."
+msgstr ""
+
+msgid "Groups"
+msgstr "Grupper"
+
+msgid "Groups library"
+msgstr "Grupparkiv"
 
 msgid "import"
 msgstr "importera"
 
 msgid "lists"
 msgstr "listor"
+
+msgid "Manage groups"
+msgstr "Hantera grupper"
 
 msgid "meta data"
 msgstr "metadata"
@@ -85,12 +59,24 @@ msgstr "ny klass"
 msgid "new group"
 msgstr "ny grupp"
 
-msgid "new property"
-msgstr "ny egenskap"
+msgid "Related tests"
+msgstr "Besläktade test"
 
-msgid "rdf"
-msgstr "rdf"
+msgid "Save"
+msgstr "Spara"
 
 msgid "search"
 msgstr "sök"
+
+msgid "Select group deliveries"
+msgstr "Välj gruppleveranser"
+
+msgid "Select group test takers"
+msgstr "Välj grupptesttagare"
+
+msgid "The Group module allows to groupe Test takers according to global features and classifications."
+msgstr "Gruppmodulen låter dig gruppera testtagare enligt totala egenskaper och klassifikationer"
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr "Huvudsyftet med gruppmodulen är att knyta test(er) till fastställd grupp, och därigenom upprätta grunden för att genomföra ett test"
 

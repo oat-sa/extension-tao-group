@@ -1,47 +1,15 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO v2.2-alpha\n"
+"PO-Revision-Date: 2012-01-18T15:51:00\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: LU\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 msgid "Class saved"
 msgstr "Klass gespaichert"
-
-msgid "DE"
-msgstr "German"
-
-msgid "EN"
-msgstr "English"
-
-msgid "Edit group class"
-msgstr "Gruppen Klass editéiren"
-
-msgid "FR"
-msgstr "French"
-
-msgid "Group saved"
-msgstr "Grupp gespaichert"
-
-msgid "Groups"
-msgstr "Gruppen"
-
-msgid "Groups library"
-msgstr "Gruppensammlung"
-
-msgid "LU"
-msgstr "Luxembourgish"
-
-msgid "Manage groups"
-msgstr "Gruppen verwalten"
-
-msgid "Save"
-msgstr "Spaicheren"
-
-msgid "Select group test"
-msgstr "Gruppen Test eraussichen"
-
-msgid "Select group test takers"
-msgstr "Gruppen Testpersounen eraussichen"
-
-msgid "The Group module allows to groupe Test takers according to global features and classifications."
-msgstr "Den Gruppen Modul erlabt Testpersounen ze gruppéiren no globalen Charakteristiken an Klassifikatiounen."
-
-msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr "d'Haaptziel vum Gruppen Modul besteht dran fier Tester mat hiirem entspriechenden Grupp ze verbannen an esou een Test ze erméiglechen."
 
 msgid "create table"
 msgstr "Tabell erstellen"
@@ -52,35 +20,23 @@ msgstr "läschen"
 msgid "duplicate"
 msgstr "duplizéiren"
 
-msgid "edit group"
-msgstr "Grupp editéiren"
+msgid "Edit group class"
+msgstr "Gruppen Klass editéiren"
 
 msgid "export"
 msgstr "exportéiren"
 
-msgid "meta data"
-msgstr "Meta Daten"
+msgid "Group saved"
+msgstr "Grupp gespaichert"
 
-msgid "new class"
-msgstr "Nei Klass"
-
-msgid "new group"
-msgstr "Nei Grupp"
-
-msgid "new property"
-msgstr "nei Proprietéit"
-
-msgid "search"
-msgstr "sichen"
-
-msgid "Related tests"
+msgid "Group test takers according to global features and classifications."
 msgstr ""
 
-msgid "Select group deliveries"
-msgstr ""
+msgid "Groups"
+msgstr "Gruppen"
 
-msgid "Show delvery tests"
-msgstr ""
+msgid "Groups library"
+msgstr "Gruppensammlung"
 
 msgid "import"
 msgstr ""
@@ -88,9 +44,39 @@ msgstr ""
 msgid "lists"
 msgstr ""
 
+msgid "Manage groups"
+msgstr "Gruppen verwalten"
+
+msgid "meta data"
+msgstr "Meta Daten"
+
 msgid "move"
 msgstr ""
 
-msgid "rdf"
+msgid "new class"
+msgstr "Nei Klass"
+
+msgid "new group"
+msgstr "Nei Grupp"
+
+msgid "Related tests"
 msgstr ""
+
+msgid "Save"
+msgstr "Spaicheren"
+
+msgid "search"
+msgstr "sichen"
+
+msgid "Select group deliveries"
+msgstr ""
+
+msgid "Select group test takers"
+msgstr "Gruppen Testpersounen eraussichen"
+
+msgid "The Group module allows to groupe Test takers according to global features and classifications."
+msgstr "Den Gruppen Modul erlabt Testpersounen ze gruppéiren no globalen Charakteristiken an Klassifikatiounen."
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr "d'Haaptziel vum Gruppen Modul besteht dran fier Tester mat hiirem entspriechenden Grupp ze verbannen an esou een Test ze erméiglechen."
 

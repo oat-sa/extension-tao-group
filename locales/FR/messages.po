@@ -1,53 +1,15 @@
-msgid "DE"
-msgstr "German"
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO v2.2-alpha\n"
+"PO-Revision-Date: 2012-01-18T15:51:00\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: FR\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-msgid "EN"
-msgstr "English"
-
-msgid "Edit group class"
-msgstr "Modifier la classe Groupe"
-
-msgid "FR"
-msgstr "French"
-
-msgid "Group saved"
-msgstr "Groupe enregistré"
-
-msgid "Groups"
-msgstr "Groupes"
-
-msgid "Groups library"
-msgstr "Librairie"
-
-msgid "LU"
-msgstr "Luxemburgish"
-
-msgid "Manage groups"
-msgstr "Gérer les groupes"
-
-msgid "Related tests"
-msgstr "Tests"
-
-msgid "Save"
-msgstr "Enregistrer"
-
-msgid "Select group deliveries"
-msgstr "Choissiez les deliveries du groupe"
-
-msgid "Select group test"
-msgstr "Choisir le test du groupe"
-
-msgid "Select group test takers"
-msgstr "Choisissez les sujets du groupe"
-
-msgid "Show delvery tests"
-msgstr "Voire les tests du delivery"
-
-msgid "The Group module allows to groupe Test takers according to global features and classifications."
-msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications."
-
-msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
+msgid "Class saved"
+msgstr "Classe sauvegardée"
 
 msgid "create table"
 msgstr "créer un tableau"
@@ -58,17 +20,32 @@ msgstr "supprimer"
 msgid "duplicate"
 msgstr "dupliquer"
 
-msgid "edit group"
-msgstr "modifier le groupe"
+msgid "Edit group class"
+msgstr "Modifier la classe Groupe"
 
 msgid "export"
 msgstr "exporter"
+
+msgid "Group saved"
+msgstr "Groupe enregistré"
+
+msgid "Group test takers according to global features and classifications."
+msgstr ""
+
+msgid "Groups"
+msgstr "Groupes"
+
+msgid "Groups library"
+msgstr "Librairie"
 
 msgid "import"
 msgstr "importer"
 
 msgid "lists"
 msgstr "listes"
+
+msgid "Manage groups"
+msgstr "Gérer les groupes"
 
 msgid "meta data"
 msgstr "métadonnée"
@@ -82,15 +59,24 @@ msgstr "Nouvelle classe"
 msgid "new group"
 msgstr "nouveau groupe"
 
-msgid "new property"
-msgstr "nouvelle propriété"
+msgid "Related tests"
+msgstr "Tests"
 
-msgid "rdf"
-msgstr "rdf"
+msgid "Save"
+msgstr "Enregistrer"
 
 msgid "search"
 msgstr "Rechercher"
 
-msgid "Class saved"
-msgstr "Classe sauvegardée"
+msgid "Select group deliveries"
+msgstr "Choissiez les deliveries du groupe"
+
+msgid "Select group test takers"
+msgstr "Choisissez les sujets du groupe"
+
+msgid "The Group module allows to groupe Test takers according to global features and classifications."
+msgstr "Le module Groupe vous permet de rassembler des Sujets par rapport à des fonctions globales et des classifications."
+
+msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgstr "L'objectif principal du module Groupe est d'attribuer le(s) test(s) au groupe désigné, en établissant ainsi la base de l'exécution du test."
 
