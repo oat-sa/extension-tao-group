@@ -13,7 +13,7 @@
     <rdfs:subClassOf rdf:resource="http://www.tao.lu/Ontologies/TAO.rdf#TAOObject"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Members">
-    <rdf:type rdf:resource="http://www.tao.lu/Ontologies/TAO.rdf#TAOProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:label xml:lang="EN"><![CDATA[Members]]></rdfs:label>
     <rdfs:comment xml:lang="EN"><![CDATA[Members]]></rdfs:comment>
     <rdfs:domain rdf:resource="http://www.tao.lu/Ontologies/TAOGroup.rdf#Group"/>
@@ -23,7 +23,7 @@
     <tao:TAOGUIOrder><![CDATA[10]]></tao:TAOGUIOrder>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries">
-    <rdf:type rdf:resource="http://www.tao.lu/Ontologies/TAO.rdf#TAOProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:label xml:lang="EN"><![CDATA[Deliveries]]></rdfs:label>
     <rdfs:comment xml:lang="EN"><![CDATA[Deliveries]]></rdfs:comment>
     <rdfs:domain rdf:resource="http://www.tao.lu/Ontologies/TAOGroup.rdf#Group"/>
