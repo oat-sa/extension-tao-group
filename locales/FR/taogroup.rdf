@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    @sourceLanguage EN
+    @targetLanguage FR
+-->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.tao.lu/Ontologies/TAOGroup.rdf">
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Group">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage FR
+    @source Group
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="FR"><![CDATA[Group]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage FR
+    @source Group
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="FR"><![CDATA[Group]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Members">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage FR
+    @source Members
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="FR"><![CDATA[Members]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage FR
+    @source Members
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="FR"><![CDATA[Members]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage FR
+    @source Deliveries
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="FR"><![CDATA[Deliveries]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage FR
+    @source Deliveries
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="FR"><![CDATA[Deliveries]]></rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

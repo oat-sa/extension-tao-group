@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+-->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.tao.lu/Ontologies/taoFuncACL.rdf">
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_Groups">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source module Groups
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_Groups
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[module Groups]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source module Groups
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_Groups
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[module Groups]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_editGroupClass">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action editGroupClass
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_editGroupClass
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action editGroupClass]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action editGroupClass
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_editGroupClass
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action editGroupClass]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_editGroup">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action editGroup
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_editGroup
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action editGroup]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action editGroup
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_editGroup
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action editGroup]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_addGroupClass">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action addGroupClass
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_addGroupClass
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action addGroupClass]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action addGroupClass
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_addGroupClass
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action addGroupClass]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_delete">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action delete
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_delete
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action delete]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action delete
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_delete
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action delete]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_getMembers">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action getMembers
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_getMembers
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action getMembers]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action getMembers
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_getMembers
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action getMembers]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_saveMembers">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action saveMembers
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_saveMembers
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action saveMembers]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action saveMembers
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_saveMembers
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action saveMembers]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_getDeliveries">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action getDeliveries
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_getDeliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action getDeliveries]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action getDeliveries
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_getDeliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action getDeliveries]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_saveDeliveries">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action saveDeliveries
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_saveDeliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action saveDeliveries]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action saveDeliveries
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_Groups_saveDeliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action saveDeliveries]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_SaSGroups">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source module SaSGroups
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_SaSGroups
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[module SaSGroups]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source module SaSGroups
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_SaSGroups
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[module SaSGroups]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_setView">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action setView
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_setView
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action setView]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action setView
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_setView
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action setView]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_selectSubjects">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action selectSubjects
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_selectSubjects
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action selectSubjects]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action selectSubjects
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_selectSubjects
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action selectSubjects]]></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_selectDeliveries">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action selectDeliveries
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_selectDeliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="_raw"><![CDATA[action selectDeliveries]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage _raw
+    @source action selectDeliveries
+    @subject http://www.tao.lu/Ontologies/taoFuncACL.rdf#a_taoGroups_SaSGroups_selectDeliveries
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="_raw"><![CDATA[action selectDeliveries]]></rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

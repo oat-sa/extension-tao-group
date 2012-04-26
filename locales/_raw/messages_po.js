@@ -1,4 +1,4 @@
 /* auto generated content */
-/* lang: _raw */
-var langCode = '_raw';
+/* lang: EN */
+var langCode = 'EN';
 var i18n_tr = {"Class saved":"","create table":"","delete":"","duplicate":"","Edit group class":"","export":"","Group saved":"","Group test takers according to global features and classifications.":"","Groups":"","Groups library":"","import":"","lists":"","Manage groups":"","meta data":"","move":"","new class":"","new group":"","Related tests":"","Save":"","search":"","Select group deliveries":"","Select group test takers":"","The Group module allows to group Test takers according to global features and classifications.":"","The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test.":""};
