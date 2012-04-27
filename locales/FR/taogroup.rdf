@@ -12,7 +12,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="FR"><![CDATA[Group]]></rdfs:label>
+    <rdfs:label xml:lang="FR"><![CDATA[Groupe]]></rdfs:label>
     <!--
     @sourceLanguage EN
     @targetLanguage FR
@@ -20,7 +20,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="FR"><![CDATA[Group]]></rdfs:comment>
+    <rdfs:comment xml:lang="FR"><![CDATA[Groupe]]></rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Members">
     <!--
@@ -30,7 +30,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="FR"><![CDATA[Members]]></rdfs:label>
+    <rdfs:label xml:lang="FR"><![CDATA[Membres]]></rdfs:label>
     <!--
     @sourceLanguage EN
     @targetLanguage FR
@@ -38,7 +38,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="FR"><![CDATA[Members]]></rdfs:comment>
+    <rdfs:comment xml:lang="FR"><![CDATA[Les Membres du Groupe]]></rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries">
     <!--
@@ -48,7 +48,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="FR"><![CDATA[Deliveries]]></rdfs:label>
+    <rdfs:label xml:lang="FR"><![CDATA[Passations]]></rdfs:label>
     <!--
     @sourceLanguage EN
     @targetLanguage FR
@@ -56,6 +56,6 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="FR"><![CDATA[Deliveries]]></rdfs:comment>
+    <rdfs:comment xml:lang="FR"><![CDATA[Les Passations auxquelles le Groupe participe]]></rdfs:comment>
   </rdf:Description>
 </rdf:RDF>
