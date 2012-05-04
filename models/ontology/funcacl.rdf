@@ -74,6 +74,11 @@
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_Groups" />
   </rdf:Description>
 
+	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAO.rdf#TaoManagerRole">
+		<funcacl:grantAccessModule rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_Groups" />
+	</rdf:Description>
+
+
 	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_SaSGroups">
     <rdf:type rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#Module"/>
     <rdfs:label xml:lang="EN"><![CDATA[Module SaSGroups]]></rdfs:label>
@@ -103,6 +108,11 @@
 		<funcacl:actionIdentifier xml:lang="EN"><![CDATA[selectDeliveries]]></funcacl:actionIdentifier>
 		<funcacl:actionMemberOf rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_SaSGroups" />
   </rdf:Description>
+
+	<rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAO.rdf#TaoManagerRole">
+		<funcacl:grantAccessModule rdf:resource="http://www.tao.lu/Ontologies/taoFuncACL.rdf#m_taoGroups_SaSGroups" />
+	</rdf:Description>
+
 
 
 </rdf:RDF>
