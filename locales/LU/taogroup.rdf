@@ -34,7 +34,7 @@
     <!--
     @sourceLanguage EN
     @targetLanguage LU
-    @source Members
+    @source Members of the group
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
@@ -52,7 +52,7 @@
     <!--
     @sourceLanguage EN
     @targetLanguage LU
-    @source Deliveries
+    @source Deliveries of the group
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
