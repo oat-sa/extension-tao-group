@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.2-beta\n"
-"PO-Revision-Date: 2012-05-24T16:14:46\n"
+"Project-Id-Version: TAO v2.2-beta2\n"
+"PO-Revision-Date: 2012-06-08T13:41:20\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: FR\n"
@@ -29,9 +29,11 @@ msgstr "exporter"
 msgid "Group saved"
 msgstr "Groupe enregistré"
 
+#, tao-public
 msgid "Group test takers according to global features and classifications."
 msgstr "Rassembler les participants selon leurs caractéristiques."
 
+#, tao-public
 msgid "Groups"
 msgstr "Groupes"
 
@@ -44,6 +46,7 @@ msgstr "importer"
 msgid "lists"
 msgstr "Listes"
 
+#, tao-public
 msgid "Manage groups"
 msgstr "Gérer les groupes"
 
