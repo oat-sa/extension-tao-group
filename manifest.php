@@ -8,7 +8,7 @@ return array(
 	'name' => 'taoGroups',
 	'description' => 'TAO Groups extension',
 	'additional' => array(
-		'version' => '2.0',
+		'version' => '2.3',
 		'author' => 'CRP Henri Tudor',
 		'extends' => 'tao',
 		'dependances' => array('tao'),
