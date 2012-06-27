@@ -6,7 +6,8 @@
 		<sections>
 			<section id="manage_groups" name="Manage groups" url="/taoGroups/Groups/index">
 				<trees>
-					<tree name="Groups library" 
+					<tree name="Groups library"
+						className="Group" 
 						dataUrl="/taoGroups/Groups/getOntologyData" 
 						editClassUrl="/taoGroups/Groups/editGroupClass"
 						editInstanceUrl="/taoGroups/Groups/editGroup"
