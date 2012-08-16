@@ -16,45 +16,41 @@
 <?endif?>
 <script type="text/javascript">
 $(document).ready(function(){
-	
-	getUrl = "<?=_url('getDeliveries')?>";
-	setUrl = "<?=_url('saveDeliveries')?>";
-	getTests = "<?=_url('getDeliveriesTests', 'Delivery', 'taoDelivery')?>";
-	
-	new GenerisTreeFormClass('#delivery-tree', getUrl, {
-		actionId: 		'delivery',
-		saveUrl: 		setUrl,
-		checkedNodes: 	<?=get_data('relatedDeliveries')?>,
-		paginate: 		10,
-		loadCallback: function(){
-			$.postJson(getTests, {}, function(response){
-				if(response.data){
-					var tests = response.data;
+	require(['require', 'jquery', 'generis.tree.select'], function(req, $, GenerisTreeSelectClass) {
+		new GenerisTreeSelectClass('#delivery-tree', "<?=_url('getDeliveries')?>", {
+			actionId: 		'delivery',
+			saveUrl: 		"<?=_url('saveDeliveries')?>",
+			checkedNodes: 	<?=get_data('relatedDeliveries')?>,
+			paginate: 		10,
+			loadCallback: function(){
+				$.postJson("<?=_url('getDeliveriesTests', 'Delivery', 'taoDelivery')?>", {}, function(response){
+					if(response.data){
+						var tests = response.data;
 
-					$("#delivery-tree  li.node-instance").each(function(){
-						deliveryUri = $(this).attr('id');
-						if(tests[deliveryUri]){
-							testContent = '';
-							testContent += "<img src='<?=BASE_WWW?>/img/test.png'  class='tests-opener' id='tests-opener_"+deliveryUri+"' />";
-							testContent += "<div id='tests-viewer_"+deliveryUri+"' class='ui-state-highlight' style='display:none;'>" ;
-							testContent += __('Related tests') + ":<br />";
-							for(test in tests[deliveryUri]){
-								testContent += " - " + tests[deliveryUri][test]['label'] + "<br />";
+						$("#delivery-tree  li.node-instance").each(function(){
+							deliveryUri = $(this).attr('id');
+							if(tests[deliveryUri]){
+								testContent = '';
+								testContent += "<img src='<?=BASE_WWW?>/img/test.png'  class='tests-opener' id='tests-opener_"+deliveryUri+"' />";
+								testContent += "<div id='tests-viewer_"+deliveryUri+"' class='ui-state-highlight' style='display:none;'>" ;
+								testContent += __('Related tests') + ":<br />";
+								for(test in tests[deliveryUri]){
+									testContent += " - " + tests[deliveryUri][test]['label'] + "<br />";
+								}
+								testContent += "</div>";
+								$(this).append(testContent);
 							}
-							testContent += "</div>";
-							$(this).append(testContent);
-						}
-					});
-					$(".tests-opener").mouseover(function(){
-						$("div[id='" + this.id.replace('tests-opener_', 'tests-viewer_')+"']").show();
-					});
-					$(".tests-opener").mouseout(function(){
-						$("div[id='" + this.id.replace('tests-opener_', 'tests-viewer_')+"']").hide();
-					});
-				}
-			});
-		}
+						});
+						$(".tests-opener").mouseover(function(){
+							$("div[id='" + this.id.replace('tests-opener_', 'tests-viewer_')+"']").show();
+						});
+						$(".tests-opener").mouseout(function(){
+							$("div[id='" + this.id.replace('tests-opener_', 'tests-viewer_')+"']").hide();
+						});
+					}
+				});
+			}
+		});
 	});
-
 });
 </script>
