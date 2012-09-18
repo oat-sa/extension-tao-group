@@ -12,7 +12,7 @@ return array(
 	'description' => 'TAO Groups extension',
 	'version' => '2.3',
 	'author' => 'CRP Henri Tudor',
-	'dependances' => array('taoSubjects'),
+	'dependencies' => array('taoSubjects'),
 	'models' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf',
 		'http://www.tao.lu/Ontologies/taoFuncACL.rdf'
@@ -27,7 +27,8 @@ return array(
 		dirname(__FILE__).'/helpers/'
 	 ),
 	 'constants' => array(
-		 "DIR_ACTIONS"			=> $extpath."actions".DIRECTORY_SEPARATOR,
+		# actions directory
+		"DIR_ACTIONS"			=> $extpath."actions".DIRECTORY_SEPARATOR,
 	
 		# models directory
 		"DIR_MODELS"			=> $extpath."models".DIRECTORY_SEPARATOR,
