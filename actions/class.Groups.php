@@ -29,26 +29,6 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
  */
 	
 	/**
-	 * get the selected group from the current context (from the uri and classUri parameter in the request)
-	 * @return core_kernel_classes_Resource $group
-	 */
-	protected function getCurrentInstance()
-	{
-		$uri = tao_helpers_Uri::decode($this->getRequestParameter('uri'));
-		if(is_null($uri) || empty($uri)){
-			throw new Exception("No valid uri found");
-		}
-		
-		$clazz = $this->getCurrentClass();
-		$group = $this->service->getGroup($uri, 'uri', $clazz);
-		if(is_null($group)){
-			throw new Exception("No group found for the uri {$uri}");
-		}
-		
-		return $group;
-	}
-	
-	/**
 	 * get the main class
 	 * @return core_kernel_classes_Classes
 	 */

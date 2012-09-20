@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 /**
  * Service methods to manage the Groups business models using the RDF API.
  *
- * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+ * @author Joel Bout, <joel.bout@tudor.lu>
  * @package taoGroups
  * @subpackage models_classes
  */
@@ -18,7 +18,7 @@ if (0 > version_compare(PHP_VERSION, '5')) {
  * The Service class is an abstraction of each service instance. 
  * Used to centralize the behavior related to every servcie instances.
  *
- * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+ * @author Joel Bout, <joel.bout@tudor.lu>
  */
 require_once('tao/models/classes/class.GenerisService.php');
 
@@ -34,7 +34,7 @@ require_once('tao/models/classes/class.GenerisService.php');
  * Service methods to manage the Groups business models using the RDF API.
  *
  * @access public
- * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+ * @author Joel Bout, <joel.bout@tudor.lu>
  * @package taoGroups
  * @subpackage models_classes
  */
@@ -60,7 +60,7 @@ class taoGroups_models_classes_GroupsService
      * Short description of method __construct
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @return mixed
      */
     public function __construct()
@@ -79,7 +79,7 @@ class taoGroups_models_classes_GroupsService
      * If the uri don't reference a group subclass, it returns null
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  string uri
      * @return core_kernel_classes_Class
      */
@@ -105,49 +105,10 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * get a group instance
-     *
-     * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
-     * @param  string identifier usually the test label or the ressource URI
-     * @param  string mode
-     * @param  Class clazz
-     * @return core_kernel_classes_Resource
-     */
-    public function getGroup($identifier, $mode = 'uri',  core_kernel_classes_Class $clazz = null)
-    {
-        $returnValue = null;
-
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D5 begin
-		
-		if(is_null($clazz) && $mode == 'uri'){
-			try{
-				$resource = new core_kernel_classes_Resource($identifier);
-				$types = $resource->getType();
-				foreach($types as $type){
-					$clazz = $type;
-					break;
-				}
-			}
-			catch(Exception $e){}
-		}
-		if(is_null($clazz)){
-			$clazz = $this->groupClass;
-		}
-		if($this->isGroupClass($clazz)){
-			$returnValue = $this->getOneInstanceBy( $clazz, $identifier, $mode);
-		}
-		
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D5 end
-
-        return $returnValue;
-    }
-
-    /**
      * subclass the Group class or one of it's subclass
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Class clazz
      * @param  string label
      * @param  array properties
@@ -187,7 +148,7 @@ class taoGroups_models_classes_GroupsService
      * delete a group instance
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Resource group
      * @return boolean
      */
@@ -210,7 +171,7 @@ class taoGroups_models_classes_GroupsService
      * delete a group class or sublcass
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Class clazz
      * @return boolean
      */
@@ -235,7 +196,7 @@ class taoGroups_models_classes_GroupsService
      * Check if the Class in parameter is a subclass of the Group Class
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Class clazz
      * @return boolean
      */
@@ -266,7 +227,7 @@ class taoGroups_models_classes_GroupsService
      * get the list of subjects linked to the group in parameter
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Resource group
      * @return array
      */
@@ -308,7 +269,7 @@ class taoGroups_models_classes_GroupsService
      * define the list of subjects composing a group
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Resource group
      * @param  array subjects
      * @return boolean
@@ -344,7 +305,7 @@ class taoGroups_models_classes_GroupsService
      * get the list of deliveries linked to the group in parameter
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Resource group
      * @return array
      */
@@ -382,7 +343,7 @@ class taoGroups_models_classes_GroupsService
      * define a list of deliveries linked to the group in parameter
      *
      * @access public
-     * @author Bertrand Chevrier, <bertrand.chevrier@tudor.lu>
+     * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Resource group
      * @param  array deliveries
      * @return boolean

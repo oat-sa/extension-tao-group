@@ -78,12 +78,7 @@ class GroupsTestCase extends UnitTestCase {
 		//delete group instance
 		$this->assertTrue($groupInstance->delete());
 		
-		//delete subclass and check if the instance is deleted
-		$subGroupInstanceUri = $subGroupInstance->uriResource;
-		$this->assertNotNull($this->groupsService->getGroup($subGroupInstanceUri));
 		$this->assertTrue($subGroupInstance->delete());
-		$this->assertNull($this->groupsService->getGroup($subGroupInstanceUri));
-		
 		$this->assertTrue($subGroupClass->delete());
 	}
 	
