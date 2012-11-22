@@ -21,6 +21,9 @@ return array(
 		'rdf' => array(
 				array('ns' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf', 'file' => dirname(__FILE__). '/models/ontology/taogroup.rdf'),
 		),
+		'checks' => array(
+			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_taoGroups_includes', 'location' => 'taoGroups/includes', 'rights' => 'r'))
+		)
 	),
 	'classLoaderPackages' => array(
 		dirname(__FILE__).'/actions/',
