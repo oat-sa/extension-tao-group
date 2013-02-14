@@ -17,9 +17,7 @@
 <script type="text/javascript">
 $(function(){
 	require(['require', 'jquery', 'generis.tree.select'], function(req, $, GenerisTreeSelectClass) {
-		if (ctx_extension) {
-			url = root_url + ctx_extension + '/' + ctx_module + '/';
-		}
+		url = root_url + 'taoGroups/Groups/';
 
 		new GenerisTreeSelectClass('#subject-tree', url + 'getMembers', {
 			actionId: 'subject',

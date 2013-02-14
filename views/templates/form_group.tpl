@@ -1,4 +1,4 @@
-<?include(TAO_TPL_PATH . 'header.tpl')?>
+<?include(TAO_TPL_PATH . 'messages.tpl')?>
 
 <?include('subjects.tpl')?>
 
