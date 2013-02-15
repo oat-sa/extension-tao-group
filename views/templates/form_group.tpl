@@ -1,5 +1,3 @@
-<?include(TAO_TPL_PATH . 'messages.tpl')?>
-
 <?include('subjects.tpl')?>
 
 <?include('deliveries.tpl')?>
