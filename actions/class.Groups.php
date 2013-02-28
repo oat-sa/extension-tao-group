@@ -65,7 +65,7 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 		}
 		$this->setData('formTitle', __('Edit group class'));
 		$this->setData('myForm', $myForm->render());
-		$this->setView('form.tpl', true);
+		$this->setView('form.tpl', 'tao');
 	}
 	
 	/**
