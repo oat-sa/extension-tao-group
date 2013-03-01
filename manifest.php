@@ -11,7 +11,7 @@ return array(
 	'name' => 'taoGroups',
 	'description' => 'TAO Groups extension',
 	'version' => '2.4',
-	'author' => 'CRP Henri Tudor',
+	'author' => 'Open Assessment Technologies, CRP Henri Tudor',
 	'dependencies' => array('taoSubjects'),
 	'models' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf',
