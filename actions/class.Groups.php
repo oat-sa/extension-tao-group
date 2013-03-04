@@ -82,7 +82,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				
-				$group = $this->service->bindProperties($group, $myForm->getValues());
+				$binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
+				$group = $binder->bind($myForm->getValues());
 				
 				$this->setData('message', __('Group saved'));
 				$this->setData('reload', true);
