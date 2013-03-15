@@ -35,7 +35,6 @@ class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {
      */
     public function __construct() {
     	tao_helpers_Context::load('STANDALONE_MODE');
-        $this->setSessionAttribute('currentExtension', 'taoGroups');
 		parent::__construct();
     }
     
