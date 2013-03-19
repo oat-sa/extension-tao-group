@@ -203,7 +203,7 @@ class taoGroups_models_classes_GroupsService
         // section 127-0-1-1-5109b15:124a4877945:-8000:0000000000001B0D begin
 		
 		if(!is_null($clazz)){
-			if($this->isGroupClass($clazz) && $clazz->uriResource != $this->groupClass->uriResource){
+			if($this->isGroupClass($clazz) && !$clazz->equals($this->groupClass)){
 				$returnValue = $clazz->delete();
 			}
 		}
@@ -227,12 +227,12 @@ class taoGroups_models_classes_GroupsService
 
         // section 127-0-1-1--5cd530d7:1249feedb80:-8000:0000000000001AEA begin
 		
-		if($clazz->uriResource == $this->groupClass->uriResource){
+		if($clazz->equals($this->groupClass)) {
 			$returnValue = true;	
 		}
 		else{
 			foreach($this->groupClass->getSubClasses(true) as $subclass){
-				if($clazz->uriResource == $subclass->uriResource){
+				if($clazz->equals($subclass)){
 					$returnValue = true;
 					break;	
 				}
@@ -265,14 +265,14 @@ class taoGroups_models_classes_GroupsService
 				$subjectClass = new core_kernel_classes_Class(TAO_SUBJECT_CLASS);
 				$subjectSubClasses = array();
 				foreach($subjectClass->getSubClasses(true) as $subjectSubClass){
-					$subjectSubClasses[] = $subjectSubClass->uriResource;
+					$subjectSubClasses[] = $subjectSubClass->getUri();
 				}
 				foreach($subjects as $subjectUri){
 					if(!empty($subjectUri)){
 						$clazz = $this->getClass(new core_kernel_classes_Resource($subjectUri));
 						if(!is_null($clazz)){
-							if(in_array($clazz->uriResource, $subjectSubClasses)){
-								$returnValue[] = $clazz->uriResource;
+							if(in_array($clazz->getUri(), $subjectSubClasses)){
+								$returnValue[] = $clazz->getUri();
 							}
 						}
 						$returnValue[] = $subjectUri;
@@ -342,13 +342,13 @@ class taoGroups_models_classes_GroupsService
 			$deliveryClass = new core_kernel_classes_Class(TAO_DELIVERY_CLASS);
 			$deliverySubClasses = array();
 			foreach($deliveryClass->getSubClasses(true) as $deliverySubClass){
-				$deliverySubClasses[] = $deliverySubClass->uriResource;
+				$deliverySubClasses[] = $deliverySubClass->getUri();
 			}
 			foreach($deliveries as $deliveryUri){
 				$clazz = $this->getClass(new core_kernel_classes_Resource($deliveryUri));
 				if(!is_null($clazz)){
-					if(in_array($clazz->uriResource, $deliverySubClasses)){
-						$returnValue[] = $clazz->uriResource;
+					if(in_array($clazz->getUri(), $deliverySubClasses)){
+						$returnValue[] = $clazz->getUri();
 					}
 				}
 				$returnValue[] = $deliveryUri;

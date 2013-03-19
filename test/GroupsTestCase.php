@@ -67,7 +67,7 @@ class GroupsTestCase extends UnitTestCase {
 		$this->assertTrue(defined('TAO_GROUP_CLASS'));
 		$groupClass = $this->groupsService->getGroupClass();
 		$this->assertIsA($groupClass, 'core_kernel_classes_Class');
-		$this->assertEqual(TAO_GROUP_CLASS, $groupClass->uriResource);
+		$this->assertEqual(TAO_GROUP_CLASS, $groupClass->getUri());
 		
 		//create a subclass
 		$subGroupClassLabel = 'subGroup class';

@@ -78,7 +78,7 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				if($clazz instanceof core_kernel_classes_Resource){
-					$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($clazz->uriResource));
+					$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($clazz->getUri()));
 				}
 				$this->setData('message', __('Class saved'));
 				$this->setData('reload', true);
@@ -110,7 +110,7 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 				$this->setData('reload', true);
 			}
 		}
-		$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->uriResource));
+		$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->getUri()));
 		
 		$relatedSubjects = tao_helpers_Uri::encodeArray($this->service->getRelatedSubjects($group), tao_helpers_Uri::ENCODE_ARRAY_VALUES, true, true);
 		
@@ -138,7 +138,7 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 		if(!is_null($clazz) && $clazz instanceof core_kernel_classes_Class){
 			echo json_encode(array(
 				'label'	=> $clazz->getLabel(),
-				'uri' 	=> tao_helpers_Uri::encode($clazz->uriResource)
+				'uri' 	=> tao_helpers_Uri::encode($clazz->getUri())
 			));
 		}
 	}
