@@ -47,10 +47,6 @@ return array(
 		)
 	),
 	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
-	'classLoaderPackages' => array(
-		dirname(__FILE__).'/actions/',
-		dirname(__FILE__).'/helpers/'
-	),
 	'optimizableClasses' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
 	),
