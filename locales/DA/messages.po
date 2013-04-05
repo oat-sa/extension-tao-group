@@ -1,20 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.4-alpha1\n"
-"PO-Revision-Date: 2013-03-29 11:15+0200\n"
-"Last-Translator: Anders <aos@vucnordjylland.dk>\n"
-"Language: da\n"
+"Project-Id-Version: TAO v2.4-beta3\n"
+"PO-Revision-Date: 2013-04-05T18:36:57\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
+"Language: DA\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.6\n"
 
 msgid "Class saved"
 msgstr "Klasse gemt"
-
-msgid "create table"
-msgstr "opret tabel"
 
 msgid "delete"
 msgstr "slet"
@@ -33,8 +28,7 @@ msgstr "Gruppe gemt"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
-"Gruppe test tagere i forhold til globale egenskaber og klassifikationer."
+msgstr "Gruppe test tagere i forhold til globale egenskaber og klassifikationer."
 
 #, tao-public
 msgid "Groups"
@@ -81,11 +75,8 @@ msgid "Select group test takers"
 msgstr "Vælg gruppe test tagere"
 
 msgid "The Group module allows to group Test takers according to global features and classifications."
-msgstr ""
-"Gruppe modulet gør det muligt at gruppere test tagere i forhold til globale "
-"indstillinger og klassifikationer."
+msgstr "Gruppe modulet gør det muligt at gruppere test tagere i forhold til globale indstillinger og klassifikationer."
 
 msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr ""
-"Hovedsigtet med gruppemodulet er at knytte test(s) til de bestemte grupper, "
-"og derigennem oprettet baggrund for at gennemfører en test."
+msgstr "Hovedsigtet med gruppemodulet er at knytte test(s) til de bestemte grupper, og derigennem oprettet baggrund for at gennemfører en test."
+

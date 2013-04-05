@@ -38,7 +38,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="EN"><![CDATA[Members]]></rdfs:comment>
+    <rdfs:comment xml:lang="EN"><![CDATA[Members of the group]]></rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries">
     <!--
@@ -56,7 +56,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="EN"><![CDATA[Deliveries]]></rdfs:comment>
+    <rdfs:comment xml:lang="EN"><![CDATA[Deliveries of the group]]></rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole">
     <!--

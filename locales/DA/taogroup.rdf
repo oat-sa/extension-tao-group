@@ -58,4 +58,22 @@
     -->
     <rdfs:comment xml:lang="DA"><![CDATA[Deliveries of the group]]></rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole">
+    <!--
+    @sourceLanguage EN
+    @targetLanguage DA
+    @source Groups Manager
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
+    @predicate http://www.w3.org/2000/01/rdf-schema#label
+    -->
+    <rdfs:label xml:lang="DA"><![CDATA[Groups Manager]]></rdfs:label>
+    <!--
+    @sourceLanguage EN
+    @targetLanguage DA
+    @source The Groups Manager Role
+    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
+    @predicate http://www.w3.org/2000/01/rdf-schema#comment
+    -->
+    <rdfs:comment xml:lang="DA"><![CDATA[The Groups Manager Role]]></rdfs:comment>
+  </rdf:Description>
 </rdf:RDF>
