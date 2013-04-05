@@ -23,9 +23,9 @@
 <?php
 
 /**
- * Groups Controller provide actions performed from url resolution
+ * This Module aims at managing the Group class and its instances.
  * 
- * @author Bertrand Chevrier, <taosupport@tudor.lu>
+ * @author Bertrand Chevrier, <bertrand@taotesting.com>
  * @package taoGroups
  * @subpackage actions
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
@@ -33,8 +33,7 @@
 class taoGroups_actions_Groups extends tao_actions_TaoModule {
 
 	/**
-	 * constructor: initialize the service and the default data
-	 * @return Groups
+	 * Initialize the service and the default data
 	 */
 	public function __construct()
 	{
@@ -51,7 +50,8 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
  */
 	
 	/**
-	 * get the main class
+	 * Get the Root class of the Group extension which is the Group class.
+	 * 
 	 * @return core_kernel_classes_Classes
 	 */
 	protected function getRootClass()
@@ -64,8 +64,21 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
  */
 	
 	/**
-	 * Edit a group class
-	 * @return void
+	 * This action aims at editing the Group class or its sub-classes.
+	 * 
+	 * It looks for the 'classUri' request parameter to select which class will be edited but also
+	 * looks for the 'property_mode' request parameter or the session attribute with the same key 
+	 * to idenfity if the advanced or simple mode is in use.
+	 * 
+	 * This action will generate 4 entries in the request data:
+	 * 
+	 * * 'message' (string) A message to be displayed to the end users.
+	 * * 'reload' (boolean) States if the page must be reloaded or not in the browser.
+	 * * 'formTitle' (string) The title of the displayed form.
+	 * * 'myForm' (tao_helpers_form_FormContainer) The form to be displayed.
+	 * 
+	 * The template selected by this action is 'form.tpl' from the tao meta-extension.
+	 * 
 	 */
 	public function editGroupClass()
 	{

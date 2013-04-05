@@ -19,15 +19,15 @@
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
  * 
  */
-?>
-<?php
+
 /**
+ * The Main Module of the taoGroups extension.
+ * 
  * @package taoGroups
  * @subpackage actions
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  * 
  */
-
 class taoGroups_actions_Main extends tao_actions_Main {
 	
 }
