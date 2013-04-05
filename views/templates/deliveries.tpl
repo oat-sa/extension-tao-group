@@ -10,18 +10,22 @@
 		<input id="saver-action-delivery" type="button" value="<?=__('Save')?>" />
 	</div>
 </div>
-<?if(!get_data('myForm')):?>
-	<input type='hidden' name='uri' value="<?=get_data('uri')?>" />
-	<input type='hidden' name='classUri' value="<?=get_data('classUri')?>" />
-<?endif?>
 <script type="text/javascript">
 $(document).ready(function(){
 	require(['require', 'jquery', 'generis.tree.select'], function(req, $, GenerisTreeSelectClass) {
-		new GenerisTreeSelectClass('#delivery-tree', "<?=_url('getDeliveries')?>", {
+		new GenerisTreeSelectClass('#delivery-tree', '<?=get_data('dataUrl')?>', {
 			actionId: 		'delivery',
-			saveUrl: 		"<?=_url('saveDeliveries')?>",
-			checkedNodes: 	<?=get_data('relatedDeliveries')?>,
-			paginate: 		10,
+			saveUrl: '<?=get_data('saveUrl')?>',
+			saveData: {
+				resourceUri: '<?=get_data('resourceUri')?>',
+				propertyUri: '<?=get_data('propertyUri')?>'
+			},
+			checkedNodes: <?=json_encode(tao_helpers_Uri::encodeArray(get_data('values')))?>,
+					serverParameters: {
+						openNodes: <?=json_encode(get_data('openNodes'))?>,
+						rootNode: <?=json_encode(get_data('rootNode'))?>
+					},
+			paginate: 10,
 			loadCallback: function(){
 				$.postJson("<?=_url('getDeliveriesTests', 'Delivery', 'taoDelivery')?>", {}, function(response){
 					if(response.data){
