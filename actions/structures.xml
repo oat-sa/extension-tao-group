@@ -26,7 +26,7 @@
 					<action name="duplicate" js="generisActions.duplicateNode" url="/taoGroups/Groups/cloneInstance" context="instance" />
 					<action name="move" js="generisActions.moveNode" url="" context="instance" />
 					<action name="lists"  url="/tao/Lists/index"  context="*" />
-					<action name="meta data" js="generisActions.loadMetaData" url="/taoGroups/Groups/getMetaData"  context="instance" />
+					<action name="meta data" js="generisActions.loadMetaData" url="/tao/MetaData/getMetaData"  context="instance" />
 					<action name="export" url="/tao/Export/index"  context="*" />
 					<action name="import" url="/tao/Import/index"  context="class" />
 				</actions>
