@@ -29,35 +29,12 @@
  * @subpackage actions
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
-class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {
-    
-    /**
-     * @see Groups::__construct()
-     */
-    public function __construct() {
-    	tao_helpers_Context::load('STANDALONE_MODE');
-		parent::__construct();
-    }
-    
-	/**
-	 * @see TaoModule::setView()
-	 * @param string $identifier the view name
-	 * @param boolean $useMetaExtensionView use a view from the parent extention
-	 * @return mixed 
-	 */
-    public function setView($identifier, $useMetaExtensionView = false) {
-		if(tao_helpers_Request::isAjax()){
-			return parent::setView($identifier, $useMetaExtensionView);
-		}
-    	if($useMetaExtensionView){
-			$this->setData('includedView', $identifier);
-		}
-		else{
-			$this->setData('includedView', DIR_VIEWS . 'templates/' . $identifier);
-		}
-		return parent::setView('sas.tpl', true);
-    }
+class taoGroups_actions_SaSGroups extends tao_actions_SaSLegacy {
 	
+	protected function getRootClass() {
+		return new core_kernel_classes_Class(TAO_GROUP_CLASS);
+	}
+    
 	/**
      * overrided to prevent exception: 
      * if no class is selected, the root class is returned 
@@ -76,11 +53,11 @@ class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {
 	 * @return void
 	 */
 	public function selectSubjects(){
-		$this->setData('uri', $this->getRequestParameter('uri'));
-		$this->setData('classUri', $this->getRequestParameter('classUri'));
-		$relatedSubjects = tao_helpers_Uri::encodeArray($this->service->getRelatedSubjects($this->getCurrentInstance()), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
-		$this->setData('relatedSubjects', json_encode($relatedSubjects));
-		$this->setView('subjects.tpl');
+		$memberProperty = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
+		$memberForm = tao_helpers_form_GenerisTreeForm::buildTree($this->getCurrentInstance(), $memberProperty);
+		$memberForm->setData('title',	__('Select group test takers'));
+		$this->setData('tree', $memberForm->render());
+		$this->setView('sas'.DIRECTORY_SEPARATOR.'generisTreeSelect.tpl', 'tao');
 	}
 	
 	
@@ -89,11 +66,13 @@ class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {
 	 * @return void
 	 */
 	public function selectDeliveries(){
-		$this->setData('uri', $this->getRequestParameter('uri'));
-		$this->setData('classUri', $this->getRequestParameter('classUri'));
-		$relatedDeliveries = tao_helpers_Uri::encodeArray($this->service->getRelatedDeliveries($this->getCurrentInstance()), tao_helpers_Uri::ENCODE_ARRAY_VALUES);
-		$this->setData('relatedDeliveries', json_encode($relatedDeliveries));
-		$this->setView('deliveries.tpl');
+		$deliveryProperty = new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP);
+		$deliveryForm = tao_helpers_form_GenerisTreeForm::buildTree($this->getCurrentInstance(), $deliveryProperty);
+		$ext = common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
+		$deliveryForm->setTemplate($ext->getConstant('DIR_VIEWS').'templates'.DIRECTORY_SEPARATOR.'deliveries.tpl');
+		$this->setData('deliveryForm', $deliveryForm->render());
+		$this->setData('tree', $deliveryForm->render());
+		$this->setView('sas'.DIRECTORY_SEPARATOR.'generisTreeSelect.tpl', 'tao');
 	}
 }
 ?>
