@@ -1,3 +1,4 @@
+<? if (tao_helpers_funcACL_funcACL::hasAccessURL(get_data('dataUrl')) && tao_helpers_funcACL_funcACL::hasAccess('taoDelivery', 'Delivery', 'getDeliveriesTests')): ?>
 <div id="delivery-container" class="data-container">
 	<div class="ui-widget ui-state-default ui-widget-header ui-corner-top container-title" >
 		<?=__('Select group deliveries')?>
@@ -58,3 +59,4 @@ $(document).ready(function(){
 	});
 });
 </script>
+<?endif;?>
