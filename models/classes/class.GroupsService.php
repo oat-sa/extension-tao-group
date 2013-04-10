@@ -19,38 +19,6 @@
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
  * 
  */
-?>
-<?php
-
-error_reporting(E_ALL);
-
-/**
- * Service methods to manage the Groups business models using the RDF API.
- *
- * @author Joel Bout, <joel.bout@tudor.lu>
- * @package taoGroups
- * @subpackage models_classes
- */
-
-if (0 > version_compare(PHP_VERSION, '5')) {
-    die('This file was generated for PHP 5');
-}
-
-/**
- * The Service class is an abstraction of each service instance. 
- * Used to centralize the behavior related to every servcie instances.
- *
- * @author Joel Bout, <joel.bout@tudor.lu>
- */
-require_once('tao/models/classes/class.GenerisService.php');
-
-/* user defined includes */
-// section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D2-includes begin
-// section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D2-includes end
-
-/* user defined constants */
-// section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D2-constants begin
-// section 10-13-1-45-792423e0:12398d13f24:-8000:00000000000017D2-constants end
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -61,7 +29,7 @@ require_once('tao/models/classes/class.GenerisService.php');
  * @subpackage models_classes
  */
 class taoGroups_models_classes_GroupsService
-    extends tao_models_classes_GenerisService
+    extends tao_models_classes_ClassService
 {
     // --- ASSOCIATIONS ---
 
@@ -96,34 +64,15 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * get a group subclass by uri. 
-     * If the uri is not set, it returns the group class (the top level class.
-     * If the uri don't reference a group subclass, it returns null
+     * return the group top level class
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  string uri
      * @return core_kernel_classes_Class
      */
-    public function getGroupClass($uri = '')
+    public function getRootClass()
     {
-        $returnValue = null;
-
-        // section 127-0-1-1--5cd530d7:1249feedb80:-8000:0000000000001AE8 begin
-		
-		if(empty($uri) && !is_null($this->groupClass)){
-			$returnValue = $this->groupClass;
-		}
-		else{
-			$clazz = new core_kernel_classes_Class($uri);
-			if($this->isGroupClass($clazz)){
-				$returnValue = $clazz;
-			}
-		}
-		
-        // section 127-0-1-1--5cd530d7:1249feedb80:-8000:0000000000001AE8 end
-
-        return $returnValue;
+        return $this->groupClass;
     }
 
     /**

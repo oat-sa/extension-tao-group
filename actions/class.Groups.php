@@ -56,7 +56,7 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 	 */
 	protected function getRootClass()
 	{
-		return $this->service->getGroupClass();
+		return $this->service->getRootClass();
 	}
 	
 /*
@@ -88,7 +88,7 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 			$this->setSessionAttribute('property_mode', $this->getRequestParameter('property_mode'));
 		}
 		
-		$myForm = $this->editClass($clazz, $this->service->getGroupClass());
+		$myForm = $this->editClass($clazz, $this->service->getRootClass());
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				if($clazz instanceof core_kernel_classes_Resource){
