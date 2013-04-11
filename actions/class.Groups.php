@@ -30,7 +30,7 @@
  * @subpackage actions
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
-class taoGroups_actions_Groups extends tao_actions_TaoModule {
+class taoGroups_actions_Groups extends tao_actions_SaSModule {
 
 	/**
 	 * Initialize the service and the default data
@@ -44,19 +44,10 @@ class taoGroups_actions_Groups extends tao_actions_TaoModule {
 		$this->service = taoGroups_models_classes_GroupsService::singleton();
 		$this->defaultData();
 	}
-	
-/*
- * conveniance methods
- */
-	
-	/**
-	 * Get the Root class of the Group extension which is the Group class.
-	 * 
-	 * @return core_kernel_classes_Classes
-	 */
-	protected function getRootClass()
+
+	protected function getClassService()
 	{
-		return $this->service->getRootClass();
+		return taoGroups_models_classes_GroupsService::singleton();
 	}
 	
 /*

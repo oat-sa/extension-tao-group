@@ -29,7 +29,7 @@
  * @subpackage actions
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
-class taoGroups_actions_SaSGroups extends tao_actions_SaSModule {
+class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {
 	
 	protected function getClassService() {
 		return taoGroups_models_classes_GroupsService::singleton();
