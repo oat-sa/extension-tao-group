@@ -12,7 +12,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="fr-FR"><![CDATA[Group]]></rdfs:label>
+    <rdfs:label xml:lang="fr-FR"><![CDATA[Groupe]]></rdfs:label>
     <!--
     @sourceLanguage en-US
     @targetLanguage fr-FR
@@ -20,7 +20,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="fr-FR"><![CDATA[Group]]></rdfs:comment>
+    <rdfs:comment xml:lang="fr-FR"><![CDATA[Groupe]]></rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Members">
     <!--
@@ -30,7 +30,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="fr-FR"><![CDATA[Members]]></rdfs:label>
+    <rdfs:label xml:lang="fr-FR"><![CDATA[Membres]]></rdfs:label>
     <!--
     @sourceLanguage en-US
     @targetLanguage fr-FR
@@ -38,7 +38,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="fr-FR"><![CDATA[Members of the group]]></rdfs:comment>
+    <rdfs:comment xml:lang="fr-FR"><![CDATA[Membres du groupe]]></rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries">
     <!--
@@ -48,7 +48,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="fr-FR"><![CDATA[Deliveries]]></rdfs:label>
+    <rdfs:label xml:lang="fr-FR"><![CDATA[Passations]]></rdfs:label>
     <!--
     @sourceLanguage en-US
     @targetLanguage fr-FR
@@ -56,7 +56,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="fr-FR"><![CDATA[Deliveries of the group]]></rdfs:comment>
+    <rdfs:comment xml:lang="fr-FR"><![CDATA[Passations liées au groupe]]></rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole">
     <!--
@@ -66,7 +66,7 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
     @predicate http://www.w3.org/2000/01/rdf-schema#label
     -->
-    <rdfs:label xml:lang="fr-FR"><![CDATA[Groups Manager]]></rdfs:label>
+    <rdfs:label xml:lang="fr-FR"><![CDATA[Gestionnaire Groupes]]></rdfs:label>
     <!--
     @sourceLanguage en-US
     @targetLanguage fr-FR
@@ -74,6 +74,6 @@
     @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
     @predicate http://www.w3.org/2000/01/rdf-schema#comment
     -->
-    <rdfs:comment xml:lang="fr-FR"><![CDATA[The Groups Manager Role]]></rdfs:comment>
+    <rdfs:comment xml:lang="fr-FR"><![CDATA[Le rôle Gestionnaire Groupes]]></rdfs:comment>
   </rdf:Description>
 </rdf:RDF>
