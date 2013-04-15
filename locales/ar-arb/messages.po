@@ -74,7 +74,7 @@ msgstr "Choissiez les deliveries du groupe"
 msgid "Select group test takers"
 msgstr "اختر مواضيع المجموعة"
 
-msgid "The Group module allows to group Test takers according to global features and classifications."
+msgid "The Groups module allows to group Test takers according to global features and classifications."
 msgstr ""
 
 msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
