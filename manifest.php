@@ -43,7 +43,7 @@ return array(
 			dirname(__FILE__). '/models/ontology/taogroup.rdf'
 		),
 		'checks' => array(
-			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_taoGroups_includes', 'location' => 'taoGroups/includes', 'rights' => 'r'))
+			array('type' => 'CheckFileSystemComponent', 'value' => array('id' => 'fs_taoGroups_includes', 'location' => 'taoGroups/includes', 'rights' => 'rw'))
 		)
 	),
 	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
