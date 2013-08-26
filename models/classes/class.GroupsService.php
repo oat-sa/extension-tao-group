@@ -195,6 +195,20 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
+     * get the groups of a user
+     *
+     * @access public
+     * @author Joel Bout, <joel.bout@tudor.lu>
+     * @param  string userUri
+     * @return array resources of group
+     */
+    public function getGroups($userUri)
+    {
+        $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
+        return $groupClass->searchInstances(array(TAO_GROUP_MEMBERS_PROP => $userUri), array('like'=>false, 'recursive' => true));
+    }
+    
+    /**
      * get the list of subjects linked to the group in parameter
      *
      * @access public
@@ -273,41 +287,21 @@ class taoGroups_models_classes_GroupsService
     }
 
     /**
-     * get the list of deliveries linked to the group in parameter
+     * get the list of delivery urls linked to the group in parameter
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
      * @param  Resource group
      * @return array
+     * @deprecated
      */
     public function getRelatedDeliveries( core_kernel_classes_Resource $group)
     {
         $returnValue = array();
-
-        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED4 begin
-		
-		if(!is_null($group)){
-			$deliveries = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP));
-		
-			$deliveryClass = new core_kernel_classes_Class(TAO_DELIVERY_CLASS);
-			$deliverySubClasses = array();
-			foreach($deliveryClass->getSubClasses(true) as $deliverySubClass){
-				$deliverySubClasses[] = $deliverySubClass->getUri();
-			}
-			foreach($deliveries as $deliveryUri){
-				$clazz = $this->getClass(new core_kernel_classes_Resource($deliveryUri));
-				if(!is_null($clazz)){
-					if(in_array($clazz->getUri(), $deliverySubClasses)){
-						$returnValue[] = $clazz->getUri();
-					}
-				}
-				$returnValue[] = $deliveryUri;
-			}
-		}
-		
-        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED4 end
-
-        return (array) $returnValue;
+        foreach ($group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP)) as $delivery) {
+            $returnValue[] = $delivery->getUri();
+        }
+        return $returnValue;
     }
 
     /**

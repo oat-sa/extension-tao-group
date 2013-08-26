@@ -126,7 +126,6 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 		$deliveryProperty = new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP);
 		$deliveryForm = tao_helpers_form_GenerisTreeForm::buildTree($group, $deliveryProperty);
 		$ext = common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
-		$deliveryForm->setTemplate($ext->getConstant('DIR_VIEWS').'templates'.DIRECTORY_SEPARATOR.'deliveries.tpl');
 		$this->setData('deliveryForm', $deliveryForm->render());
 		
 		$this->setData('formTitle', 'Edit group');
