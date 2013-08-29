@@ -45,7 +45,9 @@ class taoGroups_models_classes_CrudGroupsService
     }
     
     public function delete( $resource){
-	return parent::delete($resource);
+        taoGroups_models_classes_GroupsService::singleton()->deleteGroup(new core_kernel_classes_Resource($resource));
+        //parent::delete($resource)
+        return true;
     }
      public function deleteAll(){
 	return parent::deleteAll();
