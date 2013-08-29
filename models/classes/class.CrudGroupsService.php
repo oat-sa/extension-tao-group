@@ -54,7 +54,7 @@ class taoGroups_models_classes_CrudGroupsService
      * @param array parameters an array of property uri and values
      */
     public function create(array $propertiesValues){
-	
+       
 		if (!isset($propertiesValues[RDFS_LABEL])) {
 			$propertiesValues[RDFS_LABEL] = "";
 		}

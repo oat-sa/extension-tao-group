@@ -48,6 +48,7 @@ class taoGroups_actions_RestGroups extends tao_actions_CommonRestModule {
 		 *  is set it will become mandatory for the method/operation in $key
 		* Default Parameters Requirents are applied
 		* type by default is not required and the root class type is applied
+         * @example :"post"=> array("login", "password")
 		*/
 		
 	    );
