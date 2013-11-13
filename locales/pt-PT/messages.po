@@ -1,82 +1,90 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO v2.5-alpha\n"
-"PO-Revision-Date: 2013-06-18T15:46:19\n"
-"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"PO-Revision-Date: 2013-11-10 16:37-0000\n"
+"Last-Translator: Paulo Amorim <paulo@amorims.com>\n"
 "MIME-Version: 1.0\n"
 "Language: pt-PT\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.5.7\n"
 
 msgid "Class saved"
-msgstr ""
+msgstr "Disciplina guardada"
 
 msgid "delete"
-msgstr ""
+msgstr "eliminar"
 
 msgid "duplicate"
-msgstr ""
+msgstr "duplicar"
 
 msgid "Edit group class"
-msgstr ""
+msgstr "Editar grupo de disciplina"
 
 msgid "export"
-msgstr ""
+msgstr "exportar"
 
 msgid "Group saved"
-msgstr ""
+msgstr "Grupo guardado"
 
-#, tao-public
 msgid "Group test takers according to global features and classifications."
 msgstr ""
+"Grupo examinados de acordo com características e classificações globais"
 
-#, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 msgid "Groups library"
-msgstr ""
+msgstr "Biblioteca de grupos"
 
 msgid "import"
-msgstr ""
+msgstr "importa"
 
 msgid "lists"
-msgstr ""
+msgstr "listas"
 
-#, tao-public
 msgid "Manage groups"
-msgstr ""
+msgstr "Gestão de grupos"
 
 msgid "meta data"
-msgstr ""
+msgstr "meta dados"
 
 msgid "move"
-msgstr ""
+msgstr "mover"
 
 msgid "new class"
-msgstr ""
+msgstr "nova disciplina"
 
 msgid "new group"
-msgstr ""
+msgstr "novo grupo"
 
 msgid "Related tests"
-msgstr ""
+msgstr "Testes relacionados"
 
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 msgid "search"
-msgstr ""
+msgstr "Procurar"
 
 msgid "Select group deliveries"
-msgstr ""
+msgstr "Seleccione as entregas do grupo"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "Seleccione grupo de examinados"
 
-msgid "The Groups module allows to group Test takers according to global features and classifications."
+msgid ""
+"The Groups module allows to group Test takers according to global features "
+"and classifications."
 msgstr ""
+"O módulo de Grupos permite grupo de Examinando de acordo com as "
+"características e classificações globais"
 
-msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
+msgid ""
+"The main objective of the Group module is to assign the test(s) to the "
+"appointed group, thus establishing the basis for running a test."
 msgstr ""
-
+"O objectivo principal do módulo de grupo é atribuir o ensaio (s) com o grupo "
+"indicado, estabelecendo, assim, a base para executar um teste."
