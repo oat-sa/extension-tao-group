@@ -47,6 +47,9 @@ return array(
 		)
 	),
 	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
+    'acl' => array(
+        array('grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', array('ext'=>'taoGroups')),
+    ),
 	'optimizableClasses' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
 	),
