@@ -40,7 +40,7 @@ msgid "Groups library"
 msgstr "Biblioteca de grupos"
 
 msgid "import"
-msgstr "importa"
+msgstr "importar"
 
 msgid "lists"
 msgstr "listas"
