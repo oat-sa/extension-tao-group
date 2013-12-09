@@ -20,7 +20,7 @@
  */
 ?>
 <?php
-require_once dirname(__FILE__) . '/../../tao/test/TaoTestRunner.php';
+require_once dirname(__FILE__) . '/../../tao/test/TaoPhpUnitTestRunner.php';
 include_once dirname(__FILE__) . '/../includes/raw_start.php';
 
 /**
@@ -30,7 +30,7 @@ include_once dirname(__FILE__) . '/../includes/raw_start.php';
  * @package taoGroups
  * @subpackage test
  */
-class GroupsTestCase extends UnitTestCase {
+class GroupsTest extends TaoPhpUnitTestRunner {
 	
 	/**
 	 * @var taoGroups_models_classes_GroupsService
@@ -41,7 +41,8 @@ class GroupsTestCase extends UnitTestCase {
 	 * tests initialization
 	 */
 	public function setUp(){		
-		TaoTestRunner::initTest();
+		TaoPhpUnitTestRunner::initTest();
+		$this->groupsService = taoGroups_models_classes_GroupsService::singleton();
 	}
 	
 	/**
@@ -51,11 +52,11 @@ class GroupsTestCase extends UnitTestCase {
 	 */
 	public function testService(){
 		
-		$groupsService = taoGroups_models_classes_GroupsService::singleton();
-		$this->assertIsA($groupsService, 'tao_models_classes_Service');
-		$this->assertIsA($groupsService, 'taoGroups_models_classes_GroupsService');
+	
+		$this->assertIsA($this->groupsService, 'tao_models_classes_Service');
+		$this->assertIsA($this->groupsService, 'taoGroups_models_classes_GroupsService');
 		
-		$this->groupsService = $groupsService;
+
 	}
 	
 	/**
@@ -67,20 +68,20 @@ class GroupsTestCase extends UnitTestCase {
 		$this->assertTrue(defined('TAO_GROUP_CLASS'));
 		$groupClass = $this->groupsService->getRootClass();
 		$this->assertIsA($groupClass, 'core_kernel_classes_Class');
-		$this->assertEqual(TAO_GROUP_CLASS, $groupClass->getUri());
+		$this->assertEquals(TAO_GROUP_CLASS, $groupClass->getUri());
 		
 		//create a subclass
 		$subGroupClassLabel = 'subGroup class';
 		$subGroupClass = $this->groupsService->createSubClass($groupClass, $subGroupClassLabel);
 		$this->assertIsA($subGroupClass, 'core_kernel_classes_Class');
-		$this->assertEqual($subGroupClassLabel, $subGroupClass->getLabel());
+		$this->assertEquals($subGroupClassLabel, $subGroupClass->getLabel());
 		$this->assertTrue($this->groupsService->isGroupClass($subGroupClass));
 		
 		//create instance of Group
 		$groupInstanceLabel = 'group instance';
 		$groupInstance = $this->groupsService->createInstance($groupClass, $groupInstanceLabel);
 		$this->assertIsA($groupInstance, 'core_kernel_classes_Resource');
-		$this->assertEqual($groupInstanceLabel, $groupInstance->getLabel());
+		$this->assertEquals($groupInstanceLabel, $groupInstance->getLabel());
 		
 		//create instance of subGroup
 		$subGroupInstanceLabel = 'subGroup instance';
@@ -90,11 +91,11 @@ class GroupsTestCase extends UnitTestCase {
 		$subGroupInstance->removePropertyValues(new core_kernel_classes_Property(RDFS_LABEL));
 		$subGroupInstance->setLabel($subGroupInstanceLabel);
 		$this->assertIsA($subGroupInstance, 'core_kernel_classes_Resource');
-		$this->assertEqual($subGroupInstanceLabel, $subGroupInstance->getLabel());
+		$this->assertEquals($subGroupInstanceLabel, $subGroupInstance->getLabel());
 		
 		$subGroupInstanceLabel2 = 'my sub group instance';
 		$subGroupInstance->setLabel($subGroupInstanceLabel2);
-		$this->assertEqual($subGroupInstanceLabel2, $subGroupInstance->getLabel());
+		$this->assertEquals($subGroupInstanceLabel2, $subGroupInstance->getLabel());
 		
 		//delete group instance
 		$this->assertTrue($groupInstance->delete());
