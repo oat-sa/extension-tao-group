@@ -37,7 +37,9 @@ class taoGroups_helpers_SubjectForm
      */
     public static function renderGroupTreeForm(core_kernel_classes_Resource $subject) {
     	
-        // groups constants loaded when checking if extention is installed
+        // Ensure groups constants are loaded
+        common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
+        
         $memberProperty = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
 		$groupForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($subject, $memberProperty);
 		$groupForm->setData('title',	__('Add to group '));
