@@ -128,7 +128,7 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 		$ext = common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
 		$this->setData('deliveryForm', $deliveryForm->render());
 		
-		$this->setData('formTitle', 'Edit group');
+		$this->setData('formTitle', __('Edit group'));
 		$this->setData('myForm', $myForm->render());
 		$this->setView('form_group.tpl');
 	}
