@@ -77,17 +77,6 @@
 		</return>
 	</service>
 	<service>
-		<name>Group related deliveries</name>
-		<description>Select the deliveries linked to the group</description>
-		<location url="/taoGroups/SaSGroups/selectDeliveries">
-			<param key="uri" value="^groupUri" />
-			<param key="classUri" value="^groupClassUri" />
-		</location>
-		<return>
-			<param key="deliveryUris" />
-		</return>
-	</service>
-	<service>
 		<name>Groups searching</name>
 		<description>Search groups instances</description>
 		<location url="/taoGroups/SaSGroups/search" />

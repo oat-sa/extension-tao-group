@@ -33,9 +33,7 @@ class taoGroups_actions_RestGroups extends tao_actions_CommonRestModule {
 	 */
 	protected function getParametersAliases(){
 	    return array_merge(parent::getParametersAliases(), array(
-		    "member"=> TAO_GROUP_MEMBERS_PROP,
-		    "delivery" => TAO_GROUP_DELIVERIES_PROP
-		   
+		    "member"=> TAO_GROUP_MEMBERS_PROP
 	    ));
 	}
 	/**

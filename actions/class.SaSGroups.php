@@ -19,8 +19,7 @@
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
  * 
  */
-?>
-<?php
+
 /**
  * SaSGroups Controller provide process services
  * 
@@ -59,20 +58,4 @@ class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {
 		$this->setData('tree', $memberForm->render());
 		$this->setView('sas'.DIRECTORY_SEPARATOR.'generisTreeSelect.tpl', 'tao');
 	}
-	
-	
-	/**
-	 * Render the tree to select the group related deliveries 
-	 * @return void
-	 */
-	public function selectDeliveries(){
-		$deliveryProperty = new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP);
-		$deliveryForm = tao_helpers_form_GenerisTreeForm::buildTree($this->getCurrentInstance(), $deliveryProperty);
-		$ext = common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
-		$deliveryForm->setTemplate($ext->getConstant('DIR_VIEWS').'templates'.DIRECTORY_SEPARATOR.'deliveries.tpl');
-		$this->setData('deliveryForm', $deliveryForm->render());
-		$this->setData('tree', $deliveryForm->render());
-		$this->setView('sas'.DIRECTORY_SEPARATOR.'generisTreeSelect.tpl', 'tao');
-	}
 }
-?>

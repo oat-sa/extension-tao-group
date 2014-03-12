@@ -286,60 +286,6 @@ class taoGroups_models_classes_GroupsService
         return (bool) $returnValue;
     }
 
-    /**
-     * get the list of delivery urls linked to the group in parameter
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
-     * @return array
-     * @deprecated
-     */
-    public function getRelatedDeliveries( core_kernel_classes_Resource $group)
-    {
-        $returnValue = array();
-        foreach ($group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP)) as $delivery) {
-            $returnValue[] = $delivery->getUri();
-        }
-        return $returnValue;
-    }
-
-    /**
-     * define a list of deliveries linked to the group in parameter
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
-     * @param  array deliveries
-     * @return boolean
-     */
-    public function setRelatedDeliveries( core_kernel_classes_Resource $group, $deliveries = array())
-    {
-        $returnValue = (bool) false;
-
-        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED7 begin
-		
-		if(!is_null($group)){
-			
-			$deliveriesProp = new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP);
-			
-			$group->removePropertyValues($deliveriesProp);
-			$done = 0;
-			foreach($deliveries as $delivery){
-				if($group->setPropertyValue($deliveriesProp, $delivery)){
-					$done++;
-				}
-			}
-			if($done == count($deliveries)){
-				$returnValue = true;
-			}
-		}
-		
-        // section 127-0-1-1-72374553:127198ee25a:-8000:0000000000001ED7 end
-
-        return (bool) $returnValue;
-    }
-
 } /* end of class taoGroups_models_classes_GroupsService */
 
 ?>

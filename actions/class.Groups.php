@@ -123,11 +123,9 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 		$memberForm->setData('title',	__('Select group test takers'));
 		$this->setData('memberForm', $memberForm->render());
 		
-		$deliveryProperty = new core_kernel_classes_Property(TAO_GROUP_DELIVERIES_PROP);
-		$deliveryForm = tao_helpers_form_GenerisTreeForm::buildTree($group, $deliveryProperty);
-		$ext = common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
-		$this->setData('deliveryForm', $deliveryForm->render());
-		
+		if (common_ext_ExtensionsManager::singleton()->isEnabled('taoDelivery')) {
+		    $this->setData('deliveryForm', \taoDelivery_helper_Delivery::renderDeliveryTree($group));
+		}
 		$this->setData('formTitle', __('Edit group'));
 		$this->setData('myForm', $myForm->render());
 		$this->setView('form_group.tpl');
@@ -271,32 +269,5 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 		}
 		echo json_encode($this->service->toTree($clazz, $options));
 	}
-	
-	/**
-	 * Save the group related deliveries
-	 * @return void
-	 */
-	public function saveDeliveries()
-	{
-		if(!tao_helpers_Request::isAjax()){
-			throw new Exception("wrong request mode");
-		}
-		$saved = false;
-		
-		$deliveries = array();
-		foreach($this->getRequestParameters() as $key => $value){
-			if(preg_match("/^instance_/", $key)){
-				array_push($deliveries, tao_helpers_Uri::decode($value));
-			}
-		}
-		$group = $this->getCurrentInstance();
-		
-		if($this->service->setRelatedDeliveries($group, $deliveries)){
-			$saved = true;
-		}
-		echo json_encode(array('saved'	=> $saved));
-	}
-	
-	
 }
 ?>
