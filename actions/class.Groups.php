@@ -1,5 +1,5 @@
 <?php
-/*  
+/**  
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; under version 2
@@ -19,8 +19,6 @@
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
  * 
  */
-?>
-<?php
 
 /**
  * This Module aims at managing the Group class and its instances.
@@ -233,41 +231,4 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 		}
 		echo json_encode(array('saved'	=> $saved));
 	}
-	
-	/**
-	 * Get the data to populate the tree of group's deliveries
-	 * @return void
-	 */
-	public function getDeliveries()
-	{
-		if(!tao_helpers_Request::isAjax()){
-			throw new Exception("wrong request mode");
-		}
-		$options = array('chunk' => false);
-		if($this->hasRequestParameter('classUri')){
-			$clazz = $this->getCurrentClass();
-			$options['chunk'] = true;
-		}
-		else{
-			$clazz = new core_kernel_classes_Class(TAO_DELIVERY_CLASS);
-		}
-		if($this->hasRequestParameter('selected')){
-			$selected = $this->getRequestParameter('selected');
-			if(!is_array($selected)){
-				$selected = array($selected);
-			}
-			$options['browse'] = $selected;
-		}
-		if($this->hasRequestParameter('offset')){
-			$options['offset'] = $this->getRequestParameter('offset');
-		}
-		if($this->hasRequestParameter('limit')){
-			$options['limit'] = $this->getRequestParameter('limit');
-		}
-		if($this->hasRequestParameter('subclasses')){
-			$options['subclasses'] = $this->getRequestParameter('subclasses');
-		}
-		echo json_encode($this->service->toTree($clazz, $options));
-	}
 }
-?>
