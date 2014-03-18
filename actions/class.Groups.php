@@ -129,25 +129,6 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 		$this->setView('form_group.tpl');
 	}
 	
-	
-	/**
-	 * Add a group subclass
-	 * @return void
-	 */
-	public function addGroupClass()
-	{
-		if(!tao_helpers_Request::isAjax()){
-			throw new Exception("wrong request mode");
-		}
-		$clazz = $this->service->createGroupClass($this->getCurrentClass());
-		if(!is_null($clazz) && $clazz instanceof core_kernel_classes_Class){
-			echo json_encode(array(
-				'label'	=> $clazz->getLabel(),
-				'uri' 	=> tao_helpers_Uri::encode($clazz->getUri())
-			));
-		}
-	}
-	
 	/**
 	 * Delete a group or a group class
 	 * @return void
