@@ -25,7 +25,7 @@
  * 
  * @author Bertrand Chevrier, <taosupport@tudor.lu>
  * @package taoGroups
- * @subpackage actions
+ 
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
 class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {

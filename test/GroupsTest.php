@@ -28,7 +28,7 @@ include_once dirname(__FILE__) . '/../includes/raw_start.php';
  * 
  * @author Bertrand Chevrier, <taosupport@tudor.lu>
  * @package taoGroups
- * @subpackage test
+ 
  */
 class GroupsTest extends TaoPhpUnitTestRunner {
 	

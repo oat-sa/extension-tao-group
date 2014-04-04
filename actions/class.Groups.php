@@ -25,7 +25,7 @@
  * 
  * @author Bertrand Chevrier, <bertrand@taotesting.com>
  * @package taoGroups
- * @subpackage actions
+ 
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
 class taoGroups_actions_Groups extends tao_actions_SaSModule {
