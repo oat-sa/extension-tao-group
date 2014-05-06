@@ -37,11 +37,14 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	 */
 	protected $groupsService = null;
 	
+	protected $subjectsService = null;
+	
 	/**
 	 * tests initialization
 	 */
 	public function setUp(){		
 		TaoPhpUnitTestRunner::initTest();
+		$this->subjectsService = taoSubjects_models_classes_SubjectsService::singleton();
 		$this->groupsService = taoGroups_models_classes_GroupsService::singleton();
 	}
 	
@@ -58,6 +61,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 		
 
 	}
+	
 	
 	/**
 	 * Usual CRUD (Create Read Update Delete) on the group class  
@@ -103,6 +107,88 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 		$this->assertTrue($subGroupInstance->delete());
 		$this->assertTrue($subGroupClass->delete());
 	}
+	
+	
+	public function testGetGroups(){
+	    $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
+	    $this->assertTrue($this->groupsService->isGroupClass($groupClass));
+	     
+	    $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
+	    $oneGroup = $groupClass->createInstance('testGroupInstance');
+	    
+	    $oneGroup->setPropertiesValues(array(TAO_GROUP_MEMBERS_PROP => $subject->getUri()) );
+	    $oneGroup2 = $groupClass->createInstance('testGroupInstance2');
+	    
+	    $subclass = $groupClass->createSubClass('testGroupSubclass');
+	    $oneGroup3 = $subclass->createInstance('testSubGroupInstance');
+	    $oneGroup3->setPropertiesValues(array(TAO_GROUP_MEMBERS_PROP => $subject->getUri()) );
+	    
+	    $groups = $this->groupsService->getGroups($subject->getUri());
+	    
+	    $this->assertTrue(is_array($groups));
+	    $this->assertTrue(count($groups) ==2);
+	    $this->assertTrue(array_key_exists( $oneGroup->getUri(),$groups));
+	    $this->assertFalse(array_key_exists( $oneGroup2->getUri(),$groups));
+	    $this->assertTrue(array_key_exists( $oneGroup3->getUri(),$groups));
+
+
+	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup));
+	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup2));
+	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup3));
+	    
+	    $this->assertTrue($this->groupsService->deleteGroupClass($subclass));
+
+	    $subject->delete();
+	}
+	
+	public function testSetRelatedSubjects(){
+        $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
+        $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
+        $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
+        $subject2 = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject2');
+        
+        $oneGroup = $groupClass->createInstance('testGroupInstance');
+        $this->assertTrue($this->groupsService->setRelatedSubjects($oneGroup, array($subject,$subject2)));
+        
+        $members = $oneGroup->getPropertiesValues(array($memberProp));
+
+        $this->assertTrue(isset($members[TAO_GROUP_MEMBERS_PROP]));
+
+        $this->assertTrue(count($members[TAO_GROUP_MEMBERS_PROP]) == 2);
+
+        foreach ($members[TAO_GROUP_MEMBERS_PROP] as $sub){
+            $this->assertTrue(in_array($sub->getUri(), array($subject->getUri(),$subject2->getUri())));
+        }
+        
+        $subject->delete();
+        $subject2->delete();
+        $oneGroup->delete();
+        
+    }
+    
+    public function testGetRelatedSubjects(){
+        $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
+        $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
+        $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
+        $subject2 = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject2');
+    
+        $oneGroup = $groupClass->createInstance('testGroupInstance');
+        $this->assertTrue($this->groupsService->setRelatedSubjects($oneGroup, array($subject,$subject2)));
+    
+        $members = $this->groupsService->getRelatedSubjects($oneGroup);
+    
+        $this->assertTrue(count($members) == 2);
+    
+        foreach ($members as $sub){
+            $this->assertTrue(in_array($sub, array($subject->getUri(),$subject2->getUri())));
+        }
+
+        $subject->delete();
+        $subject2->delete();
+        $oneGroup->delete();
+    
+    }
+	
 	
 }
 ?>
