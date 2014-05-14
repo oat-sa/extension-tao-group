@@ -55,12 +55,12 @@ class taoGroups_models_classes_GroupsService
      */
     public function __construct()
     {
-        // section 127-0-1-1-506607cb:1249f78eef0:-8000:0000000000001AEB begin
+        
 		
 		parent::__construct();
 		$this->groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
 		
-        // section 127-0-1-1-506607cb:1249f78eef0:-8000:0000000000001AEB end
+        
     }
 
     /**
@@ -87,13 +87,13 @@ class taoGroups_models_classes_GroupsService
     {
         $returnValue = (bool) false;
 
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:0000000000001806 begin
+        
 		
 		if(!is_null($group)){
 			$returnValue = $group->delete();
 		}
 		
-        // section 10-13-1-45-792423e0:12398d13f24:-8000:0000000000001806 end
+        
 
         return (bool) $returnValue;
     }
@@ -110,7 +110,7 @@ class taoGroups_models_classes_GroupsService
     {
         $returnValue = (bool) false;
 
-        // section 127-0-1-1-5109b15:124a4877945:-8000:0000000000001B0D begin
+        
 		
 		if(!is_null($clazz)){
 			if($this->isGroupClass($clazz) && !$clazz->equals($this->groupClass)){
@@ -118,7 +118,7 @@ class taoGroups_models_classes_GroupsService
 			}
 		}
 		
-        // section 127-0-1-1-5109b15:124a4877945:-8000:0000000000001B0D end
+        
 
         return (bool) $returnValue;
     }
@@ -135,7 +135,7 @@ class taoGroups_models_classes_GroupsService
     {
         $returnValue = (bool) false;
 
-        // section 127-0-1-1--5cd530d7:1249feedb80:-8000:0000000000001AEA begin
+        
 		
 		if($clazz->equals($this->groupClass)) {
 			$returnValue = true;	
@@ -149,7 +149,7 @@ class taoGroups_models_classes_GroupsService
 			}
 		}
 		
-        // section 127-0-1-1--5cd530d7:1249feedb80:-8000:0000000000001AEA end
+        
 
         return (bool) $returnValue;
     }
@@ -180,7 +180,7 @@ class taoGroups_models_classes_GroupsService
     {
         $returnValue = array();
 
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D44 begin
+        
 		
 		if(!is_null($group)){
 			$subjects = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP));
@@ -205,7 +205,7 @@ class taoGroups_models_classes_GroupsService
 			}
 		}
 		
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D44 end
+        
 
         return (array) $returnValue;
     }
@@ -223,7 +223,7 @@ class taoGroups_models_classes_GroupsService
     {
         $returnValue = (bool) false;
 
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D48 begin
+        
 		
 		if(!is_null($group)){
 			
@@ -241,7 +241,7 @@ class taoGroups_models_classes_GroupsService
 			}
 		}
 		
-        // section 127-0-1-1-3cab853e:12592221770:-8000:0000000000001D48 end
+        
 
         return (bool) $returnValue;
     }
