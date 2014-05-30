@@ -40,24 +40,6 @@
     -->
     <rdfs:comment xml:lang="it-IT"><![CDATA[Members of the group]]></rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries">
-    <!--
-    @sourceLanguage en-US
-    @targetLanguage it-IT
-    @source Deliveries
-    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
-    @predicate http://www.w3.org/2000/01/rdf-schema#label
-    -->
-    <rdfs:label xml:lang="it-IT"><![CDATA[Deliveries]]></rdfs:label>
-    <!--
-    @sourceLanguage en-US
-    @targetLanguage it-IT
-    @source Deliveries of the group
-    @subject http://www.tao.lu/Ontologies/TAOGroup.rdf#Deliveries
-    @predicate http://www.w3.org/2000/01/rdf-schema#comment
-    -->
-    <rdfs:comment xml:lang="it-IT"><![CDATA[Deliveries of the group]]></rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole">
     <!--
     @sourceLanguage en-US

@@ -1,12 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.4-beta3\n"
-"PO-Revision-Date: 2013-09-06 09:37+0000\n"
+"Project-Id-Version: TAO v2.6-beta2\n"
+"PO-Revision-Date: 2014-05-30T15:55:02\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: fr-FR\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+msgid "Add to group"
+msgstr ""
 
 msgid "Class saved"
 msgstr "Classe enregistrée"
@@ -16,6 +19,9 @@ msgstr "Supprimer"
 
 msgid "duplicate"
 msgstr "Dupliquer"
+
+msgid "Edit group"
+msgstr ""
 
 msgid "Edit group class"
 msgstr "Modifier la classe Groupe"
@@ -48,7 +54,8 @@ msgid "Manage groups"
 msgstr "Gestion des groupes"
 
 msgid "meta data"
-msgstr "Méta-\ndonnées"
+msgstr "Méta-\n"
+"données"
 
 msgid "move"
 msgstr "Déplacer"
@@ -59,17 +66,8 @@ msgstr "Créer classe"
 msgid "new group"
 msgstr "Créer groupe"
 
-msgid "Related tests"
-msgstr "Tests liés"
-
-msgid "Save"
-msgstr "Enregistrer"
-
 msgid "search"
 msgstr "Rechercher"
-
-msgid "Select group deliveries"
-msgstr "Choisissez les délivrances du groupe"
 
 msgid "Select group test takers"
 msgstr "Choisissez les participants du groupe"
@@ -77,21 +75,3 @@ msgstr "Choisissez les participants du groupe"
 msgid "The Groups module allows to group Test takers according to global features and classifications."
 msgstr "Le module <i>Groupes</i> vous permet de grouper les participants en fonction de propriétés globales et de classifications."
 
-msgid "The main objective of the Group module is to assign the test(s) to the appointed group, thus establishing the basis for running a test."
-msgstr "L'objectif principal de ce module est d'attribuer le ou les tests au groupe "
-"désigné, établissant ainsi la base de l'exécution du test."
-
-msgid "Logged in as:"
-msgstr "Connecté en tant que : "
-
-msgid "Settings"
-msgstr "Réglages"
-
-msgid "User Management"
-msgstr "Gestion des utilisateurs"
-
-msgid "Delivery"
-msgstr "Passations"
-
-msgid "Beta version"
-msgstr "Version bêta"
