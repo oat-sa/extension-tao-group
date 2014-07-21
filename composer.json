@@ -7,7 +7,7 @@
      ],
 
     "name": "oat-sa/extension-tao-group",
-    "description" : "TAO extension to manage group",
+    "description" : "extension to manage group",
     "type" : "tao-extension",
     "authors" : [
 		{
