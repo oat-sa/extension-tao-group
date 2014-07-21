@@ -1,4 +1,4 @@
 extension-tao-group
 ===================
 
-Tao extension to manage group
+extension to manage group
