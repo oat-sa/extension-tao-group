@@ -30,7 +30,7 @@
                         <icon id="icon-users"/>
                     </action>
                     <action name="Delete" js="removeNode" url="/taoGroups/Groups/delete" context="resource" group="tree">
-                        <icon id="icon-eraser"/>
+                        <icon id="icon-bin"/>
                     </action>
                     <action name="Duplicate" js="duplicateNode" url="/taoGroups/Groups/cloneInstance" context="instance" group="tree">
                         <icon id="icon-copy"/>
