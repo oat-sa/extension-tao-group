@@ -30,10 +30,18 @@ class taoGroups_models_classes_CrudGroupsService
     extends tao_models_classes_CrudService
 {
 
+    /**
+     * (non-PHPdoc)
+     * @see tao_models_classes_CrudService::getClassService()
+     */
     protected function getClassService(){
         return taoGroups_models_classes_GroupsService::singleton();
     }
     
+    /**
+     * (non-PHPdoc)
+     * @see tao_models_classes_CrudService::delete()
+     */
     public function delete( $resource){
         $this->getClassService()->deleteGroup(new core_kernel_classes_Resource($resource));
         //parent::delete($resource)
@@ -41,7 +49,10 @@ class taoGroups_models_classes_CrudGroupsService
     }
 
     /**
-     * @param array parameters an array of property uri and values
+     * 
+     * @author Patrick Plichart, patrick@taotesting.com
+     * @param array $propertiesValues
+     * @return core_kernel_classes_Resource
      */
     public function createFromArray(array $propertiesValues){
        
