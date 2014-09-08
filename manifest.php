@@ -37,7 +37,7 @@ return array(
     'version' => '2.6',
 	'author' => 'Open Assessment Technologies, CRP Henri Tudor',
 	'requires' => array(
-	    'taoSubjects' => '2.6'
+	    'taoTestTaker' => '2.6'
     ),
 	'models' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf'
@@ -50,6 +50,8 @@ return array(
 	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
     'acl' => array(
         array('grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', array('ext'=>'taoGroups')),
+        array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole',array('ext'=>'taoGroups','mod' => 'RestGroups'))
+        
     ),
 	'optimizableClasses' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
