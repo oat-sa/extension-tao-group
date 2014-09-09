@@ -1,5 +1,5 @@
 <?php
-/*  
+/**  
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; under version 2
@@ -17,8 +17,12 @@
  * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg (under the project TAO & TAO2);
  *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- * 
+ *               2013-2014 (update and modification) Open Assessment Technologies SA
  */
+
+namespace oat\taoGroups\controller;
+
+use \tao_actions_Main;
 
 /**
  * The Main Module of the taoGroups extension.
@@ -28,7 +32,7 @@
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  * 
  */
-class taoGroups_actions_Main extends tao_actions_Main {
+class Main extends tao_actions_Main {
 	
 }
 ?>

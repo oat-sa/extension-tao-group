@@ -19,6 +19,13 @@
  * 
  */
 
+namespace oat\taoGroups\helpers;
+
+use \common_ext_ExtensionsManager;
+use \core_kernel_classes_Property;
+use \core_kernel_classes_Resource;
+use \tao_helpers_form_GenerisTreeForm;
+
 /**
  * Helper to render the groups form on the user pane
  *
@@ -27,7 +34,7 @@
  * @package taoGroups
  
  */
-class taoGroups_helpers_SubjectForm
+class SubjectForm
 {
     /**
      * Returns a form to modify the groups a user is part of 

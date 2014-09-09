@@ -1,6 +1,6 @@
 <?php
 
-/*  
+/**  
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; under version 2
@@ -20,7 +20,9 @@
  * 
  */
 
+use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
+use \core_kernel_classes_Resource;
 
 
 require_once dirname(__FILE__) . '/../../tao/test/TaoPhpUnitTestRunner.php';
@@ -36,7 +38,7 @@ include_once dirname(__FILE__) . '/../includes/raw_start.php';
 class GroupsTest extends TaoPhpUnitTestRunner {
 	
 	/**
-	 * @var taoGroups_models_classes_GroupsService
+	 * @var oat\taoGroups\models\GroupsService
 	 */
 	protected $groupsService = null;
 	
@@ -48,19 +50,19 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	public function setUp(){		
 		TaoPhpUnitTestRunner::initTest();
 		$this->subjectsService = TestTakerService::singleton();
-		$this->groupsService = taoGroups_models_classes_GroupsService::singleton();
+		$this->groupsService = GroupsService::singleton();
 	}
 	
 	/**
 	 * Test the user service implementation
 	 * @see tao_models_classes_ServiceFactory::get
-	 * @see taoGroups_models_classes_GroupsService::__construct
+	 * @see oat\taoGroups\models\GroupsService::__construct
 	 */
 	public function testService(){
 		
 	
-		$this->assertIsA($this->groupsService, 'tao_models_classes_Service');
-		$this->assertIsA($this->groupsService, 'taoGroups_models_classes_GroupsService');
+		$this->assertIsA($this->subjectsService, 'tao_models_classes_Service');
+		$this->assertIsA($this->groupsService, 'oat\taoGroups\models\GroupsService');
 		
 
 	}

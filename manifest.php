@@ -50,15 +50,18 @@ return array(
 	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
     'acl' => array(
         array('grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', array('ext'=>'taoGroups')),
-        array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole',array('ext'=>'taoGroups','mod' => 'RestGroups'))
+        array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole',array('ext'=>'taoGroups','mod' => 'Api'))
         
+    ),
+    'routes' => array(
+        '/taoGroups' => 'oat\\taoGroups\\controller'
     ),
 	'optimizableClasses' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
 	),
 	'constants' => array(
 		# actions directory
-		"DIR_ACTIONS"			=> $extpath."actions".DIRECTORY_SEPARATOR,
+		"DIR_ACTIONS"			=> $extpath."controller".DIRECTORY_SEPARATOR,
 	
 		# views directory
 		"DIR_VIEWS"				=> $extpath."views".DIRECTORY_SEPARATOR,
