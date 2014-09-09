@@ -20,6 +20,12 @@
  * 
  */
 
+namespace oat\taoGroups\controller;
+
+use \core_kernel_classes_Property;
+use \tao_helpers_form_GenerisTreeForm;
+use oat\taoGroups\model\GroupsService;
+
 /**
  * SaSGroups Controller provide process services
  * 
@@ -28,10 +34,10 @@
  
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
-class taoGroups_actions_SaSGroups extends taoGroups_actions_Groups {
+class SaSGroups extends Groups {
 	
 	protected function getClassService() {
-		return taoGroups_models_classes_GroupsService::singleton();
+		return GroupsService::singleton();
 	}
     
 	/**

@@ -17,8 +17,15 @@
  * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg (under the project TAO & TAO2);
  *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- * 
+ *               2013-2014 (update and modification) Open Assessment Technologies SA
  */
+
+namespace oat\taoGroups\models;
+
+use \core_kernel_classes_Class;
+use \core_kernel_classes_Property;
+use \core_kernel_classes_Resource;
+use \tao_models_classes_ClassService;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -28,13 +35,9 @@
  * @package taoGroups
  
  */
-class taoGroups_models_classes_GroupsService
+class GroupsService
     extends tao_models_classes_ClassService
 {
-    // --- ASSOCIATIONS ---
-
-
-    // --- ATTRIBUTES ---
 
     /**
      * The RDFS top level group class
@@ -44,7 +47,7 @@ class taoGroups_models_classes_GroupsService
      */
     protected $groupClass = null;
 
-    // --- OPERATIONS ---
+
 
     /**
      * Short description of method __construct
@@ -86,16 +89,11 @@ class taoGroups_models_classes_GroupsService
     public function deleteGroup( core_kernel_classes_Resource $group)
     {
         $returnValue = (bool) false;
-
-        
-		
+	
 		if(!is_null($group)){
 			$returnValue = $group->delete();
 		}
-		
-        
-
-        return (bool) $returnValue;
+	    return (bool) $returnValue;
     }
 
     /**
@@ -110,15 +108,11 @@ class taoGroups_models_classes_GroupsService
     {
         $returnValue = (bool) false;
 
-        
-		
 		if(!is_null($clazz)){
 			if($this->isGroupClass($clazz) && !$clazz->equals($this->groupClass)){
 				$returnValue = $clazz->delete();
 			}
 		}
-		
-        
 
         return (bool) $returnValue;
     }
@@ -135,8 +129,6 @@ class taoGroups_models_classes_GroupsService
     {
         $returnValue = (bool) false;
 
-        
-		
 		if($clazz->equals($this->groupClass)) {
 			$returnValue = true;	
 		}
@@ -148,8 +140,6 @@ class taoGroups_models_classes_GroupsService
 				}
 			}
 		}
-		
-        
 
         return (bool) $returnValue;
     }
@@ -204,8 +194,6 @@ class taoGroups_models_classes_GroupsService
 				}
 			}
 		}
-		
-        
 
         return (array) $returnValue;
     }
@@ -222,9 +210,7 @@ class taoGroups_models_classes_GroupsService
     public function setRelatedSubjects( core_kernel_classes_Resource $group, $subjects = array())
     {
         $returnValue = (bool) false;
-
-        
-		
+	
 		if(!is_null($group)){
 			
 			$memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
@@ -240,12 +226,9 @@ class taoGroups_models_classes_GroupsService
 				$returnValue = true;
 			}
 		}
-		
-        
-
         return (bool) $returnValue;
     }
 
-} /* end of class taoGroups_models_classes_GroupsService */
+}
 
 ?>

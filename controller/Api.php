@@ -15,16 +15,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  */
+namespace oat\taoGroups\controller;
+
+use \tao_actions_CommonRestModule;
+use oat\taoGroups\models\CrudGroupsService;
+
 /**
  *
  * @author plichart
  */
-class taoGroups_actions_RestGroups extends tao_actions_CommonRestModule {
+class Api extends tao_actions_CommonRestModule {
 
 	public function __construct(){
 		parent::__construct();
 		//The service taht implements or inherits get/getAll/getRootClass ... for that particular type of resources
-		$this->service = taoGroups_models_classes_CrudGroupsService::singleton();
+		$this->service = CrudGroupsService::singleton();
 	}
 
 	/**

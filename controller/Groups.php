@@ -20,6 +20,21 @@
  * 
  */
 
+namespace oat\taoGroups\controller;
+
+
+use \common_ext_ExtensionsManager;
+use \core_kernel_classes_Property;
+use \core_kernel_classes_Resource;
+use \taoDelivery_helper_Delivery;
+use \tao_actions_SaSModule;
+use \tao_actions_form_Instance;
+use \tao_helpers_Request;
+use \tao_helpers_Uri;
+use \tao_helpers_form_GenerisTreeForm;
+use \tao_models_classes_dataBinding_GenerisFormDataBinder;
+use oat\taoGroups\models\GroupsService;
+
 /**
  * This Module aims at managing the Group class and its instances.
  * 
@@ -28,7 +43,7 @@
  
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
-class taoGroups_actions_Groups extends tao_actions_SaSModule {
+class Groups extends tao_actions_SaSModule {
 
 	/**
 	 * Initialize the service and the default data
@@ -39,13 +54,13 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 		parent::__construct();
 		
 		//the service is initialized by default
-		$this->service = taoGroups_models_classes_GroupsService::singleton();
+		$this->service = GroupsService::singleton();
 		$this->defaultData();
 	}
 
 	protected function getClassService()
 	{
-		return taoGroups_models_classes_GroupsService::singleton();
+		return GroupsService::singleton();
 	}
 	
 /*
@@ -136,7 +151,7 @@ class taoGroups_actions_Groups extends tao_actions_SaSModule {
 	public function delete()
 	{
 		if(!tao_helpers_Request::isAjax()){
-			throw new Exception("wrong request mode");
+			throw new \Exception("wrong request mode");
 		}
 		
 		$deleted = false;
