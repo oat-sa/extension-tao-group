@@ -38,7 +38,7 @@ include_once dirname(__FILE__) . '/../includes/raw_start.php';
 class GroupsTest extends TaoPhpUnitTestRunner {
 	
 	/**
-	 * @var oat\taoGroups\model\GroupsService
+	 * @var oat\taoGroups\models\GroupsService
 	 */
 	protected $groupsService = null;
 	
@@ -56,7 +56,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	/**
 	 * Test the user service implementation
 	 * @see tao_models_classes_ServiceFactory::get
-	 * @see oat\taoGroups\model\GroupsService::__construct
+	 * @see oat\taoGroups\models\GroupsService::__construct
 	 */
 	public function testService(){
 		
