@@ -34,7 +34,7 @@ use \tao_helpers_form_GenerisTreeForm;
  * @package taoGroups
  
  */
-class SubjectForm
+class TestTakerForm
 {
     /**
      * Returns a form to modify the groups a user is part of 
