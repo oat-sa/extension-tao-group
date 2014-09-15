@@ -20,8 +20,17 @@
                             />
                 </trees>
                 <actions>
+                	  <action name="Edit class" url="/taoGroups/Groups/editGroupClass" group="content" context="class">
+                        <icon id="icon-edit"/>
+                    </action>
+                    <action name="Edit group"  url="/taoGroups/Groups/editGroup" group="content" context="instance">
+                        <icon id="icon-edit"/>
+                    </action> 
 
-                    <action name="Find" url="/taoGroups/Groups/search" context="*" group="search" binding="launchFinder">
+                    <action name="Filter" context="*" group="search" binding="launchFinder">
+                        <icon id="icon-filter"/>
+                    </action>
+                    <action name="Search" url="/taoGroups/Groups/search" context="*" group="search" binding="launchFinder">
                         <icon id="icon-find"/>
                     </action>
                     <action name="New class" url="/taoGroups/Groups/addSubClass" context="class" group="content" binding="subClass">
@@ -41,9 +50,6 @@
                     </action>
                     <action name="Lists" url="/tao/Lists/index" context="*" group="tree">
                         <icon id="icon-ul"/>
-                    </action>
-                    <action name="Metadata" url="/tao/MetaData/getMetaData" context="resource" group="tree" binding="loadMetaData">
-                        <icon id="icon-meta-data"/>
                     </action>
                     <action name="Export" url="/tao/Export/index" context="resource" group="content">
                         <icon id="icon-export"/>
