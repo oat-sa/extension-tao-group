@@ -10,13 +10,10 @@
                     <tree name="Groups library"
                           className="Group"
                           dataUrl="/taoGroups/Groups/getOntologyData"
-                          editClassUrl="/taoGroups/Groups/editGroupClass"
-                          editInstanceUrl="/taoGroups/Groups/editGroup"
-                          addInstanceUrl="/taoGroups/Groups/addInstance"
-                          addSubClassUrl="/taoGroups/Groups/addSubClass"
-                          deleteUrl="/taoGroups/Groups/delete"
-                          duplicateUrl="/taoGroups/Groups/cloneInstance"
-                          moveInstanceUrl="/taoGroups/Groups/moveInstance"
+                            selectClass="Edit class"
+                            selectInstance="Edit group"
+                            moveInstance="Move"
+                            delete="Delete" 
                             />
                 </trees>
                 <actions>
