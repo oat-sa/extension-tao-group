@@ -20,12 +20,11 @@
  * 
  */
 
+use oat\tao\test\TaoPhpUnitTestRunner;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
 use \core_kernel_classes_Resource;
 
-
-require_once dirname(__FILE__) . '/../../tao/test/TaoPhpUnitTestRunner.php';
 include_once dirname(__FILE__) . '/../includes/raw_start.php';
 
 /**
@@ -196,4 +195,3 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	
 	
 }
-?>

@@ -1,4 +1,6 @@
 <?php
+use oat\tao\test\RestTestCase;
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,7 +20,6 @@
  *
  */
 
-require_once dirname(__FILE__) . '/../../tao/test/RestTestCase.php';
 
 class RestGroupsTest extends RestTestCase
 {
@@ -28,5 +29,3 @@ class RestGroupsTest extends RestTestCase
         );
     }
 }
-
-?>
