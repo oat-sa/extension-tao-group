@@ -20,12 +20,17 @@
  * 
  */
 
-use oat\tao\test\TaoPhpUnitTestRunner;
+namespace oat\taoGroups\test;
+
+
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
 use \core_kernel_classes_Resource;
+use \core_kernel_classes_Class;
+use \core_kernel_classes_Property;
+use oat\tao\test\TaoPhpUnitTestRunner;
 
-include_once dirname(__FILE__) . '/../includes/raw_start.php';
+
 
 /**
  * Test the group management 
@@ -42,56 +47,75 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	protected $groupsService = null;
 	
 	protected $subjectsService = null;
-	
+
 	/**
 	 * tests initialization
 	 */
-	public function setUp(){		
-		TaoPhpUnitTestRunner::initTest();
+	public function setUp(){
+        TaoPhpUnitTestRunner::initTest();
 		$this->subjectsService = TestTakerService::singleton();
 		$this->groupsService = GroupsService::singleton();
 	}
-	
+
 	/**
 	 * Test the user service implementation
 	 * @see tao_models_classes_ServiceFactory::get
 	 * @see oat\taoGroups\models\GroupsService::__construct
 	 */
 	public function testService(){
-		
-	
-		$this->assertIsA($this->subjectsService, 'tao_models_classes_Service');
+		$this->assertIsA($this->subjectsService, '\tao_models_classes_Service');
 		$this->assertIsA($this->groupsService, 'oat\taoGroups\models\GroupsService');
-		
-
 	}
-	
-	
-	/**
-	 * Usual CRUD (Create Read Update Delete) on the group class  
-	 */
-	public function testCrud(){
-		
-		//check parent class
+
+    /**
+	 * @return \core_kernel_classes_Class|null
+     */
+    public function testGroup() {
 		$this->assertTrue(defined('TAO_GROUP_CLASS'));
 		$groupClass = $this->groupsService->getRootClass();
 		$this->assertIsA($groupClass, 'core_kernel_classes_Class');
 		$this->assertEquals(TAO_GROUP_CLASS, $groupClass->getUri());
-		
-		//create a subclass
-		$subGroupClassLabel = 'subGroup class';
-		$subGroupClass = $this->groupsService->createSubClass($groupClass, $subGroupClassLabel);
-		$this->assertIsA($subGroupClass, 'core_kernel_classes_Class');
-		$this->assertEquals($subGroupClassLabel, $subGroupClass->getLabel());
-		$this->assertTrue($this->groupsService->isGroupClass($subGroupClass));
-		
-		//create instance of Group
+
+        return $groupClass;
+    }
+
+    /**
+     * @depends testGroup
+     * @param $group
+     * @return \core_kernel_classes_Class
+     */
+    public function testSubGroup($groupClass) {
+		$subGroupLabel = 'subGroup class';
+		$subGroup = $this->groupsService->createSubClass($groupClass, $subGroupLabel);
+		$this->assertIsA($subGroup, 'core_kernel_classes_Class');
+		$this->assertEquals($subGroupLabel, $subGroup->getLabel());
+
+        $this->assertTrue($this->groupsService->isGroupClass($subGroup));
+
+        return $subGroup;
+    }
+    
+
+    /**
+     * @depends testGroup
+     * @param $group
+     * @return \core_kernel_classes_Resource
+     */
+    public function testGroupInstance($groupClass) {
 		$groupInstanceLabel = 'group instance';
 		$groupInstance = $this->groupsService->createInstance($groupClass, $groupInstanceLabel);
 		$this->assertIsA($groupInstance, 'core_kernel_classes_Resource');
 		$this->assertEquals($groupInstanceLabel, $groupInstance->getLabel());
-		
-		//create instance of subGroup
+
+        return $groupInstance;
+    }
+
+    /**
+     * @depends testSubGroup
+     * @param $subGroup
+     * @return \core_kernel_classes_Class
+     */
+    public function testSubGroupInstance($subGroupClass) {
 		$subGroupInstanceLabel = 'subGroup instance';
 		$subGroupInstance = $this->groupsService->createInstance($subGroupClass);
 		
@@ -104,15 +128,38 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 		$subGroupInstanceLabel2 = 'my sub group instance';
 		$subGroupInstance->setLabel($subGroupInstanceLabel2);
 		$this->assertEquals($subGroupInstanceLabel2, $subGroupInstance->getLabel());
-		
-		//delete group instance
+
+        return $subGroupInstance;
+    }
+
+    /**
+     * @depends testGroupInstance
+     * @param $groupInstance
+     */
+    public function testDeleteGroupInstance($groupInstance) {
 		$this->assertTrue($groupInstance->delete());
-		
+    }
+
+    /**
+     * @depends testSubGroupInstance
+     * @param $subGroupInstance
+     */
+    public function testDeleteSubGroupInstance($subGroupInstance) {
 		$this->assertTrue($subGroupInstance->delete());
-		$this->assertTrue($subGroupClass->delete());
-	}
-	
-	
+    }
+
+    /**
+     * @depends testSubGroup
+     * @param $subGroup
+     */
+    public function testDeleteSubGroupClass($subGroup) {
+		$this->assertTrue($subGroup->delete());
+    }
+
+    /**
+     * 
+     * @author Lionel Lecaque, lionel@taotesting.com
+     */
 	public function testGetGroups(){
 	    $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
 	    $this->assertTrue($this->groupsService->isGroupClass($groupClass));
@@ -130,7 +177,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	    $groups = $this->groupsService->getGroups($subject->getUri());
 	    
 	    $this->assertTrue(is_array($groups));
-	    $this->assertTrue(count($groups) ==2);
+	    $this->assertTrue(count($groups) == 2);
 	    $this->assertTrue(array_key_exists( $oneGroup->getUri(),$groups));
 	    $this->assertFalse(array_key_exists( $oneGroup2->getUri(),$groups));
 	    $this->assertTrue(array_key_exists( $oneGroup3->getUri(),$groups));
@@ -144,7 +191,11 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 
 	    $subject->delete();
 	}
-	
+
+	/**
+	 * 
+	 * @author Lionel Lecaque, lionel@taotesting.com
+	 */
 	public function testSetRelatedSubjects(){
         $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
         $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
@@ -169,7 +220,10 @@ class GroupsTest extends TaoPhpUnitTestRunner {
         $oneGroup->delete();
         
     }
-    
+    /**
+     * 
+     * @author Lionel Lecaque, lionel@taotesting.com
+     */
     public function testGetRelatedSubjects(){
         $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
         $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);

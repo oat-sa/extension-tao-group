@@ -31,8 +31,7 @@ use \tao_models_classes_CrudService;
  * @author Patrick Plichart, patrick@taotesting.com
  * 
  */
-class CrudGroupsService
-    extends tao_models_classes_CrudService
+class CrudGroupsService extends tao_models_classes_CrudService
 {
 
     /**
@@ -42,7 +41,7 @@ class CrudGroupsService
     protected function getClassService(){
         return GroupsService::singleton();
     }
-    
+
     /**
      * (non-PHPdoc)
      * @see tao_models_classes_CrudService::delete()
@@ -60,7 +59,6 @@ class CrudGroupsService
      * @return core_kernel_classes_Resource
      */
     public function createFromArray(array $propertiesValues){
-       
 		if (!isset($propertiesValues[RDFS_LABEL])) {
 			$propertiesValues[RDFS_LABEL] = "";
 		}
@@ -72,9 +70,4 @@ class CrudGroupsService
 		$resource =  parent::create($label, $type, $propertiesValues);
 		return $resource;
     }
-
-
-    
-} 
-
-?>
+}

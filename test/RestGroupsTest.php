@@ -1,6 +1,4 @@
 <?php
-use oat\tao\test\RestTestCase;
-
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -20,7 +18,14 @@ use oat\tao\test\RestTestCase;
  *
  */
 
+namespace oat\taoGroups\test;
 
+use oat\tao\test\RestTestCase;
+
+/**
+ *
+ * @author Lionel Lecaque
+ */
 class RestGroupsTest extends RestTestCase
 {
     public function serviceProvider(){
@@ -29,3 +34,4 @@ class RestGroupsTest extends RestTestCase
         );
     }
 }
+
