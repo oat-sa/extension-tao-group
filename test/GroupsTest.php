@@ -20,12 +20,17 @@
  * 
  */
 
+namespace oat\taoGroups\test;
+
+
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
 use \core_kernel_classes_Resource;
+use \core_kernel_classes_Class;
+use \core_kernel_classes_Property;
+use oat\tao\test\TaoPhpUnitTestRunner;
 
-//require_once dirname(__FILE__) . '/../../tao/test/TaoPhpUnitTestRunner.php';
-//include_once dirname(__FILE__) . '/../includes/raw_start.php';
+
 
 /**
  * Test the group management 
@@ -58,7 +63,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	 * @see oat\taoGroups\models\GroupsService::__construct
 	 */
 	public function testService(){
-		$this->assertIsA($this->subjectsService, 'tao_models_classes_Service');
+		$this->assertIsA($this->subjectsService, '\tao_models_classes_Service');
 		$this->assertIsA($this->groupsService, 'oat\taoGroups\models\GroupsService');
 	}
 
@@ -89,9 +94,10 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 
         return $subGroup;
     }
+    
 
     /**
-     * @depends testClassCreate
+     * @depends testGroup
      * @param $group
      * @return \core_kernel_classes_Resource
      */
@@ -150,6 +156,10 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 		$this->assertTrue($subGroup->delete());
     }
 
+    /**
+     * 
+     * @author Lionel Lecaque, lionel@taotesting.com
+     */
 	public function testGetGroups(){
 	    $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
 	    $this->assertTrue($this->groupsService->isGroupClass($groupClass));
@@ -182,6 +192,10 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	    $subject->delete();
 	}
 
+	/**
+	 * 
+	 * @author Lionel Lecaque, lionel@taotesting.com
+	 */
 	public function testSetRelatedSubjects(){
         $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
         $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
@@ -206,7 +220,10 @@ class GroupsTest extends TaoPhpUnitTestRunner {
         $oneGroup->delete();
         
     }
-
+    /**
+     * 
+     * @author Lionel Lecaque, lionel@taotesting.com
+     */
     public function testGetRelatedSubjects(){
         $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
         $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
