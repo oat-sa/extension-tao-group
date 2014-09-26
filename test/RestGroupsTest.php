@@ -18,8 +18,16 @@
  *
  */
 
-require_once dirname(__FILE__) . '/../../tao/test/RestTestCase.php';
+namespace oat\taoGroups\test;
 
+use oat\tao\test\RestTestCase;
+
+/**
+ * 
+ *
+ *
+ * @author 
+ */
 class RestGroupsTest extends RestTestCase
 {
     public function serviceProvider(){
