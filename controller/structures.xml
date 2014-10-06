@@ -10,48 +10,47 @@
                     <tree name="Groups library"
                           className="Group"
                           dataUrl="/taoGroups/Groups/getOntologyData"
-                            selectClass="Edit class"
-                            selectInstance="Edit group"
-                            moveInstance="Move"
-                            delete="Delete" 
-                            />
+                          selectClass="group-class-properties"
+                          selectInstance="group-properties"
+                          moveInstance="group-move"
+                          delete="group-delete" 
+                      />
                 </trees>
                 <actions>
-                	  <action name="Edit class" url="/taoGroups/Groups/editGroupClass" group="content" context="class">
+                	<action id="group-class-properties" name="Properties" url="/taoGroups/Groups/editGroupClass" group="content" context="class">
                         <icon id="icon-edit"/>
                     </action>
-                    <action name="Edit group"  url="/taoGroups/Groups/editGroup" group="content" context="instance">
+                    <action id="group-properties" name="Properties"  url="/taoGroups/Groups/editGroup" group="content" context="instance">
                         <icon id="icon-edit"/>
                     </action> 
-
-                    <action name="Filter" context="*" group="search" binding="filter">
+                    <action id="group-filter" name="Filter" context="*" group="search" binding="filter">
                         <icon id="icon-filter"/>
                     </action>
-                    <action name="Search" url="/taoGroups/Groups/search" context="*" group="search" binding="launchFinder">
+                    <action id="group-search" name="Search" url="/taoGroups/Groups/search" context="*" group="search" binding="launchFinder">
                         <icon id="icon-find"/>
                     </action>
-                    <action name="New class" url="/taoGroups/Groups/addSubClass" context="class" group="content" binding="subClass">
+                    <action id="group-class-new" name="New class" url="/taoGroups/Groups/addSubClass" context="class" group="content" binding="subClass">
                         <icon id="icon-folder-open"/>
                     </action>
-                    <action name="New group" url="/taoGroups/Groups/addInstance" context="class" group="content" binding="instanciate">
+                    <action id="group-new" name="New Group" url="/taoGroups/Groups/addInstance" context="class" group="content" binding="instanciate">
                         <icon id="icon-users"/>
                     </action>
-                    <action name="Delete" url="/taoGroups/Groups/delete" context="resource" group="tree" binding="removeNode">
+                    <action id="group-delete" name="Delete" url="/taoGroups/Groups/delete" context="resource" group="tree" binding="removeNode">
                         <icon id="icon-bin"/>
                     </action>
-                    <action name="Duplicate" url="/taoGroups/Groups/cloneInstance" context="instance" group="tree" binding="duplicateNode">
+                    <action id="group-duplicate" name="Duplicate" url="/taoGroups/Groups/cloneInstance" context="instance" group="tree" binding="duplicateNode">
                         <icon id="icon-copy"/>
                     </action>
-                    <action name="Move" url="" context="instance" group="tree" binding="gmoveNode">
+                    <action id="group-move" name="Move" url="" context="instance" group="none" binding="gmoveNode">
                         <icon id="icon-move-item"/>
                     </action>
-                    <action name="Lists" url="/tao/Lists/index" context="*" group="tree">
+                    <action id="group-lists" name="Lists" url="/tao/Lists/index" context="*" group="tree">
                         <icon id="icon-ul"/>
                     </action>
-                    <action name="Export" url="/tao/Export/index" context="resource" group="content">
+                    <action id="group-export" name="Export" url="/tao/Export/index" context="resource" group="content">
                         <icon id="icon-export"/>
                     </action>
-                    <action name="Import" url="/tao/Import/index" context="class" group="content">
+                    <action id="group-import" name="Import" url="/tao/Import/index" context="class" group="content">
                         <icon id="icon-import"/>
                     </action>
                 </actions>
