@@ -1,12 +1,17 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:30\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:17\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: hu-HU\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: hu-HU\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
 msgstr ""
@@ -14,10 +19,10 @@ msgstr ""
 msgid "Class saved"
 msgstr ""
 
-msgid "delete"
+msgid "Delete"
 msgstr ""
 
-msgid "duplicate"
+msgid "Duplicate"
 msgstr ""
 
 msgid "Edit group"
@@ -26,7 +31,10 @@ msgstr ""
 msgid "Edit group class"
 msgstr ""
 
-msgid "export"
+msgid "Export"
+msgstr ""
+
+msgid "Filter"
 msgstr ""
 
 msgid "Group saved"
@@ -43,29 +51,29 @@ msgstr ""
 msgid "Groups library"
 msgstr ""
 
-msgid "import"
+msgid "Import"
 msgstr ""
 
-msgid "lists"
+msgid "Lists"
 msgstr ""
 
 #, tao-public
 msgid "Manage groups"
 msgstr ""
 
-msgid "meta data"
+msgid "Move"
 msgstr ""
 
-msgid "move"
+msgid "New class"
 msgstr ""
 
-msgid "new class"
+msgid "New Group"
 msgstr ""
 
-msgid "new group"
+msgid "Properties"
 msgstr ""
 
-msgid "search"
+msgid "Search"
 msgstr ""
 
 msgid "Select group test takers"

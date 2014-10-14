@@ -1,77 +1,84 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:30\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:17\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: fr-FR\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: fr-FR\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
 msgstr ""
 
 msgid "Class saved"
-msgstr "Classe enregistrée"
+msgstr ""
 
-msgid "delete"
-msgstr "Supprimer"
+msgid "Delete"
+msgstr ""
 
-msgid "duplicate"
-msgstr "Dupliquer"
+msgid "Duplicate"
+msgstr ""
 
 msgid "Edit group"
 msgstr ""
 
 msgid "Edit group class"
-msgstr "Modifier la classe Groupe"
+msgstr ""
 
-msgid "export"
-msgstr "Exporter"
+msgid "Export"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
 
 msgid "Group saved"
-msgstr "Groupe enregistré"
+msgstr ""
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr "Rassembler les participants selon leurs caractéristiques."
+msgstr ""
 
 #, tao-public
 msgid "Groups"
-msgstr "Groupes"
+msgstr ""
 
 msgid "Groups library"
-msgstr "Groupes"
+msgstr ""
 
-msgid "import"
-msgstr "Importer"
+msgid "Import"
+msgstr ""
 
-msgid "lists"
-msgstr "Listes"
+msgid "Lists"
+msgstr ""
 
 #, tao-public
 msgid "Manage groups"
-msgstr "Gestion des groupes"
+msgstr ""
 
-msgid "meta data"
-msgstr "Méta-\n"
-"données"
+msgid "Move"
+msgstr ""
 
-msgid "move"
-msgstr "Déplacer"
+msgid "New class"
+msgstr ""
 
-msgid "new class"
-msgstr "Créer classe"
+msgid "New Group"
+msgstr ""
 
-msgid "new group"
-msgstr "Créer groupe"
+msgid "Properties"
+msgstr ""
 
-msgid "search"
-msgstr "Rechercher"
+msgid "Search"
+msgstr ""
 
 msgid "Select group test takers"
-msgstr "Choisissez les participants du groupe"
+msgstr ""
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr "Le module <i>Groupes</i> vous permet de grouper les participants en fonction de propriétés globales et de classifications."
+msgstr ""
 

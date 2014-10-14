@@ -1,36 +1,44 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v2.6-RC03\n"
-"PO-Revision-Date: 2014-06-20T16:27:31\n"
+"Project-Id-Version: TAO v2.7\n"
+"PO-Revision-Date: 2014-10-14T10:43:17\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: lb-LU\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: lb-LU\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
 msgstr ""
 
 msgid "Class saved"
-msgstr "Klass gespaichert"
+msgstr ""
 
-msgid "delete"
-msgstr "läschen"
+msgid "Delete"
+msgstr ""
 
-msgid "duplicate"
-msgstr "duplizéiren"
+msgid "Duplicate"
+msgstr ""
 
 msgid "Edit group"
 msgstr ""
 
 msgid "Edit group class"
-msgstr "Gruppen Klass editéiren"
+msgstr ""
 
-msgid "export"
-msgstr "exportéiren"
+msgid "Export"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
 
 msgid "Group saved"
-msgstr "Grupp gespaichert"
+msgstr ""
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
@@ -38,38 +46,38 @@ msgstr ""
 
 #, tao-public
 msgid "Groups"
-msgstr "Gruppen"
-
-msgid "Groups library"
-msgstr "Gruppensammlung"
-
-msgid "import"
 msgstr ""
 
-msgid "lists"
+msgid "Groups library"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Lists"
 msgstr ""
 
 #, tao-public
 msgid "Manage groups"
-msgstr "Gruppen verwalten"
-
-msgid "meta data"
-msgstr "Meta Daten"
-
-msgid "move"
 msgstr ""
 
-msgid "new class"
-msgstr "Nei Klass"
+msgid "Move"
+msgstr ""
 
-msgid "new group"
-msgstr "Nei Grupp"
+msgid "New class"
+msgstr ""
 
-msgid "search"
-msgstr "sichen"
+msgid "New Group"
+msgstr ""
+
+msgid "Properties"
+msgstr ""
+
+msgid "Search"
+msgstr ""
 
 msgid "Select group test takers"
-msgstr "Gruppen Testpersounen eraussichen"
+msgstr ""
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
 msgstr ""
