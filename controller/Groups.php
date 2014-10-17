@@ -94,7 +94,7 @@ class Groups extends tao_actions_SaSModule {
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
 				if($clazz instanceof core_kernel_classes_Resource){
-					$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($clazz->getUri()));
+					$this->setData("selectNode", tao_helpers_Uri::encode($clazz->getUri()));
 				}
 				$this->setData('message', __('Class saved'));
 				$this->setData('reload', true);
@@ -122,12 +122,11 @@ class Groups extends tao_actions_SaSModule {
 				$binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
 				$group = $binder->bind($myForm->getValues());
 				
+		        $this->setData("selectNode", tao_helpers_Uri::encode($group->getUri()));
 				$this->setData('message', __('Group saved'));
 				$this->setData('reload', true);
 			}
 		}
-		
-		$this->setSessionAttribute("showNodeUri", tao_helpers_Uri::encode($group->getUri()));
 		
 		$memberProperty = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
 		$memberForm = tao_helpers_form_GenerisTreeForm::buildTree($group, $memberProperty);
