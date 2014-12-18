@@ -58,51 +58,13 @@ class Groups extends tao_actions_SaSModule {
 		$this->defaultData();
 	}
 
+	/**
+	 * (non-PHPdoc)
+	 * @see tao_actions_SaSModule::getClassService()
+	 */
 	protected function getClassService()
 	{
 		return GroupsService::singleton();
-	}
-	
-
-	
-	/**
-	 * This action aims at editing the Group class or its sub-classes.
-	 * 
-	 * It looks for the 'classUri' request parameter to select which class will be edited but also
-	 * looks for the 'property_mode' request parameter or the session attribute with the same key 
-	 * to idenfity if the advanced or simple mode is in use.
-	 * 
-	 * This action will generate 4 entries in the request data:
-	 * 
-	 * * 'message' (string) A message to be displayed to the end users.
-	 * * 'reload' (boolean) States if the page must be reloaded or not in the browser.
-	 * * 'formTitle' (string) The title of the displayed form.
-	 * * 'myForm' (tao_helpers_form_FormContainer) The form to be displayed.
-	 * 
-	 * The template selected by this action is 'form.tpl' from the tao meta-extension.
-	 * 
-	 */
-	public function editGroupClass()
-	{
-		$clazz = $this->getCurrentClass();
-		
-		if($this->hasRequestParameter('property_mode')){
-			$this->setSessionAttribute('property_mode', $this->getRequestParameter('property_mode'));
-		}
-		
-		$myForm = $this->editClass($clazz, $this->service->getRootClass());
-		if($myForm->isSubmited()){
-			if($myForm->isValid()){
-				if($clazz instanceof core_kernel_classes_Resource){
-					$this->setData("selectNode", tao_helpers_Uri::encode($clazz->getUri()));
-				}
-				$this->setData('message', __('Class saved'));
-				$this->setData('reload', true);
-			}
-		}
-		$this->setData('formTitle', __('Edit group class'));
-		$this->setData('myForm', $myForm->render());
-		$this->setView('form.tpl', 'tao');
 	}
 	
 	/**

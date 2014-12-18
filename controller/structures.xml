@@ -17,7 +17,7 @@
                       />
                 </trees>
                 <actions>
-                	<action id="group-class-properties" name="Properties" url="/taoGroups/Groups/editGroupClass" group="content" context="class">
+                	<action id="group-class-properties" name="Properties" url="/taoGroups/Groups/editClass" group="content" context="class">
                         <icon id="icon-edit"/>
                     </action>
                     <action id="group-properties" name="Properties"  url="/taoGroups/Groups/editGroup" group="content" context="instance">
