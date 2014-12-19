@@ -9,6 +9,7 @@
                 <trees>
                     <tree name="Groups library"
                           className="Group"
+                          rootNode="http://www.tao.lu/Ontologies/TAOGroup.rdf#Group"
                           dataUrl="/taoGroups/Groups/getOntologyData"
                           selectClass="group-class-properties"
                           selectInstance="group-properties"
