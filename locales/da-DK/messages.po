@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v3.0\n"
-"PO-Revision-Date: 2014-10-21T07:51:56\n"
+"Project-Id-Version: TAO 3.0\n"
+"PO-Revision-Date: 2014-11-21T10:32:39\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: da-DK\n"
@@ -17,68 +17,68 @@ msgid "Add to group"
 msgstr ""
 
 msgid "Class saved"
-msgstr ""
+msgstr "Klasse gemt"
 
 msgid "Delete"
-msgstr ""
+msgstr "Slet"
 
 msgid "Duplicate"
-msgstr ""
+msgstr "Kopier"
 
 msgid "Edit group"
 msgstr ""
 
 msgid "Edit group class"
-msgstr ""
+msgstr "Redigere gruppe klasse"
 
 msgid "Export"
-msgstr ""
+msgstr "Eksport"
 
 msgid "Filter"
 msgstr ""
 
 msgid "Group saved"
-msgstr ""
+msgstr "Gruppe gemt"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
+msgstr "Gruppe test tagere i forhold til globale egenskaber og klassifikationer."
 
 #, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "Grupper"
 
 msgid "Groups library"
-msgstr ""
+msgstr "Gruppe arkiv"
 
 msgid "Import"
-msgstr ""
+msgstr "Importere"
 
 msgid "Lists"
-msgstr ""
+msgstr "Lister"
 
 #, tao-public
 msgid "Manage groups"
-msgstr ""
+msgstr "Administrere grupper"
 
 msgid "Move"
-msgstr ""
+msgstr "Flyt"
 
 msgid "New class"
-msgstr ""
+msgstr "Ny klasse"
 
 msgid "New Group"
-msgstr ""
+msgstr "Ny gruppe"
 
 msgid "Properties"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Søg"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "Vælg gruppe test tagere"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr ""
+msgstr "Gruppe modulet gør det muligt at gruppere test tagere i forhold til globale indstillinger og klassifikationer."
 

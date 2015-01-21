@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO v3.0\n"
-"PO-Revision-Date: 2014-10-21T07:51:56\n"
+"Project-Id-Version: TAO 3.0\n"
+"PO-Revision-Date: 2014-11-21T10:32:39\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: fr-FR\n"
@@ -17,68 +17,68 @@ msgid "Add to group"
 msgstr ""
 
 msgid "Class saved"
-msgstr ""
+msgstr "Classe enregistrée"
 
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliquer"
 
 msgid "Edit group"
 msgstr ""
 
 msgid "Edit group class"
-msgstr ""
+msgstr "Modifier la classe Groupe"
 
 msgid "Export"
-msgstr ""
+msgstr "Exporter"
 
 msgid "Filter"
 msgstr ""
 
 msgid "Group saved"
-msgstr ""
+msgstr "Groupe enregistré"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
+msgstr "Rassembler les participants selon leurs caractéristiques."
 
 #, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "Groupes"
 
 msgid "Groups library"
-msgstr ""
+msgstr "Groupes"
 
 msgid "Import"
-msgstr ""
+msgstr "Importer"
 
 msgid "Lists"
-msgstr ""
+msgstr "Listes"
 
 #, tao-public
 msgid "Manage groups"
-msgstr ""
+msgstr "Gestion des groupes"
 
 msgid "Move"
-msgstr ""
+msgstr "Déplacer"
 
 msgid "New class"
-msgstr ""
+msgstr "Créer classe"
 
 msgid "New Group"
-msgstr ""
+msgstr "Créer groupe"
 
 msgid "Properties"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "Choisissez les participants du groupe"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr ""
+msgstr "Le module <i>Groupes</i> vous permet de grouper les participants en fonction de propriétés globales et de classifications."
 
