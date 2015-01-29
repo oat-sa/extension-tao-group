@@ -23,6 +23,7 @@
 namespace oat\taoGroups\controller;
 
 
+use oat\taoGroups\controller\form\Group;
 use \common_ext_ExtensionsManager;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
@@ -76,7 +77,7 @@ class Groups extends tao_actions_SaSModule {
 		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentInstance();
 
-		$formContainer = new tao_actions_form_Instance($clazz, $group);
+		$formContainer = new Group($clazz, $group);
 		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
