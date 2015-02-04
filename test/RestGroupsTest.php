@@ -30,7 +30,7 @@ class RestGroupsTest extends RestTestCase
 {
     public function serviceProvider(){
         return array(
-            array('taoGroups/Api')
+            array('taoGroups/Api',TAO_GROUP_CLASS)
         );
     }
 }
