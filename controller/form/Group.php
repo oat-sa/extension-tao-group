@@ -37,7 +37,6 @@ class Group extends \tao_actions_form_Instance
     {
         parent::initElements();
 		$this->form->removeElement(\tao_helpers_Uri::encode(TAO_GROUP_MEMBERS_PROP));
-		$this->form->removeElement(\tao_helpers_Uri::encode(PROPERTY_GROUP_DELVIERY));
     }
 
 } 
