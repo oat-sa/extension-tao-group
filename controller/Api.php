@@ -21,6 +21,7 @@ namespace oat\taoGroups\controller;
 
 use \tao_actions_CommonRestModule;
 use oat\taoGroups\models\CrudGroupsService;
+use oat\taoGroups\models\GroupsService;
 
 /**
  *
@@ -43,7 +44,7 @@ class Api extends tao_actions_CommonRestModule
     protected function getParametersAliases()
     {
         return array_merge(parent::getParametersAliases(), array(
-            "member" => TAO_GROUP_MEMBERS_PROP
+            "member" => GroupsService::PROPERTY_MEMBERS_URI
         ));
     }
 

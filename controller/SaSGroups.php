@@ -62,7 +62,7 @@ class SaSGroups extends Groups
      */
     public function selectSubjects()
     {
-        $memberProperty = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
+        $memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
         $memberForm = tao_helpers_form_GenerisTreeForm::buildTree($this->getCurrentInstance(), $memberProperty);
         $memberForm->setData('title', __('Select group test takers'));
         $this->setData('tree', $memberForm->render());

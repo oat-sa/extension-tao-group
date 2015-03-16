@@ -25,6 +25,7 @@ use \common_ext_ExtensionsManager;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
 use \tao_helpers_form_GenerisTreeForm;
+use oat\taoGroups\models\GroupsService;
 
 /**
  * Helper to render the groups form on the user pane
@@ -47,7 +48,7 @@ class TestTakerForm
         // Ensure groups constants are loaded
         common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
         
-        $memberProperty = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
+        $memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
 		$groupForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($subject, $memberProperty);
 		$groupForm->setData('title',	__('Add to group'));
 		return $groupForm->render();

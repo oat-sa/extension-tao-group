@@ -22,8 +22,6 @@
 
 namespace oat\taoGroups\controller;
 
-
-use oat\taoGroups\controller\form\Group;
 use \common_ext_ExtensionsManager;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
@@ -77,7 +75,7 @@ class Groups extends tao_actions_SaSModule {
 		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentInstance();
 
-		$formContainer = new Group($clazz, $group);
+		$formContainer = new \tao_actions_form_Instance($clazz, $group);
 		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
@@ -91,7 +89,7 @@ class Groups extends tao_actions_SaSModule {
 			}
 		}
 		
-		$memberProperty = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
+		$memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
 		$memberForm = tao_helpers_form_GenerisTreeForm::buildTree($group, $memberProperty);
 		$memberForm->setData('title',	__('Select group test takers'));
 		$this->setData('memberForm', $memberForm->render());

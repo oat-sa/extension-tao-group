@@ -21,6 +21,7 @@
 namespace oat\taoGroups\test;
 
 use oat\tao\test\RestTestCase;
+use oat\taoGroups\models\GroupsService;
 
 /**
  *
@@ -30,8 +31,7 @@ class RestGroupsTest extends RestTestCase
 {
     public function serviceProvider(){
         return array(
-            array('taoGroups/Api',TAO_GROUP_CLASS)
+            array('taoGroups/Api',GroupsService::CLASS_URI)
         );
     }
 }
-
