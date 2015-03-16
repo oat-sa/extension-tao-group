@@ -26,5 +26,6 @@
  * 
  */
 $todefine = array(
+    /** @deprecated */
 	'TAO_GROUP_MEMBERS_PROP'=> 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Members'
 );
