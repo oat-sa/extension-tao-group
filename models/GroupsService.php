@@ -114,7 +114,7 @@ class GroupsService
     public function getGroups($userUri)
     {
         $user = new core_kernel_classes_Resource($userUri);
-        return $user->getPropertyValues(self::PROPERTY_MEMBERS_URI);
+        return $user->getPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI));
     }
     
     /**
@@ -142,26 +142,4 @@ class GroupsService
     public function removeUser(\core_kernel_classes_Resource $user, core_kernel_classes_Resource $group) {
         return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
-    
-    /**
-     * define the list of subjects composing a group
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
-     * @param  array subjects
-     * @return boolean
-     */
-    public function setRelatedSubjects( core_kernel_classes_Resource $group, $subjects = array())
-    {
-        $oldUsers = $this->getUsers($group->getUri());
-        foreach (array_diff($oldUsers, $subjects) as $toRemove) {
-            $this->removeUser($toRemove, $group);
-        }
-        foreach (array_diff($oldUsers, $subjects) as $toAdd) {
-            $this->addUser($toAdd, $group);
-        }
-        return true;
-    }
-
 }

@@ -42,7 +42,7 @@ use oat\tao\test\TaoPhpUnitTestRunner;
 class GroupsTest extends TaoPhpUnitTestRunner {
 	
 	/**
-	 * @var oat\taoGroups\models\GroupsService
+	 * @var GroupsService
 	 */
 	protected $groupsService = null;
 	
@@ -166,22 +166,21 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	    $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
 	    $oneGroup = $groupClass->createInstance('testGroupInstance');
 	    
-	    $oneGroup->setPropertiesValues(array(GroupsService::PROPERTY_MEMBERS_URI => $subject->getUri()) );
+	    $this->groupsService->addUser($subject->getUri(), $oneGroup);
 	    $oneGroup2 = $groupClass->createInstance('testGroupInstance2');
 	    
 	    $subclass = $groupClass->createSubClass('testGroupSubclass');
 	    $oneGroup3 = $subclass->createInstance('testSubGroupInstance');
-	    $oneGroup3->setPropertiesValues(array(GroupsService::PROPERTY_MEMBERS_URI => $subject->getUri()) );
+	    $this->groupsService->addUser($subject->getUri(), $oneGroup3);
 	    
 	    $groups = $this->groupsService->getGroups($subject->getUri());
 	    
 	    $this->assertTrue(is_array($groups));
 	    $this->assertTrue(count($groups) == 2);
-	    $this->assertTrue(array_key_exists( $oneGroup->getUri(),$groups));
-	    $this->assertFalse(array_key_exists( $oneGroup2->getUri(),$groups));
-	    $this->assertTrue(array_key_exists( $oneGroup3->getUri(),$groups));
-
-
+	    $this->assertContains($oneGroup->getUri(), $groups);
+	    $this->assertNotContains($oneGroup2->getUri(), $groups);
+	    $this->assertContains($oneGroup3->getUri(), $groups);
+	    
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup));
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup2));
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup3));
@@ -190,34 +189,5 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 
 	    $subject->delete();
 	}
-
-	/**
-	 * 
-	 * @author Lionel Lecaque, lionel@taotesting.com
-	 */
-	public function testSetRelatedSubjects(){
-        $groupClass = GroupsService::singleton()->getRootClass();
-        $memberProp = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
-        $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
-        $subject2 = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject2');
-        
-        $oneGroup = $groupClass->createInstance('testGroupInstance');
-        $this->assertTrue($this->groupsService->setRelatedSubjects($oneGroup, array($subject,$subject2)));
-        
-        $members = $oneGroup->getPropertiesValues(array($memberProp));
-
-        $this->assertTrue(isset($members[GroupsService::PROPERTY_MEMBERS_URI]));
-
-        $this->assertTrue(count($members[GroupsService::PROPERTY_MEMBERS_URI]) == 2);
-
-        foreach ($members[GroupsService::PROPERTY_MEMBERS_URI] as $sub){
-            $this->assertTrue(in_array($sub->getUri(), array($subject->getUri(),$subject2->getUri())));
-        }
-        
-        $subject->delete();
-        $subject2->delete();
-        $oneGroup->delete();
-        
-    }
 	
 }
