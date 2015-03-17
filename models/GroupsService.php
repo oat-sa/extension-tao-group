@@ -26,6 +26,7 @@ use \core_kernel_classes_Class;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
 use \tao_models_classes_ClassService;
+use oat\taoTestTaker\models\TestTakerService;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -40,7 +41,7 @@ class GroupsService
 {
     const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
 
-    const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Members';
+    const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
     
     /**
      * return the group top level class
@@ -112,7 +113,8 @@ class GroupsService
      */
     public function getGroups($userUri)
     {
-        return $this->getRootClass()->searchInstances(array(self::PROPERTY_MEMBERS_URI => $userUri), array('like'=>false, 'recursive' => true));
+        $user = new core_kernel_classes_Resource($userUri);
+        return $user->getPropertyValues(self::PROPERTY_MEMBERS_URI);
     }
     
     /**
@@ -123,10 +125,24 @@ class GroupsService
      */
     public function getUsers($groupUri)
     {
-        $group = new core_kernel_classes_Resource($groupUri);
-        return $group->getPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI));
+        $subjectClass = TestTakerService::singleton()->getRootClass();
+        $users = $subjectClass->searchInstances(array(
+        	self::PROPERTY_MEMBERS_URI => $groupUri
+        ), array(
+        	'recursive' => true, 'like' => false
+        ));
+        return $users;
     }
-
+    
+    public function addUser($userUri, core_kernel_classes_Resource $group) {
+        $user = new \core_kernel_classes_Resource($userUri);
+        return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+    }
+    
+    public function removeUser(\core_kernel_classes_Resource $user, core_kernel_classes_Resource $group) {
+        return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+    }
+    
     /**
      * define the list of subjects composing a group
      *
@@ -138,7 +154,14 @@ class GroupsService
      */
     public function setRelatedSubjects( core_kernel_classes_Resource $group, $subjects = array())
     {
-        return $group->editPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $subjects);
+        $oldUsers = $this->getUsers($group->getUri());
+        foreach (array_diff($oldUsers, $subjects) as $toRemove) {
+            $this->removeUser($toRemove, $group);
+        }
+        foreach (array_diff($oldUsers, $subjects) as $toAdd) {
+            $this->addUser($toAdd, $group);
+        }
+        return true;
     }
 
 }
