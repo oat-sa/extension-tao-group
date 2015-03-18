@@ -27,6 +27,7 @@ use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
 use \tao_models_classes_ClassService;
 use oat\taoTestTaker\models\TestTakerService;
+use oat\oatbox\user\User;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -111,9 +112,9 @@ class GroupsService
      * @param  string userUri
      * @return array resources of group
      */
-    public function getGroups($userUri)
+    public function getGroups(User $user)
     {
-        $user = new core_kernel_classes_Resource($userUri);
+        $user = new core_kernel_classes_Resource($user->getIdentifier());
         return $user->getPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI));
     }
     
