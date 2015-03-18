@@ -173,10 +173,14 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	    $oneGroup3 = $subclass->createInstance('testSubGroupInstance');
 	    $this->groupsService->addUser($subject->getUri(), $oneGroup3);
 	    
-	    $groups = $this->groupsService->getGroups($subject->getUri());
+	    $generisUser = new \core_kernel_users_GenerisUser($subject);
+	    $groups = $this->groupsService->getGroups($generisUser);
 	    
 	    $this->assertTrue(is_array($groups));
 	    $this->assertTrue(count($groups) == 2);
+	    array_walk($groups, function (&$group) {
+	    	$group = $group->getUri();
+	    });
 	    $this->assertContains($oneGroup->getUri(), $groups);
 	    $this->assertNotContains($oneGroup2->getUri(), $groups);
 	    $this->assertContains($oneGroup3->getUri(), $groups);
