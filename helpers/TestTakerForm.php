@@ -49,7 +49,7 @@ class TestTakerForm
         common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
         
         $memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
-		$groupForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($subject, $memberProperty);
+		$groupForm = tao_helpers_form_GenerisTreeForm::buildTree($subject, $memberProperty);
 		$groupForm->setData('title',	__('Add to group'));
 		return $groupForm->render();
     }

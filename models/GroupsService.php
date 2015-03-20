@@ -26,6 +26,8 @@ use \core_kernel_classes_Class;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
 use \tao_models_classes_ClassService;
+use oat\taoTestTaker\models\TestTakerService;
+use oat\oatbox\user\User;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -40,7 +42,7 @@ class GroupsService
 {
     const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
 
-    const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Members';
+    const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
     
     /**
      * return the group top level class
@@ -110,9 +112,12 @@ class GroupsService
      * @param  string userUri
      * @return array resources of group
      */
-    public function getGroups($userUri)
+    public function getGroups(User $user)
     {
-        return $this->getRootClass()->searchInstances(array(self::PROPERTY_MEMBERS_URI => $userUri), array('like'=>false, 'recursive' => true));
+        $user = new core_kernel_classes_Resource($user->getIdentifier());
+        $groups = $user->getPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI));
+        array_walk($groups, function(&$group) { $group = new core_kernel_classes_Resource($group);});
+        return $groups;
     }
     
     /**
@@ -123,22 +128,21 @@ class GroupsService
      */
     public function getUsers($groupUri)
     {
-        $group = new core_kernel_classes_Resource($groupUri);
-        return $group->getPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI));
+        $subjectClass = TestTakerService::singleton()->getRootClass();
+        $users = $subjectClass->searchInstances(array(
+        	self::PROPERTY_MEMBERS_URI => $groupUri
+        ), array(
+        	'recursive' => true, 'like' => false
+        ));
+        return $users;
     }
-
-    /**
-     * define the list of subjects composing a group
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
-     * @param  array subjects
-     * @return boolean
-     */
-    public function setRelatedSubjects( core_kernel_classes_Resource $group, $subjects = array())
-    {
-        return $group->editPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $subjects);
+    
+    public function addUser($userUri, core_kernel_classes_Resource $group) {
+        $user = new \core_kernel_classes_Resource($userUri);
+        return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
-
+    
+    public function removeUser(\core_kernel_classes_Resource $user, core_kernel_classes_Resource $group) {
+        return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+    }
 }
