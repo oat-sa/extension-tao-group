@@ -114,8 +114,7 @@ class GroupsService
      */
     public function getGroups(User $user)
     {
-        $user = new core_kernel_classes_Resource($user->getIdentifier());
-        $groups = $user->getPropertyValues(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI));
+        $groups = $user->getPropertyValues(self::PROPERTY_MEMBERS_URI);
         array_walk($groups, function(&$group) { $group = new core_kernel_classes_Resource($group);});
         return $groups;
     }
