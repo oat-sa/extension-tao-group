@@ -117,7 +117,7 @@ class Groups extends tao_actions_SaSModule {
 			$deleted = $this->service->deleteGroup($this->getCurrentInstance());
 		}
 		else{
-			$deleted = $this->service->deleteGroupClass($this->getCurrentClass());
+		    return $this->forward('deleteClass', null, null, (array('id' => $this->getRequestParameter('id'))));
 		}
 		
 		echo json_encode(array('deleted'	=> $deleted));

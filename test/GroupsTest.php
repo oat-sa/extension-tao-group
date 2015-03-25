@@ -189,7 +189,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup2));
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup3));
 	    
-	    $this->assertTrue($this->groupsService->deleteGroupClass($subclass));
+	    $this->assertTrue($this->groupsService->deleteClass($subclass));
 
 	    $subject->delete();
 	}
