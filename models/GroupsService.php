@@ -75,23 +75,6 @@ class GroupsService
     }
 
     /**
-     * delete a group class or sublcass
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Class clazz
-     * @return boolean
-     */
-    public function deleteGroupClass( core_kernel_classes_Class $clazz)
-    {
-        if ($clazz->isSubClassOf($this->getRootClass())) {
-            return $clazz->delete();
-        } else {
-            return false;
-        }
-    }
-
-    /**
      * Check if the Class in parameter is a subclass of the Group Class
      *
      * @access public
