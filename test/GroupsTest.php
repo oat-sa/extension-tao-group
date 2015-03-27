@@ -42,7 +42,7 @@ use oat\tao\test\TaoPhpUnitTestRunner;
 class GroupsTest extends TaoPhpUnitTestRunner {
 	
 	/**
-	 * @var oat\taoGroups\models\GroupsService
+	 * @var GroupsService
 	 */
 	protected $groupsService = null;
 	
@@ -71,10 +71,9 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	 * @return \core_kernel_classes_Class|null
      */
     public function testGroup() {
-		$this->assertTrue(defined('TAO_GROUP_CLASS'));
 		$groupClass = $this->groupsService->getRootClass();
 		$this->assertIsA($groupClass, 'core_kernel_classes_Class');
-		$this->assertEquals(TAO_GROUP_CLASS, $groupClass->getUri());
+		$this->assertEquals(GroupsService::CLASS_URI, $groupClass->getUri());
 
         return $groupClass;
     }
@@ -161,91 +160,38 @@ class GroupsTest extends TaoPhpUnitTestRunner {
      * @author Lionel Lecaque, lionel@taotesting.com
      */
 	public function testGetGroups(){
-	    $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
+	    $groupClass = GroupsService::singleton()->getRootClass();
 	    $this->assertTrue($this->groupsService->isGroupClass($groupClass));
 	     
 	    $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
 	    $oneGroup = $groupClass->createInstance('testGroupInstance');
 	    
-	    $oneGroup->setPropertiesValues(array(TAO_GROUP_MEMBERS_PROP => $subject->getUri()) );
+	    $this->groupsService->addUser($subject->getUri(), $oneGroup);
 	    $oneGroup2 = $groupClass->createInstance('testGroupInstance2');
 	    
 	    $subclass = $groupClass->createSubClass('testGroupSubclass');
 	    $oneGroup3 = $subclass->createInstance('testSubGroupInstance');
-	    $oneGroup3->setPropertiesValues(array(TAO_GROUP_MEMBERS_PROP => $subject->getUri()) );
+	    $this->groupsService->addUser($subject->getUri(), $oneGroup3);
 	    
-	    $groups = $this->groupsService->getGroups($subject->getUri());
+	    $generisUser = new \core_kernel_users_GenerisUser($subject);
+	    $groups = $this->groupsService->getGroups($generisUser);
 	    
 	    $this->assertTrue(is_array($groups));
 	    $this->assertTrue(count($groups) == 2);
-	    $this->assertTrue(array_key_exists( $oneGroup->getUri(),$groups));
-	    $this->assertFalse(array_key_exists( $oneGroup2->getUri(),$groups));
-	    $this->assertTrue(array_key_exists( $oneGroup3->getUri(),$groups));
-
-
+	    array_walk($groups, function (&$group) {
+	    	$group = $group->getUri();
+	    });
+	    $this->assertContains($oneGroup->getUri(), $groups);
+	    $this->assertNotContains($oneGroup2->getUri(), $groups);
+	    $this->assertContains($oneGroup3->getUri(), $groups);
+	    
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup));
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup2));
 	    $this->assertTrue($this->groupsService->deleteGroup($oneGroup3));
 	    
-	    $this->assertTrue($this->groupsService->deleteGroupClass($subclass));
+	    $this->assertTrue($this->groupsService->deleteClass($subclass));
 
 	    $subject->delete();
 	}
-
-	/**
-	 * 
-	 * @author Lionel Lecaque, lionel@taotesting.com
-	 */
-	public function testSetRelatedSubjects(){
-        $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
-        $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
-        $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
-        $subject2 = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject2');
-        
-        $oneGroup = $groupClass->createInstance('testGroupInstance');
-        $this->assertTrue($this->groupsService->setRelatedSubjects($oneGroup, array($subject,$subject2)));
-        
-        $members = $oneGroup->getPropertiesValues(array($memberProp));
-
-        $this->assertTrue(isset($members[TAO_GROUP_MEMBERS_PROP]));
-
-        $this->assertTrue(count($members[TAO_GROUP_MEMBERS_PROP]) == 2);
-
-        foreach ($members[TAO_GROUP_MEMBERS_PROP] as $sub){
-            $this->assertTrue(in_array($sub->getUri(), array($subject->getUri(),$subject2->getUri())));
-        }
-        
-        $subject->delete();
-        $subject2->delete();
-        $oneGroup->delete();
-        
-    }
-    /**
-     * 
-     * @author Lionel Lecaque, lionel@taotesting.com
-     */
-    public function testGetRelatedSubjects(){
-        $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
-        $memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
-        $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
-        $subject2 = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject2');
-    
-        $oneGroup = $groupClass->createInstance('testGroupInstance');
-        $this->assertTrue($this->groupsService->setRelatedSubjects($oneGroup, array($subject,$subject2)));
-    
-        $members = $this->groupsService->getRelatedSubjects($oneGroup);
-    
-        $this->assertTrue(count($members) == 2);
-    
-        foreach ($members as $sub){
-            $this->assertTrue(in_array($sub, array($subject->getUri(),$subject2->getUri())));
-        }
-
-        $subject->delete();
-        $subject2->delete();
-        $oneGroup->delete();
-    
-    }
-	
 	
 }

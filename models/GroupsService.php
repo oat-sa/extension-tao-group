@@ -26,6 +26,8 @@ use \core_kernel_classes_Class;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
 use \tao_models_classes_ClassService;
+use oat\taoTestTaker\models\TestTakerService;
+use oat\oatbox\user\User;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -38,34 +40,10 @@ use \tao_models_classes_ClassService;
 class GroupsService
     extends tao_models_classes_ClassService
 {
+    const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
 
-    /**
-     * The RDFS top level group class
-     *
-     * @access protected
-     * @var Class
-     */
-    protected $groupClass = null;
-
-
-
-    /**
-     * Short description of method __construct
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @return mixed
-     */
-    public function __construct()
-    {
-        
-		
-		parent::__construct();
-		$this->groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
-		
-        
-    }
-
+    const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
+    
     /**
      * return the group top level class
      *
@@ -75,7 +53,7 @@ class GroupsService
      */
     public function getRootClass()
     {
-        return $this->groupClass;
+        return new core_kernel_classes_Class(self::CLASS_URI);
     }
 
     /**
@@ -97,27 +75,6 @@ class GroupsService
     }
 
     /**
-     * delete a group class or sublcass
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Class clazz
-     * @return boolean
-     */
-    public function deleteGroupClass( core_kernel_classes_Class $clazz)
-    {
-        $returnValue = (bool) false;
-
-		if(!is_null($clazz)){
-			if($this->isGroupClass($clazz) && !$clazz->equals($this->groupClass)){
-				$returnValue = $clazz->delete();
-			}
-		}
-
-        return (bool) $returnValue;
-    }
-
-    /**
      * Check if the Class in parameter is a subclass of the Group Class
      *
      * @access public
@@ -127,21 +84,7 @@ class GroupsService
      */
     public function isGroupClass( core_kernel_classes_Class $clazz)
     {
-        $returnValue = (bool) false;
-
-		if($clazz->equals($this->groupClass)) {
-			$returnValue = true;	
-		}
-		else{
-			foreach($this->groupClass->getSubClasses(true) as $subclass){
-				if($clazz->equals($subclass)){
-					$returnValue = true;
-					break;	
-				}
-			}
-		}
-
-        return (bool) $returnValue;
+        return $clazz->equals($this->getRootClass()) || $clazz->isSubClassOf($this->getRootClass());
     }
 
     /**
@@ -152,83 +95,36 @@ class GroupsService
      * @param  string userUri
      * @return array resources of group
      */
-    public function getGroups($userUri)
+    public function getGroups(User $user)
     {
-        $groupClass = new core_kernel_classes_Class(TAO_GROUP_CLASS);
-        return $groupClass->searchInstances(array(TAO_GROUP_MEMBERS_PROP => $userUri), array('like'=>false, 'recursive' => true));
+        $groups = $user->getPropertyValues(self::PROPERTY_MEMBERS_URI);
+        array_walk($groups, function(&$group) { $group = new core_kernel_classes_Resource($group);});
+        return $groups;
     }
     
     /**
-     * get the list of subjects linked to the group in parameter
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
-     * @return array
+     * gets the users of a group
+     * 
+     * @param string $groupUri
+     * @return array resources of users
      */
-    public function getRelatedSubjects( core_kernel_classes_Resource $group)
+    public function getUsers($groupUri)
     {
-        $returnValue = array();
-
-        
-		
-		if(!is_null($group)){
-			$subjects = $group->getPropertyValues(new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP));
-			
-			if(count($subjects) > 0){
-				$subjectClass = new core_kernel_classes_Class(TAO_SUBJECT_CLASS);
-				$subjectSubClasses = array();
-				foreach($subjectClass->getSubClasses(true) as $subjectSubClass){
-					$subjectSubClasses[] = $subjectSubClass->getUri();
-				}
-				foreach($subjects as $subjectUri){
-					if(!empty($subjectUri)){
-						$clazz = $this->getClass(new core_kernel_classes_Resource($subjectUri));
-						if(!is_null($clazz)){
-							if(in_array($clazz->getUri(), $subjectSubClasses)){
-								$returnValue[] = $clazz->getUri();
-							}
-						}
-						$returnValue[] = $subjectUri;
-					}
-				}
-			}
-		}
-
-        return (array) $returnValue;
+        $subjectClass = TestTakerService::singleton()->getRootClass();
+        $users = $subjectClass->searchInstances(array(
+        	self::PROPERTY_MEMBERS_URI => $groupUri
+        ), array(
+        	'recursive' => true, 'like' => false
+        ));
+        return $users;
     }
-
-    /**
-     * define the list of subjects composing a group
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
-     * @param  array subjects
-     * @return boolean
-     */
-    public function setRelatedSubjects( core_kernel_classes_Resource $group, $subjects = array())
-    {
-        $returnValue = (bool) false;
-	
-		if(!is_null($group)){
-			
-			$memberProp = new core_kernel_classes_Property(TAO_GROUP_MEMBERS_PROP);
-			
-			$group->removePropertyValues($memberProp);
-			$done = 0;
-			foreach($subjects as $subject){
-				if($group->setPropertyValue($memberProp, $subject)){
-					$done++;
-				}
-			}
-			if($done == count($subjects)){
-				$returnValue = true;
-			}
-		}
-        return (bool) $returnValue;
+    
+    public function addUser($userUri, core_kernel_classes_Resource $group) {
+        $user = new \core_kernel_classes_Resource($userUri);
+        return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
-
+    
+    public function removeUser(\core_kernel_classes_Resource $user, core_kernel_classes_Resource $group) {
+        return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+    }
 }
-
-?>
