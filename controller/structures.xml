@@ -54,6 +54,9 @@
                     <action id="group-import" name="Import" url="/tao/Import/index" context="class" group="content">
                         <icon id="icon-import"/>
                     </action>
+                    <action id="testtaker-inform" name="Inform" url="/taoTestTaker/Notify/inform" context="resource" group="content">
+                        <icon id="icon-email"/>
+                    </action>
                 </actions>
             </section>
         </sections>

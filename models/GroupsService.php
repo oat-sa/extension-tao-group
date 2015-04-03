@@ -61,7 +61,7 @@ class GroupsService
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
+     * @param  core_kernel_classes_Resource $group
      * @return boolean
      */
     public function deleteGroup( core_kernel_classes_Resource $group)
@@ -79,7 +79,7 @@ class GroupsService
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Class clazz
+     * @param  core_kernel_classes_Class $clazz
      * @return boolean
      */
     public function isGroupClass( core_kernel_classes_Class $clazz)
@@ -92,7 +92,7 @@ class GroupsService
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  string userUri
+     * @param  User $user
      * @return array resources of group
      */
     public function getGroups(User $user)
@@ -126,5 +126,36 @@ class GroupsService
     
     public function removeUser(\core_kernel_classes_Resource $user, core_kernel_classes_Resource $group) {
         return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+    }
+
+    /**
+     * trying to retrieve testTakers from group/group class if applicable
+     *
+     * @param core_kernel_classes_Resource $resource
+     *
+     * @return array
+     */
+    public function getTestTakers( \core_kernel_classes_Resource $resource )
+    {
+        $result = array();
+        $groups = array();
+
+        if ($resource instanceof \core_kernel_classes_Class && (
+                $resource->equals( $this->getRootClass() ) || $resource->isSubClassOf( $this->getRootClass() )
+            )
+        ) {
+            $groups = $resource->searchInstances( array(), array( 'recursive' => true ) );
+        }
+
+        if ($resource->isInstanceOf( $this->getRootClass() )) {
+            $groups = array( $resource );
+        }
+
+        /** @var core_kernel_classes_Resource $group */
+        foreach ($groups as $group) {
+            $result = array_merge( $result, $this->getUsers( $group->getUri() ) );
+        }
+
+        return $result;
     }
 }
