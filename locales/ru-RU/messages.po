@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO 3.0-RC05\n"
-"PO-Revision-Date: 2015-04-08T14:44:28\n"
+"PO-Revision-Date: 2015-04-09T09:15:39\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ru-RU\n"
@@ -16,18 +16,22 @@ msgstr ""
 msgid "Add to group"
 msgstr ""
 
+#, tao-public
 msgid "Delete"
 msgstr ""
 
+#, tao-public
 msgid "Duplicate"
 msgstr ""
 
 msgid "Edit group"
 msgstr ""
 
+#, tao-public
 msgid "Export"
 msgstr ""
 
+#, tao-public
 msgid "Filter"
 msgstr ""
 
@@ -42,12 +46,15 @@ msgstr ""
 msgid "Groups"
 msgstr ""
 
+#, tao-public
 msgid "Groups library"
 msgstr ""
 
+#, tao-public
 msgid "Import"
 msgstr ""
 
+#, tao-public
 msgid "Lists"
 msgstr ""
 
@@ -55,18 +62,23 @@ msgstr ""
 msgid "Manage groups"
 msgstr ""
 
+#, tao-public
 msgid "Move"
 msgstr ""
 
+#, tao-public
 msgid "New class"
 msgstr ""
 
+#, tao-public
 msgid "New Group"
 msgstr ""
 
+#, tao-public
 msgid "Properties"
 msgstr ""
 
+#, tao-public
 msgid "Search"
 msgstr ""
 

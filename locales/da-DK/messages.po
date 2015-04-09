@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO 3.0-RC05\n"
-"PO-Revision-Date: 2015-04-08T14:44:28\n"
+"PO-Revision-Date: 2015-04-09T09:15:39\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: da-DK\n"
@@ -16,18 +16,22 @@ msgstr ""
 msgid "Add to group"
 msgstr ""
 
+#, tao-public
 msgid "Delete"
 msgstr "Slet"
 
+#, tao-public
 msgid "Duplicate"
 msgstr "Kopier"
 
 msgid "Edit group"
 msgstr ""
 
+#, tao-public
 msgid "Export"
 msgstr "Eksport"
 
+#, tao-public
 msgid "Filter"
 msgstr ""
 
@@ -42,12 +46,15 @@ msgstr "Gruppe test tagere i forhold til globale egenskaber og klassifikationer.
 msgid "Groups"
 msgstr "Grupper"
 
+#, tao-public
 msgid "Groups library"
 msgstr "Gruppe arkiv"
 
+#, tao-public
 msgid "Import"
 msgstr "Importere"
 
+#, tao-public
 msgid "Lists"
 msgstr "Lister"
 
@@ -55,18 +62,23 @@ msgstr "Lister"
 msgid "Manage groups"
 msgstr "Administrere grupper"
 
+#, tao-public
 msgid "Move"
 msgstr "Flyt"
 
+#, tao-public
 msgid "New class"
 msgstr "Ny klasse"
 
+#, tao-public
 msgid "New Group"
 msgstr "Ny gruppe"
 
+#, tao-public
 msgid "Properties"
 msgstr ""
 
+#, tao-public
 msgid "Search"
 msgstr "Søg"
 
