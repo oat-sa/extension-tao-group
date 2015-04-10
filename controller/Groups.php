@@ -101,26 +101,4 @@ class Groups extends tao_actions_SaSModule {
 		$this->setData('myForm', $myForm->render());
 		$this->setView('form_group.tpl');
 	}
-	
-	/**
-	 * Delete a group or a group class
-	 * @return void
-	 */
-	public function delete()
-	{
-		if(!tao_helpers_Request::isAjax()){
-			throw new \Exception("wrong request mode");
-		}
-		
-		$deleted = false;
-		if($this->getRequestParameter('uri')){
-			$deleted = $this->service->deleteGroup($this->getCurrentInstance());
-		}
-		else{
-		    return $this->forward('deleteClass', null, null, (array('id' => $this->getRequestParameter('id'))));
-		}
-		
-		echo json_encode(array('deleted'	=> $deleted));
-	}
-
 }
