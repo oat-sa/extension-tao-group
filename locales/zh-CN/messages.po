@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO 3.0.0\n"
-"PO-Revision-Date: 2015-04-30T09:14:57\n"
+"PO-Revision-Date: 2015-04-30T09:14:58\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
-"Language: de-DE\n"
+"Language: zh-CN\n"
 "sourceLanguage: en-US\n"
-"targetLanguage: de-DE\n"
+"targetLanguage: zh-CN\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../\n"
@@ -14,77 +14,77 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr ""
+msgstr "添加到群组"
 
 #, tao-public
 msgid "Delete"
-msgstr "Löschen"
+msgstr "删除"
 
 #, tao-public
 msgid "Duplicate"
-msgstr "Duplizieren"
+msgstr "复制"
 
 msgid "Edit group"
-msgstr ""
+msgstr "编辑群组"
 
 #, tao-public
 msgid "Export"
-msgstr "Export"
+msgstr "导出"
 
 #, tao-public
 msgid "Filter"
-msgstr "import"
+msgstr "过滤条件"
 
 msgid "Group saved"
-msgstr "Gruppe gespeichert"
+msgstr "群组已储存"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
+msgstr "根据全局的特征和分类的考生组。"
 
 #, tao-public
 msgid "Groups"
-msgstr "Gruppen"
+msgstr "群组"
 
 #, tao-public
 msgid "Groups library"
-msgstr "Gruppen-Bibliothek"
+msgstr "群组书库"
 
 #, tao-public
 msgid "Import"
-msgstr ""
+msgstr "导入"
 
 #, tao-public
 msgid "Lists"
-msgstr ""
+msgstr "清单"
 
 #, tao-public
 msgid "Manage groups"
-msgstr "Gruppen verwalten"
+msgstr "管理群组"
 
 #, tao-public
 msgid "Move"
-msgstr ""
+msgstr "移动"
 
 #, tao-public
 msgid "New class"
-msgstr "neue Klasse"
+msgstr "新类别"
 
 #, tao-public
 msgid "New Group"
-msgstr "neue Gruppe"
+msgstr "新增群组"
 
 #, tao-public
 msgid "Properties"
-msgstr ""
+msgstr "属性"
 
 #, tao-public
 msgid "Search"
-msgstr "Suchen"
+msgstr "搜寻"
 
 msgid "Select group test takers"
-msgstr "Testpersonen der Gruppe markieren"
+msgstr "选择考生群组"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr ""
+msgstr "该组模块允许考生根据全球特征及类别分类。"
 
