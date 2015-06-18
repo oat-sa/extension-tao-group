@@ -56,6 +56,11 @@ class Updater extends \common_ext_ExtensionUpdater
                 }
             }
             $current = '2.6.1';
+
+
+        }
+        if ($current == '2.6.1') {
+            $current = '2.6.2';
         }
         return $current;
     }
