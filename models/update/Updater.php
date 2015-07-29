@@ -59,8 +59,8 @@ class Updater extends \common_ext_ExtensionUpdater
 
 
         }
-        if ($current == '2.6.1') {
-            $current = '2.6.2';
+        if ($current == '2.6.1' || $current == '2.6.2') {
+            $current = '2.7';
         }
         return $current;
     }

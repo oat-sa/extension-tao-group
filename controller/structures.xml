@@ -45,9 +45,6 @@
                     <action id="group-export" name="Export" url="/tao/Export/index" context="resource" group="tree">
                         <icon id="icon-export"/>
                     </action>
-                    <action id="group-lists" name="Lists" url="/tao/Lists/index" context="*" group="tree">
-                        <icon id="icon-ul"/>
-                    </action>
                     <action id="group-duplicate" name="Duplicate" url="/taoGroups/Groups/cloneInstance" context="instance" group="tree" binding="duplicateNode">
                         <icon id="icon-copy"/>
                     </action>
