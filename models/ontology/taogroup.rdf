@@ -15,7 +15,7 @@
   
   <rdf:Description rdf:about="http://www.tao.lu/Ontologies/TAOGroup.rdf#member">
   	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#member"/>
-    <rdfs:label xml:lang="en-US"><![CDATA[Member]]></rdfs:label>
+    <rdfs:label xml:lang="en-US"><![CDATA[Group]]></rdfs:label>
     <rdfs:comment xml:lang="en-US"><![CDATA[Member of the groups]]></rdfs:comment>
     <rdfs:domain rdf:resource="http://www.tao.lu/Ontologies/TAOSubject.rdf#Subject"/>
     <rdfs:range rdf:resource="http://www.tao.lu/Ontologies/TAOGroup.rdf#Group"/>
