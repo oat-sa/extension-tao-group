@@ -62,6 +62,11 @@ class Updater extends \common_ext_ExtensionUpdater
         if ($current == '2.6.1' || $current == '2.6.2') {
             $current = '2.7';
         }
+        
+        if ($current == '2.7') {
+            OntologyUpdater::syncModels();
+            $current = '2.7.1';
+        }
         return $current;
     }
 }
