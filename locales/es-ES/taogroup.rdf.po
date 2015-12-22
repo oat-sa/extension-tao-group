@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.1.0-sprint03\n"
-"PO-Revision-Date: 2015-08-11T17:05:16\n"
+"Project-Id-Version: TAO 3.1.0-sprint15\n"
+"PO-Revision-Date: 2015-12-22T14:35:32\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: es-ES\n"
@@ -13,42 +13,42 @@ msgstr ""
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
 msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
 msgid "Group"
-msgstr "Group"
+msgstr "Grupo"
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
 msgid "Group"
-msgstr "Group"
-
-# http://www.tao.lu/Ontologies/TAOGroup.rdf#member
-msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
-msgid "Member"
-msgstr ""
+msgstr "Grupo"
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#member
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
 msgid "Member of the groups"
-msgstr ""
+msgstr "Miembro de los grupos"
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
 msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
 msgid "Groups Manager"
-msgstr "Groups Manager"
+msgstr "Administrador de Grupos"
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
 msgid "The Groups Manager Role"
-msgstr ""
+msgstr "Administrador del Rol de Grupos"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#member
+msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
+msgid "Member"
+msgstr "Miembro"
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
 msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
 msgid "Members"
-msgstr "Members"
+msgstr "Miembros"
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
 msgid "Members of the group"
-msgstr ""
+msgstr "Miembros del grupo"
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
