@@ -119,12 +119,27 @@ class GroupsService
         return $users;
     }
     
+    /**
+     * Add a User to a Group
+     * 
+     * @param string $userUri
+     * @param core_kernel_classes_Resource $group
+     * @return boolean
+     */
     public function addUser($userUri, core_kernel_classes_Resource $group) {
         $user = new \core_kernel_classes_Resource($userUri);
         return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
     
-    public function removeUser(\core_kernel_classes_Resource $user, core_kernel_classes_Resource $group) {
+    /**
+     * Remove a User from a Group
+     * 
+     * @param string $userUri
+     * @param core_kernel_classes_Resource $group
+     * @return boolean
+     */
+    public function removeUser($userUri, core_kernel_classes_Resource $group) {
+        $user = new \core_kernel_classes_Resource($userUri);
         return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
 }
