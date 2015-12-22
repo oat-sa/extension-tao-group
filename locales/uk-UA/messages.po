@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TAO 3.1.0-sprint04\n"
-"PO-Revision-Date: 2015-12-22T13:29:05\n"
+"PO-Revision-Date: 2015-12-22T13:29:06\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
-"Language: es-ES\n"
+"Language: uk-UA\n"
 "sourceLanguage: en-US\n"
-"targetLanguage: es-ES\n"
+"targetLanguage: uk-UA\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../\n"
@@ -14,73 +14,73 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr "Añadir al grupo"
+msgstr ""
 
 #, tao-public
 msgid "Delete"
-msgstr "Eliminar"
+msgstr ""
 
 #, tao-public
 msgid "Duplicate"
-msgstr "Duplicar"
+msgstr ""
 
 msgid "Edit group"
-msgstr "Editar grupo"
+msgstr ""
 
 #, tao-public
 msgid "Export"
-msgstr "Exportar"
+msgstr ""
 
 #, tao-public
 msgid "Filter"
-msgstr "Filtro"
+msgstr ""
 
 msgid "Group saved"
-msgstr "Grupo guardado"
+msgstr ""
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr "Grupo de participantes de acuerdo con las características globales y clasificaciones."
+msgstr ""
 
 #, tao-public
 msgid "Groups"
-msgstr "Grupos"
+msgstr ""
 
 #, tao-public
 msgid "Groups library"
-msgstr "Biblioteca de grupos"
+msgstr ""
 
 #, tao-public
 msgid "Import"
-msgstr "Importar"
+msgstr ""
 
 #, tao-public
 msgid "Manage groups"
-msgstr "Gestionar grupos"
+msgstr ""
 
 #, tao-public
 msgid "Move"
-msgstr "Mover"
+msgstr ""
 
 #, tao-public
 msgid "New class"
-msgstr "Nueva clase"
+msgstr ""
 
 #, tao-public
 msgid "New Group"
-msgstr "Nuevo grupo"
+msgstr ""
 
 #, tao-public
 msgid "Properties"
-msgstr "Propiedades"
+msgstr ""
 
 #, tao-public
 msgid "Search"
-msgstr "Buscar"
+msgstr ""
 
 msgid "Select group test takers"
-msgstr "Seleccionar grupo de participante de prueba"
+msgstr ""
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr "El módulo de grupos permite agrupar Los candidatos de acuerdo a las características globales y clasificaciones."
+msgstr ""
 

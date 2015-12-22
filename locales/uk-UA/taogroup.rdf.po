@@ -4,21 +4,21 @@ msgstr ""
 "PO-Revision-Date: 2015-12-22T13:29:06\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
-"Language: sv-SE\n"
+"Language: uk-UA\n"
 "sourceLanguage: en-US\n"
-"targetLanguage: sv-SE\n"
+"targetLanguage: uk-UA\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#member
 msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
 msgid "Group"
-msgstr "Group"
+msgstr ""
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
 msgid "Group"
-msgstr "Group"
+msgstr ""
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#member
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
@@ -28,35 +28,10 @@ msgstr ""
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
 msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
 msgid "Groups Manager"
-msgstr "Groups Manager"
+msgstr ""
 
 # http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
 msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
 msgid "The Groups Manager Role"
 msgstr ""
-
-# http://www.tao.lu/Ontologies/TAOGroup.rdf#member
-msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
-msgid "Member"
-msgstr ""
-
-# http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
-msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
-msgid "Members"
-msgstr "Members"
-
-# http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
-msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
-msgid "Members of the group"
-msgstr ""
-
-# http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
-msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
-msgid "Members"
-msgstr "Members of the group"
-
-# http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
-msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
-msgid "Groups Manager"
-msgstr "The Groups Manager Role"
 
