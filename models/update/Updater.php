@@ -67,6 +67,9 @@ class Updater extends \common_ext_ExtensionUpdater
             OntologyUpdater::syncModels();
             $current = '2.7.1';
         }
+        if($this->isVersion('2.7.1')){
+            $this->setVersion('2.8');
+        }
         return $current;
     }
 }
