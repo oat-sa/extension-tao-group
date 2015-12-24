@@ -42,8 +42,7 @@ class Updater extends \common_ext_ExtensionUpdater
      */
     public function update($initialVersion)
     {
-        $current = $initialVersion; 
-        if ($current == '2.6') {
+         if ($this->isVersion('2.6')) {
             OntologyUpdater::syncModels();
             
             $iterator = new \core_kernel_classes_ResourceIterator(array(GroupsService::singleton()->getRootClass()));
@@ -55,21 +54,20 @@ class Updater extends \common_ext_ExtensionUpdater
                     }
                 }
             }
-            $current = '2.6.1';
-
-
+           $this->setVersion('2.6.1');
         }
-        if ($current == '2.6.1' || $current == '2.6.2') {
-            $current = '2.7';
+
+        if ($this->isBetween('2.6.1','2.7')){
+            $this->setVersion('2.7');
         }
         
-        if ($current == '2.7') {
+        if ($this->isVersion('2.7')) {
             OntologyUpdater::syncModels();
-            $current = '2.7.1';
+            $this->setVersion('2.7.1');
         }
         if($this->isVersion('2.7.1')){
             $this->setVersion('2.8');
         }
-        return $current;
+        return null;
     }
 }
