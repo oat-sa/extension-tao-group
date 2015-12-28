@@ -4,9 +4,9 @@ msgstr ""
 "PO-Revision-Date: 2015-12-23T13:12:17\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
-"Language: sv-SE\n"
+"Language: uk-UA\n"
 "sourceLanguage: en-US\n"
-"targetLanguage: sv-SE\n"
+"targetLanguage: uk-UA\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../\n"
@@ -18,25 +18,25 @@ msgstr ""
 
 #, tao-public
 msgid "Delete"
-msgstr "Radera"
+msgstr ""
 
 #, tao-public
 msgid "Duplicate"
-msgstr "Dublett"
+msgstr ""
 
 msgid "Edit group"
 msgstr ""
 
 #, tao-public
 msgid "Export"
-msgstr "Exportera"
+msgstr ""
 
 #, tao-public
 msgid "Filter"
 msgstr ""
 
 msgid "Group saved"
-msgstr "Grupp sparad"
+msgstr ""
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
@@ -44,31 +44,31 @@ msgstr ""
 
 #, tao-public
 msgid "Groups"
-msgstr "Grupper"
+msgstr ""
 
 #, tao-public
 msgid "Groups library"
-msgstr "Grupparkiv"
+msgstr ""
 
 #, tao-public
 msgid "Import"
-msgstr "Importera"
+msgstr ""
 
 #, tao-public
 msgid "Manage groups"
-msgstr "Hantera grupper"
+msgstr ""
 
 #, tao-public
 msgid "Move"
-msgstr "Flytta"
+msgstr ""
 
 #, tao-public
 msgid "New class"
-msgstr "Ny klass"
+msgstr ""
 
 #, tao-public
 msgid "New Group"
-msgstr "Ny grupp"
+msgstr ""
 
 #, tao-public
 msgid "Properties"
@@ -76,10 +76,10 @@ msgstr ""
 
 #, tao-public
 msgid "Search"
-msgstr "Sök"
+msgstr ""
 
 msgid "Select group test takers"
-msgstr "Välj grupptesttagare"
+msgstr ""
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
 msgstr ""
