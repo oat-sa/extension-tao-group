@@ -68,6 +68,9 @@ class Updater extends \common_ext_ExtensionUpdater
         if($this->isVersion('2.7.1')){
             $this->setVersion('2.8');
         }
+        if($this->isVersion('2.8')){
+            $this->setVersion('2.9');
+        }
         return null;
     }
 }
