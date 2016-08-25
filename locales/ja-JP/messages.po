@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.1.0-sprint15\n"
-"PO-Revision-Date: 2015-12-23T13:12:16\n"
+"Project-Id-Version: TAO 3.1.0-sprint33\n"
+"PO-Revision-Date: 2016-08-25T14:33:11\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ja-JP\n"
@@ -14,73 +14,73 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr ""
+msgstr "グループに追加"
 
 #, tao-public
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 #, tao-public
 msgid "Duplicate"
-msgstr ""
+msgstr "複製"
 
 msgid "Edit group"
-msgstr ""
+msgstr "グループを編集"
 
 #, tao-public
 msgid "Export"
-msgstr ""
+msgstr "エクスポート"
 
 #, tao-public
 msgid "Filter"
-msgstr ""
+msgstr "フィルタ"
 
 msgid "Group saved"
-msgstr ""
+msgstr "グループを保存"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
+msgstr "グループの受験者のグローバル機能と分類"
 
 #, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "グループ"
 
 #, tao-public
 msgid "Groups library"
-msgstr ""
+msgstr "グループライブラリ"
 
 #, tao-public
 msgid "Import"
-msgstr ""
+msgstr "インポート"
 
 #, tao-public
 msgid "Manage groups"
-msgstr ""
+msgstr "グループの管理"
 
 #, tao-public
 msgid "Move"
-msgstr ""
+msgstr "移動"
 
 #, tao-public
 msgid "New class"
-msgstr ""
+msgstr "新規クラス"
 
 #, tao-public
 msgid "New Group"
-msgstr ""
+msgstr "新規グループ"
 
 #, tao-public
 msgid "Properties"
-msgstr ""
+msgstr "プロパティ"
 
 #, tao-public
 msgid "Search"
-msgstr ""
+msgstr "検索"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "グループの受験者の選択"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr ""
+msgstr "グループモジュールは、グループの受験者のグローバルな特徴と分類が可能です"
 
