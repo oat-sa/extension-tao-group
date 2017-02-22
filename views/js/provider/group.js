@@ -1,7 +1,21 @@
 /**
- * Copyright (c) 2017 Open Assessment Technologies, S.A.
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; under version 2
+ * of the License (non-upgradable).
  *
- * @author A.Zagovorichev, <zagovorichev@1pt.com>
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ * Copyright (c) 2017  (original work) Open Assessment Technologies SA;
+ *
+ * @author Alexander Zagovorichev <zagovorichev@1pt.com>
  */
 
 define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise'], function ($, _, __, urlUtil, Promise) {
@@ -23,6 +37,10 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise'], function ($, _,
             /**
              * Create new group
              *
+             * @param config
+             * @param {String} [config.classUri] - rdf uri of the Group for current environment
+             * @param {String} [config.id] - id of the Group for current environment
+             * @param {String} [config.type] - Type of the instance
              * @return {*}
              */
             addInstance: function addInstance (config) {
