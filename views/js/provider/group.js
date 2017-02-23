@@ -70,8 +70,19 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise'], function ($, _,
                 });
             },
 
+            /**
+             * Group deleting
+             *
+             * @param uri
+             * @return {*}
+             */
             deleteGroup: function deleteGroup (uri) {
+
                 return new Promise(function(resolve, reject) {
+
+                    if (!_.isString(uri) || _.isEmpty(uri)) {
+                        return reject(new TypeError(__('Group uri is not valid')));
+                    }
 
                     $.ajax({
                         url: urlUtil.route('delete', 'Groups', 'taoGroups'),
