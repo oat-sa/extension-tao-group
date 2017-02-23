@@ -37,7 +37,9 @@ module.exports = function(grunt) {
     copy.taogroupsbundle = {
         files: [
             { src: [out + '/taoGroups/controller/routes.js'],  dest: root + '/taoGroups/views/js/controllers.min.js' },
-            { src: [out + '/taoGroups/controller/routes.js.map'],  dest: root + '/taoGroups/views/js/controllers.min.js.map' }
+            { src: [out + '/taoGroups/controller/routes.js.map'],  dest: root + '/taoGroups/views/js/controllers.min.js.map' },
+            { src: [out + '/taoGroups/provider/group.js'],  dest: root + '/taoGroups/provider/group.js' },
+            { src: [out + '/taoGroups/provider/group.js.map'],  dest: root + '/taoGroups/provider/group.js.map' }
         ]
     };
 
