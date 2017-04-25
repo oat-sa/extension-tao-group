@@ -79,9 +79,6 @@ return array(
 	
 		#BASE URL (usually the domain root)
 		'BASE_URL'				=> ROOT_URL .'taoGroups/',
-	
-		#BASE WWW the web resources path
-		'BASE_WWW'				=> ROOT_URL .'taoGroups/views/',
 	),
     'extra' => array(
         'structures' => dirname(__FILE__).DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR.'structures.xml',
