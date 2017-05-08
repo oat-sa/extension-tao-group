@@ -34,7 +34,7 @@ return array(
     'label' => 'Groups core extension',
 	'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
-    'version' => '3.0.0',
+    'version' => '3.0.1',
 	'author' => 'Open Assessment Technologies, CRP Henri Tudor',
 	'requires' => array(
 	    'taoTestTaker' => '>=2.6',
@@ -51,9 +51,7 @@ return array(
     'update' => 'oat\\taoGroups\\models\\update\\Updater',
 	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
     'acl' => array(
-        array('grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', array('ext'=>'taoGroups')),
-        array('grant', 'http://www.tao.lu/Ontologies/generis.rdf#AnonymousRole',array('ext'=>'taoGroups','mod' => 'Api'))
-        
+        array('grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', array('ext'=>'taoGroups'))
     ),
     'routes' => array(
         '/taoGroups' => 'oat\\taoGroups\\controller'
