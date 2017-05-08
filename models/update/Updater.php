@@ -24,6 +24,10 @@ namespace oat\taoGroups\models\update;
 
 use oat\taoGroups\models\GroupsService;
 use oat\tao\scripts\update\OntologyUpdater;
+use oat\tao\model\accessControl\func\AclProxy;
+use oat\tao\model\accessControl\func\AccessRule;
+use oat\tao\model\user\TaoRoles;
+use oat\taoGroups\controller\Api;
 /**
  * Service methods to manage the Groups business models using the RDF API.
  *
@@ -67,5 +71,10 @@ class Updater extends \common_ext_ExtensionUpdater
         }
 
         $this->skip('2.7.1','3.0.0');
+        // fix anonymous access
+        if ($this->isVersion('3.0.0')) {
+            AclProxy::revokeRule(new AccessRule(AccessRule::GRANT, TaoRoles::ANONYMOUS, Api::class));
+            $this->setVersion('3.0.1');
+        }
     }
 }
