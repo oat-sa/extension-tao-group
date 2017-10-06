@@ -21,6 +21,8 @@
 namespace oat\taoGroups\models;
 
 use \core_kernel_classes_Resource;
+use oat\generis\model\OntologyRdf;
+use oat\generis\model\OntologyRdfs;
 use \tao_models_classes_CrudService;
 
 /**
@@ -59,14 +61,14 @@ class CrudGroupsService extends tao_models_classes_CrudService
      * @return core_kernel_classes_Resource
      */
     public function createFromArray(array $propertiesValues){
-		if (!isset($propertiesValues[RDFS_LABEL])) {
-			$propertiesValues[RDFS_LABEL] = "";
+		if (!isset($propertiesValues[OntologyRdfs::RDFS_LABEL])) {
+			$propertiesValues[OntologyRdfs::RDFS_LABEL] = "";
 		}
-		$type = isset($propertiesValues[RDF_TYPE]) ? $propertiesValues[RDF_TYPE] : $this->getRootClass();
-		$label = $propertiesValues[RDFS_LABEL];
+		$type = isset($propertiesValues[OntologyRdf::RDF_TYPE]) ? $propertiesValues[OntologyRdf::RDF_TYPE] : $this->getRootClass();
+		$label = $propertiesValues[OntologyRdfs::RDFS_LABEL];
 		//hmmm
-		unset($propertiesValues[RDFS_LABEL]);
-		unset($propertiesValues[RDF_TYPE]);
+		unset($propertiesValues[OntologyRdfs::RDFS_LABEL]);
+		unset($propertiesValues[OntologyRdf::RDF_TYPE]);
 		$resource =  parent::create($label, $type, $propertiesValues);
 		return $resource;
     }
