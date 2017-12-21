@@ -23,6 +23,7 @@
 namespace oat\taoGroups\test;
 
 
+use oat\generis\model\OntologyRdfs;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
 use \core_kernel_classes_Resource;
@@ -118,8 +119,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 		$subGroupInstanceLabel = 'subGroup instance';
 		$subGroupInstance = $this->groupsService->createInstance($subGroupClass);
 		
-		$this->assertTrue(defined('RDFS_LABEL'));
-		$subGroupInstance->removePropertyValues(new core_kernel_classes_Property(RDFS_LABEL));
+		$subGroupInstance->removePropertyValues(new core_kernel_classes_Property(OntologyRdfs::RDFS_LABEL));
 		$subGroupInstance->setLabel($subGroupInstanceLabel);
 		$this->assertIsA($subGroupInstance, 'core_kernel_classes_Resource');
 		$this->assertEquals($subGroupInstanceLabel, $subGroupInstance->getLabel());

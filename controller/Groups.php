@@ -25,6 +25,7 @@ namespace oat\taoGroups\controller;
 use \common_ext_ExtensionsManager;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
+use oat\tao\model\resources\ResourceWatcher;
 use \tao_actions_SaSModule;
 use \tao_actions_form_Instance;
 use \tao_helpers_Request;
@@ -97,6 +98,8 @@ class Groups extends tao_actions_SaSModule {
 		if (common_ext_ExtensionsManager::singleton()->isEnabled('taoDeliveryRdf')) {
 		    $this->setData('deliveryForm', DeliveryWidget::renderDeliveryTree($group));
 		}
+        $updatedAt = $this->getServiceManager()->get(ResourceWatcher::SERVICE_ID)->getUpdatedAt($group);
+		$this->setData('updatedAt', $updatedAt);
 		$this->setData('formTitle', __('Edit group'));
 		$this->setData('myForm', $myForm->render());
 		$this->setView('form_group.tpl');
