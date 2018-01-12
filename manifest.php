@@ -30,15 +30,15 @@ $extpath = dirname(__FILE__).DIRECTORY_SEPARATOR;
 $taopath = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'tao'.DIRECTORY_SEPARATOR;
 
 return array(
-	'name' => 'taoGroups',
+    'name' => 'taoGroups',
     'label' => 'Groups core extension',
-	'description' => 'TAO Groups extension',
+    'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
-    'version' => '3.2.0',
-	'author' => 'Open Assessment Technologies, CRP Henri Tudor',
-	'requires' => array(
-	    'taoTestTaker' => '>=2.6',
-	    'taoBackOffice' => '>=0.8',
+    'version' => '3.3.0',
+    'author' => 'Open Assessment Technologies, CRP Henri Tudor',
+    'requires' => array(
+        'taoTestTaker' => '>=2.6',
+        'taoBackOffice' => '>=1.3.0',
         'generis' => '>=5.11.0'
     ),
 	'models' => array(
