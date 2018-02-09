@@ -45,6 +45,9 @@
                     <action id="group-duplicate" name="Duplicate" url="/taoGroups/Groups/cloneInstance" context="instance" group="tree" binding="duplicateNode">
                         <icon id="icon-copy"/>
                     </action>
+                    <action id="group-copy-to" name="Copy To" url="/taoGroups/Groups/copyInstance" context="instance" group="tree" binding="copyTo">
+                        <icon id="icon-copy"/>
+                    </action>
                     <action id="group-new" name="New Group" url="/taoGroups/Groups/addInstance" context="resource" group="tree" binding="instanciate">
                         <icon id="icon-users"/>
                     </action>
