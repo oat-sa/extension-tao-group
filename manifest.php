@@ -40,7 +40,7 @@ return array(
         'taoTestTaker' => '>=2.6',
         'taoBackOffice' => '>=1.3.0',
         'generis' => '>=5.11.0',
-        'tao' => '>=17.3.0'
+        'tao' => '>=17.2.0'
     ),
 	'models' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf'
