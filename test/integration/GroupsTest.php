@@ -20,7 +20,7 @@
  * 
  */
 
-namespace oat\taoGroups\test;
+namespace oat\taoGroups\test\integration;
 
 
 use oat\generis\model\OntologyRdfs;

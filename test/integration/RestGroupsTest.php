@@ -18,7 +18,7 @@
  *
  */
 
-namespace oat\taoGroups\test;
+namespace oat\taoGroups\test\integration;
 
 use oat\tao\test\RestTestCase;
 use oat\taoGroups\models\GroupsService;
