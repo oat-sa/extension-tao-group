@@ -20,7 +20,7 @@
 
 namespace oat\taoGroups\test\integration;
 
-use oat\tao\test\RestTestCase;
+use oat\tao\test\integration\RestTestCase;
 use oat\taoGroups\models\GroupsService;
 
 /**
