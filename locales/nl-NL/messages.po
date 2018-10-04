@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.1.0-sprint15\n"
-"PO-Revision-Date: 2015-12-23T13:12:17\n"
+"Project-Id-Version: TAO 3.3.0-sprint86\n"
+"PO-Revision-Date: 2018-09-26T12:04:41\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: nl-NL\n"
@@ -14,73 +14,85 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
+msgstr "Aan groep toevoegen"
+
+#, tao-public
+msgid "Copy To"
 msgstr ""
 
 #, tao-public
 msgid "Delete"
-msgstr ""
+msgstr "Verwijderen"
 
 #, tao-public
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliceren"
 
 msgid "Edit group"
-msgstr ""
+msgstr "Groep bewerken"
 
 #, tao-public
 msgid "Export"
-msgstr ""
-
-#, tao-public
-msgid "Filter"
-msgstr ""
+msgstr "Exporteren"
 
 msgid "Group saved"
-msgstr ""
+msgstr "Groep opgeslagen"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
+msgstr "Groepeer kandidaten conform globale kenmerken en classificaties."
+
+msgid "Group uri is not valid"
 msgstr ""
 
 #, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "Groepen"
 
 #, tao-public
 msgid "Groups library"
-msgstr ""
+msgstr "Groepen bank"
 
 #, tao-public
 msgid "Import"
+msgstr "Importeren"
+
+msgid "Last updated on %2s"
 msgstr ""
 
 #, tao-public
 msgid "Manage groups"
+msgstr "Groepen beheren"
+
+#, tao-public
+msgid "Manage Schema"
 msgstr ""
 
 #, tao-public
 msgid "Move"
-msgstr ""
+msgstr "Verplaatsen"
 
 #, tao-public
 msgid "New class"
-msgstr ""
+msgstr "Nieuwe Klasse"
 
 #, tao-public
 msgid "New Group"
-msgstr ""
+msgstr "Nieuwe groep"
 
 #, tao-public
 msgid "Properties"
-msgstr ""
-
-#, tao-public
-msgid "Search"
-msgstr ""
+msgstr "Eigenschappen"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "Selecteer een groep kandidaten"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
+msgstr "The groep module geeft u de mogelijkheid om kandidaten te groeperen conform globale kenmerken en classificaties"
+
+msgid "Unable to create new group"
+msgstr ""
+
+msgid "Unable to delete group"
 msgstr ""
 
