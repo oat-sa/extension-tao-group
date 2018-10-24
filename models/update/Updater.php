@@ -39,7 +39,7 @@ use oat\taoGroups\controller\Api;
 class Updater extends \common_ext_ExtensionUpdater
 {
     const OLD_MEMBER_PROPERTY = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Members';
-    
+
     /**
      * (non-PHPdoc)
      * @see common_ext_ExtensionUpdater::update()
@@ -48,7 +48,7 @@ class Updater extends \common_ext_ExtensionUpdater
     {
          if ($this->isVersion('2.6')) {
             OntologyUpdater::syncModels();
-            
+
             $iterator = new \core_kernel_classes_ResourceIterator(array(GroupsService::singleton()->getRootClass()));
             foreach ($iterator as $group) {
                 $users = $group->getPropertyValues(new \core_kernel_classes_Property(self::OLD_MEMBER_PROPERTY));
@@ -64,7 +64,7 @@ class Updater extends \common_ext_ExtensionUpdater
         if ($this->isBetween('2.6.1','2.7')){
             $this->setVersion('2.7');
         }
-        
+
         if ($this->isVersion('2.7')) {
             OntologyUpdater::syncModels();
             $this->setVersion('2.7.1');
@@ -77,6 +77,6 @@ class Updater extends \common_ext_ExtensionUpdater
             $this->setVersion('3.0.1');
         }
 
-        $this->skip('3.0.1','3.6.3');
+        $this->skip('3.0.1','4.0.0');
     }
 }
