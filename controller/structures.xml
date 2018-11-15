@@ -51,6 +51,12 @@
                     <action id="group-copy-to" name="Copy To" url="/taoGroups/Groups/copyInstance" context="instance" group="tree" binding="copyTo">
                         <icon id="icon-copy"/>
                     </action>
+                    <action id="group-move-to" name="Move To" url="/taoGroups/Groups/moveResource" context="resource" group="tree" binding="moveTo">
+                        <icon id="icon-move-item"/>
+                    </action>
+                    <action id="group-move-all" name="Move To" url="/taoGroups/Groups/moveAll" context="resource" multiple="true" group="tree" binding="moveTo">
+                        <icon id="icon-move-item"/>
+                    </action>
                     <action id="group-new" name="New Group" url="/taoGroups/Groups/addInstance" context="resource" group="tree" binding="instanciate">
                         <icon id="icon-users"/>
                     </action>
