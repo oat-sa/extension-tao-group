@@ -19,8 +19,7 @@
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
  *
  */
-?>
-<?php
+use oat\taoGroups\scripts\install\RegisterGroupAssignment;
 /*
  * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
@@ -46,6 +45,7 @@ return array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf'
 	),
 	'install' => array(
+	    'php' => [RegisterGroupAssignment::class],
 		'rdf' => array(
 			dirname(__FILE__). '/models/ontology/taogroup.rdf'
 		)

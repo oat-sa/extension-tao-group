@@ -42,7 +42,7 @@ class Updater extends \common_ext_ExtensionUpdater
 
     /**
      * (non-PHPdoc)
-     * @see common_ext_ExtensionUpdater::update()
+     * @see \common_ext_ExtensionUpdater::update()
      */
     public function update($initialVersion)
     {

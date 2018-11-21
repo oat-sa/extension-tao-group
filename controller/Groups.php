@@ -22,7 +22,6 @@
 
 namespace oat\taoGroups\controller;
 
-use \common_ext_ExtensionsManager;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
 use oat\tao\model\resources\ResourceWatcher;
@@ -33,7 +32,7 @@ use \tao_helpers_Uri;
 use \tao_helpers_form_GenerisTreeForm;
 use \tao_models_classes_dataBinding_GenerisFormDataBinder;
 use oat\taoGroups\models\GroupsService;
-use oat\taoDeliveryRdf\helper\DeliveryWidget;
+use oat\taoGroups\helpers\GroupWidget;
 
 /**
  * This Module aims at managing the Group class and its instances.
@@ -95,10 +94,8 @@ class Groups extends tao_actions_SaSModule {
 		$memberForm->setData('title',	__('Select group test takers'));
 		$this->setData('memberForm', $memberForm->render());
 
-		if (common_ext_ExtensionsManager::singleton()->isEnabled('taoDeliveryRdf')) {
-		    $this->setData('deliveryForm', DeliveryWidget::renderDeliveryTree($group));
-		}
-        $updatedAt = $this->getServiceManager()->get(ResourceWatcher::SERVICE_ID)->getUpdatedAt($group);
+		$this->setData('deliveryForm', GroupWidget::renderDeliveryTree($group));
+        $updatedAt = $this->getServiceLocator()->get(ResourceWatcher::SERVICE_ID)->getUpdatedAt($group);
 		$this->setData('updatedAt', $updatedAt);
 		$this->setData('formTitle', __('Edit group'));
 		$this->setData('myForm', $myForm->render());
