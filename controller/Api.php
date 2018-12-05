@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- * 
+ *
  * Copyright (c) 2013-2014 (original work) Open Assessment Technologies SA
  *
  */
@@ -58,11 +58,10 @@ class Api extends tao_actions_CommonRestModule
          * is set it will become mandatory for the method/operation in $key
          * Default Parameters Requirents are applied
          * type by default is not required and the root class type is applied
-         * 
+         *
          * @example :"post"=> array("login", "password")
          */
         
         ;
     }
 }
-?>

@@ -28,6 +28,7 @@ use oat\tao\model\accessControl\func\AclProxy;
 use oat\tao\model\accessControl\func\AccessRule;
 use oat\tao\model\user\TaoRoles;
 use oat\taoGroups\controller\Api;
+
 /**
  * Service methods to manage the Groups business models using the RDF API.
  *
@@ -46,7 +47,7 @@ class Updater extends \common_ext_ExtensionUpdater
      */
     public function update($initialVersion)
     {
-         if ($this->isVersion('2.6')) {
+        if ($this->isVersion('2.6')) {
             OntologyUpdater::syncModels();
 
             $iterator = new \core_kernel_classes_ResourceIterator(array(GroupsService::singleton()->getRootClass()));
@@ -58,10 +59,10 @@ class Updater extends \common_ext_ExtensionUpdater
                     }
                 }
             }
-           $this->setVersion('2.6.1');
+            $this->setVersion('2.6.1');
         }
 
-        if ($this->isBetween('2.6.1','2.7')){
+        if ($this->isBetween('2.6.1', '2.7')) {
             $this->setVersion('2.7');
         }
 
@@ -70,13 +71,13 @@ class Updater extends \common_ext_ExtensionUpdater
             $this->setVersion('2.7.1');
         }
 
-        $this->skip('2.7.1','3.0.0');
+        $this->skip('2.7.1', '3.0.0');
         // fix anonymous access
         if ($this->isVersion('3.0.0')) {
             AclProxy::revokeRule(new AccessRule(AccessRule::GRANT, TaoRoles::ANONYMOUS, Api::class));
             $this->setVersion('3.0.1');
         }
 
-        $this->skip('3.0.1','4.1.0');
+        $this->skip('3.0.1', '4.1.0');
     }
 }

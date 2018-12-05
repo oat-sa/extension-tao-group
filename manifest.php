@@ -42,44 +42,44 @@ return array(
         'generis' => '>=5.11.0',
         'tao' => '>=21.0.0'
     ),
-	'models' => array(
-		'http://www.tao.lu/Ontologies/TAOGroup.rdf'
-	),
-	'install' => array(
-		'rdf' => array(
-			dirname(__FILE__). '/models/ontology/taogroup.rdf'
-		)
-	),
+    'models' => array(
+        'http://www.tao.lu/Ontologies/TAOGroup.rdf'
+    ),
+    'install' => array(
+        'rdf' => array(
+            dirname(__FILE__). '/models/ontology/taogroup.rdf'
+        )
+    ),
     'update' => 'oat\\taoGroups\\models\\update\\Updater',
-	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
+    'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
     'acl' => array(
         array('grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', array('ext'=>'taoGroups'))
     ),
     'routes' => array(
         '/taoGroups' => 'oat\\taoGroups\\controller'
     ),
-	'optimizableClasses' => array(
-		'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
-	),
-	'constants' => array(
-		# actions directory
-		"DIR_ACTIONS"			=> $extpath."controller".DIRECTORY_SEPARATOR,
+    'optimizableClasses' => array(
+        'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
+    ),
+    'constants' => array(
+        # actions directory
+        "DIR_ACTIONS"           => $extpath."controller".DIRECTORY_SEPARATOR,
 
-		# views directory
-		"DIR_VIEWS"				=> $extpath."views".DIRECTORY_SEPARATOR,
+        # views directory
+        "DIR_VIEWS"             => $extpath."views".DIRECTORY_SEPARATOR,
 
-		# default module name
-		'DEFAULT_MODULE_NAME'	=> 'Groups',
+        # default module name
+        'DEFAULT_MODULE_NAME'   => 'Groups',
 
-		#default action name
-		'DEFAULT_ACTION_NAME'	=> 'index',
+        #default action name
+        'DEFAULT_ACTION_NAME'   => 'index',
 
-		#BASE PATH: the root path in the file system (usually the document root)
-		'BASE_PATH'				=> $extpath,
+        #BASE PATH: the root path in the file system (usually the document root)
+        'BASE_PATH'             => $extpath,
 
-		#BASE URL (usually the domain root)
-		'BASE_URL'				=> ROOT_URL .'taoGroups/',
-	),
+        #BASE URL (usually the domain root)
+        'BASE_URL'              => ROOT_URL .'taoGroups/',
+    ),
     'extra' => array(
         'structures' => dirname(__FILE__).DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR.'structures.xml',
     )
