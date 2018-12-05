@@ -31,7 +31,8 @@ include_once dirname(__FILE__) . '/../../includes/raw_start.php';
  */
 class RestGroupsTest extends RestTestCase
 {
-    public function serviceProvider(){
+    public function serviceProvider()
+    {
         return array(
             array('taoGroups/Api',GroupsService::CLASS_URI)
         );

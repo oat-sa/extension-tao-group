@@ -43,67 +43,67 @@ use oat\taoDeliveryRdf\helper\DeliveryWidget;
 
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
-class Groups extends tao_actions_SaSModule {
+class Groups extends tao_actions_SaSModule
+{
 
-	/**
-	 * Initialize the service and the default data
-	 */
-	public function __construct()
-	{
+    /**
+     * Initialize the service and the default data
+     */
+    public function __construct()
+    {
 
-		parent::__construct();
+        parent::__construct();
 
-		//the service is initialized by default
-		$this->service = GroupsService::singleton();
-		$this->defaultData();
-	}
+        //the service is initialized by default
+        $this->service = GroupsService::singleton();
+        $this->defaultData();
+    }
 
-	/**
-	 * (non-PHPdoc)
-	 * @see tao_actions_SaSModule::getClassService()
-	 */
-	protected function getClassService()
-	{
-		return GroupsService::singleton();
-	}
+    /**
+     * (non-PHPdoc)
+     * @see tao_actions_SaSModule::getClassService()
+     */
+    protected function getClassService()
+    {
+        return GroupsService::singleton();
+    }
 
-	/**
-	 * Edit a group instance
-	 * @return void
-	 */
-	public function editGroup()
-	{
-		$clazz = $this->getCurrentClass();
-		$group = $this->getCurrentInstance();
+    /**
+     * Edit a group instance
+     * @return void
+     */
+    public function editGroup()
+    {
+        $clazz = $this->getCurrentClass();
+        $group = $this->getCurrentInstance();
 
-		$formContainer = new \tao_actions_form_Instance($clazz, $group);
-		$myForm = $formContainer->getForm();
-		if($myForm->isSubmited()){
-			if($myForm->isValid()){
+        $formContainer = new \tao_actions_form_Instance($clazz, $group);
+        $myForm = $formContainer->getForm();
+        if ($myForm->isSubmited()) {
+            if ($myForm->isValid()) {
+                $binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
+                $group = $binder->bind($myForm->getValues());
 
-				$binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
-				$group = $binder->bind($myForm->getValues());
+                $this->setData("selectNode", tao_helpers_Uri::encode($group->getUri()));
+                $this->setData('message', __('Group saved'));
+                $this->setData('reload', true);
+            }
+        }
 
-		        $this->setData("selectNode", tao_helpers_Uri::encode($group->getUri()));
-				$this->setData('message', __('Group saved'));
-				$this->setData('reload', true);
-			}
-		}
+        $memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
+        $memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
+        $memberForm->setData('title', __('Select group test takers'));
+        $this->setData('memberForm', $memberForm->render());
 
-		$memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
-		$memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
-		$memberForm->setData('title',	__('Select group test takers'));
-		$this->setData('memberForm', $memberForm->render());
-
-		if (common_ext_ExtensionsManager::singleton()->isEnabled('taoDeliveryRdf')) {
-		    $this->setData('deliveryForm', DeliveryWidget::renderDeliveryTree($group));
-		}
+        if (common_ext_ExtensionsManager::singleton()->isEnabled('taoDeliveryRdf')) {
+            $this->setData('deliveryForm', DeliveryWidget::renderDeliveryTree($group));
+        }
         $updatedAt = $this->getServiceManager()->get(ResourceWatcher::SERVICE_ID)->getUpdatedAt($group);
-		$this->setData('updatedAt', $updatedAt);
-		$this->setData('formTitle', __('Edit group'));
-		$this->setData('myForm', $myForm->render());
-		$this->setView('form_group.tpl');
-	}
+        $this->setData('updatedAt', $updatedAt);
+        $this->setData('formTitle', __('Edit group'));
+        $this->setData('myForm', $myForm->render());
+        $this->setView('form_group.tpl');
+    }
 
     /**
      * overwrite the parent moveAllInstances to add the requiresRight only in Items
