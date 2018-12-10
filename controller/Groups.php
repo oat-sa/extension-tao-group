@@ -24,11 +24,8 @@ namespace oat\taoGroups\controller;
 
 use \common_ext_ExtensionsManager;
 use \core_kernel_classes_Property;
-use \core_kernel_classes_Resource;
 use oat\tao\model\resources\ResourceWatcher;
 use \tao_actions_SaSModule;
-use \tao_actions_form_Instance;
-use \tao_helpers_Request;
 use \tao_helpers_Uri;
 use \tao_helpers_form_GenerisTreeForm;
 use \tao_models_classes_dataBinding_GenerisFormDataBinder;
@@ -76,7 +73,7 @@ class Groups extends tao_actions_SaSModule {
 		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentInstance();
 
-		$formContainer = new \tao_actions_form_Instance($clazz, $group);
+		$formContainer = new SignedFormInstance($clazz, $group);
 		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
