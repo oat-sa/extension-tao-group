@@ -24,6 +24,7 @@ namespace oat\taoGroups\controller;
 
 use \common_ext_ExtensionsManager;
 use \core_kernel_classes_Property;
+use oat\tao\model\controller\SignedFormInstance;
 use oat\tao\model\resources\ResourceWatcher;
 use \tao_actions_SaSModule;
 use \tao_helpers_Uri;
