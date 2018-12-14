@@ -78,6 +78,7 @@ class Groups extends tao_actions_SaSModule {
 		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
+			    $this->validateInstanceRoot($group->getUri());
 
 				$binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
 				$group = $binder->bind($myForm->getValues());
