@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.1.0-sprint15\n"
-"PO-Revision-Date: 2015-12-23T13:12:17\n"
+"Project-Id-Version: TAO 3.3.0-sprint92.1\n"
+"PO-Revision-Date: 2019-01-18T12:46:11\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: zh-TW\n"
@@ -15,6 +15,10 @@ msgstr ""
 
 msgid "Add to group"
 msgstr "加入群組"
+
+#, tao-public
+msgid "Copy To"
+msgstr ""
 
 #, tao-public
 msgid "Delete"
@@ -31,16 +35,15 @@ msgstr "編輯群組"
 msgid "Export"
 msgstr "匯出"
 
-#, tao-public
-msgid "Filter"
-msgstr "過濾條件"
-
 msgid "Group saved"
 msgstr "群組已儲存"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
 msgstr "根據全局的特征和分類的考生組。"
+
+msgid "Group uri is not valid"
+msgstr ""
 
 #, tao-public
 msgid "Groups"
@@ -54,13 +57,24 @@ msgstr "群組書庫"
 msgid "Import"
 msgstr "匯入"
 
+msgid "Last updated on %2s"
+msgstr ""
+
 #, tao-public
 msgid "Manage groups"
 msgstr "管理群組"
 
 #, tao-public
+msgid "Manage Schema"
+msgstr ""
+
+#, tao-public
 msgid "Move"
 msgstr "移動"
+
+#, tao-public
+msgid "Move To"
+msgstr ""
 
 #, tao-public
 msgid "New class"
@@ -74,13 +88,15 @@ msgstr "新增群組"
 msgid "Properties"
 msgstr "屬性"
 
-#, tao-public
-msgid "Search"
-msgstr "搜尋"
-
 msgid "Select group test takers"
 msgstr "選擇考生群組"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
 msgstr "該組模塊允許考生根據全球特征及類別分類。"
+
+msgid "Unable to create new group"
+msgstr ""
+
+msgid "Unable to delete group"
+msgstr ""
 
