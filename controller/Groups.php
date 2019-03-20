@@ -17,21 +17,20 @@
  * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg (under the project TAO & TAO2);
  *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- *               2013-2014 (update and modification) Open Assessment Technologies SA
+ *               2013-2018 (update and modification) Open Assessment Technologies SA
  */
 
 namespace oat\taoGroups\controller;
 
-use \common_ext_ExtensionsManager;
-use \core_kernel_classes_Property;
+use common_ext_ExtensionsManager;
 use oat\tao\model\controller\SignedFormInstance;
 use oat\tao\model\resources\ResourceWatcher;
-use \tao_actions_SaSModule;
-use \tao_helpers_Uri;
-use \tao_helpers_form_GenerisTreeForm;
-use \tao_models_classes_dataBinding_GenerisFormDataBinder;
-use oat\taoGroups\models\GroupsService;
 use oat\taoDeliveryRdf\helper\DeliveryWidget;
+use oat\taoGroups\models\GroupsService;
+use tao_actions_SaSModule;
+use tao_helpers_form_GenerisTreeForm;
+use tao_helpers_Uri;
+use tao_models_classes_dataBinding_GenerisFormDataBinder;
 
 /**
  * This Module aims at managing the Group class and its instances.
@@ -41,20 +40,8 @@ use oat\taoDeliveryRdf\helper\DeliveryWidget;
 
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
-class Groups extends tao_actions_SaSModule {
-
-	/**
-	 * Initialize the service and the default data
-	 */
-	public function __construct()
-	{
-
-		parent::__construct();
-
-		//the service is initialized by default
-		$this->service = GroupsService::singleton();
-		$this->defaultData();
-	}
+class Groups extends tao_actions_SaSModule
+{
 
 	/**
 	 * (non-PHPdoc)
@@ -71,6 +58,8 @@ class Groups extends tao_actions_SaSModule {
 	 */
 	public function editGroup()
 	{
+        $this->defaultData();
+
 		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentInstance();
 
@@ -89,15 +78,15 @@ class Groups extends tao_actions_SaSModule {
 			}
 		}
 
-		$memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
+		$memberProperty = $this->getProperty(GroupsService::PROPERTY_MEMBERS_URI);
 		$memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
 		$memberForm->setData('title',	__('Select group test takers'));
 		$this->setData('memberForm', $memberForm->render());
 
-		if (common_ext_ExtensionsManager::singleton()->isEnabled('taoDeliveryRdf')) {
+		if ($this->getServiceLocator()->get(common_ext_ExtensionsManager::SERVICE_ID)->isEnabled('taoDeliveryRdf')) {
 		    $this->setData('deliveryForm', DeliveryWidget::renderDeliveryTree($group));
 		}
-        $updatedAt = $this->getServiceManager()->get(ResourceWatcher::SERVICE_ID)->getUpdatedAt($group);
+        $updatedAt = $this->getServiceLocator()->get(ResourceWatcher::SERVICE_ID)->getUpdatedAt($group);
 		$this->setData('updatedAt', $updatedAt);
 		$this->setData('formTitle', __('Edit group'));
 		$this->setData('myForm', $myForm->render());

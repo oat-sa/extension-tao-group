@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.1.0-sprint15\n"
-"PO-Revision-Date: 2015-12-23T13:12:17\n"
+"Project-Id-Version: TAO 3.3.0-sprint92.1\n"
+"PO-Revision-Date: 2019-01-18T12:46:10\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: pt-PT\n"
@@ -14,6 +14,10 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
+msgstr ""
+
+#, tao-public
+msgid "Copy To"
 msgstr ""
 
 #, tao-public
@@ -31,16 +35,15 @@ msgstr ""
 msgid "Export"
 msgstr "Exportar"
 
-#, tao-public
-msgid "Filter"
-msgstr ""
-
 msgid "Group saved"
 msgstr "Grupo guardado"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
 msgstr "Grupo examinados de acordo com características e classificações globais"
+
+msgid "Group uri is not valid"
+msgstr ""
 
 #, tao-public
 msgid "Groups"
@@ -54,13 +57,24 @@ msgstr "Biblioteca de grupos"
 msgid "Import"
 msgstr "Importar"
 
+msgid "Last updated on %2s"
+msgstr ""
+
 #, tao-public
 msgid "Manage groups"
 msgstr "Gestão de grupos"
 
 #, tao-public
+msgid "Manage Schema"
+msgstr ""
+
+#, tao-public
 msgid "Move"
 msgstr "Mover"
+
+#, tao-public
+msgid "Move To"
+msgstr ""
 
 #, tao-public
 msgid "New class"
@@ -74,13 +88,15 @@ msgstr "Novo grupo"
 msgid "Properties"
 msgstr ""
 
-#, tao-public
-msgid "Search"
-msgstr "Procurar"
-
 msgid "Select group test takers"
 msgstr "Seleccione grupo de examinados"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
 msgstr "O módulo de Grupos permite grupo de Examinando de acordo com as características e classificações globais"
+
+msgid "Unable to create new group"
+msgstr ""
+
+msgid "Unable to delete group"
+msgstr ""
 
