@@ -61,17 +61,12 @@ class GroupsService
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Resource group
+     * @param \core_kernel_classes_Resource group
      * @return boolean
      */
-    public function deleteGroup( core_kernel_classes_Resource $group)
+    public function deleteGroup(\core_kernel_classes_Resource $group)
     {
-        $returnValue = (bool) false;
-	
-		if(!is_null($group)){
-			$returnValue = $group->delete();
-		}
-	    return (bool) $returnValue;
+        return $group !== null && $group->delete(true);
     }
 
     /**

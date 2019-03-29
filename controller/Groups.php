@@ -22,14 +22,15 @@
 
 namespace oat\taoGroups\controller;
 
-use \common_ext_ExtensionsManager;
+use common_ext_ExtensionsManager;
+use oat\tao\model\controller\SignedFormInstance;
 use oat\tao\model\resources\ResourceWatcher;
-use \tao_actions_SaSModule;
-use \tao_helpers_Uri;
-use \tao_helpers_form_GenerisTreeForm;
-use \tao_models_classes_dataBinding_GenerisFormDataBinder;
-use oat\taoGroups\models\GroupsService;
 use oat\taoDeliveryRdf\helper\DeliveryWidget;
+use oat\taoGroups\models\GroupsService;
+use tao_actions_SaSModule;
+use tao_helpers_form_GenerisTreeForm;
+use tao_helpers_Uri;
+use tao_models_classes_dataBinding_GenerisFormDataBinder;
 
 /**
  * This Module aims at managing the Group class and its instances.
@@ -62,10 +63,11 @@ class Groups extends tao_actions_SaSModule
 		$clazz = $this->getCurrentClass();
 		$group = $this->getCurrentInstance();
 
-		$formContainer = new \tao_actions_form_Instance($clazz, $group);
+		$formContainer = new SignedFormInstance($clazz, $group);
 		$myForm = $formContainer->getForm();
 		if($myForm->isSubmited()){
 			if($myForm->isValid()){
+			    $this->validateInstanceRoot($group->getUri());
 
 				$binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
 				$group = $binder->bind($myForm->getValues());
