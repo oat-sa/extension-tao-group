@@ -34,7 +34,7 @@ return array(
     'label' => 'Groups core extension',
     'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
-    'version' => '5.0.0',
+    'version' => '5.0.1',
     'author' => 'Open Assessment Technologies, CRP Henri Tudor',
     'requires' => array(
         'taoTestTaker' => '>=4.0.0',
