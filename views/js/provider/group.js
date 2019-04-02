@@ -40,6 +40,7 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise'], function ($, _,
              * @param config
              * @param {String} [config.classUri] - rdf uri of the Group for current environment
              * @param {String} [config.id] - id of the Group for current environment
+             * @param {String} [config.signature] - id signature received from BE, required
              * @param {String} [config.type] - Type of the instance
              * @return {*}
              */
