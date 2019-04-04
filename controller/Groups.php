@@ -65,18 +65,18 @@ class Groups extends tao_actions_SaSModule
 
 		$formContainer = new SignedFormInstance($clazz, $group);
 		$myForm = $formContainer->getForm();
-		if($myForm->isSubmited()){
-			if($myForm->isValid()){
-			    $this->validateInstanceRoot($group->getUri());
+		if ($myForm->isSubmited() && $myForm->isValid()) {
+		    $this->validateCsrf();
+            $this->validateInstanceRoot($group->getUri());
 
-				$binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
-				$group = $binder->bind($myForm->getValues());
+            $binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
+            $group = $binder->bind($myForm->getValues());
 
-		        $this->setData("selectNode", tao_helpers_Uri::encode($group->getUri()));
-				$this->setData('message', __('Group saved'));
-				$this->setData('reload', true);
-			}
-		}
+            $this->setData('selectNode', tao_helpers_Uri::encode($group->getUri()));
+            $this->setData('selectNode', tao_helpers_Uri::encode($group->getUri()));
+            $this->setData('message', __('Group saved'));
+            $this->setData('reload', true);
+        }
 
 		$memberProperty = $this->getProperty(GroupsService::PROPERTY_MEMBERS_URI);
 		$memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
@@ -92,23 +92,4 @@ class Groups extends tao_actions_SaSModule
 		$this->setData('myForm', $myForm->render());
 		$this->setView('form_group.tpl');
 	}
-
-    /**
-     * overwrite the parent moveAllInstances to add the requiresRight only in Items
-     * @see tao_actions_TaoModule::moveResource()
-     * @requiresRight uri WRITE
-     */
-    public function moveResource()
-    {
-        return parent::moveResource();
-    }
-    /**
-     * overwrite the parent moveAllInstances to add the requiresRight only in Items
-     * @see tao_actions_TaoModule::moveAll()
-     * @requiresRight ids WRITE
-     */
-    public function moveAll()
-    {
-        return parent::moveAll();
-    }
 }
