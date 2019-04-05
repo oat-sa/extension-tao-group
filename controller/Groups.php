@@ -43,30 +43,30 @@ use tao_models_classes_dataBinding_GenerisFormDataBinder;
 class Groups extends tao_actions_SaSModule
 {
 
-	/**
-	 * (non-PHPdoc)
-	 * @see tao_actions_SaSModule::getClassService()
-	 */
-	protected function getClassService()
-	{
-		return GroupsService::singleton();
-	}
+    /**
+     * (non-PHPdoc)
+     * @see tao_actions_SaSModule::getClassService()
+     */
+    protected function getClassService()
+    {
+        return GroupsService::singleton();
+    }
 
-	/**
-	 * Edit a group instance
-	 * @return void
-	 */
-	public function editGroup()
-	{
+    /**
+     * Edit a group instance
+     * @return void
+     */
+    public function editGroup()
+    {
         $this->defaultData();
 
-		$clazz = $this->getCurrentClass();
-		$group = $this->getCurrentInstance();
+        $clazz = $this->getCurrentClass();
+        $group = $this->getCurrentInstance();
 
-		$formContainer = new SignedFormInstance($clazz, $group);
-		$myForm = $formContainer->getForm();
-		if ($myForm->isSubmited() && $myForm->isValid()) {
-		    $this->validateCsrf();
+        $formContainer = new SignedFormInstance($clazz, $group);
+        $myForm = $formContainer->getForm();
+        if ($myForm->isSubmited() && $myForm->isValid()) {
+            $this->validateCsrf();
             $this->validateInstanceRoot($group->getUri());
 
             $binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
@@ -76,20 +76,26 @@ class Groups extends tao_actions_SaSModule
             $this->setData('selectNode', tao_helpers_Uri::encode($group->getUri()));
             $this->setData('message', __('Group saved'));
             $this->setData('reload', true);
+
+            $this->returnJson([
+                'success' => true,
+                'message' => __('Group saved')
+            ]);
+            return;
         }
 
-		$memberProperty = $this->getProperty(GroupsService::PROPERTY_MEMBERS_URI);
-		$memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
-		$memberForm->setData('title',	__('Select group test takers'));
-		$this->setData('memberForm', $memberForm->render());
+        $memberProperty = $this->getProperty(GroupsService::PROPERTY_MEMBERS_URI);
+        $memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
+        $memberForm->setData('title',	__('Select group test takers'));
+        $this->setData('memberForm', $memberForm->render());
 
-		if ($this->getServiceLocator()->get(common_ext_ExtensionsManager::SERVICE_ID)->isEnabled('taoDeliveryRdf')) {
-		    $this->setData('deliveryForm', DeliveryWidget::renderDeliveryTree($group));
-		}
+        if ($this->getServiceLocator()->get(common_ext_ExtensionsManager::SERVICE_ID)->isEnabled('taoDeliveryRdf')) {
+            $this->setData('deliveryForm', DeliveryWidget::renderDeliveryTree($group));
+        }
         $updatedAt = $this->getServiceLocator()->get(ResourceWatcher::SERVICE_ID)->getUpdatedAt($group);
-		$this->setData('updatedAt', $updatedAt);
-		$this->setData('formTitle', __('Edit group'));
-		$this->setData('myForm', $myForm->render());
-		$this->setView('form_group.tpl');
-	}
+        $this->setData('updatedAt', $updatedAt);
+        $this->setData('formTitle', __('Edit group'));
+        $this->setData('myForm', $myForm->render());
+        $this->setView('form_group.tpl');
+    }
 }
