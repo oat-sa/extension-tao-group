@@ -55,6 +55,11 @@ class Groups extends tao_actions_SaSModule
     /**
      * Edit a group instance
      * @return void
+     * @throws \common_exception_Error
+     * @throws \common_ext_ExtensionException
+     * @throws \oat\tao\model\security\SecurityException
+     * @throws \tao_models_classes_MissingRequestParameterException
+     * @throws \tao_models_classes_dataBinding_GenerisFormDataBindingException
      */
     public function editGroup()
     {
@@ -66,7 +71,6 @@ class Groups extends tao_actions_SaSModule
         $formContainer = new SignedFormInstance($clazz, $group);
         $myForm = $formContainer->getForm();
         if ($myForm->isSubmited() && $myForm->isValid()) {
-            $this->validateCsrf();
             $this->validateInstanceRoot($group->getUri());
 
             $binder = new tao_models_classes_dataBinding_GenerisFormDataBinder($group);
@@ -76,17 +80,11 @@ class Groups extends tao_actions_SaSModule
             $this->setData('selectNode', tao_helpers_Uri::encode($group->getUri()));
             $this->setData('message', __('Group saved'));
             $this->setData('reload', true);
-
-            $this->returnJson([
-                'success' => true,
-                'message' => __('Group saved')
-            ]);
-            return;
         }
 
         $memberProperty = $this->getProperty(GroupsService::PROPERTY_MEMBERS_URI);
         $memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
-        $memberForm->setData('title',	__('Select group test takers'));
+        $memberForm->setData('title', __('Select group test takers'));
         $this->setData('memberForm', $memberForm->render());
 
         if ($this->getServiceLocator()->get(common_ext_ExtensionsManager::SERVICE_ID)->isEnabled('taoDeliveryRdf')) {
