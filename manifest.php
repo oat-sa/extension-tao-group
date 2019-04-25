@@ -19,8 +19,7 @@
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
  *
  */
-?>
-<?php
+
 /*
  * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
@@ -34,13 +33,13 @@ return array(
     'label' => 'Groups core extension',
     'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
-    'version' => '5.0.0',
+    'version' => '6.0.0',
     'author' => 'Open Assessment Technologies, CRP Henri Tudor',
     'requires' => array(
         'taoTestTaker' => '>=4.0.0',
         'taoBackOffice' => '>=3.0.0',
         'generis' => '>=5.11.0',
-        'tao' => '>=30.0.2'
+        'tao' => '>=34.0.0'
     ),
 	'models' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf'
