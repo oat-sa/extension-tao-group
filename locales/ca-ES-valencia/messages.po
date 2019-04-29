@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO 3.3.0-sprint96\n"
+"PO-Revision-Date: 2019-04-25T01:10:54\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: ca-ES-valencia\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: ca-ES-valencia\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Add to group"
+msgstr "Afig al grup"
+
+#, tao-public
+msgid "Copy To"
+msgstr ""
+
+#, tao-public
+msgid "Delete"
+msgstr "Suprimeix"
+
+#, tao-public
+msgid "Duplicate"
+msgstr "Duplica"
+
+msgid "Edit group"
+msgstr "Edita el grup"
+
+#, tao-public
+msgid "Export"
+msgstr "Exporta"
+
+msgid "Group saved"
+msgstr "Grup guardat"
+
+#, tao-public
+msgid "Group test takers according to global features and classifications."
+msgstr "Agrupa els participants d'acord amb característiques globals i classificacions"
+
+msgid "Group uri is not valid"
+msgstr "L'URI del grup no és vàlid."
+
+#, tao-public
+msgid "Groups"
+msgstr "Grups"
+
+#, tao-public
+msgid "Groups library"
+msgstr "Biblioteca de grups"
+
+#, tao-public
+msgid "Import"
+msgstr "Importa"
+
+msgid "Last updated on %2s"
+msgstr ""
+
+#, tao-public
+msgid "Manage groups"
+msgstr "Gestiona els grups"
+
+#, tao-public
+msgid "Manage Schema"
+msgstr ""
+
+#, tao-public
+msgid "Move"
+msgstr "Mou"
+
+#, tao-public
+msgid "Move To"
+msgstr ""
+
+#, tao-public
+msgid "New class"
+msgstr "Classe nova"
+
+#, tao-public
+msgid "New Group"
+msgstr "Grup nou"
+
+#, tao-public
+msgid "Properties"
+msgstr "Propietats"
+
+msgid "Select group test takers"
+msgstr "Selecciona un grup de participants"
+
+msgid "The Groups module allows to group Test takers according to global features and classifications."
+msgstr "El mòdul de grups permet agrupar els participants d'acord amb característiques globals i classificacions"
+
+msgid "Unable to create new group"
+msgstr "No es pot crear el grup nou"
+
+msgid "Unable to delete group"
+msgstr "No es pot eliminar el grup"
+

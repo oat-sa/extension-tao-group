@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO 3.3.0-sprint96\n"
+"PO-Revision-Date: 2019-04-25T01:14:00\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: lt-LT\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: lt-LT\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Add to group"
+msgstr "Pridėti į grupę"
+
+#, tao-public
+msgid "Copy To"
+msgstr ""
+
+#, tao-public
+msgid "Delete"
+msgstr "Ištrinti"
+
+#, tao-public
+msgid "Duplicate"
+msgstr "Kurti kopiją"
+
+msgid "Edit group"
+msgstr "Redaguoti grupę"
+
+#, tao-public
+msgid "Export"
+msgstr "Eksportuoti"
+
+msgid "Group saved"
+msgstr "Grupė išsaugota"
+
+#, tao-public
+msgid "Group test takers according to global features and classifications."
+msgstr "Grupės testo laikytojai pagal visuotines ypatybes ir klasifikacijas."
+
+msgid "Group uri is not valid"
+msgstr "Grupės uri nėra teisingas"
+
+#, tao-public
+msgid "Groups"
+msgstr "Grupės"
+
+#, tao-public
+msgid "Groups library"
+msgstr "Grupių biblioteka"
+
+#, tao-public
+msgid "Import"
+msgstr "Importuoti"
+
+msgid "Last updated on %2s"
+msgstr ""
+
+#, tao-public
+msgid "Manage groups"
+msgstr "Tvarkyti grupes"
+
+#, tao-public
+msgid "Manage Schema"
+msgstr ""
+
+#, tao-public
+msgid "Move"
+msgstr "Perkelti"
+
+#, tao-public
+msgid "Move To"
+msgstr ""
+
+#, tao-public
+msgid "New class"
+msgstr "Nauja klasė"
+
+#, tao-public
+msgid "New Group"
+msgstr "Nauja Grupė"
+
+#, tao-public
+msgid "Properties"
+msgstr "Savybės"
+
+msgid "Select group test takers"
+msgstr "Pasirink testo laikytojų grupę"
+
+msgid "The Groups module allows to group Test takers according to global features and classifications."
+msgstr "Grupės modulis leidžia grupuoti Testo laikytojus pagal visuotines ypatybes ir klasifikacijas."
+
+msgid "Unable to create new group"
+msgstr "Nepavyko sukurti grupės"
+
+msgid "Unable to delete group"
+msgstr "Nepavyko ištrinti grupės"
+

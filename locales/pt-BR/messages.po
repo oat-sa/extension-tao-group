@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO 3.3.0-sprint96\n"
+"PO-Revision-Date: 2019-04-25T01:15:19\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: pt-BR\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: pt-BR\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Add to group"
+msgstr "Adicionar ao grupo"
+
+#, tao-public
+msgid "Copy To"
+msgstr ""
+
+#, tao-public
+msgid "Delete"
+msgstr "Excluir"
+
+#, tao-public
+msgid "Duplicate"
+msgstr "Duplicar"
+
+msgid "Edit group"
+msgstr "Editar grupo"
+
+#, tao-public
+msgid "Export"
+msgstr "Exportar"
+
+msgid "Group saved"
+msgstr "Grupo salvo"
+
+#, tao-public
+msgid "Group test takers according to global features and classifications."
+msgstr "Agrupar alunos de acordo com características e classificações globais."
+
+msgid "Group uri is not valid"
+msgstr "Uri do grupo não é válido"
+
+#, tao-public
+msgid "Groups"
+msgstr "Grupos"
+
+#, tao-public
+msgid "Groups library"
+msgstr "Biblioteca de grupos"
+
+#, tao-public
+msgid "Import"
+msgstr "Importar"
+
+msgid "Last updated on %2s"
+msgstr ""
+
+#, tao-public
+msgid "Manage groups"
+msgstr "Gerenciar grupos"
+
+#, tao-public
+msgid "Manage Schema"
+msgstr ""
+
+#, tao-public
+msgid "Move"
+msgstr "Mover"
+
+#, tao-public
+msgid "Move To"
+msgstr ""
+
+#, tao-public
+msgid "New class"
+msgstr "Nova pasta"
+
+#, tao-public
+msgid "New Group"
+msgstr "Novo Grupo"
+
+#, tao-public
+msgid "Properties"
+msgstr "Propriedades"
+
+msgid "Select group test takers"
+msgstr "Selecionar grupo de alunos"
+
+msgid "The Groups module allows to group Test takers according to global features and classifications."
+msgstr "O módulo Grupos permite agrupar os participantes do teste de acordo com características e classificações globais."
+
+msgid "Unable to create new group"
+msgstr "Não é possível criar novo grupo"
+
+msgid "Unable to delete group"
+msgstr "Não é possível excluir o grupo"
+

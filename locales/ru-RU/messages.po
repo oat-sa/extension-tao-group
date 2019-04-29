@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.3.0-sprint92.1\n"
-"PO-Revision-Date: 2019-01-18T12:46:10\n"
+"Project-Id-Version: TAO 3.3.0-sprint96\n"
+"PO-Revision-Date: 2019-04-25T01:12:42\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ru-RU\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr ""
+msgstr "Добавить в группу"
 
 #, tao-public
 msgid "Copy To"
@@ -22,47 +22,47 @@ msgstr ""
 
 #, tao-public
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #, tao-public
 msgid "Duplicate"
-msgstr ""
+msgstr "Дублировать"
 
 msgid "Edit group"
-msgstr ""
+msgstr "Редактировать группу"
 
 #, tao-public
 msgid "Export"
-msgstr ""
+msgstr "Экспортировать"
 
 msgid "Group saved"
-msgstr ""
+msgstr "Группа сохранена"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
+msgstr "Группировать тестируемых в соответствии с глобальными особенностями и классификациями."
 
 msgid "Group uri is not valid"
 msgstr ""
 
 #, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "Группы"
 
 #, tao-public
 msgid "Groups library"
-msgstr ""
+msgstr "Библиотека групп"
 
 #, tao-public
 msgid "Import"
-msgstr ""
+msgstr "Импортировать"
 
 msgid "Last updated on %2s"
 msgstr ""
 
 #, tao-public
 msgid "Manage groups"
-msgstr ""
+msgstr "Управление группами"
 
 #, tao-public
 msgid "Manage Schema"
@@ -70,7 +70,7 @@ msgstr ""
 
 #, tao-public
 msgid "Move"
-msgstr ""
+msgstr "Передвигать"
 
 #, tao-public
 msgid "Move To"
@@ -78,21 +78,21 @@ msgstr ""
 
 #, tao-public
 msgid "New class"
-msgstr ""
+msgstr "Новый класс"
 
 #, tao-public
 msgid "New Group"
-msgstr ""
+msgstr "Новая группа"
 
 #, tao-public
 msgid "Properties"
-msgstr ""
+msgstr "Свойства"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "Выбирать группу тестируемых "
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr ""
+msgstr "Модуль Группы позволяет группировать тестируемых в соответствии с глобальными функциями и классификациями."
 
 msgid "Unable to create new group"
 msgstr ""
