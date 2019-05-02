@@ -31,6 +31,7 @@ use tao_actions_SaSModule;
 use tao_helpers_form_GenerisTreeForm;
 use tao_helpers_Uri;
 use tao_models_classes_dataBinding_GenerisFormDataBinder;
+use tao_helpers_form_FormContainer as FormContainer;
 
 /**
  * This Module aims at managing the Group class and its instances.
@@ -68,7 +69,7 @@ class Groups extends tao_actions_SaSModule
         $clazz = $this->getCurrentClass();
         $group = $this->getCurrentInstance();
 
-        $formContainer = new SignedFormInstance($clazz, $group);
+        $formContainer = new SignedFormInstance($clazz, $group, [FormContainer::CSRF_PROTECTION_OPTION => true]);
         $myForm = $formContainer->getForm();
         if ($myForm->isSubmited() && $myForm->isValid()) {
             $this->validateInstanceRoot($group->getUri());
