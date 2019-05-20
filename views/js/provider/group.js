@@ -58,10 +58,7 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise', 'core/request'],
                         coreRequest({
                             url: urlUtil.route('addInstance', 'Groups', 'taoGroups'),
                             method: 'POST',
-                            type: 'post',
-                            data: config,
-                            dataType: 'json',
-                            noToken: false
+                            data: config
                         })
                         .then(function (group) {
                             resolve(group);
