@@ -83,18 +83,17 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise', 'core/request'],
                         return reject(new TypeError(__('Group uri is not valid')));
                     }
 
-                    $.ajax({
+                    coreRequest({
                         url: urlUtil.route('delete', 'Groups', 'taoGroups'),
-                        type: 'post',
+                        method: 'POST',
                         data: {uri: uri},
-                        dataType: 'json'
                     })
-                        .done(function (response) {
-                            resolve(response);
-                        })
-                        .fail(function () {
-                            reject(new Error(__('Unable to delete group')));
-                        });
+                    .then(function (response) {
+                        resolve(response);
+                    })
+                    .catch(function () {
+                        reject(new Error(__('Unable to delete group')));
+                    });
                 });
             }
         };
