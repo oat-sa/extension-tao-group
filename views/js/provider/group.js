@@ -18,7 +18,7 @@
  * @author Alexander Zagovorichev <zagovorichev@1pt.com>
  */
 
-define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise'], function ($, _, __, urlUtil, Promise) {
+define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise', 'core/request'], function ($, _, __, urlUtil, Promise, coreRequest) {
     'use strict';
 
     /**
@@ -55,17 +55,16 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise'], function ($, _,
                 config = _.defaults(config || {}, _defaults);
 
                 return new Promise(function(resolve, reject){
-
-                    $.ajax({
-                        url: urlUtil.route('addInstance', 'Groups', 'taoGroups'),
-                        type: 'post',
-                        data: config,
-                        dataType: 'json'
-                    })
-                        .done(function (group) {
+                        coreRequest({
+                            url: urlUtil.route('addInstance', 'Groups', 'taoGroups'),
+                            method: 'POST',
+                            data: config,
+                            dataType: 'json',
+                        })
+                        .then(function (group) {
                             resolve(group);
                         })
-                        .fail(function () {
+                        .catch(function () {
                             reject(new Error(__('Unable to create new group')));
                         });
                 });
@@ -85,18 +84,18 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise'], function ($, _,
                         return reject(new TypeError(__('Group uri is not valid')));
                     }
 
-                    $.ajax({
+                    coreRequest({
                         url: urlUtil.route('delete', 'Groups', 'taoGroups'),
-                        type: 'post',
+                        method: 'POST',
                         data: {uri: uri},
-                        dataType: 'json'
+                        dataType: 'json',
                     })
-                        .done(function (response) {
-                            resolve(response);
-                        })
-                        .fail(function () {
-                            reject(new Error(__('Unable to delete group')));
-                        });
+                    .then(function (response) {
+                        resolve(response);
+                    })
+                    .catch(function () {
+                        reject(new Error(__('Unable to delete group')));
+                    });
                 });
             }
         };
