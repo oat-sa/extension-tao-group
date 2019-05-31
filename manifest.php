@@ -33,13 +33,13 @@ return array(
     'label' => 'Groups core extension',
     'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
-    'version' => '6.0.1',
+    'version' => '6.1.0',
     'author' => 'Open Assessment Technologies, CRP Henri Tudor',
     'requires' => array(
         'taoTestTaker' => '>=4.0.0',
         'taoBackOffice' => '>=3.0.0',
         'generis' => '>=5.11.0',
-        'tao' => '>=34.0.0'
+        'tao' => '>=36.1.0'
     ),
 	'models' => array(
 		'http://www.tao.lu/Ontologies/TAOGroup.rdf'
