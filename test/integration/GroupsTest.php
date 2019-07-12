@@ -54,8 +54,8 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 	 */
 	public function setUp(){
         TaoPhpUnitTestRunner::initTest();
-		$this->subjectsService = TestTakerService::singleton();
-		$this->groupsService = GroupsService::singleton();
+		$this->subjectsService = new TestTakerService();
+		$this->groupsService = new GroupsService();
 	}
 
 	/**
@@ -160,7 +160,8 @@ class GroupsTest extends TaoPhpUnitTestRunner {
      * @author Lionel Lecaque, lionel@taotesting.com
      */
 	public function testGetGroups(){
-	    $groupClass = GroupsService::singleton()->getRootClass();
+	    $groupClass = new GroupsService();
+            $groupClass = $groupClass->getRootClass();
 	    $this->assertTrue($this->groupsService->isGroupClass($groupClass));
 	     
 	    $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
