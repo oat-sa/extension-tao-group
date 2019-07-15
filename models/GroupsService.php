@@ -25,7 +25,6 @@ namespace oat\taoGroups\models;
 use \core_kernel_classes_Class;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
-use \tao_models_classes_ClassService;
 use oat\taoTestTaker\models\TestTakerService;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
@@ -121,7 +120,8 @@ class GroupsService extends OntologyClassService
      * @param core_kernel_classes_Resource $group
      * @return boolean
      */
-    public function addUser($userUri, core_kernel_classes_Resource $group) {
+    public function addUser($userUri, core_kernel_classes_Resource $group)
+    {
         $user = new \core_kernel_classes_Resource($userUri);
         return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
@@ -133,7 +133,8 @@ class GroupsService extends OntologyClassService
      * @param core_kernel_classes_Resource $group
      * @return boolean
      */
-    public function removeUser($userUri, core_kernel_classes_Resource $group) {
+    public function removeUser($userUri, core_kernel_classes_Resource $group)
+    {
         $user = new \core_kernel_classes_Resource($userUri);
         return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
