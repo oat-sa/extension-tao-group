@@ -40,6 +40,8 @@ use oat\oatbox\user\User;
 class GroupsService
     extends tao_models_classes_ClassService
 {
+    const SERVICE_ID = 'taoGroups/Groups';
+
     const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
 
     const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';

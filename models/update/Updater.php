@@ -28,6 +28,7 @@ use oat\tao\model\accessControl\func\AclProxy;
 use oat\tao\model\accessControl\func\AccessRule;
 use oat\tao\model\user\TaoRoles;
 use oat\taoGroups\controller\Api;
+
 /**
  * Service methods to manage the Groups business models using the RDF API.
  *
@@ -77,6 +78,12 @@ class Updater extends \common_ext_ExtensionUpdater
             $this->setVersion('3.0.1');
         }
 
-        $this->skip('3.0.1','6.1.0');
+        $this->skip('3.0.1','6.1.1');
+
+        if ($this->isVersion('6.1.1')) {
+            $groupsService = new GroupsService();
+            $this->getServiceManager()->register(GroupsService::SERVICE_ID, $groupsService);
+            $this->setVersion('6.1.2');
+        }
     }
 }
