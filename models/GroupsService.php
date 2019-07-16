@@ -25,9 +25,9 @@ namespace oat\taoGroups\models;
 use \core_kernel_classes_Class;
 use \core_kernel_classes_Property;
 use \core_kernel_classes_Resource;
-use \tao_models_classes_ClassService;
 use oat\taoTestTaker\models\TestTakerService;
 use oat\oatbox\user\User;
+use oat\tao\model\OntologyClassService;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -37,8 +37,7 @@ use oat\oatbox\user\User;
  * @package taoGroups
  
  */
-class GroupsService
-    extends tao_models_classes_ClassService
+class GroupsService extends OntologyClassService
 {
     const SERVICE_ID = 'taoGroups/Groups';
 
@@ -55,7 +54,7 @@ class GroupsService
      */
     public function getRootClass()
     {
-        return new core_kernel_classes_Class(self::CLASS_URI);
+        return $this->getClass(self::CLASS_URI);
     }
 
     /**
@@ -123,7 +122,8 @@ class GroupsService
      * @param core_kernel_classes_Resource $group
      * @return boolean
      */
-    public function addUser($userUri, core_kernel_classes_Resource $group) {
+    public function addUser($userUri, core_kernel_classes_Resource $group)
+    {
         $user = new \core_kernel_classes_Resource($userUri);
         return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
@@ -135,7 +135,8 @@ class GroupsService
      * @param core_kernel_classes_Resource $group
      * @return boolean
      */
-    public function removeUser($userUri, core_kernel_classes_Resource $group) {
+    public function removeUser($userUri, core_kernel_classes_Resource $group)
+    {
         $user = new \core_kernel_classes_Resource($userUri);
         return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }

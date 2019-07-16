@@ -56,8 +56,15 @@ class GroupsTest extends TaoPhpUnitTestRunner {
     public function setUp()
     {
         TaoPhpUnitTestRunner::initTest();
-        $this->subjectsService = $this->getServiceLocator()->get('TestTakerService');
-        $this->groupsService = $this->getServiceLocator()->get(GroupsService::SERVICE_ID);
+
+        $subjectsService = new TestTakerService();
+        $groupsService = new GroupsService();
+        $smMock = $this->getServiceLocatorMock([
+            'TestTakerService' => $subjectsService,
+            GroupsService::SERVICE_ID => $groupsService
+        ]);
+        $this->subjectsService = $smMock->get('TestTakerService');
+        $this->groupsService = $smMock->get(GroupsService::SERVICE_ID);
     }
 
     /**
