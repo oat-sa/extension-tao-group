@@ -30,6 +30,7 @@ use \core_kernel_classes_Resource;
 use \core_kernel_classes_Class;
 use \core_kernel_classes_Property;
 use oat\tao\test\TaoPhpUnitTestRunner;
+use oat\oatbox\service\ServiceManager;
 
 
 
@@ -55,8 +56,15 @@ class GroupsTest extends TaoPhpUnitTestRunner {
     public function setUp()
     {
         TaoPhpUnitTestRunner::initTest();
-        $this->subjectsService = new TestTakerService();
-        $this->groupsService = new GroupsService();
+
+        $subjectsService = new TestTakerService();
+        $groupsService = new GroupsService();
+        $smMock = $this->getServiceLocatorMock([
+            'TestTakerService' => $subjectsService,
+            GroupsService::SERVICE_ID => $groupsService
+        ]);
+        $this->subjectsService = $smMock->get('TestTakerService');
+        $this->groupsService = $smMock->get(GroupsService::SERVICE_ID);
     }
 
     /**

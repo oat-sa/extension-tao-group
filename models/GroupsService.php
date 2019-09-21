@@ -39,6 +39,8 @@ use oat\tao\model\OntologyClassService;
  */
 class GroupsService extends OntologyClassService
 {
+    const SERVICE_ID = 'taoGroups/Groups';
+
     const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
 
     const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
