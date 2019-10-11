@@ -4,9 +4,9 @@ msgstr ""
 "PO-Revision-Date: 2019-10-11T08:32:30\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
-"Language: is-IS\n"
+"Language: lt-LT\n"
 "sourceLanguage: en-US\n"
-"targetLanguage: is-IS\n"
+"targetLanguage: lt-LT\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../\n"
@@ -14,89 +14,89 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr "Bæta við í hóp"
+msgstr "Pridėti į grupę"
 
 #, tao-public
 msgid "Copy To"
-msgstr ""
+msgstr "Kopijuoti Į"
 
 #, tao-public
 msgid "Delete"
-msgstr "Eyða"
+msgstr "Ištrinti"
 
 #, tao-public
 msgid "Duplicate"
-msgstr "Afrita"
+msgstr "Kurti kopiją"
 
 msgid "Edit group"
-msgstr "Breyta hóp"
+msgstr "Redaguoti grupę"
 
 #, tao-public
 msgid "Export"
-msgstr "Flytja út"
+msgstr "Eksportuoti"
 
 msgid "Group saved"
-msgstr "Hópur vistaður"
+msgstr "Grupė išsaugota"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr "Útbúa hópa próftaka eftir almennum einkennum og skilgreiningum"
+msgstr "Grupės testo laikytojai pagal visuotines ypatybes ir klasifikacijas."
 
 msgid "Group uri is not valid"
-msgstr ""
+msgstr "Grupės uri nėra teisingas"
 
 #, tao-public
 msgid "Groups"
-msgstr "Hópar"
+msgstr "Grupės"
 
 #, tao-public
 msgid "Groups library"
-msgstr "Hópasafn"
+msgstr "Grupių biblioteka"
 
 #, tao-public
 msgid "Import"
-msgstr "Flytja inn"
+msgstr "Importuoti"
 
 msgid "Last updated on %2s"
-msgstr ""
+msgstr "Paskutinis atnaujinimas buvo %2s"
 
 #, tao-public
 msgid "Manage groups"
-msgstr "Hópastjórnun"
+msgstr "Tvarkyti grupes"
 
 #, tao-public
 msgid "Manage Schema"
-msgstr ""
+msgstr "Tvarkyti Schemą"
 
 #, tao-public
 msgid "Move"
-msgstr "Færa"
+msgstr "Perkelti"
 
 #, tao-public
 msgid "Move To"
-msgstr ""
+msgstr "Perkelti Į"
 
 #, tao-public
 msgid "New class"
-msgstr "Nýr flokkur"
+msgstr "Nauja klasė"
 
 #, tao-public
 msgid "New Group"
-msgstr "Nýr hópur"
+msgstr "Nauja Grupė"
 
 #, tao-public
 msgid "Properties"
-msgstr "Stillingar"
+msgstr "Savybės"
 
 msgid "Select group test takers"
-msgstr "Velja hóp próftaka"
+msgstr "Pasirink testo laikytojų grupę"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr "Á hópasvæði er hægt að setja saman hópa próftaka eftir almennum einkennum og skilgreiningum."
+msgstr "Grupės modulis leidžia grupuoti Testo laikytojus pagal visuotines ypatybes ir klasifikacijas."
 
 msgid "Unable to create new group"
-msgstr ""
+msgstr "Nepavyko sukurti grupės"
 
 msgid "Unable to delete group"
-msgstr ""
+msgstr "Nepavyko ištrinti grupės"
 
