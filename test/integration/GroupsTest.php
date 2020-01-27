@@ -1,27 +1,26 @@
 <?php
 
-/**  
+/**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; under version 2
  * of the License (non-upgradable).
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- * 
+ *
  * Copyright (c) 2008-2010 (original work) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- * 
+ *
  */
 
 namespace oat\taoGroups\test\integration;
-
 
 use oat\generis\model\OntologyRdfs;
 use oat\taoGroups\models\GroupsService;
@@ -31,16 +30,15 @@ use \core_kernel_classes_Class;
 use \core_kernel_classes_Property;
 use oat\tao\test\TaoPhpUnitTestRunner;
 
-
-
 /**
- * Test the group management 
- * 
+ * Test the group management
+ *
  * @author Bertrand Chevrier, <taosupport@tudor.lu>
  * @package taoGroups
- 
+
  */
-class GroupsTest extends TaoPhpUnitTestRunner {
+class GroupsTest extends TaoPhpUnitTestRunner
+{
 
     /**
      * @var GroupsService
@@ -71,7 +69,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
     }
 
     /**
-	 * @return \core_kernel_classes_Class|null
+     * @return \core_kernel_classes_Class|null
      */
     public function testGroup()
     {
@@ -165,7 +163,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
     }
 
     /**
-     * 
+     *
      * @author Lionel Lecaque, lionel@taotesting.com
      */
     public function testGetGroups()
@@ -173,7 +171,7 @@ class GroupsTest extends TaoPhpUnitTestRunner {
         $groupClass = $this->groupsService->getRootClass();
         $this->assertTrue($this->groupsService->isGroupClass($groupClass));
 
-        $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(),'testSubject');
+        $subject = $this->subjectsService->createInstance($this->subjectsService->getRootClass(), 'testSubject');
         $oneGroup = $groupClass->createInstance('testGroupInstance');
 
         $this->groupsService->addUser($subject->getUri(), $oneGroup);
@@ -203,5 +201,4 @@ class GroupsTest extends TaoPhpUnitTestRunner {
 
         $subject->delete();
     }
-	
 }
