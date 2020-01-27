@@ -1,19 +1,20 @@
 <?php
-/**  
+
+/**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; under version 2
  * of the License (non-upgradable).
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- * 
+ *
  * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg (under the project TAO & TAO2);
  *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
@@ -35,7 +36,7 @@ use oat\tao\model\OntologyClassService;
  * @access public
  * @author Joel Bout, <joel.bout@tudor.lu>
  * @package taoGroups
- 
+
  */
 class GroupsService extends OntologyClassService
 {
@@ -76,7 +77,7 @@ class GroupsService extends OntologyClassService
      * @param  Class clazz
      * @return boolean
      */
-    public function isGroupClass( core_kernel_classes_Class $clazz)
+    public function isGroupClass(core_kernel_classes_Class $clazz)
     {
         return $clazz->equals($this->getRootClass()) || $clazz->isSubClassOf($this->getRootClass());
     }
@@ -92,30 +93,32 @@ class GroupsService extends OntologyClassService
     public function getGroups(User $user)
     {
         $groups = $user->getPropertyValues(self::PROPERTY_MEMBERS_URI);
-        array_walk($groups, function(&$group) { $group = new core_kernel_classes_Resource($group);});
+        array_walk($groups, function (&$group) {
+            $group = new core_kernel_classes_Resource($group);
+        });
         return $groups;
     }
     
     /**
      * gets the users of a group
-     * 
+     *
      * @param string $groupUri
      * @return array resources of users
      */
     public function getUsers($groupUri)
     {
         $subjectClass = TestTakerService::singleton()->getRootClass();
-        $users = $subjectClass->searchInstances(array(
-        	self::PROPERTY_MEMBERS_URI => $groupUri
-        ), array(
-        	'recursive' => true, 'like' => false
-        ));
+        $users = $subjectClass->searchInstances([
+            self::PROPERTY_MEMBERS_URI => $groupUri
+        ], [
+            'recursive' => true, 'like' => false
+        ]);
         return $users;
     }
     
     /**
      * Add a User to a Group
-     * 
+     *
      * @param string $userUri
      * @param core_kernel_classes_Resource $group
      * @return boolean
@@ -128,7 +131,7 @@ class GroupsService extends OntologyClassService
     
     /**
      * Remove a User from a Group
-     * 
+     *
      * @param string $userUri
      * @param core_kernel_classes_Resource $group
      * @return boolean

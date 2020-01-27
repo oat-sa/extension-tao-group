@@ -25,61 +25,61 @@
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  *
  */
-$extpath = dirname(__FILE__).DIRECTORY_SEPARATOR;
-$taopath = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'tao'.DIRECTORY_SEPARATOR;
+$extpath = dirname(__FILE__) . DIRECTORY_SEPARATOR;
+$taopath = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'tao' . DIRECTORY_SEPARATOR;
 
-return array(
+return [
     'name' => 'taoGroups',
     'label' => 'Groups core extension',
     'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
     'version' => '6.2.0',
     'author' => 'Open Assessment Technologies, CRP Henri Tudor',
-    'requires' => array(
+    'requires' => [
         'taoTestTaker' => '>=4.0.0',
         'taoBackOffice' => '>=3.0.0',
         'generis' => '>=5.11.0',
         'tao' => '>=36.1.0'
-    ),
-	'models' => array(
-		'http://www.tao.lu/Ontologies/TAOGroup.rdf'
-	),
-	'install' => array(
-		'rdf' => array(
-			dirname(__FILE__). '/models/ontology/taogroup.rdf'
-		)
-	),
+    ],
+    'models' => [
+        'http://www.tao.lu/Ontologies/TAOGroup.rdf'
+    ],
+    'install' => [
+        'rdf' => [
+            dirname(__FILE__) . '/models/ontology/taogroup.rdf'
+        ]
+    ],
     'update' => 'oat\\taoGroups\\models\\update\\Updater',
-	'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
-    'acl' => array(
-        array('grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', array('ext'=>'taoGroups'))
-    ),
-    'routes' => array(
+    'managementRole' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole',
+    'acl' => [
+        ['grant', 'http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole', ['ext' => 'taoGroups']]
+    ],
+    'routes' => [
         '/taoGroups' => 'oat\\taoGroups\\controller'
-    ),
-	'optimizableClasses' => array(
-		'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
-	),
-	'constants' => array(
-		# actions directory
-		"DIR_ACTIONS"			=> $extpath."controller".DIRECTORY_SEPARATOR,
+    ],
+    'optimizableClasses' => [
+        'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group'
+    ],
+    'constants' => [
+        # actions directory
+        "DIR_ACTIONS"           => $extpath . "controller" . DIRECTORY_SEPARATOR,
 
-		# views directory
-		"DIR_VIEWS"				=> $extpath."views".DIRECTORY_SEPARATOR,
+        # views directory
+        "DIR_VIEWS"             => $extpath . "views" . DIRECTORY_SEPARATOR,
 
-		# default module name
-		'DEFAULT_MODULE_NAME'	=> 'Groups',
+        # default module name
+        'DEFAULT_MODULE_NAME'   => 'Groups',
 
-		#default action name
-		'DEFAULT_ACTION_NAME'	=> 'index',
+        #default action name
+        'DEFAULT_ACTION_NAME'   => 'index',
 
-		#BASE PATH: the root path in the file system (usually the document root)
-		'BASE_PATH'				=> $extpath,
+        #BASE PATH: the root path in the file system (usually the document root)
+        'BASE_PATH'             => $extpath,
 
-		#BASE URL (usually the domain root)
-		'BASE_URL'				=> ROOT_URL .'taoGroups/',
-	),
-    'extra' => array(
-        'structures' => dirname(__FILE__).DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR.'structures.xml',
-    )
-);
+        #BASE URL (usually the domain root)
+        'BASE_URL'              => ROOT_URL . 'taoGroups/',
+    ],
+    'extra' => [
+        'structures' => dirname(__FILE__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'structures.xml',
+    ]
+];
