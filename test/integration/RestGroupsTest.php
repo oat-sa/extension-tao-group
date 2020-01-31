@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -31,9 +32,10 @@ include_once dirname(__FILE__) . '/../../includes/raw_start.php';
  */
 class RestGroupsTest extends RestTestCase
 {
-    public function serviceProvider(){
-        return array(
-            array('taoGroups/Api',GroupsService::CLASS_URI)
-        );
+    public function serviceProvider()
+    {
+        return [
+            ['taoGroups/Api',GroupsService::CLASS_URI]
+        ];
     }
 }
