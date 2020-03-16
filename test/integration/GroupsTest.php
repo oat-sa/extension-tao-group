@@ -50,7 +50,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
     /**
      * tests initialization
      */
-    public function setUp()
+    public function setUp(): void
     {
         TaoPhpUnitTestRunner::initTest();
         $this->subjectsService = new TestTakerService();
@@ -96,7 +96,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
         return $subGroup;
     }
-    
+
 
     /**
      * @depends testGroup
