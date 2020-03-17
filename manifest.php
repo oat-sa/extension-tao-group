@@ -38,7 +38,7 @@ return [
     'requires' => [
         'taoTestTaker' => '>=4.0.0',
         'taoBackOffice' => '>=3.0.0',
-        'generis' => '>=5.11.0',
+        'generis'      => '>=12.15.0',
         'tao' => '>=36.1.0'
     ],
     'models' => [
