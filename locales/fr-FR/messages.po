@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.4.0-sprint120\n"
-"PO-Revision-Date: 2020-01-31T09:41:41\n"
+"Project-Id-Version: TAO 3.4.0-sprint124\n"
+"PO-Revision-Date: 2020-03-20T08:13:47\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: fr-FR\n"
@@ -14,89 +14,89 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr ""
+msgstr "Ajouter au groupe"
 
 #, tao-public
 msgid "Copy To"
-msgstr ""
+msgstr "Copier vers"
 
 #, tao-public
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #, tao-public
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliquer"
 
 msgid "Edit group"
-msgstr ""
+msgstr "Édition du groupe"
 
 #, tao-public
 msgid "Export"
-msgstr ""
+msgstr "Exporter"
 
 msgid "Group saved"
-msgstr ""
+msgstr "Groupe enregistré"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
+msgstr "Grouper les participants selon des fonctionnalités globales et des classifications."
 
 msgid "Group uri is not valid"
-msgstr ""
+msgstr "L'URI du groupe n'est pas valide."
 
 #, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "Groupes"
 
 #, tao-public
 msgid "Groups library"
-msgstr ""
+msgstr "Bibliothèque des groupes"
 
 #, tao-public
 msgid "Import"
-msgstr ""
+msgstr "Importer"
 
 msgid "Last updated on %2s"
-msgstr ""
+msgstr "Dernière mise à jour le %2s"
 
 #, tao-public
 msgid "Manage groups"
-msgstr ""
+msgstr "Gérer les groupes"
 
 #, tao-public
 msgid "Manage Schema"
-msgstr ""
+msgstr "Gérer le schéma"
 
 #, tao-public
 msgid "Move"
-msgstr ""
+msgstr "Déplacer"
 
 #, tao-public
 msgid "Move To"
-msgstr ""
+msgstr "Déplacer vers"
 
 #, tao-public
 msgid "New class"
-msgstr ""
+msgstr "Nouvelle classe"
 
 #, tao-public
 msgid "New Group"
-msgstr ""
+msgstr "Nouveau groupe"
 
 #, tao-public
 msgid "Properties"
-msgstr ""
+msgstr "Propriétés"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "Groupe de participants"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr ""
+msgstr "Le module Groupes permet de rassembler les participants selon des fonctionnalités générales et des classifications."
 
 msgid "Unable to create new group"
-msgstr ""
+msgstr "Impossible de créer un nouveau groupe"
 
 msgid "Unable to delete group"
-msgstr ""
+msgstr "Impossible de supprimer ce groupe."
 
