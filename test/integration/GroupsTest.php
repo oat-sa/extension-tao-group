@@ -23,6 +23,8 @@
 namespace oat\taoGroups\test\integration;
 
 use oat\generis\model\OntologyRdfs;
+use oat\oatbox\service\ServiceManager;
+use oat\tao\model\OntologyClassService;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
 use \core_kernel_classes_Resource;
@@ -50,11 +52,13 @@ class GroupsTest extends TaoPhpUnitTestRunner
     /**
      * tests initialization
      */
-    public function setUp()
+    public function setUp(): void
     {
         TaoPhpUnitTestRunner::initTest();
         $this->subjectsService = new TestTakerService();
         $this->groupsService = new GroupsService();
+        $this->groupsService->setServiceLocator(ServiceManager::getServiceManager());
+        $this->subjectsService->setServiceLocator(ServiceManager::getServiceManager());
     }
 
     /**
@@ -64,8 +68,8 @@ class GroupsTest extends TaoPhpUnitTestRunner
      */
     public function testService()
     {
-        $this->assertIsA($this->subjectsService, '\tao_models_classes_Service');
-        $this->assertIsA($this->groupsService, 'oat\taoGroups\models\GroupsService');
+        $this->assertInstanceOf(OntologyClassService::class, $this->subjectsService);
+        $this->assertInstanceOf(GroupsService::class, $this->groupsService);
     }
 
     /**
@@ -82,8 +86,9 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * @depends testGroup
-     * @param $group
+     * @param $groupClass
      * @return \core_kernel_classes_Class
+     * @throws
      */
     public function testSubGroup($groupClass)
     {
@@ -96,12 +101,13 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
         return $subGroup;
     }
-    
+
 
     /**
      * @depends testGroup
-     * @param $group
+     * @param $groupClass
      * @return \core_kernel_classes_Resource
+     * @throws
      */
     public function testGroupInstance($groupClass)
     {
@@ -115,8 +121,9 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * @depends testSubGroup
-     * @param $subGroup
+     * @param $subGroupClass
      * @return \core_kernel_classes_Class
+     * @throws
      */
     public function testSubGroupInstance($subGroupClass)
     {
