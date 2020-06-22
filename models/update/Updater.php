@@ -37,6 +37,7 @@ use oat\taoGroups\controller\Api;
  * @author Joel Bout, <joel.bout@tudor.lu>
  * @package taoGroups
 
+ * @deprecated use migrations instead. See https://github.com/oat-sa/generis/wiki/Tao-Update-Process
  */
 class Updater extends \common_ext_ExtensionUpdater
 {
@@ -80,5 +81,10 @@ class Updater extends \common_ext_ExtensionUpdater
         }
 
         $this->skip('3.0.1', '6.5.1');
+        
+        //Updater files are deprecated. Please use migrations.
+        //See: https://github.com/oat-sa/generis/wiki/Tao-Update-Process
+
+        $this->setVersion($this->getExtension()->getManifest()->getVersion());
     }
 }
