@@ -33,7 +33,7 @@ return [
     'label' => 'Groups core extension',
     'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
-    'version' => '6.6.1',
+    'version' => '6.6.2',
     'author' => 'Open Assessment Technologies, CRP Henri Tudor',
     'requires' => [
         'taoTestTaker' => '>=4.0.0',
