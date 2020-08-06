@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.4.0-sprint120\n"
-"PO-Revision-Date: 2020-01-31T09:41:41\n"
+"Project-Id-Version: TAO 3.4.0-sprint121\n"
+"PO-Revision-Date: 2020-07-30T17:39:53\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ru-RU\n"
@@ -14,89 +14,89 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr ""
+msgstr "Добавить в группу"
 
 #, tao-public
 msgid "Copy To"
-msgstr ""
+msgstr "Копировать в"
 
 #, tao-public
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #, tao-public
 msgid "Duplicate"
-msgstr ""
+msgstr "Дублировать"
 
 msgid "Edit group"
-msgstr ""
+msgstr "Редактировать группу"
 
 #, tao-public
 msgid "Export"
-msgstr ""
+msgstr "Экспортировать"
 
 msgid "Group saved"
-msgstr ""
+msgstr "Группа сохранена"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr ""
+msgstr "Группировать тестируемых в соответствии с глобальными особенностями и классификациями."
 
 msgid "Group uri is not valid"
-msgstr ""
+msgstr "Неправильный uri группы"
 
 #, tao-public
 msgid "Groups"
-msgstr ""
+msgstr "Группы"
 
 #, tao-public
 msgid "Groups library"
-msgstr ""
+msgstr "Библиотека групп"
 
 #, tao-public
 msgid "Import"
-msgstr ""
+msgstr "Импортировать"
 
 msgid "Last updated on %2s"
-msgstr ""
+msgstr "Последнее обновление %2s"
 
 #, tao-public
 msgid "Manage groups"
-msgstr ""
+msgstr "Управление группами"
 
 #, tao-public
 msgid "Manage Schema"
-msgstr ""
+msgstr "Управление схемой"
 
 #, tao-public
 msgid "Move"
-msgstr ""
+msgstr "Передвигать"
 
 #, tao-public
 msgid "Move To"
-msgstr ""
+msgstr "Переместить в"
 
 #, tao-public
 msgid "New class"
-msgstr ""
+msgstr "Новый класс"
 
 #, tao-public
 msgid "New Group"
-msgstr ""
+msgstr "Новая группа"
 
 #, tao-public
 msgid "Properties"
-msgstr ""
+msgstr "Свойства"
 
 msgid "Select group test takers"
-msgstr ""
+msgstr "Выбирать группу тестируемых "
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr ""
+msgstr "Модуль Группы позволяет группировать тестируемых в соответствии с глобальными функциями и классификациями."
 
 msgid "Unable to create new group"
-msgstr ""
+msgstr "Невозможно создать новую группу"
 
 msgid "Unable to delete group"
-msgstr ""
+msgstr "Невозможно удалить группу"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.4.0-sprint120\n"
-"PO-Revision-Date: 2020-01-31T09:41:41\n"
+"Project-Id-Version: TAO 3.4.0-sprint121\n"
+"PO-Revision-Date: 2020-07-30T17:39:51\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: es-ES\n"
@@ -18,7 +18,7 @@ msgstr "Añadir al grupo"
 
 #, tao-public
 msgid "Copy To"
-msgstr ""
+msgstr "Copiar a"
 
 #, tao-public
 msgid "Delete"
@@ -43,7 +43,7 @@ msgid "Group test takers according to global features and classifications."
 msgstr "Grupo de participantes de acuerdo con las características globales y clasificaciones."
 
 msgid "Group uri is not valid"
-msgstr ""
+msgstr "La URI del grupo no es válida"
 
 #, tao-public
 msgid "Groups"
@@ -58,7 +58,7 @@ msgid "Import"
 msgstr "Importar"
 
 msgid "Last updated on %2s"
-msgstr ""
+msgstr "Última actualización en %2s"
 
 #, tao-public
 msgid "Manage groups"
@@ -66,7 +66,7 @@ msgstr "Gestionar grupos"
 
 #, tao-public
 msgid "Manage Schema"
-msgstr ""
+msgstr "Gestionar esquema"
 
 #, tao-public
 msgid "Move"
@@ -74,7 +74,7 @@ msgstr "Mover"
 
 #, tao-public
 msgid "Move To"
-msgstr ""
+msgstr "Mover a"
 
 #, tao-public
 msgid "New class"
@@ -95,8 +95,8 @@ msgid "The Groups module allows to group Test takers according to global feature
 msgstr "El módulo de grupos permite agrupar Los candidatos de acuerdo a las características globales y clasificaciones."
 
 msgid "Unable to create new group"
-msgstr ""
+msgstr "No es posible crear el nuevo grupo"
 
 msgid "Unable to delete group"
-msgstr ""
+msgstr "No es posible eliminar el grupo"
 

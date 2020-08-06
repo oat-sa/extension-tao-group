@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.4.0-sprint120\n"
-"PO-Revision-Date: 2020-01-31T09:41:41\n"
+"Project-Id-Version: TAO 3.4.0-sprint121\n"
+"PO-Revision-Date: 2020-07-30T17:39:50\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: da-DK\n"
@@ -14,11 +14,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr ""
+msgstr "Tilføj til gruppen"
 
 #, tao-public
 msgid "Copy To"
-msgstr ""
+msgstr "Kopier til"
 
 #, tao-public
 msgid "Delete"
@@ -29,21 +29,21 @@ msgid "Duplicate"
 msgstr "Kopier"
 
 msgid "Edit group"
-msgstr ""
+msgstr "Rediger gruppen"
 
 #, tao-public
 msgid "Export"
-msgstr "Eksport"
+msgstr "Eksporter"
 
 msgid "Group saved"
 msgstr "Gruppe gemt"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr "Gruppe test tagere i forhold til globale egenskaber og klassifikationer."
+msgstr "Gruppér testtagere i forhold til globale egenskaber og klassifikationer."
 
 msgid "Group uri is not valid"
-msgstr ""
+msgstr "Gruppe-URI er ikke gyldig"
 
 #, tao-public
 msgid "Groups"
@@ -51,22 +51,22 @@ msgstr "Grupper"
 
 #, tao-public
 msgid "Groups library"
-msgstr "Gruppe arkiv"
+msgstr "Gruppebibliotek"
 
 #, tao-public
 msgid "Import"
-msgstr "Importere"
+msgstr "Importer"
 
 msgid "Last updated on %2s"
-msgstr ""
+msgstr "Sidst opdateret den %2s"
 
 #, tao-public
 msgid "Manage groups"
-msgstr "Administrere grupper"
+msgstr "Administrer grupper"
 
 #, tao-public
 msgid "Manage Schema"
-msgstr ""
+msgstr "Administrer skema"
 
 #, tao-public
 msgid "Move"
@@ -74,11 +74,11 @@ msgstr "Flyt"
 
 #, tao-public
 msgid "Move To"
-msgstr ""
+msgstr "Flyt til"
 
 #, tao-public
 msgid "New class"
-msgstr "Ny klasse"
+msgstr "Ny mappe"
 
 #, tao-public
 msgid "New Group"
@@ -86,17 +86,17 @@ msgstr "Ny gruppe"
 
 #, tao-public
 msgid "Properties"
-msgstr ""
+msgstr "Egenskaber"
 
 msgid "Select group test takers"
-msgstr "Vælg gruppe test tagere"
+msgstr "Vælg gruppetesttagere"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr "Gruppe modulet gør det muligt at gruppere test tagere i forhold til globale indstillinger og klassifikationer."
+msgstr "Gruppemodulet gør det muligt at gruppere testtagere i forhold til globale indstillinger og klassifikationer."
 
 msgid "Unable to create new group"
-msgstr ""
+msgstr "Kunne ikke oprette en ny gruppe"
 
 msgid "Unable to delete group"
-msgstr ""
+msgstr "Kunne ikke slette gruppe"
 
