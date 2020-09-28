@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TAO 3.4.0-sprint112\n"
-"PO-Revision-Date: 2019-10-11T08:32:30\n"
+"Project-Id-Version: TAO 3.4.0-sprint117\n"
+"PO-Revision-Date: 2020-09-22T16:02:13\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
 "MIME-Version: 1.0\n"
 "Language: ja-JP\n"
@@ -29,7 +29,7 @@ msgid "Duplicate"
 msgstr "複製"
 
 msgid "Edit group"
-msgstr "グループを編集"
+msgstr "グループ編集"
 
 #, tao-public
 msgid "Export"
@@ -78,7 +78,7 @@ msgstr ""
 
 #, tao-public
 msgid "New class"
-msgstr "新規クラス"
+msgstr "新規フォルダー"
 
 #, tao-public
 msgid "New Group"
@@ -89,7 +89,7 @@ msgid "Properties"
 msgstr "プロパティ"
 
 msgid "Select group test takers"
-msgstr "グループの受験者の選択"
+msgstr "受験対象者を選択"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
 msgstr "グループモジュールは、グループの受験者のグローバルな特徴と分類が可能です"
