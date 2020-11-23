@@ -33,10 +33,10 @@ return [
     'label' => 'Groups core extension',
     'description' => 'TAO Groups extension',
     'license' => 'GPL-2.0',
-    'version' => '6.6.2',
+    'version' => '6.7.0',
     'author' => 'Open Assessment Technologies, CRP Henri Tudor',
     'requires' => [
-        'taoTestTaker' => '>=4.0.0',
+        'taoTestTaker' => '>=7.8.0',
         'taoBackOffice' => '>=3.0.0',
         'generis'      => '>=12.15.0',
         'tao' => '>=36.1.0'
@@ -47,6 +47,9 @@ return [
     'install' => [
         'rdf' => [
             dirname(__FILE__) . '/models/ontology/taogroup.rdf'
+        ],
+        'php' => [
+            '\oat\taoGroups\scripts\install\RegisterAdditionalTestTakerForm'
         ]
     ],
     'update' => 'oat\\taoGroups\\models\\update\\Updater',
