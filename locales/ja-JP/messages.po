@@ -18,7 +18,7 @@ msgstr "グループに追加"
 
 #, tao-public
 msgid "Copy To"
-msgstr ""
+msgstr "指定コピー"
 
 #, tao-public
 msgid "Delete"
@@ -26,24 +26,25 @@ msgstr "削除"
 
 #, tao-public
 msgid "Duplicate"
-msgstr "複製"
+msgstr "コピー"
 
 msgid "Edit group"
-msgstr "グループを編集"
+msgstr "グループの編集"
+
 
 #, tao-public
 msgid "Export"
 msgstr "エクスポート"
 
 msgid "Group saved"
-msgstr "グループを保存"
+msgstr "グループ保存"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr "グループの受験者のグローバル機能と分類"
+msgstr "グローバルな特徴や分類に応じて、受検者をグループ化する。"
 
 msgid "Group uri is not valid"
-msgstr ""
+msgstr "グループURIは無効です"
 
 #, tao-public
 msgid "Groups"
@@ -58,7 +59,7 @@ msgid "Import"
 msgstr "インポート"
 
 msgid "Last updated on %2s"
-msgstr ""
+msgstr "最終更新日：%2s"
 
 #, tao-public
 msgid "Manage groups"
@@ -66,7 +67,7 @@ msgstr "グループの管理"
 
 #, tao-public
 msgid "Manage Schema"
-msgstr ""
+msgstr "スキーマ管理"
 
 #, tao-public
 msgid "Move"
@@ -74,7 +75,7 @@ msgstr "移動"
 
 #, tao-public
 msgid "Move To"
-msgstr ""
+msgstr "指定移動"
 
 #, tao-public
 msgid "New class"
@@ -89,14 +90,14 @@ msgid "Properties"
 msgstr "プロパティ"
 
 msgid "Select group test takers"
-msgstr "グループの受験者の選択"
+msgstr "グループ対象受検者"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr "グループモジュールは、グループの受験者のグローバルな特徴と分類が可能です"
+msgstr "グループは、グローバルな特徴や分類に従って受検者をグループ化することができます。"
 
 msgid "Unable to create new group"
-msgstr ""
+msgstr "新規グループを作成できません"
 
 msgid "Unable to delete group"
-msgstr ""
+msgstr "グループを削除できません"
 
