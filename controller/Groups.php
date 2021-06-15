@@ -87,6 +87,9 @@ class Groups extends tao_actions_SaSModule
         $memberProperty = $this->getProperty(GroupsService::PROPERTY_MEMBERS_URI);
         $memberForm = tao_helpers_form_GenerisTreeForm::buildReverseTree($group, $memberProperty);
         $memberForm->setData('title', __('Select group test takers'));
+
+        $memberForm->setData('saveUrl', _url('setReverseValues', 'TestTakerGenerisTree', 'taoTestTaker'));
+
         $this->setData('memberForm', $memberForm->render());
 
         if ($this->getServiceLocator()->get(common_ext_ExtensionsManager::SERVICE_ID)->isEnabled('taoDeliveryRdf')) {
