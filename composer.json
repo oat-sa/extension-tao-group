@@ -57,6 +57,6 @@
 		"oat-sa/generis" : ">=14.0.0",
 		"oat-sa/tao-core" : ">=47.0.0",
 		"oat-sa/extension-tao-backoffice" : ">=6.0.0",
-		"oat-sa/extension-tao-testtaker" : ">=8.2.0"
+		"oat-sa/extension-tao-testtaker" : ">=8.0.1.1"
 	}
 }
