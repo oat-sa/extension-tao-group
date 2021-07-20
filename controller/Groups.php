@@ -23,6 +23,8 @@
 
 namespace oat\taoGroups\controller;
 
+use common_exception_Error;
+use common_exception_MethodNotAllowed;
 use common_ext_ExtensionsManager;
 use oat\tao\model\controller\SignedFormInstance;
 use oat\tao\model\resources\ResourceWatcher;
@@ -39,7 +41,6 @@ use tao_helpers_form_FormContainer as FormContainer;
  *
  * @author Bertrand Chevrier, <bertrand@taotesting.com>
  * @package taoGroups
-
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
 class Groups extends tao_actions_SaSModule
@@ -100,5 +101,15 @@ class Groups extends tao_actions_SaSModule
         $this->setData('formTitle', __('Edit group'));
         $this->setData('myForm', $myForm->render());
         $this->setView('form_group.tpl');
+    }
+
+    /**
+     * @throws common_exception_Error
+     * @throws common_exception_MethodNotAllowed
+     * @requiresRight classUri WRITE
+     */
+    public function moveResource()
+    {
+        parent::moveResource();
     }
 }
