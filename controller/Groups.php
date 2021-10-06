@@ -26,6 +26,7 @@ namespace oat\taoGroups\controller;
 use common_exception_Error;
 use common_exception_MethodNotAllowed;
 use common_ext_ExtensionsManager;
+use oat\oatbox\validator\ValidatorInterface;
 use oat\tao\model\controller\SignedFormInstance;
 use oat\tao\model\resources\ResourceWatcher;
 use oat\taoDeliveryRdf\helper\DeliveryWidget;
@@ -35,6 +36,7 @@ use tao_helpers_form_GenerisTreeForm;
 use tao_helpers_Uri;
 use tao_models_classes_dataBinding_GenerisFormDataBinder;
 use tao_helpers_form_FormContainer as FormContainer;
+use oat\tao\model\Lists\Business\Validation\DependsOnPropertyValidator;
 
 /**
  * This Module aims at managing the Group class and its instances.
@@ -71,8 +73,20 @@ class Groups extends tao_actions_SaSModule
         $clazz = $this->getCurrentClass();
         $group = $this->getCurrentInstance();
 
-        $formContainer = new SignedFormInstance($clazz, $group, [FormContainer::CSRF_PROTECTION_OPTION => true]);
+        $formContainer = new SignedFormInstance(
+            $clazz,
+            $group,
+            [
+                FormContainer::CSRF_PROTECTION_OPTION => true,
+                FormContainer::ATTRIBUTE_VALIDATORS => [
+                    'data-depends-on-property' => [
+                        $this->getDependsOnPropertyValidator(),
+                    ],
+                ],
+            ]
+        );
         $myForm = $formContainer->getForm();
+
         if ($myForm->isSubmited() && $myForm->isValid()) {
             $this->validateInstanceRoot($group->getUri());
 
@@ -111,5 +125,10 @@ class Groups extends tao_actions_SaSModule
     public function moveResource()
     {
         parent::moveResource();
+    }
+
+    private function getDependsOnPropertyValidator(): ValidatorInterface
+    {
+        return $this->getPsrContainer()->get(DependsOnPropertyValidator::class);
     }
 }
