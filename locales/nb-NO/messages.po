@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TAO 2021.10\n"
+"PO-Revision-Date: 2021-10-22T12:49:16\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: nb-NO\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: nb-NO\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Add to group"
+msgstr "Legg til i gruppe"
+
+#, tao-public
+msgid "Copy To"
+msgstr "Kopier til"
+
+#, tao-public
+msgid "Delete"
+msgstr "Slett"
+
+#, tao-public
+msgid "Duplicate"
+msgstr "Duplisere"
+
+msgid "Edit group"
+msgstr "Rediger gruppe"
+
+#, tao-public
+msgid "Export"
+msgstr "Eksporter"
+
+msgid "Group saved"
+msgstr "Gruppe ble lagret"
+
+#, tao-public
+msgid "Group test takers according to global features and classifications."
+msgstr "Grupper elever i henhold til globale funksjoner og klassifiseringer."
+
+msgid "Group uri is not valid"
+msgstr "Gruppe URI er ikke gyldig"
+
+#, tao-public
+msgid "Groups"
+msgstr "Grupper"
+
+#, tao-public
+msgid "Groups library"
+msgstr "Gruppebibliotek"
+
+#, tao-public
+msgid "Import"
+msgstr "Importer"
+
+msgid "Last updated on %2s"
+msgstr "Sist oppdatert på %2s"
+
+#, tao-public
+msgid "Manage groups"
+msgstr "Administrer grupper"
+
+#, tao-public
+msgid "Manage Schema"
+msgstr "Administrer skjema"
+
+#, tao-public
+msgid "Move"
+msgstr "Flytt"
+
+#, tao-public
+msgid "Move To"
+msgstr "Flytt til"
+
+#, tao-public
+msgid "New class"
+msgstr "Ny mappe"
+
+#, tao-public
+msgid "New Group"
+msgstr "Ny gruppe"
+
+#, tao-public
+msgid "Properties"
+msgstr "Egenskaper"
+
+msgid "Select group test takers"
+msgstr "Velg elevgrupper"
+
+msgid "The Groups module allows to group Test takers according to global features and classifications."
+msgstr "Gruppe-modulen gjør det mulig å gruppere elever i henhold til globale funksjoner og klassifiseringer."
+
+msgid "Unable to create new group"
+msgstr "Kan ikke opprette ny gruppe"
+
+msgid "Unable to delete group"
+msgstr "Kan ikke slette gruppe"
+
