@@ -22,8 +22,11 @@ declare(strict_types=1);
 
 namespace oat\taoDacSimple\test;
 
+use common_session_Session;
 use core_kernel_classes_Class;
 use core_kernel_classes_Resource;
+use oat\generis\model\OntologyRdfs;
+use oat\generis\test\ServiceManagerMockTrait;
 use oat\oatbox\log\LoggerService;
 use oat\oatbox\service\ServiceManager;
 use oat\oatbox\session\SessionService;
@@ -36,6 +39,8 @@ use PHPUnit\Framework\TestCase;
 
 class GroupServiceTest extends TestCase
 {
+    use ServiceManagerMockTrait;
+
     /** @var GroupsService */
     private $sut;
 
@@ -145,20 +150,54 @@ class GroupServiceTest extends TestCase
             ->method('getRootClass')
             ->willReturn($ttRootClassMock);
 
+        $classMock
+            ->expects($this->once())
+            ->method('searchInstances')
+            ->with(
+                [OntologyRdfs::RDFS_LABEL => 'Class Label 1'],
+                $this->anything()
+            )
+            ->willReturn([]);
 
         // @todo Mock the getDataLanguage() call from GenerisServiceTrait
         //       (called by GenerisServiceTrait::cloneInstance()).
         /*
          * 1) oat\taoDacSimple\test\GroupServiceTest::testCloneInstance
+         *   Expectation failed for method name is "searchInstances" when invoked 1 time(s)
          *
-         *      Error: Call to a member function get() on null
+         *   Parameter 0 for invocation core_kernel_classes_Class::searchInstances(Array (...), Array (...))
+         *   does not match expected value.
          *
-         *      tao/models/classes/GenerisServiceTrait.php:109
-         *      tao/models/classes/GenerisServiceTrait.php:83
-         *      tao/models/classes/GenerisServiceTrait.php:182
-         *      taoGroups/models/GroupsService.php:168
-         *      taoGroups/test/unit/model/GroupServiceTest.php:151
+         * Failed asserting that two arrays are equal.
+         * --- Expected
+         * +++ Actual
+         * @@ @@
+         *  Array (
+         * -    'http://www.tao.lu/Ontologies/TAOGroup.rdf#member' => 'http://example.com/group1'
+         * +    'http://www.tao.lu/Ontologies/TAOGroup.rdf#member' => ''
+         *  )
+         *
+         * models/GroupsService.php:117
+         * models/GroupsService.php:170
+         * test/unit/model/GroupServiceTest.php:192
          */
+        $sessionMock = $this->createMock(common_session_Session::class);
+        $sessionMock
+            ->method('getDataLanguage')
+            ->willReturn('en-US');
+
+        $sessionServiceMock = $this->createMock(SessionService::class);
+        $sessionServiceMock
+            ->method('getCurrentSession')
+            ->willReturn($sessionMock);
+
+        $this->sut->setServiceManager(
+            $this->getServiceManagerMock([
+                SessionService::SERVICE_ID => $sessionServiceMock,
+            ])
+        );
+
+
         $result = $this->sut->cloneInstance($groupMock, $classMock);
         $this->assertSame($newGroupMock, $result);
 
