@@ -26,6 +26,7 @@ use core_kernel_classes_Class;
 use core_kernel_classes_Resource;
 use oat\oatbox\log\LoggerService;
 use oat\oatbox\service\ServiceManager;
+use oat\oatbox\session\SessionService;
 use oat\oatbox\user\User;
 use oat\tao\model\taskQueue\QueueDispatcher;
 use oat\taoGroups\models\GroupsService;
@@ -96,8 +97,76 @@ class GroupServiceTest extends TestCase
         $this->assertEquals($this->userMock, $users[0]);
     }
 
+    /**
+     * @depends testGetUsers
+     */
     public function testCloneInstance(): void
     {
-        $this->markTestIncomplete('TO-DO');
+        $classMock = $this->createMock(core_kernel_classes_Class::class);
+        $groupMock = $this->createMock(core_kernel_classes_Resource::class);
+        $newGroupMock = $this->createMock(core_kernel_classes_Resource::class);
+
+        $classMock
+            ->expects($this->once())
+            ->method('createInstance')
+            ->with($this->anything())
+            ->willReturn($newGroupMock);
+
+        $classMock
+            ->method('getLabel')
+            ->willReturn('Class Label');
+
+        $classMock
+            ->method('getInstances')
+            ->willReturn([]);
+
+        $classMock
+            ->method('getProperties')
+            ->with(true)
+            ->willReturn([]);
+
+        $newGroupMock
+            ->expects($this->once())
+            ->method('setLabel')
+            ->with($this->anything());
+
+        $ttRootClassMock = $this->createMock(core_kernel_classes_Class::class);
+        $ttRootClassMock
+            ->expects($this->once())
+            ->method('searchInstances')
+            ->with(
+                [GroupsService::PROPERTY_MEMBERS_URI => 'http://example.com/group1'],
+                ['recursive' => true, 'like' => false]
+            )
+            ->willReturn([$this->userMock]);
+
+        $this->testTakerServiceMock
+            ->expects($this->once())
+            ->method('getRootClass')
+            ->willReturn($ttRootClassMock);
+
+
+        // @todo Mock the getDataLanguage() call from GenerisServiceTrait
+        //       (called by GenerisServiceTrait::cloneInstance()).
+        /*
+         * 1) oat\taoDacSimple\test\GroupServiceTest::testCloneInstance
+         *
+         *      Error: Call to a member function get() on null
+         *
+         *      tao/models/classes/GenerisServiceTrait.php:109
+         *      tao/models/classes/GenerisServiceTrait.php:83
+         *      tao/models/classes/GenerisServiceTrait.php:182
+         *      taoGroups/models/GroupsService.php:168
+         *      taoGroups/test/unit/model/GroupServiceTest.php:151
+         */
+        $result = $this->sut->cloneInstance($groupMock, $classMock);
+        $this->assertSame($newGroupMock, $result);
+
+        // @todo Test if the users have been copied
+        //       (i.e. if addUser / $user->setPropertyValue() has been called
+        //        for former users in the copied group)
+
+
+        $this->markTestIncomplete('Work in Progress');
     }
 }
