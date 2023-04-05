@@ -18,17 +18,20 @@
  * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg (under the project TAO & TAO2);
  *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- *               2013-2014 (update and modification) Open Assessment Technologies SA
+ *               2013-2023 (update and modification) Open Assessment Technologies SA
  */
 
 namespace oat\taoGroups\models;
 
-use \core_kernel_classes_Class;
-use \core_kernel_classes_Property;
-use \core_kernel_classes_Resource;
+use common_Exception;
+use common_exception_Error;
+use League\Flysystem\FileExistsException;
 use oat\taoTestTaker\models\TestTakerService;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
+use core_kernel_classes_Class;
+use core_kernel_classes_Property;
+use core_kernel_classes_Resource;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -36,16 +39,17 @@ use oat\tao\model\OntologyClassService;
  * @access public
  * @author Joel Bout, <joel.bout@tudor.lu>
  * @package taoGroups
-
  */
 class GroupsService extends OntologyClassService
 {
     const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
 
     const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
-    
+
+    private ?TestTakerService $testTakerService = null;
+
     /**
-     * return the group top level class
+     * Return the group top level class
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
@@ -57,14 +61,14 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * delete a group instance
+     * Delete a group instance
      *
      * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param \core_kernel_classes_Resource group
+     * @param core_kernel_classes_Resource group
      * @return boolean
+     * @author Joel Bout, <joel.bout@tudor.lu>
      */
-    public function deleteGroup(\core_kernel_classes_Resource $group)
+    public function deleteGroup(core_kernel_classes_Resource $group)
     {
         return $group !== null && $group->delete(true);
     }
@@ -74,7 +78,7 @@ class GroupsService extends OntologyClassService
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  Class clazz
+     * @param  core_kernel_classes_Class $clazz
      * @return boolean
      */
     public function isGroupClass(core_kernel_classes_Class $clazz)
@@ -83,37 +87,35 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * get the groups of a user
+     * Get the groups of a user
      *
      * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  string userUri
+     * @param  User $user
      * @return array resources of group
      */
     public function getGroups(User $user)
     {
-        $groups = $user->getPropertyValues(self::PROPERTY_MEMBERS_URI);
-        array_walk($groups, function (&$group) {
-            $group = new core_kernel_classes_Resource($group);
-        });
-        return $groups;
+        return array_map(
+            function($group) {
+                return new core_kernel_classes_Resource($group);
+            },
+            $user->getPropertyValues(self::PROPERTY_MEMBERS_URI)
+        );
     }
     
     /**
-     * gets the users of a group
+     * Gets the users of a group
      *
      * @param string $groupUri
-     * @return array resources of users
+     * @return core_kernel_classes_Resource[] resources of users
      */
-    public function getUsers($groupUri)
+    public function getUsers(string $groupUri): array
     {
-        $subjectClass = TestTakerService::singleton()->getRootClass();
-        $users = $subjectClass->searchInstances([
-            self::PROPERTY_MEMBERS_URI => $groupUri
-        ], [
-            'recursive' => true, 'like' => false
-        ]);
-        return $users;
+        return $this->getTestTakerRootClass()->searchInstances(
+            [self::PROPERTY_MEMBERS_URI => $groupUri],
+            ['recursive' => true, 'like' => false]
+        );
     }
     
     /**
@@ -125,7 +127,7 @@ class GroupsService extends OntologyClassService
      */
     public function addUser($userUri, core_kernel_classes_Resource $group)
     {
-        $user = new \core_kernel_classes_Resource($userUri);
+        $user = new core_kernel_classes_Resource($userUri);
         return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
     
@@ -138,7 +140,52 @@ class GroupsService extends OntologyClassService
      */
     public function removeUser($userUri, core_kernel_classes_Resource $group)
     {
-        $user = new \core_kernel_classes_Resource($userUri);
+        $user = new core_kernel_classes_Resource($userUri);
         return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+    }
+
+    /**
+     * Duplicates a Group, copying associations for former  Test Takers and
+     * Deliveries to the new group.
+     *
+     * Test takers assigned to the group are not copied by the parent class
+     * method (but deliveries assigned to the group are), so we need to assign
+     * them here to the new group.
+     *
+     * @param core_kernel_classes_Resource $instance Group being cloned
+     * @param core_kernel_classes_Class $class Class to create the duplicate in
+     *
+     * @throws common_Exception
+     * @throws common_exception_Error
+     * @throws FileExistsException
+     *
+     * @return core_kernel_classes_Resource
+     */
+    public function cloneInstance(
+        core_kernel_classes_Resource $instance,
+        core_kernel_classes_Class $class = null
+    ) {
+        $newGroup = parent::cloneInstance($instance, $class);
+
+        foreach ($this->getUsers($instance->getUri()) as $user) {
+            $this->addUser($user->getUri(), $newGroup);
+        }
+
+        return $newGroup;
+    }
+
+    private function getTestTakerRootClass(): core_kernel_classes_Class
+    {
+        return $this->getTestTakerService()->getRootClass();
+    }
+
+    private function getTestTakerService(): TestTakerService
+    {
+        return $this->testTakerService ?? TestTakerService::singleton();
+    }
+
+    public function setTestTakerService(TestTakerService $service): void
+    {
+        $this->testTakerService = $service;
     }
 }
