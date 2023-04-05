@@ -110,6 +110,24 @@ class GroupServiceTest extends TestCase
         $classMock = $this->createMock(core_kernel_classes_Class::class);
         $groupMock = $this->createMock(core_kernel_classes_Resource::class);
         $newGroupMock = $this->createMock(core_kernel_classes_Resource::class);
+        /*$groupMock = $this->getMockBuilder(User::class)
+            //->setMockClassName(core_kernel_classes_Resource::class)
+            ->setMethods(array_merge(get_class_methods(User::class),['getUri']))
+               // ->enableProxyingToOriginalMethods()
+
+            ->getMock();*/
+
+        $this->userMock = $this->createMock(core_kernel_classes_Resource::class);
+
+        $this->userMock
+            ->expects($this->once())
+            ->method('getUri')
+            ->willReturn('http://example.com/user1');
+
+        $this->userMock
+            ->expects($this->once())
+            ->method('setPropertyValue')
+            ->with($this->anything(), $this->anything()); // @fixme
 
         $classMock
             ->expects($this->once())
@@ -135,6 +153,11 @@ class GroupServiceTest extends TestCase
             ->method('setLabel')
             ->with($this->anything());
 
+        $groupMock
+            ->expects($this->once())
+            ->method('getUri')
+            ->willReturn('http://example.com/group1');
+
         $ttRootClassMock = $this->createMock(core_kernel_classes_Class::class);
         $ttRootClassMock
             ->expects($this->once())
@@ -158,6 +181,8 @@ class GroupServiceTest extends TestCase
                 $this->anything()
             )
             ->willReturn([]);
+
+
 
         // @todo Mock the getDataLanguage() call from GenerisServiceTrait
         //       (called by GenerisServiceTrait::cloneInstance()).

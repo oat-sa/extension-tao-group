@@ -127,6 +127,8 @@ class GroupsService extends OntologyClassService
      */
     public function addUser($userUri, core_kernel_classes_Resource $group)
     {
+        // @fixme Instantiating core_kernel_classes_Resource directly is not testable,
+        //        would need to pass an Ontology(mock) to be used to retrieve resources
         $user = new core_kernel_classes_Resource($userUri);
         return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
     }
