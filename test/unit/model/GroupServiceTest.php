@@ -20,7 +20,7 @@
 
 declare(strict_types=1);
 
-namespace oat\taoDacSimple\test;
+namespace oat\taoGroups\test\unit\model;
 
 use oat\generis\model\data\Ontology;
 use oat\generis\model\OntologyRdfs;
