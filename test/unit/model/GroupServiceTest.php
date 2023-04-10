@@ -22,18 +22,17 @@ declare(strict_types=1);
 
 namespace oat\taoDacSimple\test;
 
-use common_session_Session;
-use core_kernel_classes_Class;
-use core_kernel_classes_Resource;
+use oat\generis\model\data\Ontology;
 use oat\generis\model\OntologyRdfs;
 use oat\generis\test\ServiceManagerMockTrait;
-use oat\oatbox\log\LoggerService;
-use oat\oatbox\service\ServiceManager;
 use oat\oatbox\session\SessionService;
 use oat\oatbox\user\User;
-use oat\tao\model\taskQueue\QueueDispatcher;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
+use common_session_Session;
+use core_kernel_classes_Class;
+use core_kernel_classes_Property;
+use core_kernel_classes_Resource;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -47,13 +46,29 @@ class GroupServiceTest extends TestCase
     /** @var User|MockObject */
     private $userMock;
 
+    /** @var Ontology|MockObject */
+    private $ontology;
+
+    /** @var core_kernel_classes_Resource|MockObject */
+    private $group1Mock;
+
+    /** @var core_kernel_classes_Resource|MockObject */
+    private $group2Mock;
+
     public function setUp(): void
     {
-        $this->sut = new GroupsService();
         $this->userMock = $this->createMock(User::class);
         $this->testTakerServiceMock = $this->createMock(TestTakerService::class);
+        $this->group1Mock = $this->createMock(core_kernel_classes_Resource::class);
+        $this->group2Mock = $this->createMock(core_kernel_classes_Resource::class);
+        $this->ontology = $this->createMock(Ontology::class);
 
+        $this->group1Mock->method('getUri')->willReturn('http://example.com/group1');
+        $this->group2Mock->method('getUri')->willReturn('http://example.com/group2');
+
+        $this->sut = new GroupsService();
         $this->sut->setTestTakerService($this->testTakerServiceMock);
+        $this->sut->setModel($this->ontology);
     }
 
     public function testGetGroups(): void
@@ -67,6 +82,18 @@ class GroupServiceTest extends TestCase
                     'http://example.com/group1',
                     'http://example.com/group2'
                 ]
+            );
+
+        $this->ontology
+            ->expects($this->exactly(2))
+            ->method('getResource')
+            ->withConsecutive(
+                ['http://example.com/group1'],
+                ['http://example.com/group2']
+            )
+            ->willReturnOnConsecutiveCalls(
+                $this->group1Mock,
+                $this->group2Mock
             );
 
         $groups = $this->sut->getGroups($this->userMock);
@@ -107,56 +134,55 @@ class GroupServiceTest extends TestCase
      */
     public function testCloneInstance(): void
     {
-        $classMock = $this->createMock(core_kernel_classes_Class::class);
-        $groupMock = $this->createMock(core_kernel_classes_Resource::class);
-        $newGroupMock = $this->createMock(core_kernel_classes_Resource::class);
-        /*$groupMock = $this->getMockBuilder(User::class)
-            //->setMockClassName(core_kernel_classes_Resource::class)
-            ->setMethods(array_merge(get_class_methods(User::class),['getUri']))
-               // ->enableProxyingToOriginalMethods()
+        $membersProperty = $this->createMock(core_kernel_classes_Property::class);
+        $this->ontology
+            ->expects($this->once())
+            ->method('getProperty')
+            ->with(GroupsService::PROPERTY_MEMBERS_URI)
+            ->willReturn($membersProperty);
 
-            ->getMock();*/
+        $newGroupMock = $this->createMock(core_kernel_classes_Resource::class);
+        $newGroupMock
+            ->method('setLabel')  // Called by parent::cloneInstance()
+            ->with($this->stringStartsWith('Former group'));
 
         $this->userMock = $this->createMock(core_kernel_classes_Resource::class);
-
         $this->userMock
             ->expects($this->once())
             ->method('getUri')
             ->willReturn('http://example.com/user1');
 
-        $this->userMock
+        $this->ontology
             ->expects($this->once())
-            ->method('setPropertyValue')
-            ->with($this->anything(), $this->anything()); // @fixme
+            ->method('getResource')
+            ->with('http://example.com/user1')
+            ->willReturn($this->userMock);
 
-        $classMock
-            ->expects($this->once())
-            ->method('createInstance')
-            ->with($this->anything())
-            ->willReturn($newGroupMock);
-
+        $classMock = $this->createMock(core_kernel_classes_Class::class);
         $classMock
             ->method('getLabel')
             ->willReturn('Class Label');
-
         $classMock
             ->method('getInstances')
             ->willReturn([]);
-
         $classMock
             ->method('getProperties')
             ->with(true)
             ->willReturn([]);
-
-        $newGroupMock
+        $classMock
             ->expects($this->once())
-            ->method('setLabel')
-            ->with($this->anything());
+            ->method('createInstance') // Called from GenerisServiceTrait
+            ->with($this->stringStartsWith('Class Label'))
+            ->willReturn($newGroupMock);
 
+        $groupMock = $this->createMock(core_kernel_classes_Resource::class);
         $groupMock
             ->expects($this->once())
             ->method('getUri')
             ->willReturn('http://example.com/group1');
+        $groupMock
+            ->method('getLabel')
+            ->willReturn('Former group');
 
         $ttRootClassMock = $this->createMock(core_kernel_classes_Class::class);
         $ttRootClassMock
@@ -182,30 +208,29 @@ class GroupServiceTest extends TestCase
             )
             ->willReturn([]);
 
+        // Mocks needed for the call to parent::cloneInstance()
+        $this->sut->setServiceManager(
+            $this->getServiceManagerMock([
+                SessionService::SERVICE_ID => $this->getSessionServiceMock(),
+            ])
+        );
 
+        // Tests if a call is made to assign the former users to the new group
+        $this->userMock
+            ->expects($this->once())
+            ->method('setPropertyValue')
+            ->with($membersProperty, $newGroupMock);
 
-        // @todo Mock the getDataLanguage() call from GenerisServiceTrait
-        //       (called by GenerisServiceTrait::cloneInstance()).
-        /*
-         * 1) oat\taoDacSimple\test\GroupServiceTest::testCloneInstance
-         *   Expectation failed for method name is "searchInstances" when invoked 1 time(s)
-         *
-         *   Parameter 0 for invocation core_kernel_classes_Class::searchInstances(Array (...), Array (...))
-         *   does not match expected value.
-         *
-         * Failed asserting that two arrays are equal.
-         * --- Expected
-         * +++ Actual
-         * @@ @@
-         *  Array (
-         * -    'http://www.tao.lu/Ontologies/TAOGroup.rdf#member' => 'http://example.com/group1'
-         * +    'http://www.tao.lu/Ontologies/TAOGroup.rdf#member' => ''
-         *  )
-         *
-         * models/GroupsService.php:117
-         * models/GroupsService.php:170
-         * test/unit/model/GroupServiceTest.php:192
-         */
+        $result = $this->sut->cloneInstance($groupMock, $classMock);
+        $this->assertSame($newGroupMock, $result);
+    }
+
+    /**
+     * SessionService needs to be mocked because it is used by cloneInstance()
+     * (inherited from GenerisServiceTrait).
+     */
+    private function getSessionServiceMock(): SessionService
+    {
         $sessionMock = $this->createMock(common_session_Session::class);
         $sessionMock
             ->method('getDataLanguage')
@@ -216,21 +241,6 @@ class GroupServiceTest extends TestCase
             ->method('getCurrentSession')
             ->willReturn($sessionMock);
 
-        $this->sut->setServiceManager(
-            $this->getServiceManagerMock([
-                SessionService::SERVICE_ID => $sessionServiceMock,
-            ])
-        );
-
-
-        $result = $this->sut->cloneInstance($groupMock, $classMock);
-        $this->assertSame($newGroupMock, $result);
-
-        // @todo Test if the users have been copied
-        //       (i.e. if addUser / $user->setPropertyValue() has been called
-        //        for former users in the copied group)
-
-
-        $this->markTestIncomplete('Work in Progress');
+        return $sessionServiceMock;
     }
 }

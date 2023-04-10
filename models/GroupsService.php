@@ -23,15 +23,14 @@
 
 namespace oat\taoGroups\models;
 
-use common_Exception;
-use common_exception_Error;
-use League\Flysystem\FileExistsException;
 use oat\taoTestTaker\models\TestTakerService;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
+use common_Exception;
+use common_exception_Error;
 use core_kernel_classes_Class;
-use core_kernel_classes_Property;
 use core_kernel_classes_Resource;
+use League\Flysystem\FileExistsException;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -64,7 +63,7 @@ class GroupsService extends OntologyClassService
      * Delete a group instance
      *
      * @access public
-     * @param core_kernel_classes_Resource group
+     * @param core_kernel_classes_Resource $group
      * @return boolean
      * @author Joel Bout, <joel.bout@tudor.lu>
      */
@@ -83,7 +82,8 @@ class GroupsService extends OntologyClassService
      */
     public function isGroupClass(core_kernel_classes_Class $clazz)
     {
-        return $clazz->equals($this->getRootClass()) || $clazz->isSubClassOf($this->getRootClass());
+        return $clazz->equals($this->getRootClass())
+            || $clazz->isSubClassOf($this->getRootClass());
     }
 
     /**
@@ -97,8 +97,8 @@ class GroupsService extends OntologyClassService
     public function getGroups(User $user)
     {
         return array_map(
-            function($group) {
-                return new core_kernel_classes_Resource($group);
+            function(string $group): core_kernel_classes_Resource {
+                return $this->getModel()->getResource($group);
             },
             $user->getPropertyValues(self::PROPERTY_MEMBERS_URI)
         );
@@ -127,10 +127,10 @@ class GroupsService extends OntologyClassService
      */
     public function addUser($userUri, core_kernel_classes_Resource $group)
     {
-        // @fixme Instantiating core_kernel_classes_Resource directly is not testable,
-        //        would need to pass an Ontology(mock) to be used to retrieve resources
-        $user = new core_kernel_classes_Resource($userUri);
-        return $user->setPropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+        return $this->getModel()->getResource($userUri)->setPropertyValue(
+            $this->getModel()->getProperty(self::PROPERTY_MEMBERS_URI),
+            $group
+        );
     }
     
     /**
@@ -142,8 +142,10 @@ class GroupsService extends OntologyClassService
      */
     public function removeUser($userUri, core_kernel_classes_Resource $group)
     {
-        $user = new core_kernel_classes_Resource($userUri);
-        return $user->removePropertyValue(new core_kernel_classes_Property(self::PROPERTY_MEMBERS_URI), $group);
+        return $this->getModel()->getResource($userUri)->removePropertyValue(
+            $this->getModel()->getProperty(self::PROPERTY_MEMBERS_URI),
+            $group
+        );
     }
 
     /**
@@ -155,7 +157,7 @@ class GroupsService extends OntologyClassService
      * them here to the new group.
      *
      * @param core_kernel_classes_Resource $instance Group being cloned
-     * @param core_kernel_classes_Class $class Class to create the duplicate in
+     * @param ?core_kernel_classes_Class $class Class to create the duplicate in
      *
      * @throws common_Exception
      * @throws common_exception_Error
