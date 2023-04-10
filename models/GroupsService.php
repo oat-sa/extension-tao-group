@@ -1,4 +1,4 @@
-<?php
+<?php // @codingStandardsIgnoreStart
 
 /**
  * This program is free software; you can redistribute it and/or
@@ -21,6 +21,8 @@
  *               2013-2023 (update and modification) Open Assessment Technologies SA
  */
 
+// @codingStandardsIgnoreEnd
+
 namespace oat\taoGroups\models;
 
 use oat\taoTestTaker\models\TestTakerService;
@@ -41,9 +43,9 @@ use League\Flysystem\FileExistsException;
  */
 class GroupsService extends OntologyClassService
 {
-    const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
+    public const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
 
-    const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
+    public const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
 
     private ?TestTakerService $testTakerService = null;
 
@@ -97,13 +99,13 @@ class GroupsService extends OntologyClassService
     public function getGroups(User $user)
     {
         return array_map(
-            function(string $group): core_kernel_classes_Resource {
+            function (string $group): core_kernel_classes_Resource {
                 return $this->getModel()->getResource($group);
             },
             $user->getPropertyValues(self::PROPERTY_MEMBERS_URI)
         );
     }
-    
+
     /**
      * Gets the users of a group
      *
@@ -117,7 +119,7 @@ class GroupsService extends OntologyClassService
             ['recursive' => true, 'like' => false]
         );
     }
-    
+
     /**
      * Add a User to a Group
      *
@@ -132,7 +134,7 @@ class GroupsService extends OntologyClassService
             $group
         );
     }
-    
+
     /**
      * Remove a User from a Group
      *
