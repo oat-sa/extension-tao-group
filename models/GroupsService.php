@@ -167,7 +167,7 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * Duplicates a Group, copying associations for former  Test Takers and
+     * Duplicates a Group, copying associations for former Test Takers and
      * Deliveries to the new group.
      *
      * Test takers assigned to the group are not copied by the parent class
