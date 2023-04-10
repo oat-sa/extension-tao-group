@@ -66,9 +66,11 @@ class GroupServiceTest extends TestCase
         $this->group1Mock->method('getUri')->willReturn('http://example.com/group1');
         $this->group2Mock->method('getUri')->willReturn('http://example.com/group2');
 
-        $this->sut = new GroupsService();
-        $this->sut->setTestTakerService($this->testTakerServiceMock);
-        $this->sut->setModel($this->ontology);
+        $this->sut = new GroupsService(
+             [],
+            $this->testTakerServiceMock,
+            $this->ontology
+        );
     }
 
     public function testGetGroups(): void

@@ -26,6 +26,7 @@
 
 namespace oat\taoGroups\models;
 
+use oat\generis\model\data\Ontology;
 use oat\taoTestTaker\models\TestTakerService;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
@@ -48,7 +49,21 @@ class GroupsService extends OntologyClassService
 
     public const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
 
-    private ?TestTakerService $testTakerService = null;
+    private TestTakerService $testTakerService;
+
+    public function __construct(
+        $options = [],
+        ?TestTakerService $testTakerService = null,
+        ?Ontology $ontology = null
+    ) {
+        parent::__construct($options);
+
+        $this->testTakerService = $testTakerService ?? TestTakerService::singleton();
+
+        if ($ontology instanceof Ontology) {
+            $this->setModel($ontology);
+        }
+    }
 
     /**
      * Return the group top level class
@@ -183,16 +198,6 @@ class GroupsService extends OntologyClassService
 
     private function getTestTakerRootClass(): core_kernel_classes_Class
     {
-        return $this->getTestTakerService()->getRootClass();
-    }
-
-    private function getTestTakerService(): TestTakerService
-    {
-        return $this->testTakerService ?? TestTakerService::singleton();
-    }
-
-    public function setTestTakerService(TestTakerService $service): void
-    {
-        $this->testTakerService = $service;
+        return $this->testTakerService->getRootClass();
     }
 }
