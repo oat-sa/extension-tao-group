@@ -93,8 +93,12 @@ class GroupsService extends OntologyClassService
      *
      * @return core_kernel_classes_Resource[] User resources
      */
-    public function getUsers(string $groupUri): array
+    public function getUsers(?string $groupUri): array
     {
+        if (empty($groupUri)) {
+            return [];
+        }
+
         return $this->getTestTakerService()->getRootClass()->searchInstances(
             [self::PROPERTY_MEMBERS_URI => $groupUri],
             ['recursive' => true, 'like' => false]
