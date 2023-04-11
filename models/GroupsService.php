@@ -27,6 +27,7 @@
 namespace oat\taoGroups\models;
 
 use oat\generis\model\data\Ontology;
+use oat\tao\model\TaoOntology;
 use oat\taoTestTaker\models\TestTakerService;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
@@ -45,7 +46,7 @@ use League\Flysystem\FileExistsException;
  */
 class GroupsService extends OntologyClassService
 {
-    public const CLASS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Group';
+    public const CLASS_URI = TaoOntology::CLASS_URI_GROUP;
 
     public const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
 
@@ -93,9 +94,7 @@ class GroupsService extends OntologyClassService
     /**
      * Check if the Class in parameter is a subclass of the Group Class
      *
-     * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  core_kernel_classes_Class $clazz
      * @return boolean
      */
     public function isGroupClass(core_kernel_classes_Class $clazz)
@@ -105,12 +104,10 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * Get the groups of a user
+     * Get the groups of a user.
      *
-     * @access public
      * @author Joel Bout, <joel.bout@tudor.lu>
-     * @param  User $user
-     * @return array resources of group
+     * @return core_kernel_classes_Resource[] resources of group
      */
     public function getGroups(User $user)
     {
@@ -125,7 +122,6 @@ class GroupsService extends OntologyClassService
     /**
      * Gets the users of a group
      *
-     * @param string $groupUri
      * @return core_kernel_classes_Resource[] resources of users
      */
     public function getUsers(string $groupUri): array
