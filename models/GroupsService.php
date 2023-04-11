@@ -97,7 +97,7 @@ class GroupsService extends OntologyClassService
      */
     public function getUsers(string $groupUri): array
     {
-        return $this->getTestTakerRootClass()->searchInstances(
+        return $this->getTestTakerService()->getRootClass()->searchInstances(
             [self::PROPERTY_MEMBERS_URI => $groupUri],
             ['recursive' => true, 'like' => false]
         );
@@ -148,11 +148,6 @@ class GroupsService extends OntologyClassService
         }
 
         return $newGroup;
-    }
-
-    private function getTestTakerRootClass(): core_kernel_classes_Class
-    {
-        return $this->getTestTakerService()->getRootClass();
     }
 
     private function getTestTakerService(): TestTakerService
