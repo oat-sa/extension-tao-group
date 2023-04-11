@@ -135,6 +135,17 @@ class GroupServiceTest extends TestCase
         $this->assertEquals($this->userMock, $users[0]);
     }
 
+    public function testGetUsersForNullGroupUri(): void
+    {
+        $this->testTakerServiceMock
+            ->expects($this->never())
+            ->method('getRootClass');
+
+        $users = $this->sut->getUsers(null);
+
+        $this->assertEmpty($users);
+    }
+
     /**
      * @depends testGetUsers
      */
