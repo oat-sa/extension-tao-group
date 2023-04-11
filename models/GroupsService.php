@@ -50,8 +50,6 @@ class GroupsService extends OntologyClassService
 
     public const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
 
-    private ?TestTakerService $testTakerService = null;
-
     /**
      * Returns the group top level class.
      */
@@ -150,13 +148,8 @@ class GroupsService extends OntologyClassService
         return $newGroup;
     }
 
-    private function getTestTakerService(): TestTakerService
+    protected function getTestTakerService(): TestTakerService
     {
-        return $this->testTakerService ?? TestTakerService::singleton();
-    }
-
-    public function setTestTakerService(TestTakerService $service): void
-    {
-        $this->testTakerService = $service;
+        return $this->getServiceManager()->getContainer()->get(TestTakerService::class);
     }
 }

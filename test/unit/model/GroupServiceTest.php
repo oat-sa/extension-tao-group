@@ -25,6 +25,7 @@ namespace oat\taoGroups\test\unit\model;
 use oat\generis\model\data\Ontology;
 use oat\generis\model\OntologyRdfs;
 use oat\generis\test\ServiceManagerMockTrait;
+use oat\oatbox\service\ServiceManager;
 use oat\oatbox\session\SessionService;
 use oat\oatbox\user\User;
 use oat\taoGroups\models\GroupsService;
@@ -66,8 +67,13 @@ class GroupServiceTest extends TestCase
         $this->group1Mock->method('getUri')->willReturn('http://example.com/group1');
         $this->group2Mock->method('getUri')->willReturn('http://example.com/group2');
 
+        ServiceManager::setServiceManager(
+            $this->getServiceManagerMock([
+                TestTakerService::class => $this->testTakerServiceMock,
+            ])
+        );
+
         $this->sut = new GroupsService();
-        $this->sut->setTestTakerService($this->testTakerServiceMock);
         $this->sut->setModel($this->ontology);
     }
 
