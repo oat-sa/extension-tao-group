@@ -66,11 +66,9 @@ class GroupServiceTest extends TestCase
         $this->group1Mock->method('getUri')->willReturn('http://example.com/group1');
         $this->group2Mock->method('getUri')->willReturn('http://example.com/group2');
 
-        $this->sut = new GroupsService(
-            [],
-            $this->testTakerServiceMock,
-            $this->ontology
-        );
+        $this->sut = new GroupsService();
+        $this->sut->setTestTakerService($this->testTakerServiceMock);
+        $this->sut->setModel($this->ontology);
     }
 
     public function testGetGroups(): void
@@ -221,7 +219,8 @@ class GroupServiceTest extends TestCase
         $this->userMock
             ->expects($this->once())
             ->method('setPropertyValue')
-            ->with($membersProperty, $newGroupMock);
+            ->with($membersProperty, $newGroupMock)
+            ->willReturn(true);
 
         $result = $this->sut->cloneInstance($groupMock, $classMock);
         $this->assertSame($newGroupMock, $result);
