@@ -100,9 +100,7 @@ class GroupsService extends OntologyClassService
     public function getGroups(User $user): array
     {
         return array_map(
-            function (string $group): core_kernel_classes_Resource {
-                return $this->getModel()->getResource($group);
-            },
+            fn (string $group): core_kernel_classes_Resource => $this->getModel()->getResource($group),
             $user->getPropertyValues(self::PROPERTY_MEMBERS_URI)
         );
     }
