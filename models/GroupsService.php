@@ -40,8 +40,9 @@ use League\Flysystem\FileExistsException;
 /**
  * Service methods to manage the Groups business models using the RDF API.
  *
- * @access public
  * @author Joel Bout, <joel.bout@tudor.lu>
+ *
+ * @access public
  * @package taoGroups
  */
 class GroupsService extends OntologyClassService
@@ -67,37 +68,25 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * Return the group top level class
-     *
-     * @access public
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @return core_kernel_classes_Class
+     * Returns the group top level class.
      */
-    public function getRootClass()
+    public function getRootClass(): core_kernel_classes_Class
     {
         return $this->getClass(self::CLASS_URI);
     }
 
     /**
-     * Delete a group instance
-     *
-     * @access public
-     * @param core_kernel_classes_Resource $group
-     * @return boolean
-     * @author Joel Bout, <joel.bout@tudor.lu>
+     * Deletes a group instance.
      */
-    public function deleteGroup(core_kernel_classes_Resource $group)
+    public function deleteGroup(core_kernel_classes_Resource $group): bool
     {
         return $group !== null && $group->delete(true);
     }
 
     /**
-     * Check if the Class in parameter is a subclass of the Group Class
-     *
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @return boolean
+     * Check if a given class is a subclass of the Group root class.
      */
-    public function isGroupClass(core_kernel_classes_Class $clazz)
+    public function isGroupClass(core_kernel_classes_Class $clazz): bool
     {
         return $clazz->equals($this->getRootClass())
             || $clazz->isSubClassOf($this->getRootClass());
@@ -106,10 +95,9 @@ class GroupsService extends OntologyClassService
     /**
      * Get the groups of a user.
      *
-     * @author Joel Bout, <joel.bout@tudor.lu>
-     * @return core_kernel_classes_Resource[] resources of group
+     * @return core_kernel_classes_Resource[] Group resources
      */
-    public function getGroups(User $user)
+    public function getGroups(User $user): array
     {
         return array_map(
             function (string $group): core_kernel_classes_Resource {
@@ -120,9 +108,9 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * Gets the users of a group
+     * Gets the users of a group.
      *
-     * @return core_kernel_classes_Resource[] resources of users
+     * @return core_kernel_classes_Resource[] User resources
      */
     public function getUsers(string $groupUri): array
     {
@@ -133,13 +121,9 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * Add a User to a Group
-     *
-     * @param string $userUri
-     * @param core_kernel_classes_Resource $group
-     * @return boolean
+     * Adds a user to a Group.
      */
-    public function addUser($userUri, core_kernel_classes_Resource $group)
+    public function addUser(string $userUri, core_kernel_classes_Resource $group): bool
     {
         return $this->getModel()->getResource($userUri)->setPropertyValue(
             $this->getModel()->getProperty(self::PROPERTY_MEMBERS_URI),
@@ -148,13 +132,9 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * Remove a User from a Group
-     *
-     * @param string $userUri
-     * @param core_kernel_classes_Resource $group
-     * @return boolean
+     * Removes a user from a Group.
      */
-    public function removeUser($userUri, core_kernel_classes_Resource $group)
+    public function removeUser(string $userUri, core_kernel_classes_Resource $group): bool
     {
         return $this->getModel()->getResource($userUri)->removePropertyValue(
             $this->getModel()->getProperty(self::PROPERTY_MEMBERS_URI),
@@ -163,28 +143,23 @@ class GroupsService extends OntologyClassService
     }
 
     /**
-     * Duplicates a Group, copying associations for former Test Takers and
-     * Deliveries to the new group.
-     *
-     * Test takers assigned to the group are not copied by the parent class
-     * method (but deliveries assigned to the group are), so we need to assign
-     * them here to the new group.
-     *
-     * @param core_kernel_classes_Resource $instance Group being cloned
-     * @param ?core_kernel_classes_Class $class Class to create the duplicate in
+     * Creates a duplicate of the given group instance into the given class,
+     * copying associations for former Test Takers and Deliveries to the new group.
      *
      * @throws common_Exception
      * @throws common_exception_Error
      * @throws FileExistsException
-     *
-     * @return core_kernel_classes_Resource
      */
     public function cloneInstance(
         core_kernel_classes_Resource $instance,
         core_kernel_classes_Class $class = null
-    ) {
+    ): core_kernel_classes_Resource {
         $newGroup = parent::cloneInstance($instance, $class);
 
+        // Test takers assigned to the group are not copied by the parent class
+        // method (but deliveries assigned to the group are), so we need to
+        // assign them here to the new group.
+        //
         foreach ($this->getUsers($instance->getUri()) as $user) {
             $this->addUser($user->getUri(), $newGroup);
         }
