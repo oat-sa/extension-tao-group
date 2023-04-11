@@ -125,7 +125,13 @@ class GroupsService extends OntologyClassService
 
     /**
      * Creates a duplicate of the given group instance into the given class,
-     * copying associations for former Test Takers and Deliveries to the new group.
+     * copying associations for former Test Takers and Deliveries to the new
+     * group.
+     *
+     * Test takers assigned to the group are not copied by the parent class
+     * method (but deliveries assigned to the group are) so, after the parent
+     * method has copied the former relations pointing to deliveries, this
+     * method assigns all test takers from the former group to the new one.
      *
      * @throws common_Exception
      * @throws common_exception_Error
@@ -137,10 +143,6 @@ class GroupsService extends OntologyClassService
     ): core_kernel_classes_Resource {
         $newGroup = parent::cloneInstance($instance, $class);
 
-        // Test takers assigned to the group are not copied by the parent class
-        // method (but deliveries assigned to the group are), so we need to
-        // assign them here to the new group.
-        //
         foreach ($this->getUsers($instance->getUri()) as $user) {
             $this->addUser($user->getUri(), $newGroup);
         }
