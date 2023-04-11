@@ -154,7 +154,7 @@ class GroupsService extends OntologyClassService
         return $newGroup;
     }
 
-    protected function getTestTakerService(): TestTakerService
+    public function getTestTakerService(): TestTakerService
     {
         return $this->getServiceManager()->getContainer()->get(TestTakerService::class);
     }
