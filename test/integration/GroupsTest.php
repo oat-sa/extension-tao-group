@@ -27,9 +27,9 @@ use oat\oatbox\service\ServiceManager;
 use oat\tao\model\OntologyClassService;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
-use \core_kernel_classes_Resource;
-use \core_kernel_classes_Class;
-use \core_kernel_classes_Property;
+use core_kernel_classes_Resource;
+use core_kernel_classes_Class;
+use core_kernel_classes_Property;
 use oat\tao\test\TaoPhpUnitTestRunner;
 
 /**
@@ -41,7 +41,6 @@ use oat\tao\test\TaoPhpUnitTestRunner;
  */
 class GroupsTest extends TaoPhpUnitTestRunner
 {
-
     /**
      * @var GroupsService
      */

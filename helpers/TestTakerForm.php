@@ -24,10 +24,10 @@ declare(strict_types=1);
 
 namespace oat\taoGroups\helpers;
 
-use \common_ext_ExtensionsManager;
-use \core_kernel_classes_Property;
-use \core_kernel_classes_Resource;
-use \tao_helpers_form_GenerisTreeForm;
+use common_ext_ExtensionsManager;
+use core_kernel_classes_Property;
+use core_kernel_classes_Resource;
+use tao_helpers_form_GenerisTreeForm;
 use oat\taoGroups\models\GroupsService;
 
 /**

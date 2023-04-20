@@ -47,7 +47,6 @@ use oat\tao\model\Lists\Business\Validation\DependsOnPropertyValidator;
  */
 class Groups extends tao_actions_SaSModule
 {
-
     /**
      * (non-PHPdoc)
      * @see tao_actions_SaSModule::getClassService()

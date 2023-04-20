@@ -23,7 +23,7 @@
 
 namespace oat\taoGroups\controller;
 
-use \tao_helpers_form_GenerisTreeForm;
+use tao_helpers_form_GenerisTreeForm;
 use oat\taoGroups\models\GroupsService;
 
 /**

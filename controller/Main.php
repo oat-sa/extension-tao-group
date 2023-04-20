@@ -23,7 +23,7 @@
 
 namespace oat\taoGroups\controller;
 
-use \tao_actions_Main;
+use tao_actions_Main;
 
 /**
  * The Main Module of the taoGroups extension.
@@ -35,5 +35,4 @@ use \tao_actions_Main;
  */
 class Main extends tao_actions_Main
 {
-
 }

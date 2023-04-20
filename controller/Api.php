@@ -21,7 +21,7 @@
 
 namespace oat\taoGroups\controller;
 
-use \tao_actions_CommonRestModule;
+use tao_actions_CommonRestModule;
 use oat\taoGroups\models\CrudGroupsService;
 use oat\taoGroups\models\GroupsService;
 
