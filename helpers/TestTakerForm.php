@@ -70,8 +70,9 @@ class TestTakerForm
      *
      * @return tao_helpers_form_GenerisTreeForm
      */
-    public static function returnGroupTreeFormObject(core_kernel_classes_Resource $subject): tao_helpers_form_GenerisTreeForm
-    {
+    public static function returnGroupTreeFormObject(
+        core_kernel_classes_Resource $subject
+    ): tao_helpers_form_GenerisTreeForm {
         // Ensure groups constants are loaded
         common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
 

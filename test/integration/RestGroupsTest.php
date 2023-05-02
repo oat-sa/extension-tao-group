@@ -23,7 +23,9 @@ namespace oat\taoGroups\test\integration;
 use oat\tao\test\integration\RestTestCase;
 use oat\taoGroups\models\GroupsService;
 
+// phpcs:disable
 include_once dirname(__FILE__) . '/../../includes/raw_start.php';
+// phpcs:enable
 
 /**
  * @author Lionel Lecaque
