@@ -22,6 +22,10 @@ declare(strict_types=1);
 
 namespace oat\taoGroups\test\unit\model;
 
+use common_session_Session;
+use core_kernel_classes_Class;
+use core_kernel_classes_Property;
+use core_kernel_classes_Resource;
 use oat\generis\model\data\Ontology;
 use oat\generis\model\OntologyRdfs;
 use oat\generis\test\ServiceManagerMockTrait;
@@ -30,10 +34,6 @@ use oat\oatbox\session\SessionService;
 use oat\oatbox\user\User;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
-use common_session_Session;
-use core_kernel_classes_Class;
-use core_kernel_classes_Property;
-use core_kernel_classes_Resource;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -86,7 +86,7 @@ class GroupServiceTest extends TestCase
             ->willReturn(
                 [
                     'http://example.com/group1',
-                    'http://example.com/group2'
+                    'http://example.com/group2',
                 ]
             );
 
