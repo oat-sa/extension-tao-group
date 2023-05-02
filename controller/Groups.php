@@ -15,41 +15,49 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg (under the project TAO & TAO2);
- *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
- *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- *               2013-2018 (update and modification) Open Assessment Technologies SA
+ * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg
+ *                                         (under the project TAO & TAO2);
+ *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung
+ *                                                   (under the project TAO-TRANSFER);
+ *               2009-2012 (update and modification) Public Research Centre Henri Tudor
+ *                                                   (under the project TAO-SUSTAIN & TAO-DEV);
+ *               2013-2023 (update and modification) Open Assessment Technologies SA
  */
 
 namespace oat\taoGroups\controller;
 
 use common_exception_Error;
 use common_exception_MethodNotAllowed;
+use common_ext_ExtensionException;
 use common_ext_ExtensionsManager;
 use oat\oatbox\validator\ValidatorInterface;
 use oat\tao\model\controller\SignedFormInstance;
+use oat\tao\model\Lists\Business\Validation\DependsOnPropertyValidator;
 use oat\tao\model\resources\ResourceWatcher;
 use oat\taoDeliveryRdf\helper\DeliveryWidget;
 use oat\taoGroups\models\GroupsService;
 use tao_actions_SaSModule;
+use tao_helpers_form_FormContainer as FormContainer;
 use tao_helpers_form_GenerisTreeForm;
 use tao_helpers_Uri;
 use tao_models_classes_dataBinding_GenerisFormDataBinder;
-use tao_helpers_form_FormContainer as FormContainer;
-use oat\tao\model\Lists\Business\Validation\DependsOnPropertyValidator;
+use tao_models_classes_dataBinding_GenerisFormDataBindingException;
+use tao_models_classes_MissingRequestParameterException;
 
 /**
  * This Module aims at managing the Group class and its instances.
  *
  * @author Bertrand Chevrier, <bertrand@taotesting.com>
+ *
  * @package taoGroups
+ *
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
 class Groups extends tao_actions_SaSModule
 {
-
     /**
      * (non-PHPdoc)
+     *
      * @see tao_actions_SaSModule::getClassService()
      */
     protected function getClassService()
@@ -59,12 +67,14 @@ class Groups extends tao_actions_SaSModule
 
     /**
      * Edit a group instance
-     * @return void
-     * @throws \common_exception_Error
-     * @throws \common_ext_ExtensionException
+     *
+     * @throws common_exception_Error
+     * @throws common_ext_ExtensionException
      * @throws \oat\tao\model\security\SecurityException
-     * @throws \tao_models_classes_MissingRequestParameterException
-     * @throws \tao_models_classes_dataBinding_GenerisFormDataBindingException
+     * @throws tao_models_classes_MissingRequestParameterException
+     * @throws tao_models_classes_dataBinding_GenerisFormDataBindingException
+     *
+     * @return void
      */
     public function editGroup()
     {
@@ -120,6 +130,7 @@ class Groups extends tao_actions_SaSModule
     /**
      * @throws common_exception_Error
      * @throws common_exception_MethodNotAllowed
+     *
      * @requiresRight classUri WRITE
      */
     public function moveResource()

@@ -15,33 +15,34 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * Copyright (c) 2008-2010 (original work) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
- *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- *
+ * Copyright (c) 2008-2010 (original work) Deutsche Institut für Internationale Pädagogische Forschung
+ *                         (under the project TAO-TRANSFER);
+ *               2009-2012 (update and modification) Public Research Centre Henri Tudor
+ *                         (under the project TAO-SUSTAIN & TAO-DEV);
  */
 
 namespace oat\taoGroups\test\integration;
 
+use core_kernel_classes_Class;
+use core_kernel_classes_Property;
+use core_kernel_classes_Resource;
+use core_kernel_users_GenerisUser;
 use oat\generis\model\OntologyRdfs;
 use oat\oatbox\service\ServiceManager;
 use oat\tao\model\OntologyClassService;
+use oat\tao\test\TaoPhpUnitTestRunner;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
-use \core_kernel_classes_Resource;
-use \core_kernel_classes_Class;
-use \core_kernel_classes_Property;
-use oat\tao\test\TaoPhpUnitTestRunner;
 
 /**
  * Test the group management
  *
  * @author Bertrand Chevrier, <taosupport@tudor.lu>
+ *
  * @package taoGroups
-
  */
 class GroupsTest extends TaoPhpUnitTestRunner
 {
-
     /**
      * @var GroupsService
      */
@@ -63,6 +64,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * Test the user service implementation
+     *
      * @see tao_models_classes_ServiceFactory::get
      * @see oat\taoGroups\models\GroupsService::__construct
      */
@@ -73,7 +75,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
     }
 
     /**
-     * @return \core_kernel_classes_Class|null
+     * @return core_kernel_classes_Class|null
      */
     public function testGroup()
     {
@@ -86,9 +88,12 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * @depends testGroup
+     *
      * @param $groupClass
-     * @return \core_kernel_classes_Class
+     *
      * @throws
+     *
+     * @return core_kernel_classes_Class
      */
     public function testSubGroup($groupClass)
     {
@@ -102,12 +107,14 @@ class GroupsTest extends TaoPhpUnitTestRunner
         return $subGroup;
     }
 
-
     /**
      * @depends testGroup
+     *
      * @param $groupClass
-     * @return \core_kernel_classes_Resource
+     *
      * @throws
+     *
+     * @return core_kernel_classes_Resource
      */
     public function testGroupInstance($groupClass)
     {
@@ -121,9 +128,12 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * @depends testSubGroup
+     *
      * @param $subGroupClass
-     * @return \core_kernel_classes_Class
+     *
      * @throws
+     *
+     * @return core_kernel_classes_Class
      */
     public function testSubGroupInstance($subGroupClass)
     {
@@ -144,6 +154,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * @depends testGroupInstance
+     *
      * @param $groupInstance
      */
     public function testDeleteGroupInstance($groupInstance)
@@ -153,6 +164,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * @depends testSubGroupInstance
+     *
      * @param $subGroupInstance
      */
     public function testDeleteSubGroupInstance($subGroupInstance)
@@ -162,6 +174,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
 
     /**
      * @depends testSubGroup
+     *
      * @param $subGroup
      */
     public function testDeleteSubGroupClass($subGroup)
@@ -170,7 +183,6 @@ class GroupsTest extends TaoPhpUnitTestRunner
     }
 
     /**
-     *
      * @author Lionel Lecaque, lionel@taotesting.com
      */
     public function testGetGroups()
@@ -188,7 +200,7 @@ class GroupsTest extends TaoPhpUnitTestRunner
         $oneGroup3 = $subclass->createInstance('testSubGroupInstance');
         $this->groupsService->addUser($subject->getUri(), $oneGroup3);
 
-        $generisUser = new \core_kernel_users_GenerisUser($subject);
+        $generisUser = new core_kernel_users_GenerisUser($subject);
         $groups = $this->groupsService->getGroups($generisUser);
 
         $this->assertTrue(is_array($groups));
