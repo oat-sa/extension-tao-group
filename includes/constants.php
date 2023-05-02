@@ -18,15 +18,13 @@
  * Copyright (c) 2002-2008 (original work) Public Research Centre Henri Tudor & University of Luxembourg (under the project TAO & TAO2);
  *               2008-2010 (update and modification) Deutsche Institut für Internationale Pädagogische Forschung (under the project TAO-TRANSFER);
  *               2009-2012 (update and modification) Public Research Centre Henri Tudor (under the project TAO-SUSTAIN & TAO-DEV);
- *
  */
 
 /**
  * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
- *
  */
 $todefine = [
-    /** @deprecated */
-    'TAO_GROUP_MEMBERS_PROP' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Members'
+    /* @deprecated */
+    'TAO_GROUP_MEMBERS_PROP' => 'http://www.tao.lu/Ontologies/TAOGroup.rdf#Members',
 ];

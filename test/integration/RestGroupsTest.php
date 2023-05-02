@@ -16,7 +16,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2014 (original work) Open Assessment Technologies SA (under the project TAO-PRODUCT);
- *
  */
 
 namespace oat\taoGroups\test\integration;
@@ -27,7 +26,6 @@ use oat\taoGroups\models\GroupsService;
 include_once dirname(__FILE__) . '/../../includes/raw_start.php';
 
 /**
- *
  * @author Lionel Lecaque
  */
 class RestGroupsTest extends RestTestCase
@@ -35,7 +33,7 @@ class RestGroupsTest extends RestTestCase
     public function serviceProvider()
     {
         return [
-            ['taoGroups/Api',GroupsService::CLASS_URI]
+            ['taoGroups/Api',GroupsService::CLASS_URI],
         ];
     }
 }

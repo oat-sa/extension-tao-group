@@ -16,7 +16,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2013-2014 (original work) Open Assessment Technologies SA
- *
  */
 
 namespace oat\taoGroups\models;
@@ -32,12 +31,12 @@ use tao_models_classes_CrudService;
  * Consequently the signatures and behaviors is closer to REST and throwing HTTP like exceptions
  *
  * @author Patrick Plichart, patrick@taotesting.com
- *
  */
 class CrudGroupsService extends tao_models_classes_CrudService
 {
     /**
      * (non-PHPdoc)
+     *
      * @see tao_models_classes_CrudService::getClassService()
      */
     protected function getClassService()
@@ -47,7 +46,10 @@ class CrudGroupsService extends tao_models_classes_CrudService
 
     /**
      * (non-PHPdoc)
+     *
      * @see tao_models_classes_CrudService::delete()
+     *
+     * @param mixed $resource
      */
     public function delete($resource)
     {
@@ -57,22 +59,24 @@ class CrudGroupsService extends tao_models_classes_CrudService
     }
 
     /**
-     *
      * @author Patrick Plichart, patrick@taotesting.com
+     *
      * @param array $propertiesValues
+     *
      * @return core_kernel_classes_Resource
      */
     public function createFromArray(array $propertiesValues)
     {
         if (!isset($propertiesValues[OntologyRdfs::RDFS_LABEL])) {
-            $propertiesValues[OntologyRdfs::RDFS_LABEL] = "";
+            $propertiesValues[OntologyRdfs::RDFS_LABEL] = '';
         }
-        $type = isset($propertiesValues[OntologyRdf::RDF_TYPE]) ? $propertiesValues[OntologyRdf::RDF_TYPE] : $this->getRootClass();
+        $type = $propertiesValues[OntologyRdf::RDF_TYPE] ?? $this->getRootClass();
         $label = $propertiesValues[OntologyRdfs::RDFS_LABEL];
         //hmmm
         unset($propertiesValues[OntologyRdfs::RDFS_LABEL]);
         unset($propertiesValues[OntologyRdf::RDF_TYPE]);
-        $resource =  parent::create($label, $type, $propertiesValues);
+        $resource = parent::create($label, $type, $propertiesValues);
+
         return $resource;
     }
 }

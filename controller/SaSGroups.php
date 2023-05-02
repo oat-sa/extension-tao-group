@@ -26,13 +26,15 @@
 
 namespace oat\taoGroups\controller;
 
-use tao_helpers_form_GenerisTreeForm;
+use core_kernel_classes_Class;
 use oat\taoGroups\models\GroupsService;
+use tao_helpers_form_GenerisTreeForm;
 
 /**
  * SaSGroups Controller provide process services
  *
  * @author Bertrand Chevrier, <taosupport@tudor.lu>
+ *
  * @package taoGroups
  *
  * @license GPLv2 http://www.opensource.org/licenses/gpl-2.0.php
@@ -44,19 +46,20 @@ class SaSGroups extends Groups
      * if no class is selected, the root class is returned
      *
      * @see TaoModule::getCurrentClass()
-     * @return \core_kernel_classes_Class
+     *
+     * @return core_kernel_classes_Class
      */
     protected function getCurrentClass()
     {
         if ($this->hasRequestParameter('classUri')) {
             return parent::getCurrentClass();
         }
+
         return $this->getRootClass();
     }
 
     /**
      * Render the tree to select the group related subjects
-     *
      */
     public function selectSubjects()
     {

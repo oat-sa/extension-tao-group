@@ -24,7 +24,7 @@
  *               2023 (update and modification) Open Assessment Technologies SA
  */
 
-/**
+/*
  * RAW Bootstraping
  *
  * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}

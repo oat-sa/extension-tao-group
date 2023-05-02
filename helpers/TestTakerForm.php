@@ -22,19 +22,21 @@ declare(strict_types=1);
 
 namespace oat\taoGroups\helpers;
 
+use common_ext_ExtensionException;
 use common_ext_ExtensionsManager;
 use core_kernel_classes_Property;
 use core_kernel_classes_Resource;
-use tao_helpers_form_GenerisTreeForm;
 use oat\taoGroups\models\GroupsService;
+use tao_helpers_form_GenerisTreeForm;
 
 /**
  * Helper to render the groups form on the user pane
  *
  * @access public
+ *
  * @author Joel Bout, <joel@taotesting.com>
+ *
  * @package taoGroups
-
  */
 class TestTakerForm
 {
@@ -42,27 +44,31 @@ class TestTakerForm
      * Returns a form to modify the groups a user is part of
      *
      * @param core_kernel_classes_Resource $subject
-     * @return string
      *
-     * @throws \common_ext_ExtensionException
+     * @throws common_ext_ExtensionException
+     *
+     * @return string
      */
     public static function renderGroupTreeForm(core_kernel_classes_Resource $subject): string
     {
-
         // Ensure groups constants are loaded
         common_ext_ExtensionsManager::singleton()->getExtensionById('taoGroups');
 
         $memberProperty = new core_kernel_classes_Property(GroupsService::PROPERTY_MEMBERS_URI);
         $groupForm = tao_helpers_form_GenerisTreeForm::buildTree($subject, $memberProperty);
         $groupForm->setData('title', __('Add to group'));
+
         return $groupForm->render();
     }
 
     /**
      * Returns non-rendered form
+     *
      * @param core_kernel_classes_Resource $subject
+     *
+     * @throws common_ext_ExtensionException
+     *
      * @return tao_helpers_form_GenerisTreeForm
-     * @throws \common_ext_ExtensionException
      */
     public static function returnGroupTreeFormObject(core_kernel_classes_Resource $subject): tao_helpers_form_GenerisTreeForm
     {

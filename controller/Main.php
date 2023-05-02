@@ -33,8 +33,8 @@ use tao_actions_Main;
  *
  * @package taoGroups
 
- * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  *
+ * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
 class Main extends tao_actions_Main
 {

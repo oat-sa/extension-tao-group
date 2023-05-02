@@ -16,17 +16,15 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * Copyright (c) 2013-2023 (original work) Open Assessment Technologies SA
- *
  */
 
 namespace oat\taoGroups\controller;
 
-use tao_actions_CommonRestModule;
 use oat\taoGroups\models\CrudGroupsService;
 use oat\taoGroups\models\GroupsService;
+use tao_actions_CommonRestModule;
 
 /**
- *
  * @author plichart
  */
 class Api extends tao_actions_CommonRestModule
@@ -39,6 +37,7 @@ class Api extends tao_actions_CommonRestModule
         if (!$this->service) {
             $this->service = CrudGroupsService::singleton();
         }
+
         return $this->service;
     }
 
@@ -49,7 +48,7 @@ class Api extends tao_actions_CommonRestModule
     protected function getParametersAliases()
     {
         return array_merge(parent::getParametersAliases(), [
-            "member" => GroupsService::PROPERTY_MEMBERS_URI
+            'member' => GroupsService::PROPERTY_MEMBERS_URI,
         ]);
     }
 

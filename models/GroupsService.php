@@ -26,15 +26,15 @@
 
 namespace oat\taoGroups\models;
 
-use oat\tao\model\TaoOntology;
-use oat\taoTestTaker\models\TestTakerService;
-use oat\oatbox\user\User;
-use oat\tao\model\OntologyClassService;
 use common_Exception;
 use common_exception_Error;
 use core_kernel_classes_Class;
 use core_kernel_classes_Resource;
 use League\Flysystem\FileExistsException;
+use oat\oatbox\user\User;
+use oat\tao\model\OntologyClassService;
+use oat\tao\model\TaoOntology;
+use oat\taoTestTaker\models\TestTakerService;
 
 /**
  * Service methods to manage the Groups business models using the RDF API.
@@ -42,6 +42,7 @@ use League\Flysystem\FileExistsException;
  * @author Joel Bout, <joel.bout@tudor.lu>
  *
  * @access public
+ *
  * @package taoGroups
  */
 class GroupsService extends OntologyClassService
