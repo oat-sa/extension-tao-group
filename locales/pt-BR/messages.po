@@ -40,7 +40,7 @@ msgstr "Editar grupo"
 
 #, tao-public
 msgid "Export"
-msgstr "Exportação"
+msgstr "Exportar"
 
 msgid "Group saved"
 msgstr "Grupo salvo"
@@ -54,7 +54,7 @@ msgstr "O grupo uri não é válido"
 
 #, tao-public
 msgid "Groups"
-msgstr "grupos"
+msgstr "Grupos"
 
 #, tao-public
 msgid "Groups library"
@@ -62,7 +62,7 @@ msgstr "Biblioteca de grupos"
 
 #, tao-public
 msgid "Import"
-msgstr "Importação"
+msgstr "Importar"
 
 msgid "Last updated on %2s"
 msgstr "Última atualização em %2s"
