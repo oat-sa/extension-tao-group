@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tao-3x\n"
+"PO-Revision-Date: 2023-04-21 15:46\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: pt\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: en-US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: tao-3x\n"
+"X-Crowdin-Project-ID: 582145\n"
+"X-Crowdin-Language: pt-BR\n"
+"X-Crowdin-File: /taoGroups/locales/en-US/taogroup.rdf.po\n"
+"X-Crowdin-File-ID: 1501\n"
+"Language-Team: Portuguese, Brazilian\n"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
+msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
+msgid "Group"
+msgstr "grupo"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#Group
+msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
+msgid "Group"
+msgstr "grupo"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#member
+msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
+msgid "Member of the groups"
+msgstr "Membro dos grupos"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
+msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
+msgid "Groups Manager"
+msgstr "Gerenciador de Grupos"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
+msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
+msgid "The Groups Manager Role"
+msgstr "A função Gerente de Grupos"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#member
+msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
+msgid "Member"
+msgstr "Membro"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
+msgctxt "http://www.w3.org/2000/01/rdf-schema#label"
+msgid "Members"
+msgstr "membros"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
+msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
+msgid "Members of the group"
+msgstr "Membros do grupo"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#Members
+msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
+msgid "Members"
+msgstr "membros"
+
+# http://www.tao.lu/Ontologies/TAOGroup.rdf#GroupsManagerRole
+msgctxt "http://www.w3.org/2000/01/rdf-schema#comment"
+msgid "Groups Manager"
+msgstr "Gerenciador de Grupos"
+
