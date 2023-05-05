@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tao-3x\n"
+"PO-Revision-Date: 2023-04-21 15:46\n"
+"Last-Translator: TAO Translation Team <translation@tao.lu>\n"
+"MIME-Version: 1.0\n"
+"Language: pt\n"
+"sourceLanguage: en-US\n"
+"targetLanguage: en-US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: tao-3x\n"
+"X-Crowdin-Project-ID: 582145\n"
+"X-Crowdin-Language: pt-BR\n"
+"X-Crowdin-File: /taoGroups/locales/en-US/messages.po\n"
+"X-Crowdin-File-ID: 1499\n"
+"Language-Team: Portuguese, Brazilian\n"
+
+msgid "Add to group"
+msgstr "Adicionar ao grupo"
+
+#, tao-public
+msgid "Copy To"
+msgstr "Copiar Para"
+
+#, tao-public
+msgid "Delete"
+msgstr "excluir"
+
+#, tao-public
+msgid "Duplicate"
+msgstr "Duplicate"
+
+msgid "Edit group"
+msgstr "Editar grupo"
+
+#, tao-public
+msgid "Export"
+msgstr "Exportar"
+
+msgid "Group saved"
+msgstr "Grupo salvo"
+
+#, tao-public
+msgid "Group test takers according to global features and classifications."
+msgstr "takers de teste do grupo de acordo com recursos e classificações globais."
+
+msgid "Group uri is not valid"
+msgstr "O grupo uri não é válido"
+
+#, tao-public
+msgid "Groups"
+msgstr "Grupos"
+
+#, tao-public
+msgid "Groups library"
+msgstr "Biblioteca de grupos"
+
+#, tao-public
+msgid "Import"
+msgstr "Importar"
+
+msgid "Last updated on %2s"
+msgstr "Última atualização em %2s"
+
+#, tao-public
+msgid "Manage groups"
+msgstr "Gerenciar grupos"
+
+#, tao-public
+msgid "Manage Schema"
+msgstr "Gerenciar esquema"
+
+#, tao-public
+msgid "Move"
+msgstr "Mover-se"
+
+#, tao-public
+msgid "Move To"
+msgstr "Mover para"
+
+#, tao-public
+msgid "New class"
+msgstr "Nova classe"
+
+#, tao-public
+msgid "New Group"
+msgstr "Novo Grupo"
+
+#, tao-public
+msgid "Properties"
+msgstr "propriedades"
+
+msgid "Select group test takers"
+msgstr "Selecionar usuários de testes"
+
+msgid "The Groups module allows to group Test takers according to global features and classifications."
+msgstr "O módulo de grupos permite agrupar usuários de testes de acordo com características e classificações globais."
+
+msgid "Unable to create new group"
+msgstr "Não é possível criar novo grupo"
+
+msgid "Unable to delete group"
+msgstr "Não é possível excluir grupo"
+
