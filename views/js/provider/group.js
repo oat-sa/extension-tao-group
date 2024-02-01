@@ -18,7 +18,7 @@
  * @author Alexander Zagovorichev <zagovorichev@1pt.com>
  */
 
-define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise', 'core/request'], function ($, _, __, urlUtil, Promise, coreRequest) {
+define(['jquery', 'i18n', 'util/url', 'core/promise', 'core/request'], function ($, __, urlUtil, Promise, coreRequest) {
     'use strict';
 
     /**
@@ -52,7 +52,7 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise', 'core/request'],
                     type: 'instance'
                 };
 
-                config = _.defaults(config || {}, _defaults);
+                config = Object.assign({}, _defaults, config);
 
                 return new Promise((resolve, reject) => {
                         coreRequest({
@@ -80,7 +80,7 @@ define(['jquery', 'lodash', 'i18n', 'util/url', 'core/promise', 'core/request'],
 
                 return new Promise((resolve, reject) => {
 
-                    if (!_.isString(uri) || _.isEmpty(uri)) {
+                    if (typeof uri !== 'string' || uri.trim() === '') {
                         return reject(new TypeError(__('Group uri is not valid')));
                     }
 
