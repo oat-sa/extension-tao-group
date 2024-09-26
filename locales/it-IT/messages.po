@@ -22,7 +22,7 @@ msgstr ""
 
 #, tao-public
 msgid "Delete"
-msgstr "Cancella"
+msgstr "Elimina"
 
 #, tao-public
 msgid "Duplicate"
