@@ -30,7 +30,6 @@ use common_Exception;
 use common_exception_Error;
 use core_kernel_classes_Class;
 use core_kernel_classes_Resource;
-use League\Flysystem\FileExistsException;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
 use oat\tao\model\TaoOntology;
@@ -140,7 +139,6 @@ class GroupsService extends OntologyClassService
      *
      * @throws common_Exception
      * @throws common_exception_Error
-     * @throws FileExistsException
      */
     public function cloneInstance(
         core_kernel_classes_Resource $instance,
