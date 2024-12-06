@@ -27,37 +27,37 @@
                     <action id="group-properties" name="Properties"  url="/taoGroups/Groups/editGroup" group="content" context="instance">
                         <icon id="icon-edit"/>
                     </action>
-                    <action id="group-class-new" name="New class" url="/taoGroups/Groups/addSubClass" context="resource" group="tree" binding="subClass">
+                    <action id="group-class-new" name="New class" url="/taoGroups/Groups/addSubClass" context="resource" group="tree" binding="subClass" weight="10">
                         <icon id="icon-folder-open"/>
                     </action>
-                    <action id="group-delete" name="Delete" url="/taoGroups/Groups/delete" context="resource" group="tree" binding="removeNode">
+                    <action id="group-delete" name="Delete" url="/taoGroups/Groups/delete" context="resource" group="tree" binding="removeNode"  weight="-1">
                         <icon id="icon-bin"/>
                     </action>
-                    <action id="group-delete-all" name="Delete" url="/taoGroups/Groups/deleteAll" context="resource" multiple="true" group="tree" binding="removeNodes">
+                    <action id="group-delete-all" name="Delete" url="/taoGroups/Groups/deleteAll" context="resource" multiple="true" group="tree" binding="removeNodes" weight="-2">
                         <icon id="icon-bin"/>
                     </action>
                     <action id="group-move" name="Move" url="/taoGroups/Groups/moveInstance" context="instance" group="none" binding="moveNode">
                         <icon id="icon-move-item"/>
                     </action>
-                    <action id="group-import" name="Import" url="/tao/Import/index" context="resource" group="tree">
+                    <action id="group-import" name="Import" url="/tao/Import/index" context="resource" group="tree" weight="5">
                         <icon id="icon-import"/>
                     </action>
-                    <action id="group-export" name="Export" url="/tao/Export/index" context="resource" group="tree">
+                    <action id="group-export" name="Export" url="/tao/Export/index" context="resource" group="tree" weight="4">
                         <icon id="icon-export"/>
                     </action>
-                    <action id="group-duplicate" name="Duplicate" url="/taoGroups/Groups/cloneInstance" context="instance" group="tree" binding="duplicateNode">
+                    <action id="group-duplicate" name="Duplicate" url="/taoGroups/Groups/cloneInstance" context="instance" group="tree" binding="duplicateNode" weight="8">
                         <icon id="icon-copy"/>
                     </action>
-                    <action id="group-copy-to" name="Copy To" url="/taoGroups/Groups/copyInstance" context="instance" group="tree" binding="copyTo">
+                    <action id="group-copy-to" name="Copy To" url="/taoGroups/Groups/copyInstance" context="instance" group="tree" binding="copyTo" weight="7">
                         <icon id="icon-copy"/>
                     </action>
-                    <action id="group-move-to" name="Move To" url="/taoGroups/Groups/moveResource" context="resource" group="tree" binding="moveTo">
+                    <action id="group-move-to" name="Move To" url="/taoGroups/Groups/moveResource" context="resource" group="tree" binding="moveTo" weight="6">
                         <icon id="icon-move-item"/>
                     </action>
                     <action id="group-move-all" name="Move To" url="/taoGroups/Groups/moveAll" context="resource" multiple="true" group="tree" binding="moveTo">
                         <icon id="icon-move-item"/>
                     </action>
-                    <action id="group-new" name="New Group" url="/taoGroups/Groups/addInstance" context="resource" group="tree" binding="instanciate">
+                    <action id="group-new" name="New Group" url="/taoGroups/Groups/addInstance" context="resource" group="tree" binding="instanciate" weight="9">
                         <icon id="icon-users"/>
                     </action>
                 </actions>
