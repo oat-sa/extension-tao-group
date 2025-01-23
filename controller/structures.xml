@@ -49,7 +49,7 @@
                         <icon id="icon-copy"/>
                     </action>
                     <action id="group-copy-to" name="Copy To" url="/taoGroups/Groups/copyInstance" context="instance" group="tree" binding="copyTo" weight="7">
-                        <icon id="icon-copy"/>
+                        <icon id="icon-copy" alt="icon-copy-to"/>
                     </action>
                     <action id="group-move-to" name="Move To" url="/taoGroups/Groups/moveResource" context="resource" group="tree" binding="moveTo" weight="6">
                         <icon id="icon-move-item"/>
