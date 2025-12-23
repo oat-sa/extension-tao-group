@@ -41,20 +41,12 @@ class GroupServiceTest extends TestCase
 {
     use ServiceManagerMockTrait;
 
-    /** @var GroupsService */
-    private $sut;
-
-    /** @var User|MockObject */
-    private $userMock;
-
-    /** @var Ontology|MockObject */
-    private $ontology;
-
-    /** @var core_kernel_classes_Resource|MockObject */
-    private $group1Mock;
-
-    /** @var core_kernel_classes_Resource|MockObject */
-    private $group2Mock;
+    private GroupsService $sut;
+    private User|MockObject $userMock;
+    private Ontology|MockObject $ontology;
+    private core_kernel_classes_Resource|MockObject $group1Mock;
+    private core_kernel_classes_Resource|MockObject $group2Mock;
+    private MockObject|TestTakerService $testTakerServiceMock;
 
     public function setUp(): void
     {
