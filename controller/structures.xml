@@ -18,13 +18,13 @@
                       />
                 </trees>
                 <actions>
-                    <action id="group-class-properties" name="Properties" url="/taoGroups/Groups/editClassLabel" group="content" context="class" weight="10">
+                    <action id="group-class-properties" name="Properties" url="/taoGroups/Groups/editClassLabel" group="content" context="class" weight="1">
                         <icon id="icon-edit"/>
                     </action>
-                    <action id="group-class-schema" name="Manage Schema" url="/tao/PropertiesAuthoring/index" group="content" context="class" weight="3">
+                    <action id="group-class-schema" name="Manage Schema" url="/tao/PropertiesAuthoring/index" group="content" context="class" weight="8">
                         <icon id="icon-property-add"/>
                     </action>
-                    <action id="group-properties" name="Properties"  url="/taoGroups/Groups/editGroup" group="content" context="instance" weight="10">
+                    <action id="group-properties" name="Properties"  url="/taoGroups/Groups/editGroup" group="content" context="instance" weight="1">
                         <icon id="icon-edit"/>
                     </action>
                     <action id="group-class-new" name="New class" url="/taoGroups/Groups/addSubClass" context="resource" group="tree" binding="subClass" weight="10">
