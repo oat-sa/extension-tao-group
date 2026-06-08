@@ -1,5 +1,5 @@
 msgid ""
-msgstr ""
+msgstr " {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 "Project-Id-Version: TAO 2022.09\n"
 "PO-Revision-Date: 2022-08-12T16:45:50\n"
 "Last-Translator: TAO Translation Team <translation@tao.lu>\n"
@@ -14,89 +14,89 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Add to group"
-msgstr "グループに追加"
+msgstr "グループに追加 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Copy To"
-msgstr "指定コピー"
+msgstr "指定コピー {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Delete"
-msgstr "削除"
+msgstr "削除 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Duplicate"
-msgstr "コピー"
+msgstr "コピー {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "Edit group"
-msgstr "グループの編集"
+msgstr "グループの編集 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Export"
-msgstr "エクスポート"
+msgstr "エクスポート {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "Group saved"
-msgstr "グループ保存"
+msgstr "グループ保存 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Group test takers according to global features and classifications."
-msgstr "グローバルな特徴や分類に応じて、受験者をグループ化する。"
+msgstr "グローバルな特徴や分類に応じて、受験者をグループ化する。 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "Group uri is not valid"
-msgstr "グループURIは無効です"
+msgstr "グループURIは無効です {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Groups"
-msgstr "グループ"
+msgstr "グループ {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Groups library"
-msgstr "グループライブラリ"
+msgstr "グループライブラリ {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Import"
-msgstr "インポート"
+msgstr "インポート {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "Last updated on %2s"
-msgstr "最終更新日：%2s"
+msgstr "最終更新日：%2s {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Manage groups"
-msgstr "グループの管理"
+msgstr "グループの管理 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Manage Schema"
-msgstr "スキーマ管理"
+msgstr "スキーマ管理 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Move"
-msgstr "移動"
+msgstr "移動 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Move To"
-msgstr "指定移動"
+msgstr "指定移動 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "New class"
-msgstr "新規クラス"
+msgstr "新規クラス {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "New Group"
-msgstr "新規グループ"
+msgstr "新規グループ {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 #, tao-public
 msgid "Properties"
-msgstr "プロパティ"
+msgstr "プロパティ {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "Select group test takers"
-msgstr "グループ対象受験者"
+msgstr "グループ対象受験者 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "The Groups module allows to group Test takers according to global features and classifications."
-msgstr "グループは、グローバルな特徴や分類に従って受験者をグループ化することができます。"
+msgstr "グループは、グローバルな特徴や分類に従って受験者をグループ化することができます。 {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "Unable to create new group"
-msgstr "新規グループを作成できません"
+msgstr "新規グループを作成できません {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
 msgid "Unable to delete group"
-msgstr "グループを削除できません"
+msgstr "グループを削除できません {ruby}{rb}6{/rb}{rt}7{/rt}{/ruby}"
 
