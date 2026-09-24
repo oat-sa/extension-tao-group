@@ -28,6 +28,8 @@
  * @author CRP Henri Tudor - TAO Team - {@link http://www.tao.lu}
  * @license GPLv2  http://www.opensource.org/licenses/gpl-2.0.php
  */
+use oat\taoGroups\models\Copier\CopierServiceProvider;
+
 $extpath = dirname(__FILE__) . DIRECTORY_SEPARATOR;
 $taopath = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'tao' . DIRECTORY_SEPARATOR;
 
@@ -78,5 +80,8 @@ return [
     'extra' => [
         'structures' => dirname(__FILE__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR
             . 'structures.xml',
+    ],
+    'containerServiceProviders' => [
+        CopierServiceProvider::class,
     ],
 ];
