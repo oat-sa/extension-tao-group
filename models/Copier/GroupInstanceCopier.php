@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * Foundation, Inc., 31 Milk St # 960789 Boston, MA 02196 USA
  *
  * Copyright (c) 2026 (original work) Open Assessment Technologies SA.
  */
@@ -33,7 +33,9 @@ class GroupInstanceCopier implements ResourceTransferInterface
 {
     private GroupsService $groupsService;
     private Ontology $ontology;
-    private ?PermissionCopierInterface $permissionCopier = null;
+
+    /** @var PermissionCopierInterface[] */
+    private array $permissionCopiers = [];
 
     public function __construct(GroupsService $groupsService, Ontology $ontology)
     {
@@ -43,12 +45,11 @@ class GroupInstanceCopier implements ResourceTransferInterface
 
     public function withPermissionCopier(PermissionCopierInterface $permissionCopier): void
     {
-        $this->permissionCopier = $permissionCopier;
+        $this->permissionCopiers[] = $permissionCopier;
     }
 
     /**
-     * This method is to be used with tagged_iterator() from service providers
-     * (but only the last copier from the iterable is effectively applied).
+     * This method is to be used with tagged_iterator() from service providers.
      */
     public function withPermissionCopiers(iterable $copiers): void
     {
@@ -64,11 +65,9 @@ class GroupInstanceCopier implements ResourceTransferInterface
 
         $copy = $this->groupsService->cloneInstance($instance, $destinationClass);
 
-        if ($this->permissionCopier !== null) {
-            $this->permissionCopier->copy(
-                $command->keepOriginalAcl() ? $instance : $destinationClass,
-                $copy
-            );
+        $aclSource = $command->keepOriginalAcl() ? $instance : $destinationClass;
+        foreach ($this->permissionCopiers as $permissionCopier) {
+            $permissionCopier->copy($aclSource, $copy);
         }
 
         return new ResourceTransferResult($copy->getUri());
