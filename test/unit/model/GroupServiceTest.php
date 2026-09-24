@@ -152,8 +152,9 @@ class GroupServiceTest extends TestCase
 
         $newGroupMock = $this->createMock(core_kernel_classes_Resource::class);
         $newGroupMock
-            ->method('setLabel')  // Called by parent::cloneInstance()
-            ->with($this->stringStartsWith('Former group'));
+            ->expects($this->once())
+            ->method('setLabel')
+            ->with('Former group bis');
 
         $this->userMock = $this->createMock(core_kernel_classes_Resource::class);
         $this->userMock
