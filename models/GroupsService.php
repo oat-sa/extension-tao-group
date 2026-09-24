@@ -142,7 +142,7 @@ class GroupsService extends OntologyClassService
      */
     public function cloneInstance(
         core_kernel_classes_Resource $instance,
-        core_kernel_classes_Class $class = null
+        ?core_kernel_classes_Class $class = null
     ): core_kernel_classes_Resource {
         $newGroup = parent::cloneInstance($instance, $class);
 
