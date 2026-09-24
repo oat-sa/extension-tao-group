@@ -30,8 +30,10 @@ use common_Exception;
 use common_exception_Error;
 use core_kernel_classes_Class;
 use core_kernel_classes_Resource;
+use oat\oatbox\service\ServiceManager;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
+use oat\tao\model\resources\Command\ResourceTransferCommand;
 use oat\tao\model\TaoOntology;
 use oat\taoTestTaker\models\TestTakerService;
 
@@ -49,6 +51,14 @@ class GroupsService extends OntologyClassService
     public const CLASS_URI = TaoOntology::CLASS_URI_GROUP;
 
     public const PROPERTY_MEMBERS_URI = 'http://www.tao.lu/Ontologies/TAOGroup.rdf#member';
+
+    /**
+     * Required by {@see GenerisServiceTrait}; implementation lives on {@see OntologyClassService}.
+     */
+    public function getServiceLocator(): ServiceManager
+    {
+        return parent::getServiceLocator();
+    }
 
     /**
      * Returns the group top level class.
@@ -142,15 +152,32 @@ class GroupsService extends OntologyClassService
      */
     public function cloneInstance(
         core_kernel_classes_Resource $instance,
-        core_kernel_classes_Class $class = null
+        ?core_kernel_classes_Class $class = null,
+        array $options = []
     ): core_kernel_classes_Resource {
         $newGroup = parent::cloneInstance($instance, $class);
+        $newGroup->setLabel($this->resolveCloneLabel($instance->getLabel(), $options));
 
         foreach ($this->getUsers($instance->getUri()) as $user) {
             $this->addUser($user->getUri(), $newGroup);
         }
 
         return $newGroup;
+    }
+
+    private function resolveCloneLabel(string $label, array $options): string
+    {
+        if ($options[ResourceTransferCommand::OPTION_INCREMENT_LABEL] ?? false) {
+            if (preg_match('/\bbis(?:\s+(\d+))?$/i', $label, $matches)) {
+                $next = (int) ($matches[1] ?? 0) + 1;
+
+                return preg_replace('/\bbis(?:\s+\d+)?$/i', 'bis ' . $next, $label);
+            }
+
+            return $label . ' bis';
+        }
+
+        return $label;
     }
 
     private function getTestTakerService(): TestTakerService

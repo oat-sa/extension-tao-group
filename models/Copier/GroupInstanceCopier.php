@@ -63,7 +63,11 @@ class GroupInstanceCopier implements ResourceTransferInterface
         $instance = $this->ontology->getResource($command->getFrom());
         $destinationClass = $this->ontology->getClass($command->getTo());
 
-        $copy = $this->groupsService->cloneInstance($instance, $destinationClass);
+        $copy = $this->groupsService->cloneInstance(
+            $instance,
+            $destinationClass,
+            $command->getOptions()
+        );
 
         $aclSource = $command->keepOriginalAcl() ? $instance : $destinationClass;
         foreach ($this->permissionCopiers as $permissionCopier) {

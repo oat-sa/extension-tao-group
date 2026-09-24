@@ -131,6 +131,34 @@ class GroupInstanceCopierTest extends TestCase
         ];
     }
 
+    public function testTransferPassesIncrementLabelOptionForDuplicate(): void
+    {
+        $instance = $this->createMock(core_kernel_classes_Resource::class);
+        $destinationClass = $this->createMock(core_kernel_classes_Class::class);
+        $copy = $this->createMock(core_kernel_classes_Resource::class);
+        $options = [ResourceTransferCommand::OPTION_INCREMENT_LABEL => true];
+
+        $this->ontology->method('getResource')->willReturn($instance);
+        $this->ontology->method('getClass')->willReturn($destinationClass);
+        $copy->method('getUri')->willReturn('http://example.com/group#copy');
+
+        $this->groupsService
+            ->expects($this->once())
+            ->method('cloneInstance')
+            ->with($instance, $destinationClass, $options)
+            ->willReturn($copy);
+
+        $this->sut->transfer(
+            new ResourceTransferCommand(
+                'http://example.com/group#source',
+                'http://example.com/group#destinationClass',
+                ResourceTransferCommand::ACL_KEEP_ORIGINAL,
+                ResourceTransferCommand::TRANSFER_MODE_COPY,
+                $options
+            )
+        );
+    }
+
     public function testTransferPropagatesCloneInstanceFailure(): void
     {
         $instance = $this->createMock(core_kernel_classes_Resource::class);
