@@ -32,6 +32,7 @@ use oat\generis\test\ServiceManagerMockTrait;
 use oat\oatbox\service\ServiceManager;
 use oat\oatbox\session\SessionService;
 use oat\oatbox\user\User;
+use oat\tao\model\resources\Command\ResourceTransferCommand;
 use oat\taoGroups\models\GroupsService;
 use oat\taoTestTaker\models\TestTakerService;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -152,8 +153,9 @@ class GroupServiceTest extends TestCase
 
         $newGroupMock = $this->createMock(core_kernel_classes_Resource::class);
         $newGroupMock
-            ->method('setLabel')  // Called by parent::cloneInstance()
-            ->with($this->stringStartsWith('Former group'));
+            ->expects($this->once())
+            ->method('setLabel')
+            ->with('Former group bis');
 
         $this->userMock = $this->createMock(core_kernel_classes_Resource::class);
         $this->userMock
@@ -233,6 +235,68 @@ class GroupServiceTest extends TestCase
 
         $result = $this->sut->cloneInstance($groupMock, $classMock);
         $this->assertSame($newGroupMock, $result);
+    }
+
+    /**
+     * @depends testGetUsers
+     */
+    public function testCloneInstanceWithIncrementLabelOptionOverridesParentLabel(): void
+    {
+        $membersProperty = $this->createMock(core_kernel_classes_Property::class);
+        $this->ontology
+            ->method('getProperty')
+            ->with(GroupsService::PROPERTY_MEMBERS_URI)
+            ->willReturn($membersProperty);
+
+        $newGroupMock = $this->createMock(core_kernel_classes_Resource::class);
+        $newGroupMock
+            ->expects($this->exactly(2))
+            ->method('setLabel')
+            ->withConsecutive(
+                ['Former group bis 1'],
+                ['Former group bis 1']
+            );
+
+        $this->userMock = $this->createMock(core_kernel_classes_Resource::class);
+        $this->userMock->method('getUri')->willReturn('http://example.com/user1');
+        $this->ontology
+            ->method('getResource')
+            ->with('http://example.com/user1')
+            ->willReturn($this->userMock);
+
+        $classMock = $this->createMock(core_kernel_classes_Class::class);
+        $classMock->method('getLabel')->willReturn('Class Label');
+        $classMock->method('getInstances')->willReturn([]);
+        $classMock->method('getProperties')->with(true)->willReturn([]);
+        $classMock
+            ->method('createInstance')
+            ->willReturn($newGroupMock);
+
+        $groupMock = $this->createMock(core_kernel_classes_Resource::class);
+        $groupMock->method('getUri')->willReturn('http://example.com/group1');
+        $groupMock->method('getLabel')->willReturn('Former group bis');
+
+        $ttRootClassMock = $this->createMock(core_kernel_classes_Class::class);
+        $ttRootClassMock
+            ->method('searchInstances')
+            ->willReturn([$this->userMock]);
+
+        $this->testTakerServiceMock->method('getRootClass')->willReturn($ttRootClassMock);
+        $classMock->method('searchInstances')->willReturn([]);
+
+        $this->sut->setServiceManager(
+            $this->getServiceManagerMock([
+                SessionService::SERVICE_ID => $this->getSessionServiceMock(),
+            ])
+        );
+
+        $this->userMock->method('setPropertyValue')->willReturn(true);
+
+        $this->sut->cloneInstance(
+            $groupMock,
+            $classMock,
+            [ResourceTransferCommand::OPTION_INCREMENT_LABEL => true]
+        );
     }
 
     /**

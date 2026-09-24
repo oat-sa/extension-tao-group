@@ -30,7 +30,6 @@ use common_Exception;
 use common_exception_Error;
 use core_kernel_classes_Class;
 use core_kernel_classes_Resource;
-use oat\oatbox\service\ServiceManager;
 use oat\oatbox\user\User;
 use oat\tao\model\OntologyClassService;
 use oat\tao\model\resources\Command\ResourceTransferCommand;
@@ -55,7 +54,7 @@ class GroupsService extends OntologyClassService
     /**
      * Required by {@see GenerisServiceTrait}; implementation lives on {@see OntologyClassService}.
      */
-    public function getServiceLocator(): ServiceManager
+    public function getServiceLocator()
     {
         return parent::getServiceLocator();
     }
@@ -156,7 +155,10 @@ class GroupsService extends OntologyClassService
         array $options = []
     ): core_kernel_classes_Resource {
         $newGroup = parent::cloneInstance($instance, $class);
-        $newGroup->setLabel($this->resolveCloneLabel($instance->getLabel(), $options));
+
+        if ($options[ResourceTransferCommand::OPTION_INCREMENT_LABEL] ?? false) {
+            $newGroup->setLabel($this->resolveCloneLabel($instance->getLabel()));
+        }
 
         foreach ($this->getUsers($instance->getUri()) as $user) {
             $this->addUser($user->getUri(), $newGroup);
@@ -165,19 +167,15 @@ class GroupsService extends OntologyClassService
         return $newGroup;
     }
 
-    private function resolveCloneLabel(string $label, array $options): string
+    private function resolveCloneLabel(string $label): string
     {
-        if ($options[ResourceTransferCommand::OPTION_INCREMENT_LABEL] ?? false) {
-            if (preg_match('/\bbis(?:\s+(\d+))?$/i', $label, $matches)) {
-                $next = (int) ($matches[1] ?? 0) + 1;
+        if (preg_match('/\bbis(?:\s+(\d+))?$/i', $label, $matches)) {
+            $next = (int) ($matches[1] ?? 0) + 1;
 
-                return preg_replace('/\bbis(?:\s+\d+)?$/i', 'bis ' . $next, $label);
-            }
-
-            return $label . ' bis';
+            return preg_replace('/\bbis(?:\s+\d+)?$/i', 'bis ' . $next, $label);
         }
 
-        return $label;
+        return $label . ' bis';
     }
 
     private function getTestTakerService(): TestTakerService
